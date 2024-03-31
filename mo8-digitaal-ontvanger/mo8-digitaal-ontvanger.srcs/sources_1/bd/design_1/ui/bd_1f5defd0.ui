@@ -1,23 +1,25 @@
 {
    "ActiveEmotionalView":"Default View",
    "Default View_ScaleFactor":"1.25",
-   "Default View_TopLeft":"-206,-42",
+   "Default View_TopLeft":"-739,-300",
    "ExpandedHierarchyInLayout":"",
    "guistr":"# # String gsaved with Nlview 7.5.8 2022-09-21 7111 VDI=41 GEI=38 GUI=JA:10.0
 #  -string -flagsOSRD
-preplace port DDR -pg 1 -lvl 2 -x 320 -y 60 -defaultsOSRD
-preplace port FIXED_IO -pg 1 -lvl 2 -x 320 -y 90 -defaultsOSRD
-preplace port UART -pg 1 -lvl 2 -x 320 -y 120 -defaultsOSRD
-preplace inst koppeling_embedded -pg 1 -lvl 1 -x 150 -y 110 -defaultsOSRD
-preplace netloc koppeling_embedded_DDR 1 1 1 300J 50n
-preplace netloc koppeling_embedded_FIXED_IO 1 1 1 300J 70n
-preplace netloc koppeling_embedded_UART_1_0 1 1 1 300J 110n
-levelinfo -pg 1 0 150 320
-pagesize -pg 1 -db -bbox -sgen 0 -10 430 220
+preplace port DDR -pg 1 -lvl 2 -x 280 -y 40 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -lvl 2 -x 280 -y 70 -defaultsOSRD
+preplace port UART -pg 1 -lvl 2 -x 280 -y 130 -defaultsOSRD
+preplace port IIC -pg 1 -lvl 2 -x 280 -y 100 -defaultsOSRD
+preplace inst koppeling_embedded -pg 1 -lvl 1 -x 130 -y 140 -defaultsOSRD
+preplace netloc koppeling_embedded_DDR 1 1 1 260J 40n
+preplace netloc koppeling_embedded_FIXED_IO 1 1 1 260J 70n
+preplace netloc koppeling_embedded_IIC 1 1 1 NJ 100
+preplace netloc koppeling_embedded_UART_1_0 1 1 1 260J 120n
+levelinfo -pg 1 0 130 280
+pagesize -pg 1 -db -bbox -sgen 0 0 390 270
 "
 }
 {
-   "da_axi4_cnt":"1",
+   "da_axi4_cnt":"5",
    "da_clkrst_cnt":"1",
    "da_ps7_cnt":"1"
 }

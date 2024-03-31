@@ -2,7 +2,7 @@
 --Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
---Date        : Thu Mar 21 12:05:51 2024
+--Date        : Sun Mar 31 14:30:16 2024
 --Host        : Lenovo-Jochem running 64-bit major release  (build 9200)
 --Command     : generate_target design_1_wrapper.bd
 --Design      : design_1_wrapper
@@ -35,6 +35,8 @@ entity design_1_wrapper is
     FIXED_IO_ps_clk : inout STD_LOGIC;
     FIXED_IO_ps_porb : inout STD_LOGIC;
     FIXED_IO_ps_srstb : inout STD_LOGIC;
+    IIC_scl_io : inout STD_LOGIC;
+    IIC_sda_io : inout STD_LOGIC;
     UART_rxd : in STD_LOGIC;
     UART_txd : out STD_LOGIC
   );
@@ -65,10 +67,44 @@ architecture STRUCTURE of design_1_wrapper is
     FIXED_IO_ps_clk : inout STD_LOGIC;
     FIXED_IO_ps_porb : inout STD_LOGIC;
     UART_txd : out STD_LOGIC;
-    UART_rxd : in STD_LOGIC
+    UART_rxd : in STD_LOGIC;
+    IIC_sda_i : in STD_LOGIC;
+    IIC_sda_o : out STD_LOGIC;
+    IIC_sda_t : out STD_LOGIC;
+    IIC_scl_i : in STD_LOGIC;
+    IIC_scl_o : out STD_LOGIC;
+    IIC_scl_t : out STD_LOGIC
   );
   end component design_1;
+  component IOBUF is
+  port (
+    I : in STD_LOGIC;
+    O : out STD_LOGIC;
+    T : in STD_LOGIC;
+    IO : inout STD_LOGIC
+  );
+  end component IOBUF;
+  signal IIC_scl_i : STD_LOGIC;
+  signal IIC_scl_o : STD_LOGIC;
+  signal IIC_scl_t : STD_LOGIC;
+  signal IIC_sda_i : STD_LOGIC;
+  signal IIC_sda_o : STD_LOGIC;
+  signal IIC_sda_t : STD_LOGIC;
 begin
+IIC_scl_iobuf: component IOBUF
+     port map (
+      I => IIC_scl_o,
+      IO => IIC_scl_io,
+      O => IIC_scl_i,
+      T => IIC_scl_t
+    );
+IIC_sda_iobuf: component IOBUF
+     port map (
+      I => IIC_sda_o,
+      IO => IIC_sda_io,
+      O => IIC_sda_i,
+      T => IIC_sda_t
+    );
 design_1_i: component design_1
      port map (
       DDR_addr(14 downto 0) => DDR_addr(14 downto 0),
@@ -92,6 +128,12 @@ design_1_i: component design_1
       FIXED_IO_ps_clk => FIXED_IO_ps_clk,
       FIXED_IO_ps_porb => FIXED_IO_ps_porb,
       FIXED_IO_ps_srstb => FIXED_IO_ps_srstb,
+      IIC_scl_i => IIC_scl_i,
+      IIC_scl_o => IIC_scl_o,
+      IIC_scl_t => IIC_scl_t,
+      IIC_sda_i => IIC_sda_i,
+      IIC_sda_o => IIC_sda_o,
+      IIC_sda_t => IIC_sda_t,
       UART_rxd => UART_rxd,
       UART_txd => UART_txd
     );

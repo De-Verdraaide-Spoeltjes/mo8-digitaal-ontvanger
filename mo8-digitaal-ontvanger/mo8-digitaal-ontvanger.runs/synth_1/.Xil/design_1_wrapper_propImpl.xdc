@@ -3,3 +3,7 @@ set_property src_info {type:XDC file:1 line:3 export:INPUT save:INPUT read:READ}
 set_property PACKAGE_PIN P18 [get_ports UART_txd]
 set_property src_info {type:XDC file:1 line:4 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN N17 [get_ports UART_rxd]
+set_property src_info {type:XDC file:1 line:8 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN P15 [get_ports IIC_scl_io]
+set_property src_info {type:XDC file:1 line:9 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN P16 [get_ports IIC_sda_io]
