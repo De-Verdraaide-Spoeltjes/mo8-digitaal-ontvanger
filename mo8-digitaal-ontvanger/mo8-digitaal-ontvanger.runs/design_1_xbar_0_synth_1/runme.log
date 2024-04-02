@@ -12,7 +12,7 @@
     ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 
 source design_1_xbar_0.tcl -notrace
-create_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 1364.508 ; gain = 159.539
+create_project: Time (s): cpu = 00:00:11 ; elapsed = 00:00:16 . Memory (MB): peak = 1365.145 ; gain = 158.949
 INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: design_1_xbar_0
 Command: synth_design -top design_1_xbar_0 -part xc7z020clg400-1 -incremental_mode off -mode out_of_context
 Starting synth_design
@@ -21,9 +21,9 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020
 INFO: [Device 21-403] Loading part xc7z020clg400-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 20516
+INFO: [Synth 8-7075] Helper process launched with PID 24356
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:15 . Memory (MB): peak = 2228.055 ; gain = 409.832
+Starting RTL Elaboration : Time (s): cpu = 00:00:13 ; elapsed = 00:00:22 . Memory (MB): peak = 2230.336 ; gain = 409.070
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'design_1_xbar_0' [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/ip/design_1_xbar_0/synth/design_1_xbar_0.v:53]
 INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_29_axi_crossbar' [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/ipshared/f8f3/hdl/axi_crossbar_v2_1_vl_rfs.v:4883]
@@ -161,18 +161,18 @@ WARNING: [Synth 8-7129] Port m_axi_ruser[2] in module axi_crossbar_v2_1_29_axi_c
 WARNING: [Synth 8-7129] Port m_axi_ruser[1] in module axi_crossbar_v2_1_29_axi_crossbar is either unconnected or has no load
 WARNING: [Synth 8-7129] Port m_axi_ruser[0] in module axi_crossbar_v2_1_29_axi_crossbar is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:26 . Memory (MB): peak = 2453.461 ; gain = 635.238
+Finished RTL Elaboration : Time (s): cpu = 00:00:20 ; elapsed = 00:00:35 . Memory (MB): peak = 2453.996 ; gain = 632.730
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:11 ; elapsed = 00:00:26 . Memory (MB): peak = 2453.461 ; gain = 635.238
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:20 ; elapsed = 00:00:35 . Memory (MB): peak = 2453.996 ; gain = 632.730
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:26 . Memory (MB): peak = 2453.461 ; gain = 635.238
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:20 ; elapsed = 00:00:35 . Memory (MB): peak = 2453.996 ; gain = 632.730
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.025 . Memory (MB): peak = 2453.461 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.041 . Memory (MB): peak = 2453.996 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -183,31 +183,31 @@ Parsing XDC File [C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digit
 Finished Parsing XDC File [C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/design_1_xbar_0_synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 2508.977 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 2553.430 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.053 . Memory (MB): peak = 2509.559 ; gain = 0.582
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.064 . Memory (MB): peak = 2553.430 ; gain = 0.000
 INFO: [Designutils 20-5008] Incremental synthesis strategy off
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:37 . Memory (MB): peak = 2509.559 ; gain = 691.336
+Finished Constraint Validation : Time (s): cpu = 00:00:28 ; elapsed = 00:00:51 . Memory (MB): peak = 2553.430 ; gain = 732.164
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:37 . Memory (MB): peak = 2509.559 ; gain = 691.336
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:28 ; elapsed = 00:00:51 . Memory (MB): peak = 2553.430 ; gain = 732.164
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 Applied set_property KEEP_HIERARCHY = SOFT for inst. (constraint file  C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/design_1_xbar_0_synth_1/dont_touch.xdc, line 9).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:37 . Memory (MB): peak = 2509.559 ; gain = 691.336
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:28 ; elapsed = 00:00:51 . Memory (MB): peak = 2553.430 ; gain = 732.164
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:38 . Memory (MB): peak = 2509.559 ; gain = 691.336
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:29 ; elapsed = 00:00:52 . Memory (MB): peak = 2553.430 ; gain = 732.164
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -252,25 +252,25 @@ WARNING: [Synth 8-7129] Port s_axi_awlen[5] in module axi_crossbar_v2_1_29_axi_c
 WARNING: [Synth 8-7129] Port s_axi_awlen[4] in module axi_crossbar_v2_1_29_axi_crossbar is either unconnected or has no load
 INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:42 . Memory (MB): peak = 2509.559 ; gain = 691.336
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:32 ; elapsed = 00:00:58 . Memory (MB): peak = 2553.430 ; gain = 732.164
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:50 . Memory (MB): peak = 2509.559 ; gain = 691.336
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:43 ; elapsed = 00:01:12 . Memory (MB): peak = 2553.430 ; gain = 732.164
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:51 . Memory (MB): peak = 2509.559 ; gain = 691.336
+Finished Timing Optimization : Time (s): cpu = 00:00:44 ; elapsed = 00:01:14 . Memory (MB): peak = 2553.430 ; gain = 732.164
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:22 ; elapsed = 00:00:51 . Memory (MB): peak = 2509.559 ; gain = 691.336
+Finished Technology Mapping : Time (s): cpu = 00:00:44 ; elapsed = 00:01:14 . Memory (MB): peak = 2553.430 ; gain = 732.164
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -288,37 +288,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:26 ; elapsed = 00:00:58 . Memory (MB): peak = 2509.559 ; gain = 691.336
+Finished IO Insertion : Time (s): cpu = 00:00:49 ; elapsed = 00:01:24 . Memory (MB): peak = 2553.430 ; gain = 732.164
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:26 ; elapsed = 00:00:58 . Memory (MB): peak = 2509.559 ; gain = 691.336
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:49 ; elapsed = 00:01:24 . Memory (MB): peak = 2553.430 ; gain = 732.164
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:26 ; elapsed = 00:00:58 . Memory (MB): peak = 2509.559 ; gain = 691.336
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:49 ; elapsed = 00:01:24 . Memory (MB): peak = 2553.430 ; gain = 732.164
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:26 ; elapsed = 00:00:58 . Memory (MB): peak = 2509.559 ; gain = 691.336
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:49 ; elapsed = 00:01:24 . Memory (MB): peak = 2553.430 ; gain = 732.164
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:26 ; elapsed = 00:00:58 . Memory (MB): peak = 2509.559 ; gain = 691.336
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:49 ; elapsed = 00:01:24 . Memory (MB): peak = 2553.430 ; gain = 732.164
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:26 ; elapsed = 00:00:58 . Memory (MB): peak = 2509.559 ; gain = 691.336
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:49 ; elapsed = 00:01:24 . Memory (MB): peak = 2553.430 ; gain = 732.164
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -343,16 +343,16 @@ Report Cell Usage:
 |7     |FDRE |   133|
 +------+-----+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:26 ; elapsed = 00:00:58 . Memory (MB): peak = 2509.559 ; gain = 691.336
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:49 ; elapsed = 00:01:24 . Memory (MB): peak = 2553.430 ; gain = 732.164
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 72 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:14 ; elapsed = 00:00:56 . Memory (MB): peak = 2509.559 ; gain = 635.238
-Synthesis Optimization Complete : Time (s): cpu = 00:00:26 ; elapsed = 00:00:59 . Memory (MB): peak = 2509.559 ; gain = 691.336
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:27 ; elapsed = 00:01:20 . Memory (MB): peak = 2553.430 ; gain = 632.730
+Synthesis Optimization Complete : Time (s): cpu = 00:00:49 ; elapsed = 00:01:25 . Memory (MB): peak = 2553.430 ; gain = 732.164
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.029 . Memory (MB): peak = 2509.559 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.031 . Memory (MB): peak = 2553.430 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2509.559 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2553.430 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
@@ -360,10 +360,10 @@ Synth Design complete | Checksum: a56ac493
 INFO: [Common 17-83] Releasing license: Synthesis
 52 Infos, 105 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:30 ; elapsed = 00:01:07 . Memory (MB): peak = 2509.559 ; gain = 1097.656
+synth_design: Time (s): cpu = 00:00:56 ; elapsed = 00:01:39 . Memory (MB): peak = 2553.430 ; gain = 1141.352
 INFO: [Common 17-1381] The checkpoint 'C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/design_1_xbar_0_synth_1/design_1_xbar_0.dcp' has been generated.
-INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP design_1_xbar_0, cache-ID = 8182a091721f3be0
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP design_1_xbar_0, cache-ID = 3b0d952a4ebb4a6a
 INFO: [Coretcl 2-1174] Renamed 7 cell refs.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/design_1_xbar_0_synth_1/design_1_xbar_0.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file design_1_xbar_0_utilization_synth.rpt -pb design_1_xbar_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sun Mar 31 14:32:17 2024...
+INFO: [Common 17-206] Exiting Vivado at Tue Apr  2 16:40:14 2024...

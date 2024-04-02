@@ -11,7 +11,7 @@
       "validated": "true"
     },
     "design_tree": {
-      "koppeling_embedded": {
+      "connection_embedded": {
         "processing_system7_0": "",
         "proc_sys_reset_0": "",
         "axi_interconnect_0": {
@@ -248,7 +248,7 @@
       }
     },
     "components": {
-      "koppeling_embedded": {
+      "connection_embedded": {
         "interface_ports": {
           "DDR": {
             "mode": "Master",
@@ -269,31 +269,31 @@
             "mode": "Master",
             "vlnv_bus_definition": "xilinx.com:interface:uart:1.0",
             "vlnv": "xilinx.com:interface:uart_rtl:1.0"
-          },
-          "rsa_versleuteld_karakter_1": {
-            "mode": "Master",
-            "vlnv_bus_definition": "xilinx.com:interface:gpio:1.0",
-            "vlnv": "xilinx.com:interface:gpio_rtl:1.0"
-          },
-          "rsa_versleuteld_karakter_2": {
-            "mode": "Master",
-            "vlnv_bus_definition": "xilinx.com:interface:gpio:1.0",
-            "vlnv": "xilinx.com:interface:gpio_rtl:1.0"
-          },
-          "rsa_versleuteld_karakter_3": {
-            "mode": "Master",
-            "vlnv_bus_definition": "xilinx.com:interface:gpio:1.0",
-            "vlnv": "xilinx.com:interface:gpio_rtl:1.0"
-          },
-          "rsa_versleuteld_karakter_4": {
-            "mode": "Master",
-            "vlnv_bus_definition": "xilinx.com:interface:gpio:1.0",
-            "vlnv": "xilinx.com:interface:gpio_rtl:1.0"
           }
         },
         "ports": {
           "CLK_100MHz": {
             "direction": "O"
+          },
+          "rsa_versleuteld_karakter_1": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "rsa_versleuteld_karakter_2": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "rsa_versleuteld_karakter_3": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "rsa_versleuteld_karakter_4": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
           }
         },
         "components": {
@@ -301,7 +301,7 @@
             "vlnv": "xilinx.com:ip:processing_system7:5.5",
             "xci_name": "design_1_processing_system7_0_0",
             "xci_path": "ip\\design_1_processing_system7_0_0\\design_1_processing_system7_0_0.xci",
-            "inst_hier_path": "koppeling_embedded/processing_system7_0",
+            "inst_hier_path": "connection_embedded/processing_system7_0",
             "parameters": {
               "PCW_ACT_APU_PERIPHERAL_FREQMHZ": {
                 "value": "650.000000"
@@ -2020,12 +2020,12 @@
             "vlnv": "xilinx.com:ip:proc_sys_reset:5.0",
             "xci_name": "design_1_proc_sys_reset_0_0",
             "xci_path": "ip\\design_1_proc_sys_reset_0_0\\design_1_proc_sys_reset_0_0.xci",
-            "inst_hier_path": "koppeling_embedded/proc_sys_reset_0"
+            "inst_hier_path": "connection_embedded/proc_sys_reset_0"
           },
           "axi_interconnect_0": {
             "vlnv": "xilinx.com:ip:axi_interconnect:2.1",
             "xci_path": "ip\\design_1_axi_interconnect_0_0\\design_1_axi_interconnect_0_0.xci",
-            "inst_hier_path": "koppeling_embedded/axi_interconnect_0",
+            "inst_hier_path": "connection_embedded/axi_interconnect_0",
             "xci_name": "design_1_axi_interconnect_0_0",
             "parameters": {
               "NUM_MI": {
@@ -2159,7 +2159,7 @@
                 "vlnv": "xilinx.com:ip:axi_crossbar:2.1",
                 "xci_name": "design_1_xbar_0",
                 "xci_path": "ip\\design_1_xbar_0\\design_1_xbar_0.xci",
-                "inst_hier_path": "koppeling_embedded/axi_interconnect_0/xbar",
+                "inst_hier_path": "connection_embedded/axi_interconnect_0/xbar",
                 "parameters": {
                   "NUM_MI": {
                     "value": "4"
@@ -2236,7 +2236,7 @@
                     "vlnv": "xilinx.com:ip:axi_protocol_converter:2.1",
                     "xci_name": "design_1_auto_pc_0",
                     "xci_path": "ip\\design_1_auto_pc_0\\design_1_auto_pc_0.xci",
-                    "inst_hier_path": "koppeling_embedded/axi_interconnect_0/s00_couplers/auto_pc",
+                    "inst_hier_path": "connection_embedded/axi_interconnect_0/s00_couplers/auto_pc",
                     "parameters": {
                       "MI_PROTOCOL": {
                         "value": "AXI4LITE"
@@ -2611,7 +2611,7 @@
             "vlnv": "xilinx.com:ip:axi_gpio:2.0",
             "xci_name": "design_1_axi_gpio_0_1",
             "xci_path": "ip\\design_1_axi_gpio_0_1\\design_1_axi_gpio_0_1.xci",
-            "inst_hier_path": "koppeling_embedded/rsa_versleuteld_karakter_1",
+            "inst_hier_path": "connection_embedded/rsa_versleuteld_karakter_1",
             "parameters": {
               "C_ALL_INPUTS": {
                 "value": "1"
@@ -2628,7 +2628,7 @@
             "vlnv": "xilinx.com:ip:axi_gpio:2.0",
             "xci_name": "design_1_rsa_versleuteld_karakter_1_0",
             "xci_path": "ip\\design_1_rsa_versleuteld_karakter_1_0\\design_1_rsa_versleuteld_karakter_1_0.xci",
-            "inst_hier_path": "koppeling_embedded/rsa_versleuteld_karakter_2",
+            "inst_hier_path": "connection_embedded/rsa_versleuteld_karakter_2",
             "parameters": {
               "C_ALL_INPUTS": {
                 "value": "1"
@@ -2645,7 +2645,7 @@
             "vlnv": "xilinx.com:ip:axi_gpio:2.0",
             "xci_name": "design_1_rsa_versleuteld_karakter_1_1",
             "xci_path": "ip\\design_1_rsa_versleuteld_karakter_1_1\\design_1_rsa_versleuteld_karakter_1_1.xci",
-            "inst_hier_path": "koppeling_embedded/rsa_versleuteld_karakter_3",
+            "inst_hier_path": "connection_embedded/rsa_versleuteld_karakter_3",
             "parameters": {
               "C_ALL_INPUTS": {
                 "value": "1"
@@ -2662,7 +2662,7 @@
             "vlnv": "xilinx.com:ip:axi_gpio:2.0",
             "xci_name": "design_1_rsa_versleuteld_karakter_1_2",
             "xci_path": "ip\\design_1_rsa_versleuteld_karakter_1_2\\design_1_rsa_versleuteld_karakter_1_2.xci",
-            "inst_hier_path": "koppeling_embedded/rsa_versleuteld_karakter_4",
+            "inst_hier_path": "connection_embedded/rsa_versleuteld_karakter_4",
             "parameters": {
               "C_ALL_INPUTS": {
                 "value": "1"
@@ -2679,7 +2679,7 @@
             "vlnv": "xilinx.com:ip:xlconcat:2.1",
             "xci_name": "design_1_xlconcat_0_0",
             "xci_path": "ip\\design_1_xlconcat_0_0\\design_1_xlconcat_0_0.xci",
-            "inst_hier_path": "koppeling_embedded/xlconcat_0",
+            "inst_hier_path": "connection_embedded/xlconcat_0",
             "parameters": {
               "NUM_PORTS": {
                 "value": "4"
@@ -2710,30 +2710,6 @@
             "interface_ports": [
               "processing_system7_0/UART_1",
               "UART"
-            ]
-          },
-          "Conn5": {
-            "interface_ports": [
-              "rsa_versleuteld_karakter_1/GPIO",
-              "rsa_versleuteld_karakter_1"
-            ]
-          },
-          "Conn6": {
-            "interface_ports": [
-              "rsa_versleuteld_karakter_2/GPIO",
-              "rsa_versleuteld_karakter_2"
-            ]
-          },
-          "Conn7": {
-            "interface_ports": [
-              "rsa_versleuteld_karakter_3/GPIO",
-              "rsa_versleuteld_karakter_3"
-            ]
-          },
-          "Conn8": {
-            "interface_ports": [
-              "rsa_versleuteld_karakter_4/GPIO",
-              "rsa_versleuteld_karakter_4"
             ]
           },
           "axi_interconnect_0_M00_AXI": {
@@ -2768,6 +2744,24 @@
           }
         },
         "nets": {
+          "gpio_io_i_1_1": {
+            "ports": [
+              "rsa_versleuteld_karakter_2",
+              "rsa_versleuteld_karakter_2/gpio_io_i"
+            ]
+          },
+          "gpio_io_i_2_1": {
+            "ports": [
+              "rsa_versleuteld_karakter_3",
+              "rsa_versleuteld_karakter_3/gpio_io_i"
+            ]
+          },
+          "gpio_io_i_3_1": {
+            "ports": [
+              "rsa_versleuteld_karakter_4",
+              "rsa_versleuteld_karakter_4/gpio_io_i"
+            ]
+          },
           "proc_sys_reset_0_peripheral_aresetn": {
             "ports": [
               "proc_sys_reset_0/peripheral_aresetn",
@@ -2807,6 +2801,12 @@
               "proc_sys_reset_0/ext_reset_in"
             ]
           },
+          "rsa_versleuteld_karakter_1": {
+            "ports": [
+              "rsa_versleuteld_karakter_1",
+              "rsa_versleuteld_karakter_1/gpio_io_i"
+            ]
+          },
           "rsa_versleuteld_karakter_1_ip2intc_irpt": {
             "ports": [
               "rsa_versleuteld_karakter_1/ip2intc_irpt",
@@ -2844,50 +2844,50 @@
       "koppeling_embedded_DDR": {
         "interface_ports": [
           "DDR",
-          "koppeling_embedded/DDR"
+          "connection_embedded/DDR"
         ]
       },
       "koppeling_embedded_FIXED_IO": {
         "interface_ports": [
           "FIXED_IO",
-          "koppeling_embedded/FIXED_IO"
+          "connection_embedded/FIXED_IO"
         ]
       },
       "koppeling_embedded_IIC": {
         "interface_ports": [
           "IIC",
-          "koppeling_embedded/IIC"
+          "connection_embedded/IIC"
         ]
       },
       "koppeling_embedded_UART_1_0": {
         "interface_ports": [
           "UART",
-          "koppeling_embedded/UART"
+          "connection_embedded/UART"
         ]
       }
     },
     "addressing": {
-      "/koppeling_embedded/processing_system7_0": {
+      "/connection_embedded/processing_system7_0": {
         "address_spaces": {
           "Data": {
             "segments": {
               "SEG_rsa_versleuteld_karakter_1_Reg": {
-                "address_block": "/koppeling_embedded/rsa_versleuteld_karakter_1/S_AXI/Reg",
+                "address_block": "/connection_embedded/rsa_versleuteld_karakter_1/S_AXI/Reg",
                 "offset": "0x41200000",
                 "range": "64K"
               },
               "SEG_rsa_versleuteld_karakter_2_Reg": {
-                "address_block": "/koppeling_embedded/rsa_versleuteld_karakter_2/S_AXI/Reg",
+                "address_block": "/connection_embedded/rsa_versleuteld_karakter_2/S_AXI/Reg",
                 "offset": "0x41210000",
                 "range": "64K"
               },
               "SEG_rsa_versleuteld_karakter_3_Reg": {
-                "address_block": "/koppeling_embedded/rsa_versleuteld_karakter_3/S_AXI/Reg",
+                "address_block": "/connection_embedded/rsa_versleuteld_karakter_3/S_AXI/Reg",
                 "offset": "0x41220000",
                 "range": "64K"
               },
               "SEG_rsa_versleuteld_karakter_4_Reg": {
-                "address_block": "/koppeling_embedded/rsa_versleuteld_karakter_4/S_AXI/Reg",
+                "address_block": "/connection_embedded/rsa_versleuteld_karakter_4/S_AXI/Reg",
                 "offset": "0x41230000",
                 "range": "64K"
               }

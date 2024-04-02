@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
-| Date             : Sun Mar 31 14:35:21 2024
+| Date             : Tue Apr  2 16:43:52 2024
 | Host             : Lenovo-Jochem running 64-bit major release  (build 9200)
 | Command          : report_power -file design_1_wrapper_power_routed.rpt -pb design_1_wrapper_power_summary_routed.pb -rpx design_1_wrapper_power_routed.rpx
 | Design           : design_1_wrapper
@@ -133,11 +133,11 @@ Table of Contents
 2.2 Clock Constraints
 ---------------------
 
-+------------+--------------------------------------------------------------------------------+-----------------+
-| Clock      | Domain                                                                         | Constraint (ns) |
-+------------+--------------------------------------------------------------------------------+-----------------+
-| clk_fpga_0 | design_1_i/koppeling_embedded/processing_system7_0/inst/FCLK_CLK_unbuffered[0] |            10.0 |
-+------------+--------------------------------------------------------------------------------+-----------------+
++------------+---------------------------------------------------------------------------------+-----------------+
+| Clock      | Domain                                                                          | Constraint (ns) |
++------------+---------------------------------------------------------------------------------+-----------------+
+| clk_fpga_0 | design_1_i/connection_embedded/processing_system7_0/inst/FCLK_CLK_unbuffered[0] |            10.0 |
++------------+---------------------------------------------------------------------------------+-----------------+
 
 
 3. Detailed Reports
@@ -146,18 +146,18 @@ Table of Contents
 3.1 By Hierarchy
 ----------------
 
-+----------------------------------+-----------+
-| Name                             | Power (W) |
-+----------------------------------+-----------+
-| design_1_wrapper                 |     1.273 |
-|   design_1_i                     |     1.271 |
-|     koppeling_embedded           |     1.271 |
-|       axi_interconnect_0         |     0.005 |
-|       processing_system7_0       |     1.259 |
-|       rsa_versleuteld_karakter_1 |     0.002 |
-|       rsa_versleuteld_karakter_2 |     0.002 |
-|       rsa_versleuteld_karakter_3 |     0.002 |
-|       rsa_versleuteld_karakter_4 |     0.002 |
-+----------------------------------+-----------+
++--------------------------------------+-----------+
+| Name                                 | Power (W) |
++--------------------------------------+-----------+
+| design_1_wrapper                     |     1.273 |
+|   design_1_i                         |     1.271 |
+|     connection_embedded              |     1.271 |
+|       axi_interconnect_0             |     0.005 |
+|       processing_system7_0           |     1.259 |
+|       rsa_versleuteld_karakter_1_RnM |     0.002 |
+|       rsa_versleuteld_karakter_2_RnM |     0.002 |
+|       rsa_versleuteld_karakter_3_RnM |     0.002 |
+|       rsa_versleuteld_karakter_4_RnM |     0.002 |
++--------------------------------------+-----------+
 
 

@@ -1,0 +1,50 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"0.38316",
+   "Default View_TopLeft":"-796,3",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.5.8 2022-09-21 7111 VDI=41 GEI=38 GUI=JA:10.0
+#  -string -flagsOSRD
+preplace port DDR -pg 1 -lvl 5 -x 1300 -y 840 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -lvl 5 -x 1300 -y 870 -defaultsOSRD
+preplace port IIC -pg 1 -lvl 5 -x 1300 -y 930 -defaultsOSRD
+preplace port UART -pg 1 -lvl 5 -x 1300 -y 900 -defaultsOSRD
+preplace port port-id_CLK_100MHz -pg 1 -lvl 5 -x 1300 -y 740 -defaultsOSRD
+preplace portBus rsa_versleuteld_karakter_1 -pg 1 -lvl 0 -x 0 -y 550 -defaultsOSRD
+preplace portBus rsa_versleuteld_karakter_2 -pg 1 -lvl 0 -x 0 -y 160 -defaultsOSRD
+preplace portBus rsa_versleuteld_karakter_3 -pg 1 -lvl 0 -x 0 -y 520 -defaultsOSRD
+preplace portBus rsa_versleuteld_karakter_4 -pg 1 -lvl 0 -x 0 -y 1040 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 2 -x 430 -y 920 -defaultsOSRD
+preplace inst proc_sys_reset_0 -pg 1 -lvl 2 -x 430 -y 680 -defaultsOSRD
+preplace inst axi_interconnect_0 -pg 1 -lvl 3 -x 800 -y 340 -defaultsOSRD
+preplace inst rsa_versleuteld_karakter_1 -pg 1 -lvl 4 -x 1120 -y 470 -defaultsOSRD
+preplace inst rsa_versleuteld_karakter_2 -pg 1 -lvl 4 -x 1120 -y 80 -defaultsOSRD
+preplace inst rsa_versleuteld_karakter_3 -pg 1 -lvl 4 -x 1120 -y 310 -defaultsOSRD
+preplace inst rsa_versleuteld_karakter_4 -pg 1 -lvl 4 -x 1120 -y 660 -defaultsOSRD
+preplace inst xlconcat_0 -pg 1 -lvl 1 -x 130 -y 670 -defaultsOSRD
+preplace netloc proc_sys_reset_0_peripheral_aresetn 1 2 2 620 540 980
+preplace netloc processing_system7_0_FCLK_CLK0 1 1 4 230 790 650 530 960 740 NJ
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 1 2 240 800 620
+preplace netloc rsa_versleuteld_karakter_1_ip2intc_irpt 1 0 5 20 560 NJ 560 NJ 560 NJ 560 1250
+preplace netloc rsa_versleuteld_karakter_2_ip2intc_irpt 1 0 5 30 570 NJ 570 NJ 570 NJ 570 1280
+preplace netloc rsa_versleuteld_karakter_3_ip2intc_irpt 1 0 5 40 580 NJ 580 NJ 580 NJ 580 1270
+preplace netloc rsa_versleuteld_karakter_4_ip2intc_irpt 1 0 5 40 780 NJ 780 NJ 780 NJ 780 1250
+preplace netloc xlconcat_0_dout 1 1 1 220 670n
+preplace netloc rsa_versleuteld_karakter_1 1 0 5 NJ 550 NJ 550 NJ 550 NJ 550 1260
+preplace netloc gpio_io_i_1_1 1 0 5 NJ 160 NJ 160 NJ 160 NJ 160 1250
+preplace netloc gpio_io_i_2_1 1 0 5 NJ 520 NJ 520 NJ 520 990J 390 1250
+preplace netloc gpio_io_i_3_1 1 0 5 NJ 1040 NJ 1040 NJ 1040 NJ 1040 1260
+preplace netloc Conn1 1 2 3 640J 840 NJ 840 NJ
+preplace netloc Conn2 1 2 3 660J 870 NJ 870 NJ
+preplace netloc Conn3 1 2 3 NJ 920 NJ 920 1280J
+preplace netloc Conn4 1 2 3 NJ 900 NJ 900 NJ
+preplace netloc axi_interconnect_0_M00_AXI 1 3 1 950 310n
+preplace netloc axi_interconnect_0_M01_AXI 1 3 1 940 60n
+preplace netloc axi_interconnect_0_M02_AXI 1 3 1 970 290n
+preplace netloc axi_interconnect_0_M03_AXI 1 3 1 940 370n
+preplace netloc processing_system7_0_M_AXI_GP0 1 2 1 630 220n
+levelinfo -pg 1 0 130 430 800 1120 1300
+pagesize -pg 1 -db -bbox -sgen -250 0 1440 1060
+"
+}
+

@@ -2,7 +2,7 @@
 --Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
---Date        : Sun Mar 31 14:30:16 2024
+--Date        : Tue Apr  2 16:37:42 2024
 --Host        : Lenovo-Jochem running 64-bit major release  (build 9200)
 --Command     : generate_target design_1.bd
 --Design      : design_1
@@ -12,7 +12,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity m00_couplers_imp_L58SQO is
+entity m00_couplers_imp_163ALG1 is
   port (
     M_ACLK : in STD_LOGIC;
     M_ARESETN : in STD_LOGIC;
@@ -53,9 +53,9 @@ entity m00_couplers_imp_L58SQO is
     S_AXI_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
     S_AXI_wvalid : in STD_LOGIC
   );
-end m00_couplers_imp_L58SQO;
+end m00_couplers_imp_163ALG1;
 
-architecture STRUCTURE of m00_couplers_imp_L58SQO is
+architecture STRUCTURE of m00_couplers_imp_163ALG1 is
   signal m00_couplers_to_m00_couplers_ARADDR : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal m00_couplers_to_m00_couplers_ARREADY : STD_LOGIC;
   signal m00_couplers_to_m00_couplers_ARVALID : STD_LOGIC;
@@ -113,7 +113,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity m01_couplers_imp_19C72W1 is
+entity m01_couplers_imp_XJGK4W is
   port (
     M_ACLK : in STD_LOGIC;
     M_ARESETN : in STD_LOGIC;
@@ -154,9 +154,9 @@ entity m01_couplers_imp_19C72W1 is
     S_AXI_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
     S_AXI_wvalid : in STD_LOGIC
   );
-end m01_couplers_imp_19C72W1;
+end m01_couplers_imp_XJGK4W;
 
-architecture STRUCTURE of m01_couplers_imp_19C72W1 is
+architecture STRUCTURE of m01_couplers_imp_XJGK4W is
   signal m01_couplers_to_m01_couplers_ARADDR : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal m01_couplers_to_m01_couplers_ARREADY : STD_LOGIC;
   signal m01_couplers_to_m01_couplers_ARVALID : STD_LOGIC;
@@ -214,7 +214,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity m02_couplers_imp_KHZEV7 is
+entity m02_couplers_imp_14MDQJ6 is
   port (
     M_ACLK : in STD_LOGIC;
     M_ARESETN : in STD_LOGIC;
@@ -255,9 +255,9 @@ entity m02_couplers_imp_KHZEV7 is
     S_AXI_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
     S_AXI_wvalid : in STD_LOGIC
   );
-end m02_couplers_imp_KHZEV7;
+end m02_couplers_imp_14MDQJ6;
 
-architecture STRUCTURE of m02_couplers_imp_KHZEV7 is
+architecture STRUCTURE of m02_couplers_imp_14MDQJ6 is
   signal m02_couplers_to_m02_couplers_ARADDR : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal m02_couplers_to_m02_couplers_ARREADY : STD_LOGIC;
   signal m02_couplers_to_m02_couplers_ARVALID : STD_LOGIC;
@@ -315,7 +315,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity m03_couplers_imp_1A941K2 is
+entity m03_couplers_imp_YQOGHF is
   port (
     M_ACLK : in STD_LOGIC;
     M_ARESETN : in STD_LOGIC;
@@ -356,9 +356,9 @@ entity m03_couplers_imp_1A941K2 is
     S_AXI_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
     S_AXI_wvalid : in STD_LOGIC
   );
-end m03_couplers_imp_1A941K2;
+end m03_couplers_imp_YQOGHF;
 
-architecture STRUCTURE of m03_couplers_imp_1A941K2 is
+architecture STRUCTURE of m03_couplers_imp_YQOGHF is
   signal m03_couplers_to_m03_couplers_ARADDR : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal m03_couplers_to_m03_couplers_ARREADY : STD_LOGIC;
   signal m03_couplers_to_m03_couplers_ARVALID : STD_LOGIC;
@@ -416,7 +416,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity s00_couplers_imp_1E8EAIQ is
+entity s00_couplers_imp_UOAE6R is
   port (
     M_ACLK : in STD_LOGIC;
     M_ARESETN : in STD_LOGIC;
@@ -480,9 +480,9 @@ entity s00_couplers_imp_1E8EAIQ is
     S_AXI_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
     S_AXI_wvalid : in STD_LOGIC
   );
-end s00_couplers_imp_1E8EAIQ;
+end s00_couplers_imp_UOAE6R;
 
-architecture STRUCTURE of s00_couplers_imp_1E8EAIQ is
+architecture STRUCTURE of s00_couplers_imp_UOAE6R is
   component design_1_auto_pc_0 is
   port (
     aclk : in STD_LOGIC;
@@ -1206,7 +1206,7 @@ begin
   m03_couplers_to_axi_interconnect_0_RRESP(1 downto 0) <= M03_AXI_rresp(1 downto 0);
   m03_couplers_to_axi_interconnect_0_RVALID <= M03_AXI_rvalid;
   m03_couplers_to_axi_interconnect_0_WREADY <= M03_AXI_wready;
-m00_couplers: entity work.m00_couplers_imp_L58SQO
+m00_couplers: entity work.m00_couplers_imp_163ALG1
      port map (
       M_ACLK => axi_interconnect_0_ACLK_net,
       M_ARESETN => axi_interconnect_0_ARESETN_net,
@@ -1247,7 +1247,7 @@ m00_couplers: entity work.m00_couplers_imp_L58SQO
       S_AXI_wstrb(3 downto 0) => xbar_to_m00_couplers_WSTRB(3 downto 0),
       S_AXI_wvalid => xbar_to_m00_couplers_WVALID(0)
     );
-m01_couplers: entity work.m01_couplers_imp_19C72W1
+m01_couplers: entity work.m01_couplers_imp_XJGK4W
      port map (
       M_ACLK => axi_interconnect_0_ACLK_net,
       M_ARESETN => axi_interconnect_0_ARESETN_net,
@@ -1288,7 +1288,7 @@ m01_couplers: entity work.m01_couplers_imp_19C72W1
       S_AXI_wstrb(3 downto 0) => xbar_to_m01_couplers_WSTRB(7 downto 4),
       S_AXI_wvalid => xbar_to_m01_couplers_WVALID(1)
     );
-m02_couplers: entity work.m02_couplers_imp_KHZEV7
+m02_couplers: entity work.m02_couplers_imp_14MDQJ6
      port map (
       M_ACLK => axi_interconnect_0_ACLK_net,
       M_ARESETN => axi_interconnect_0_ARESETN_net,
@@ -1329,7 +1329,7 @@ m02_couplers: entity work.m02_couplers_imp_KHZEV7
       S_AXI_wstrb(3 downto 0) => xbar_to_m02_couplers_WSTRB(11 downto 8),
       S_AXI_wvalid => xbar_to_m02_couplers_WVALID(2)
     );
-m03_couplers: entity work.m03_couplers_imp_1A941K2
+m03_couplers: entity work.m03_couplers_imp_YQOGHF
      port map (
       M_ACLK => axi_interconnect_0_ACLK_net,
       M_ARESETN => axi_interconnect_0_ARESETN_net,
@@ -1370,7 +1370,7 @@ m03_couplers: entity work.m03_couplers_imp_1A941K2
       S_AXI_wstrb(3 downto 0) => xbar_to_m03_couplers_WSTRB(15 downto 12),
       S_AXI_wvalid => xbar_to_m03_couplers_WVALID(3)
     );
-s00_couplers: entity work.s00_couplers_imp_1E8EAIQ
+s00_couplers: entity work.s00_couplers_imp_UOAE6R
      port map (
       M_ACLK => axi_interconnect_0_ACLK_net,
       M_ARESETN => axi_interconnect_0_ARESETN_net,
@@ -1533,7 +1533,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity koppeling_embedded_imp_13QDZ6R is
+entity connection_embedded_imp_4JK09R is
   port (
     CLK_100MHz : out STD_LOGIC;
     DDR_addr : inout STD_LOGIC_VECTOR ( 14 downto 0 );
@@ -1565,14 +1565,14 @@ entity koppeling_embedded_imp_13QDZ6R is
     IIC_sda_t : out STD_LOGIC;
     UART_rxd : in STD_LOGIC;
     UART_txd : out STD_LOGIC;
-    rsa_versleuteld_karakter_1_tri_i : in STD_LOGIC;
-    rsa_versleuteld_karakter_2_tri_i : in STD_LOGIC;
-    rsa_versleuteld_karakter_3_tri_i : in STD_LOGIC;
-    rsa_versleuteld_karakter_4_tri_i : in STD_LOGIC
+    rsa_versleuteld_karakter_1 : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    rsa_versleuteld_karakter_2 : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    rsa_versleuteld_karakter_3 : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    rsa_versleuteld_karakter_4 : in STD_LOGIC_VECTOR ( 31 downto 0 )
   );
-end koppeling_embedded_imp_13QDZ6R;
+end connection_embedded_imp_4JK09R;
 
-architecture STRUCTURE of koppeling_embedded_imp_13QDZ6R is
+architecture STRUCTURE of connection_embedded_imp_4JK09R is
   component design_1_processing_system7_0_0 is
   port (
     I2C0_SDA_I : in STD_LOGIC;
@@ -1800,10 +1800,6 @@ architecture STRUCTURE of koppeling_embedded_imp_13QDZ6R is
   signal Conn3_SDA_T : STD_LOGIC;
   signal Conn4_RxD : STD_LOGIC;
   signal Conn4_TxD : STD_LOGIC;
-  signal Conn5_TRI_I : STD_LOGIC;
-  signal Conn6_TRI_I : STD_LOGIC;
-  signal Conn7_TRI_I : STD_LOGIC;
-  signal Conn8_TRI_I : STD_LOGIC;
   signal axi_interconnect_0_M00_AXI_ARADDR : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal axi_interconnect_0_M00_AXI_ARREADY : STD_LOGIC;
   signal axi_interconnect_0_M00_AXI_ARVALID : STD_LOGIC;
@@ -1872,6 +1868,9 @@ architecture STRUCTURE of koppeling_embedded_imp_13QDZ6R is
   signal axi_interconnect_0_M03_AXI_WREADY : STD_LOGIC;
   signal axi_interconnect_0_M03_AXI_WSTRB : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal axi_interconnect_0_M03_AXI_WVALID : STD_LOGIC;
+  signal gpio_io_i_1_1 : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal gpio_io_i_2_1 : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal gpio_io_i_3_1 : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal proc_sys_reset_0_peripheral_aresetn : STD_LOGIC_VECTOR ( 0 to 0 );
   signal processing_system7_0_FCLK_CLK0 : STD_LOGIC;
   signal processing_system7_0_FCLK_RESET0_N : STD_LOGIC;
@@ -1927,15 +1926,14 @@ begin
   Conn3_SCL_I <= IIC_scl_i;
   Conn3_SDA_I <= IIC_sda_i;
   Conn4_RxD <= UART_rxd;
-  Conn5_TRI_I <= rsa_versleuteld_karakter_1_tri_i;
-  Conn6_TRI_I <= rsa_versleuteld_karakter_2_tri_i;
-  Conn7_TRI_I <= rsa_versleuteld_karakter_3_tri_i;
-  Conn8_TRI_I <= rsa_versleuteld_karakter_4_tri_i;
   IIC_scl_o <= Conn3_SCL_O;
   IIC_scl_t <= Conn3_SCL_T;
   IIC_sda_o <= Conn3_SDA_O;
   IIC_sda_t <= Conn3_SDA_T;
   UART_txd <= Conn4_TxD;
+  gpio_io_i_1_1(31 downto 0) <= rsa_versleuteld_karakter_2(31 downto 0);
+  gpio_io_i_2_1(31 downto 0) <= rsa_versleuteld_karakter_3(31 downto 0);
+  gpio_io_i_3_1(31 downto 0) <= rsa_versleuteld_karakter_4(31 downto 0);
 axi_interconnect_0: entity work.design_1_axi_interconnect_0_0
      port map (
       ACLK => processing_system7_0_FCLK_CLK0,
@@ -2144,40 +2142,9 @@ processing_system7_0: component design_1_processing_system7_0_0
       UART1_RX => Conn4_RxD,
       UART1_TX => Conn4_TxD
     );
-rsa_versleuteld_karakter_1: component design_1_axi_gpio_0_1
+rsa_versleuteld_karakter_1_RnM: component design_1_axi_gpio_0_1
      port map (
-      gpio_io_i(31) => Conn5_TRI_I,
-      gpio_io_i(30) => Conn5_TRI_I,
-      gpio_io_i(29) => Conn5_TRI_I,
-      gpio_io_i(28) => Conn5_TRI_I,
-      gpio_io_i(27) => Conn5_TRI_I,
-      gpio_io_i(26) => Conn5_TRI_I,
-      gpio_io_i(25) => Conn5_TRI_I,
-      gpio_io_i(24) => Conn5_TRI_I,
-      gpio_io_i(23) => Conn5_TRI_I,
-      gpio_io_i(22) => Conn5_TRI_I,
-      gpio_io_i(21) => Conn5_TRI_I,
-      gpio_io_i(20) => Conn5_TRI_I,
-      gpio_io_i(19) => Conn5_TRI_I,
-      gpio_io_i(18) => Conn5_TRI_I,
-      gpio_io_i(17) => Conn5_TRI_I,
-      gpio_io_i(16) => Conn5_TRI_I,
-      gpio_io_i(15) => Conn5_TRI_I,
-      gpio_io_i(14) => Conn5_TRI_I,
-      gpio_io_i(13) => Conn5_TRI_I,
-      gpio_io_i(12) => Conn5_TRI_I,
-      gpio_io_i(11) => Conn5_TRI_I,
-      gpio_io_i(10) => Conn5_TRI_I,
-      gpio_io_i(9) => Conn5_TRI_I,
-      gpio_io_i(8) => Conn5_TRI_I,
-      gpio_io_i(7) => Conn5_TRI_I,
-      gpio_io_i(6) => Conn5_TRI_I,
-      gpio_io_i(5) => Conn5_TRI_I,
-      gpio_io_i(4) => Conn5_TRI_I,
-      gpio_io_i(3) => Conn5_TRI_I,
-      gpio_io_i(2) => Conn5_TRI_I,
-      gpio_io_i(1) => Conn5_TRI_I,
-      gpio_io_i(0) => Conn5_TRI_I,
+      gpio_io_i(31 downto 0) => rsa_versleuteld_karakter_1(31 downto 0),
       ip2intc_irpt => rsa_versleuteld_karakter_1_ip2intc_irpt,
       s_axi_aclk => processing_system7_0_FCLK_CLK0,
       s_axi_araddr(8 downto 0) => axi_interconnect_0_M00_AXI_ARADDR(8 downto 0),
@@ -2199,40 +2166,9 @@ rsa_versleuteld_karakter_1: component design_1_axi_gpio_0_1
       s_axi_wstrb(3 downto 0) => axi_interconnect_0_M00_AXI_WSTRB(3 downto 0),
       s_axi_wvalid => axi_interconnect_0_M00_AXI_WVALID
     );
-rsa_versleuteld_karakter_2: component design_1_rsa_versleuteld_karakter_1_0
+rsa_versleuteld_karakter_2_RnM: component design_1_rsa_versleuteld_karakter_1_0
      port map (
-      gpio_io_i(31) => Conn6_TRI_I,
-      gpio_io_i(30) => Conn6_TRI_I,
-      gpio_io_i(29) => Conn6_TRI_I,
-      gpio_io_i(28) => Conn6_TRI_I,
-      gpio_io_i(27) => Conn6_TRI_I,
-      gpio_io_i(26) => Conn6_TRI_I,
-      gpio_io_i(25) => Conn6_TRI_I,
-      gpio_io_i(24) => Conn6_TRI_I,
-      gpio_io_i(23) => Conn6_TRI_I,
-      gpio_io_i(22) => Conn6_TRI_I,
-      gpio_io_i(21) => Conn6_TRI_I,
-      gpio_io_i(20) => Conn6_TRI_I,
-      gpio_io_i(19) => Conn6_TRI_I,
-      gpio_io_i(18) => Conn6_TRI_I,
-      gpio_io_i(17) => Conn6_TRI_I,
-      gpio_io_i(16) => Conn6_TRI_I,
-      gpio_io_i(15) => Conn6_TRI_I,
-      gpio_io_i(14) => Conn6_TRI_I,
-      gpio_io_i(13) => Conn6_TRI_I,
-      gpio_io_i(12) => Conn6_TRI_I,
-      gpio_io_i(11) => Conn6_TRI_I,
-      gpio_io_i(10) => Conn6_TRI_I,
-      gpio_io_i(9) => Conn6_TRI_I,
-      gpio_io_i(8) => Conn6_TRI_I,
-      gpio_io_i(7) => Conn6_TRI_I,
-      gpio_io_i(6) => Conn6_TRI_I,
-      gpio_io_i(5) => Conn6_TRI_I,
-      gpio_io_i(4) => Conn6_TRI_I,
-      gpio_io_i(3) => Conn6_TRI_I,
-      gpio_io_i(2) => Conn6_TRI_I,
-      gpio_io_i(1) => Conn6_TRI_I,
-      gpio_io_i(0) => Conn6_TRI_I,
+      gpio_io_i(31 downto 0) => gpio_io_i_1_1(31 downto 0),
       ip2intc_irpt => rsa_versleuteld_karakter_2_ip2intc_irpt,
       s_axi_aclk => processing_system7_0_FCLK_CLK0,
       s_axi_araddr(8 downto 0) => axi_interconnect_0_M01_AXI_ARADDR(8 downto 0),
@@ -2254,40 +2190,9 @@ rsa_versleuteld_karakter_2: component design_1_rsa_versleuteld_karakter_1_0
       s_axi_wstrb(3 downto 0) => axi_interconnect_0_M01_AXI_WSTRB(3 downto 0),
       s_axi_wvalid => axi_interconnect_0_M01_AXI_WVALID
     );
-rsa_versleuteld_karakter_3: component design_1_rsa_versleuteld_karakter_1_1
+rsa_versleuteld_karakter_3_RnM: component design_1_rsa_versleuteld_karakter_1_1
      port map (
-      gpio_io_i(31) => Conn7_TRI_I,
-      gpio_io_i(30) => Conn7_TRI_I,
-      gpio_io_i(29) => Conn7_TRI_I,
-      gpio_io_i(28) => Conn7_TRI_I,
-      gpio_io_i(27) => Conn7_TRI_I,
-      gpio_io_i(26) => Conn7_TRI_I,
-      gpio_io_i(25) => Conn7_TRI_I,
-      gpio_io_i(24) => Conn7_TRI_I,
-      gpio_io_i(23) => Conn7_TRI_I,
-      gpio_io_i(22) => Conn7_TRI_I,
-      gpio_io_i(21) => Conn7_TRI_I,
-      gpio_io_i(20) => Conn7_TRI_I,
-      gpio_io_i(19) => Conn7_TRI_I,
-      gpio_io_i(18) => Conn7_TRI_I,
-      gpio_io_i(17) => Conn7_TRI_I,
-      gpio_io_i(16) => Conn7_TRI_I,
-      gpio_io_i(15) => Conn7_TRI_I,
-      gpio_io_i(14) => Conn7_TRI_I,
-      gpio_io_i(13) => Conn7_TRI_I,
-      gpio_io_i(12) => Conn7_TRI_I,
-      gpio_io_i(11) => Conn7_TRI_I,
-      gpio_io_i(10) => Conn7_TRI_I,
-      gpio_io_i(9) => Conn7_TRI_I,
-      gpio_io_i(8) => Conn7_TRI_I,
-      gpio_io_i(7) => Conn7_TRI_I,
-      gpio_io_i(6) => Conn7_TRI_I,
-      gpio_io_i(5) => Conn7_TRI_I,
-      gpio_io_i(4) => Conn7_TRI_I,
-      gpio_io_i(3) => Conn7_TRI_I,
-      gpio_io_i(2) => Conn7_TRI_I,
-      gpio_io_i(1) => Conn7_TRI_I,
-      gpio_io_i(0) => Conn7_TRI_I,
+      gpio_io_i(31 downto 0) => gpio_io_i_2_1(31 downto 0),
       ip2intc_irpt => rsa_versleuteld_karakter_3_ip2intc_irpt,
       s_axi_aclk => processing_system7_0_FCLK_CLK0,
       s_axi_araddr(8 downto 0) => axi_interconnect_0_M02_AXI_ARADDR(8 downto 0),
@@ -2309,40 +2214,9 @@ rsa_versleuteld_karakter_3: component design_1_rsa_versleuteld_karakter_1_1
       s_axi_wstrb(3 downto 0) => axi_interconnect_0_M02_AXI_WSTRB(3 downto 0),
       s_axi_wvalid => axi_interconnect_0_M02_AXI_WVALID
     );
-rsa_versleuteld_karakter_4: component design_1_rsa_versleuteld_karakter_1_2
+rsa_versleuteld_karakter_4_RnM: component design_1_rsa_versleuteld_karakter_1_2
      port map (
-      gpio_io_i(31) => Conn8_TRI_I,
-      gpio_io_i(30) => Conn8_TRI_I,
-      gpio_io_i(29) => Conn8_TRI_I,
-      gpio_io_i(28) => Conn8_TRI_I,
-      gpio_io_i(27) => Conn8_TRI_I,
-      gpio_io_i(26) => Conn8_TRI_I,
-      gpio_io_i(25) => Conn8_TRI_I,
-      gpio_io_i(24) => Conn8_TRI_I,
-      gpio_io_i(23) => Conn8_TRI_I,
-      gpio_io_i(22) => Conn8_TRI_I,
-      gpio_io_i(21) => Conn8_TRI_I,
-      gpio_io_i(20) => Conn8_TRI_I,
-      gpio_io_i(19) => Conn8_TRI_I,
-      gpio_io_i(18) => Conn8_TRI_I,
-      gpio_io_i(17) => Conn8_TRI_I,
-      gpio_io_i(16) => Conn8_TRI_I,
-      gpio_io_i(15) => Conn8_TRI_I,
-      gpio_io_i(14) => Conn8_TRI_I,
-      gpio_io_i(13) => Conn8_TRI_I,
-      gpio_io_i(12) => Conn8_TRI_I,
-      gpio_io_i(11) => Conn8_TRI_I,
-      gpio_io_i(10) => Conn8_TRI_I,
-      gpio_io_i(9) => Conn8_TRI_I,
-      gpio_io_i(8) => Conn8_TRI_I,
-      gpio_io_i(7) => Conn8_TRI_I,
-      gpio_io_i(6) => Conn8_TRI_I,
-      gpio_io_i(5) => Conn8_TRI_I,
-      gpio_io_i(4) => Conn8_TRI_I,
-      gpio_io_i(3) => Conn8_TRI_I,
-      gpio_io_i(2) => Conn8_TRI_I,
-      gpio_io_i(1) => Conn8_TRI_I,
-      gpio_io_i(0) => Conn8_TRI_I,
+      gpio_io_i(31 downto 0) => gpio_io_i_3_1(31 downto 0),
       ip2intc_irpt => rsa_versleuteld_karakter_4_ip2intc_irpt,
       s_axi_aclk => processing_system7_0_FCLK_CLK0,
       s_axi_araddr(8 downto 0) => axi_interconnect_0_M03_AXI_ARADDR(8 downto 0),
@@ -2445,7 +2319,7 @@ architecture STRUCTURE of design_1 is
   signal koppeling_embedded_IIC_SDA_T : STD_LOGIC;
   signal koppeling_embedded_UART_1_0_RxD : STD_LOGIC;
   signal koppeling_embedded_UART_1_0_TxD : STD_LOGIC;
-  signal NLW_koppeling_embedded_CLK_100MHz_UNCONNECTED : STD_LOGIC;
+  signal NLW_connection_embedded_CLK_100MHz_UNCONNECTED : STD_LOGIC;
   attribute X_INTERFACE_INFO : string;
   attribute X_INTERFACE_INFO of DDR_cas_n : signal is "xilinx.com:interface:ddrx:1.0 DDR CAS_N";
   attribute X_INTERFACE_INFO of DDR_ck_n : signal is "xilinx.com:interface:ddrx:1.0 DDR CK_N";
@@ -2488,9 +2362,9 @@ begin
   koppeling_embedded_IIC_SCL_I <= IIC_scl_i;
   koppeling_embedded_IIC_SDA_I <= IIC_sda_i;
   koppeling_embedded_UART_1_0_RxD <= UART_rxd;
-koppeling_embedded: entity work.koppeling_embedded_imp_13QDZ6R
+connection_embedded: entity work.connection_embedded_imp_4JK09R
      port map (
-      CLK_100MHz => NLW_koppeling_embedded_CLK_100MHz_UNCONNECTED,
+      CLK_100MHz => NLW_connection_embedded_CLK_100MHz_UNCONNECTED,
       DDR_addr(14 downto 0) => DDR_addr(14 downto 0),
       DDR_ba(2 downto 0) => DDR_ba(2 downto 0),
       DDR_cas_n => DDR_cas_n,
@@ -2520,9 +2394,9 @@ koppeling_embedded: entity work.koppeling_embedded_imp_13QDZ6R
       IIC_sda_t => koppeling_embedded_IIC_SDA_T,
       UART_rxd => koppeling_embedded_UART_1_0_RxD,
       UART_txd => koppeling_embedded_UART_1_0_TxD,
-      rsa_versleuteld_karakter_1_tri_i => '0',
-      rsa_versleuteld_karakter_2_tri_i => '0',
-      rsa_versleuteld_karakter_3_tri_i => '0',
-      rsa_versleuteld_karakter_4_tri_i => '0'
+      rsa_versleuteld_karakter_1(31 downto 0) => B"00000000000000000000000000000000",
+      rsa_versleuteld_karakter_2(31 downto 0) => B"00000000000000000000000000000000",
+      rsa_versleuteld_karakter_3(31 downto 0) => B"00000000000000000000000000000000",
+      rsa_versleuteld_karakter_4(31 downto 0) => B"00000000000000000000000000000000"
     );
 end STRUCTURE;
