@@ -1,0 +1,16 @@
+#-----------------------------------------------------------
+# Vivado v2023.1 (64-bit)
+# SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
+# IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+# SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+# Start of session at: Thu Apr 11 11:02:08 2024
+# Process ID: 27700
+# Current directory: C:/_code/Git/MO8/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent30400 C:\_code\Git\MO8\mo8-digitaal-ontvanger\mo8-digitaal-ontvanger\mo8-digitaal-ontvanger.xpr
+# Log file: C:/_code/Git/MO8/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/vivado.log
+# Journal file: C:/_code/Git/MO8/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger\vivado.jou
+# Running On: TRENLAPTOP, OS: Windows, CPU Frequency: 2208 MHz, CPU Physical cores: 6, Host memory: 17054 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/_code/Git/MO8/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.xpr
+update_compile_order -fileset sources_1
