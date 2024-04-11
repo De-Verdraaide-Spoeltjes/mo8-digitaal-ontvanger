@@ -3,24 +3,21 @@
 # SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
 # IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
 # SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
-# Start of session at: Thu Apr 11 11:02:08 2024
-# Process ID: 27700
-# Current directory: C:/_code/Git/MO8/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent30400 C:\_code\Git\MO8\mo8-digitaal-ontvanger\mo8-digitaal-ontvanger\mo8-digitaal-ontvanger.xpr
-# Log file: C:/_code/Git/MO8/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/vivado.log
-# Journal file: C:/_code/Git/MO8/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger\vivado.jou
-# Running On: TRENLAPTOP, OS: Windows, CPU Frequency: 2208 MHz, CPU Physical cores: 6, Host memory: 17054 MB
+# Start of session at: Thu Apr 11 11:05:47 2024
+# Process ID: 4520
+# Current directory: D:/_code/Git/Fontys/Jaar_2/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent27980 D:\_code\Git\Fontys\Jaar_2\mo8-digitaal-ontvanger\mo8-digitaal-ontvanger\mo8-digitaal-ontvanger.xpr
+# Log file: D:/_code/Git/Fontys/Jaar_2/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/vivado.log
+# Journal file: D:/_code/Git/Fontys/Jaar_2/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger\vivado.jou
+# Running On: XPS-Tommy, OS: Windows, CPU Frequency: 2918 MHz, CPU Physical cores: 14, Host memory: 34029 MB
 #-----------------------------------------------------------
 start_gui
-open_project C:/_code/Git/MO8/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.xpr
-WARNING: [Board 49-26] cannot add Board Part xilinx.com:ac701:part0:1.4 available at C:/Xilinx/Vivado/2023.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/ac701/1.4/board.xml as part xc7a200tfbg676-2 specified in board_part file is either invalid or not available
+open_project D:/_code/Git/Fontys/Jaar_2/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.xpr
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:kc705:part0:1.6 available at C:/Xilinx/Vivado/2023.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kc705/1.6/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu105:part0:1.6 available at C:/Xilinx/Vivado/2023.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu105/1.6/board.xml as part xcku040-ffva1156-2-e specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu105:part0:1.7 available at C:/Xilinx/Vivado/2023.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu105/1.7/board.xml as part xcku040-ffva1156-2-e specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu116:part0:1.4 available at C:/Xilinx/Vivado/2023.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu116/1.4/board.xml as part xcku5p-ffvb676-2-e specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu116:part0:1.5 available at C:/Xilinx/Vivado/2023.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu116/1.5/board.xml as part xcku5p-ffvb676-2-e specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part xilinx.com:sp701:part0:1.0 available at C:/Xilinx/Vivado/2023.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/sp701/1.0/board.xml as part xc7s100fgga676-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part xilinx.com:sp701:part0:1.1 available at C:/Xilinx/Vivado/2023.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/sp701/1.1/board.xml as part xc7s100fgga676-2 specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:vc707:part0:1.4 available at C:/Xilinx/Vivado/2023.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vc707/1.4/board.xml as part xc7vx485tffg1761-2 specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:vc709:part0:1.8 available at C:/Xilinx/Vivado/2023.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vc709/1.8/board.xml as part xc7vx690tffg1761-2 specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu108:part0:1.6 available at C:/Xilinx/Vivado/2023.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu108/1.6/board.xml as part xcvu095-ffva2104-2-e specified in board_part file is either invalid or not available
@@ -55,14 +52,290 @@ WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 avail
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670:part0:2.0 available at C:/Xilinx/Vivado/2023.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670/2.0/board.xml as part xczu67dr-fsve1156-2-i specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at C:/Xilinx/Vivado/2023.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
 INFO: [Project 1-313] Project file moved from 'C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger' since last save.
-WARNING: [filemgmt 56-2] Board Part Repository Path: Could not find the directory 'C:/_code/AppData/Roaming/Xilinx/Vivado/2023.1/xhub/board_store/xilinx_board_store', nor could it be found using path 'C:/Users/Jochem/AppData/Roaming/Xilinx/Vivado/2023.1/xhub/board_store/xilinx_board_store'.
-WARNING: [filemgmt 56-3] IPUserFilesDir: Could not find the directory 'C:/_code/Git/MO8/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.ip_user_files'.
+WARNING: [filemgmt 56-2] Board Part Repository Path: Could not find the directory 'D:/_code/Git/AppData/Roaming/Xilinx/Vivado/2023.1/xhub/board_store/xilinx_board_store', nor could it be found using path 'C:/Users/Jochem/AppData/Roaming/Xilinx/Vivado/2023.1/xhub/board_store/xilinx_board_store'.
+WARNING: [filemgmt 56-3] IPUserFilesDir: Could not find the directory 'D:/_code/Git/Fontys/Jaar_2/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.ip_user_files'.
 Scanning sources...
 Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2023.1/data/ip'.
-open_project: Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 2473.227 ; gain = 489.645
+open_project: Time (s): cpu = 00:00:04 ; elapsed = 00:00:10 . Memory (MB): peak = 2473.816 ; gain = 449.105
 update_compile_order -fileset sources_1
+open_bd_design {D:/_code/Git/Fontys/Jaar_2/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.srcs/sources_1/bd/design_1/design_1.bd}
+Reading block design file <D:/_code/Git/Fontys/Jaar_2/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.srcs/sources_1/bd/design_1/design_1.bd>...
+Adding component instance block -- xilinx.com:ip:processing_system7:5.5 - processing_system7_0
+Adding component instance block -- xilinx.com:ip:proc_sys_reset:5.0 - proc_sys_reset_0
+Adding component instance block -- xilinx.com:ip:axi_interconnect:2.1 - axi_interconnect_0
+Adding component instance block -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+Adding component instance block -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Adding component instance block -- xilinx.com:ip:axi_gpio:2.0 - rsa_versleuteld_karakter_1
+Adding component instance block -- xilinx.com:ip:axi_gpio:2.0 - rsa_versleuteld_karakter_2
+Adding component instance block -- xilinx.com:ip:axi_gpio:2.0 - rsa_versleuteld_karakter_3
+Adding component instance block -- xilinx.com:ip:axi_gpio:2.0 - rsa_versleuteld_karakter_4
+Adding component instance block -- xilinx.com:ip:xlconcat:2.1 - xlconcat_0
+Adding component instance block -- xilinx.com:ip:axi_gpio:2.0 - status_led
+Adding component instance block -- xilinx.com:ip:axi_gpio:2.0 - buttons
+Successfully read diagram <design_1> from block design file <D:/_code/Git/Fontys/Jaar_2/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.srcs/sources_1/bd/design_1/design_1.bd>
+open_bd_design {D:/_code/Git/Fontys/Jaar_2/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.srcs/sources_1/bd/design_1/design_1.bd}
+close_bd_design [get_bd_designs design_1]
+Wrote  : <D:/_code/Git/Fontys/Jaar_2/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+close_project
+open_project D:/_code/Git/Fontys/Jaar_2/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.xpr
+INFO: [Project 1-313] Project file moved from 'C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger' since last save.
+WARNING: [filemgmt 56-2] Board Part Repository Path: Could not find the directory 'D:/_code/Git/AppData/Roaming/Xilinx/Vivado/2023.1/xhub/board_store/xilinx_board_store', nor could it be found using path 'C:/Users/Jochem/AppData/Roaming/Xilinx/Vivado/2023.1/xhub/board_store/xilinx_board_store'.
+WARNING: [filemgmt 56-3] IPUserFilesDir: Could not find the directory 'D:/_code/Git/Fontys/Jaar_2/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.ip_user_files'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2023.1/data/ip'.
+open_bd_design {D:/_code/Git/Fontys/Jaar_2/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.srcs/sources_1/bd/design_1/design_1.bd}
+Reading block design file <D:/_code/Git/Fontys/Jaar_2/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.srcs/sources_1/bd/design_1/design_1.bd>...
+Adding component instance block -- xilinx.com:ip:processing_system7:5.5 - processing_system7_0
+Adding component instance block -- xilinx.com:ip:proc_sys_reset:5.0 - proc_sys_reset_0
+Adding component instance block -- xilinx.com:ip:axi_interconnect:2.1 - axi_interconnect_0
+Adding component instance block -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+Adding component instance block -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Adding component instance block -- xilinx.com:ip:axi_gpio:2.0 - rsa_versleuteld_karakter_1
+Adding component instance block -- xilinx.com:ip:axi_gpio:2.0 - rsa_versleuteld_karakter_2
+Adding component instance block -- xilinx.com:ip:axi_gpio:2.0 - rsa_versleuteld_karakter_3
+Adding component instance block -- xilinx.com:ip:axi_gpio:2.0 - rsa_versleuteld_karakter_4
+Adding component instance block -- xilinx.com:ip:xlconcat:2.1 - xlconcat_0
+Adding component instance block -- xilinx.com:ip:axi_gpio:2.0 - status_led
+Adding component instance block -- xilinx.com:ip:axi_gpio:2.0 - buttons
+Successfully read diagram <design_1> from block design file <D:/_code/Git/Fontys/Jaar_2/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.srcs/sources_1/bd/design_1/design_1.bd>
+update_compile_order -fileset sources_1
+open_bd_design {D:/_code/Git/Fontys/Jaar_2/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.srcs/sources_1/bd/design_1/design_1.bd}
+open_bd_design {D:/_code/Git/Fontys/Jaar_2/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.srcs/sources_1/bd/design_1/design_1.bd}
+import_files -force -norecurse D:/_code/Git/Fontys/Jaar_2/mo8-digitaal-zender/mo8-digitaal-zender/mo8-digitaal-zender.srcs/sources_1/bd/communicatieprotocol/communicatieprotocol.bd
+INFO: [Project 1-1727] Source BDs should be added before importing the top BD D:/_code/Git/Fontys/Jaar_2/mo8-digitaal-zender/mo8-digitaal-zender/mo8-digitaal-zender.srcs/sources_1/bd/communicatieprotocol/communicatieprotocol.bd with BDC
+WARNING: [IP_Flow 19-3571] IP 'communicatieprotocol_comunication_protocol_0_0' is restricted:
+* Module reference is stale and needs refreshing.
+export_ip_user_files -of_objects  [get_files  D:/_code/Git/Fontys/Jaar_2/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.srcs/sources_1/bd/communicatieprotocol/communicatieprotocol.bd] -lib_map_path [list {modelsim=D:/_code/Git/Fontys/Jaar_2/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.cache/compile_simlib/modelsim} {questa=D:/_code/Git/Fontys/Jaar_2/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.cache/compile_simlib/questa} {riviera=D:/_code/Git/Fontys/Jaar_2/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.cache/compile_simlib/riviera} {activehdl=D:/_code/Git/Fontys/Jaar_2/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.cache/compile_simlib/activehdl}] -force -quiet
+update_compile_order -fileset sources_1
+open_bd_design {D:/_code/Git/Fontys/Jaar_2/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.srcs/sources_1/bd/communicatieprotocol/communicatieprotocol.bd}
+Reading block design file <D:/_code/Git/Fontys/Jaar_2/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.srcs/sources_1/bd/communicatieprotocol/communicatieprotocol.bd>...
+Adding component instance block -- xilinx.com:ip:fifo_generator:13.2 - fifo_generator_0
+INFO: [xilinx.com:ip:fifo_generator:13.2-5968] /fifo_generator_0Executing the post_config_ip from bd
+Adding component instance block -- xilinx.com:ip:clk_wiz:6.0 - clk_wiz
+Adding component instance block -- xilinx.com:ip:xlslice:1.0 - xlslice_0
+Adding component instance block -- xilinx.com:module_ref:comunication_protocol:1.0 - comunication_protocol_0
+CRITICAL WARNING: [BD 41-1726] Unable to resolve module-source for block '/comunication_protocol_0'.
+Given inputs for module-source, Top-module name : comunication_protocol, Module Type : RTL.
+Please review and update or add design-sources to this project to resolve this module-reference.
+Successfully read diagram <communicatieprotocol> from block design file <D:/_code/Git/Fontys/Jaar_2/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.srcs/sources_1/bd/communicatieprotocol/communicatieprotocol.bd>
+add_files -norecurse D:/_code/Git/Fontys/Jaar_2/mo8-digitaal-zender/mo8-digitaal-zender/mo8-digitaal-zender.srcs/sources_1/new/comunication_protocol.vhd
+INFO: [IP_Flow 19-5107] Inferred bus interface 'reset' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'clk': Added interface parameter 'ASSOCIATED_RESET' with value 'reset'.
+WARNING: [IP_Flow 19-5661] Bus Interface 'clk' does not have any bus interfaces associated with it.
+WARNING: [IP_Flow 19-11770] Clock interface 'clk' has no FREQ_HZ parameter.
+update_compile_order -fileset sources_1
+validate_bd_design -force
+INFO: [xilinx.com:ip:clk_wiz:6.0-1] /clk_wiz clk_wiz propagate
+CRITICAL WARNING: [BD 41-759] The input pins (listed below) are either not connected or do not have a source port, and they don't have a tie-off specified. These pins are tied-off to all 0's to avoid error in Implementation flow.
+Please check your design and connect them as needed: 
+/comunication_protocol_0/reset
+
+validate_bd_design -force
+INFO: [xilinx.com:ip:clk_wiz:6.0-1] /clk_wiz clk_wiz propagate
+CRITICAL WARNING: [BD 41-759] The input pins (listed below) are either not connected or do not have a source port, and they don't have a tie-off specified. These pins are tied-off to all 0's to avoid error in Implementation flow.
+Please check your design and connect them as needed: 
+/comunication_protocol_0/reset
+
+make_wrapper -files [get_files D:/_code/Git/Fontys/Jaar_2/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.srcs/sources_1/bd/communicatieprotocol/communicatieprotocol.bd] -top
+INFO: [BD 41-1662] The design 'communicatieprotocol.bd' is already validated. Therefore parameter propagation will not be re-run.
+CRITICAL WARNING: [BD 41-759] The input pins (listed below) are either not connected or do not have a source port, and they don't have a tie-off specified. These pins are tied-off to all 0's to avoid error in Implementation flow.
+Please check your design and connect them as needed: 
+/comunication_protocol_0/reset
+
+Wrote  : <D:\_code\Git\Fontys\Jaar_2\mo8-digitaal-ontvanger\mo8-digitaal-ontvanger\mo8-digitaal-ontvanger.srcs\sources_1\bd\communicatieprotocol\communicatieprotocol.bd> 
+VHDL Output written to : d:/_code/Git/Fontys/Jaar_2/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/communicatieprotocol/synth/communicatieprotocol.vhd
+VHDL Output written to : d:/_code/Git/Fontys/Jaar_2/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/communicatieprotocol/sim/communicatieprotocol.vhd
+VHDL Output written to : d:/_code/Git/Fontys/Jaar_2/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/communicatieprotocol/hdl/communicatieprotocol_wrapper.vhd
+add_files -norecurse D:/_code/Git/Fontys/Jaar_2/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/communicatieprotocol/hdl/communicatieprotocol_wrapper.vhd
+update_compile_order -fileset sources_1
+set_property top communicatieprotocol_wrapper [current_fileset]
+update_compile_order -fileset sources_1
+set_property top design_1_wrapper [current_fileset]
+update_compile_order -fileset sources_1
+set_property top communicatieprotocol_wrapper [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+generate_target all [get_files  D:/_code/Git/Fontys/Jaar_2/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.srcs/sources_1/bd/communicatieprotocol/communicatieprotocol.bd]
+INFO: [BD 41-1662] The design 'communicatieprotocol.bd' is already validated. Therefore parameter propagation will not be re-run.
+CRITICAL WARNING: [BD 41-759] The input pins (listed below) are either not connected or do not have a source port, and they don't have a tie-off specified. These pins are tied-off to all 0's to avoid error in Implementation flow.
+Please check your design and connect them as needed: 
+/comunication_protocol_0/reset
+
+VHDL Output written to : d:/_code/Git/Fontys/Jaar_2/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/communicatieprotocol/synth/communicatieprotocol.vhd
+VHDL Output written to : d:/_code/Git/Fontys/Jaar_2/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/communicatieprotocol/sim/communicatieprotocol.vhd
+VHDL Output written to : d:/_code/Git/Fontys/Jaar_2/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/communicatieprotocol/hdl/communicatieprotocol_wrapper.vhd
+INFO: [BD 41-1029] Generation completed for the IP Integrator block fifo_generator_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block comunication_protocol_0 .
+Exporting to file d:/_code/Git/Fontys/Jaar_2/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/communicatieprotocol/hw_handoff/communicatieprotocol.hwh
+Generated Hardware Definition File d:/_code/Git/Fontys/Jaar_2/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/communicatieprotocol/synth/communicatieprotocol.hwdef
+catch { config_ip_cache -export [get_ips -all communicatieprotocol_fifo_generator_0_0] }
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: communicatieprotocol_fifo_generator_0_0
+catch { config_ip_cache -export [get_ips -all communicatieprotocol_comunication_protocol_0_0] }
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: communicatieprotocol_comunication_protocol_0_0
+export_ip_user_files -of_objects [get_files D:/_code/Git/Fontys/Jaar_2/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.srcs/sources_1/bd/communicatieprotocol/communicatieprotocol.bd] -no_script -sync -force -quiet
+INFO: [Vivado 12-23855] The given sub-design is auto disabled, no action will be taken: 'D:/_code/Git/Fontys/Jaar_2/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.srcs/sources_1/bd/communicatieprotocol/communicatieprotocol.bd'
+export_simulation -of_objects [get_files D:/_code/Git/Fontys/Jaar_2/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.srcs/sources_1/bd/communicatieprotocol/communicatieprotocol.bd] -directory D:/_code/Git/Fontys/Jaar_2/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.ip_user_files/sim_scripts -ip_user_files_dir D:/_code/Git/Fontys/Jaar_2/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.ip_user_files -ipstatic_source_dir D:/_code/Git/Fontys/Jaar_2/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.ip_user_files/ipstatic -lib_map_path [list {modelsim=D:/_code/Git/Fontys/Jaar_2/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.cache/compile_simlib/modelsim} {questa=D:/_code/Git/Fontys/Jaar_2/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.cache/compile_simlib/questa} {riviera=D:/_code/Git/Fontys/Jaar_2/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.cache/compile_simlib/riviera} {activehdl=D:/_code/Git/Fontys/Jaar_2/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+reset_simulation -simset sim_1 -mode behavioral
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'communicatieprotocol_wrapper'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/_code/Git/Fontys/Jaar_2/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-13660] Precompiled IP simulation library mode is enabled (default). The design IP libraries will be referenced from the compiled library path. Please note that if the precompiled version of the library is not found from the path or the IP is in locked state, then the library source files for these IPs will be compiled locally as part of the compile order.
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2023.1/tps/boost_1_72_0'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2023.1/data/xsim/xsim.ini' copied to run dir:'D:/_code/Git/Fontys/Jaar_2/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'communicatieprotocol_wrapper' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/_code/Git/Fontys/Jaar_2/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L axi_vip_v1_1_14 -L processing_system7_vip_v1_0_16 -L xilinx_vip -prj communicatieprotocol_wrapper_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/_code/Git/Fontys/Jaar_2/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.ip_user_files/bd/communicatieprotocol/ip/communicatieprotocol_fifo_generator_0_0/sim/communicatieprotocol_fifo_generator_0_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module communicatieprotocol_fifo_generator_0_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/_code/Git/Fontys/Jaar_2/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.ip_user_files/bd/communicatieprotocol/ip/communicatieprotocol_clk_wiz_0/communicatieprotocol_clk_wiz_0_clk_wiz.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module communicatieprotocol_clk_wiz_0_clk_wiz
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/_code/Git/Fontys/Jaar_2/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.ip_user_files/bd/communicatieprotocol/ip/communicatieprotocol_clk_wiz_0/communicatieprotocol_clk_wiz_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module communicatieprotocol_clk_wiz_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/_code/Git/Fontys/Jaar_2/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.ip_user_files/bd/communicatieprotocol/ip/communicatieprotocol_xlslice_0_0/sim/communicatieprotocol_xlslice_0_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module communicatieprotocol_xlslice_0_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/_code/Git/Fontys/Jaar_2/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+"xvhdl --incr --relax -prj communicatieprotocol_wrapper_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/_code/Git/Fontys/Jaar_2/mo8-digitaal-zender/mo8-digitaal-zender/mo8-digitaal-zender.srcs/sources_1/new/comunication_protocol.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'comunication_protocol'
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/_code/Git/Fontys/Jaar_2/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.ip_user_files/bd/communicatieprotocol/ip/communicatieprotocol_comunication_protocol_0_0/sim/communicatieprotocol_comunication_protocol_0_0.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'communicatieprotocol_comunication_protocol_0_0'
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/_code/Git/Fontys/Jaar_2/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.ip_user_files/bd/communicatieprotocol/sim/communicatieprotocol.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'communicatieprotocol'
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/_code/Git/Fontys/Jaar_2/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/communicatieprotocol/hdl/communicatieprotocol_wrapper.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'communicatieprotocol_wrapper'
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 2946.090 ; gain = 0.000
+INFO: [USF-XSim-69] 'compile' step finished in '5' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/_code/Git/Fontys/Jaar_2/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L fifo_generator_v13_2_8 -L xlslice_v1_0_2 -L xilinx_vip -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot communicatieprotocol_wrapper_behav xil_defaultlib.communicatieprotocol_wrapper xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2023.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2023.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L fifo_generator_v13_2_8 -L xlslice_v1_0_2 -L xilinx_vip -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot communicatieprotocol_wrapper_behav xil_defaultlib.communicatieprotocol_wrapper xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package unisim.vcomponents
+Compiling package vl.vl_types
+Compiling module xil_defaultlib.glbl
+Compiling module unisims_ver.IBUF
+Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=8.0,C...
+Compiling module unisims_ver.BUFG
+Compiling module xil_defaultlib.communicatieprotocol_clk_wiz_0_c...
+Compiling module xil_defaultlib.communicatieprotocol_clk_wiz_0
+Compiling architecture behavioral of entity xil_defaultlib.comunication_protocol [comunication_protocol_default]
+Compiling architecture communicatieprotocol_comunication_protocol_0_0_arch of entity xil_defaultlib.communicatieprotocol_comunication_protocol_0_0 [communicatieprotocol_comunicatio...]
+Compiling module fifo_generator_v13_2_8.fifo_generator_v13_2_8_bhv_ver_s...
+Compiling module fifo_generator_v13_2_8.fifo_generator_v13_2_8_CONV_VER(...
+Compiling module fifo_generator_v13_2_8.fifo_generator_vlog_beh(C_COMMON...
+Compiling module xil_defaultlib.communicatieprotocol_fifo_genera...
+Compiling module xlslice_v1_0_2.xlslice_v1_0_2_xlslice(DIN_WIDTH...
+Compiling module xil_defaultlib.communicatieprotocol_xlslice_0_0
+Compiling architecture structure of entity xil_defaultlib.communicatieprotocol [communicatieprotocol_default]
+Compiling architecture structure of entity xil_defaultlib.communicatieprotocol_wrapper
+Built simulation snapshot communicatieprotocol_wrapper_behav
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 2946.090 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/_code/Git/Fontys/Jaar_2/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "communicatieprotocol_wrapper_behav -key {Behavioral:sim_1:Functional:communicatieprotocol_wrapper} -tclbatch {communicatieprotocol_wrapper.tcl} -protoinst "protoinst_files/design_1.protoinst" -protoinst "protoinst_files/communicatieprotocol.protoinst" -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+INFO: [Wavedata 42-565] Reading protoinst file protoinst_files/design_1.protoinst
+WARNING: [Wavedata 42-558] Couldn't load one or more protocol instances from protoinst file protoinst_files/design_1.protoinst for the following reason(s):
+There are no instances of module "design_1" in the design.
+
+INFO: [Wavedata 42-565] Reading protoinst file protoinst_files/communicatieprotocol.protoinst
+Time resolution is 1 ps
+source communicatieprotocol_wrapper.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'communicatieprotocol_wrapper_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:14 . Memory (MB): peak = 2987.047 ; gain = 40.957
+open_wave_config {D:/_code/Git/Fontys/Jaar_2/mo8-digitaal-zender/mo8-digitaal-zender/communicatieprotocol_wrapper_behav.wcfg}
+open_wave_config {D:/_code/Git/Fontys/Jaar_2/mo8-digitaal-zender/mo8-digitaal-zender/communicatieprotocol_wrapper_behav.wcfg}
+create_wave_config
+save_wave_config {D:/_code/Git/Fontys/Jaar_2/mo8-digitaal-zender/mo8-digitaal-zender/communicatieprotocol_wrapper_behav.wcfg}
+add_force {/communicatieprotocol_wrapper/sys_clock} -radix hex {1 0ns} {0 42500ps} -repeat_every 85000ps
+force1
+add_force {/communicatieprotocol_wrapper/din_0} -radix hex {0xffffffff 0ns}
+force2
+add_force {/communicatieprotocol_wrapper/keypad_data_0} -radix hex {0xf 0ns}
+force3
+add_force {/communicatieprotocol_wrapper/wr_en_0} -radix hex {0 0ns}
+force4
+add_force {/communicatieprotocol_wrapper/data_read_done_0} -radix hex {0 0ns}
+force5
+run 10us
+Warning: [Unisim MMCME2_ADV-20] Input CLKIN1 period and attribute CLKIN1_PERIOD are not same. Instance communicatieprotocol_wrapper.communicatieprotocol_i.clk_wiz.inst.mmcm_adv_inst 
+add_force {/communicatieprotocol_wrapper/wr_en_0} -radix hex {1 0ns}
+force6
+run 50ns
+add_force {/communicatieprotocol_wrapper/wr_en_0} -radix hex {0 0ns}
+force7
+add_force {/communicatieprotocol_wrapper/din_0} -radix hex {0 0ns}
+force8
+run 50ns
+add_force {/communicatieprotocol_wrapper/wr_en_0} -radix hex {1 0ns}
+force9
+run 50ns
+add_force {/communicatieprotocol_wrapper/wr_en_0} -radix hex {0 0ns}
+force10
+add_force {/communicatieprotocol_wrapper/din_0} -radix hex {ffffffff 0ns}
+force11
+run 50ns
+add_force {/communicatieprotocol_wrapper/wr_en_0} -radix hex {1 0ns}
+force12
+run 50ns
+add_force {/communicatieprotocol_wrapper/wr_en_0} -radix hex {0 0ns}
+force13
+add_force {/communicatieprotocol_wrapper/din_0} -radix hex {0 0ns}
+force14
+run 50ns
+add_force {/communicatieprotocol_wrapper/wr_en_0} -radix hex {1 0ns}
+force15
+run 50ns
+add_force {/communicatieprotocol_wrapper/wr_en_0} -radix hex {0 0ns}
+force16
+run 1us
+add_force {/communicatieprotocol_wrapper/keypad_data_0} -radix hex {0xa 0ns}
+force17
+run 1us
+save_wave_config {D:/_code/Git/Fontys/Jaar_2/mo8-digitaal-zender/mo8-digitaal-zender/communicatieprotocol_wrapper_behav.wcfg}
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
 exit
-INFO: [Common 17-206] Exiting Vivado at Thu Apr 11 11:03:28 2024...
+INFO: [Common 17-206] Exiting Vivado at Thu Apr 11 11:20:52 2024...
