@@ -15,7 +15,8 @@
       "seven_segment_contro_0": "",
       "clk_divider_0": "",
       "system_ila_0": "",
-      "demodulator_0": ""
+      "demodulator_0": "",
+      "resetting_timer_0": ""
     },
     "ports": {
       "crystal": {
@@ -95,10 +96,10 @@
             "value": "833.33"
           },
           "CLKOUT1_JITTER": {
-            "value": "571.161"
+            "value": "479.872"
           },
           "CLKOUT1_PHASE_ERROR": {
-            "value": "613.025"
+            "value": "668.310"
           },
           "CLKOUT2_JITTER": {
             "value": "999.010"
@@ -107,13 +108,13 @@
             "value": "613.025"
           },
           "CLKOUT2_REQUESTED_OUT_FREQ": {
-            "value": "5.000"
+            "value": "5"
           },
           "CLKOUT2_USED": {
-            "value": "true"
+            "value": "false"
           },
           "MMCM_CLKFBOUT_MULT_F": {
-            "value": "50.000"
+            "value": "62.500"
           },
           "MMCM_CLKIN1_PERIOD": {
             "value": "83.333"
@@ -122,13 +123,13 @@
             "value": "10.0"
           },
           "MMCM_CLKOUT0_DIVIDE_F": {
-            "value": "6.000"
+            "value": "7.500"
           },
           "MMCM_CLKOUT1_DIVIDE": {
-            "value": "120"
+            "value": "1"
           },
           "NUM_OUT_CLKS": {
-            "value": "2"
+            "value": "1"
           },
           "PRIM_IN_FREQ": {
             "value": "12.000"
@@ -227,20 +228,35 @@
       },
       "system_ila_0": {
         "vlnv": "xilinx.com:ip:system_ila:1.1",
-        "xci_name": "design_1_system_ila_0_1",
-        "xci_path": "ip\\design_1_system_ila_0_1\\design_1_system_ila_0_1.xci",
+        "xci_name": "design_1_system_ila_0_0",
+        "xci_path": "ip\\design_1_system_ila_0_0\\design_1_system_ila_0_0.xci",
         "inst_hier_path": "system_ila_0",
         "parameters": {
+          "C_DATA_DEPTH": {
+            "value": "131072"
+          },
           "C_MON_TYPE": {
             "value": "NATIVE"
           },
           "C_NUM_OF_PROBES": {
-            "value": "7"
+            "value": "6"
           },
           "C_PROBE0_TYPE": {
             "value": "0"
           },
           "C_PROBE1_TYPE": {
+            "value": "0"
+          },
+          "C_PROBE2_TYPE": {
+            "value": "0"
+          },
+          "C_PROBE3_TYPE": {
+            "value": "0"
+          },
+          "C_PROBE4_TYPE": {
+            "value": "0"
+          },
+          "C_PROBE5_TYPE": {
             "value": "0"
           }
         }
@@ -290,8 +306,60 @@
           "signal_i": {
             "direction": "I",
             "parameters": {
+              "CLK_DOMAIN": {
+                "value": "/clk_wiz_0_clk_out1",
+                "value_src": "ip_prop"
+              },
               "FREQ_HZ": {
                 "value": "5000000",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              }
+            }
+          },
+          "timer_almost_finished_i": {
+            "direction": "I"
+          },
+          "timer_finished_i": {
+            "direction": "I"
+          },
+          "timer_enable_o": {
+            "direction": "O"
+          },
+          "timer_reset_o": {
+            "direction": "O"
+          },
+          "data_o": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          }
+        }
+      },
+      "resetting_timer_0": {
+        "vlnv": "xilinx.com:module_ref:resetting_timer:1.0",
+        "xci_name": "design_1_resetting_timer_0_0",
+        "xci_path": "ip\\design_1_resetting_timer_0_0\\design_1_resetting_timer_0_0.xci",
+        "inst_hier_path": "resetting_timer_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "resetting_timer",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "reset",
+                "value_src": "constant"
+              },
+              "FREQ_HZ": {
+                "value": "100000000",
                 "value_src": "ip_prop"
               },
               "PHASE": {
@@ -304,31 +372,23 @@
               }
             }
           },
-          "counter_o": {
-            "direction": "O",
-            "left": "15",
-            "right": "0"
+          "enable": {
+            "direction": "I"
           },
-          "couter_running_o": {
+          "reset": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_HIGH"
+              }
+            }
+          },
+          "almost_finished": {
             "direction": "O"
           },
-          "counter_finished_o": {
+          "finished": {
             "direction": "O"
-          },
-          "bits_read_o": {
-            "direction": "O",
-            "left": "2",
-            "right": "0"
-          },
-          "signal_buffer_o": {
-            "direction": "O",
-            "left": "7",
-            "right": "0"
-          },
-          "data_o": {
-            "direction": "O",
-            "left": "7",
-            "right": "0"
           }
         }
       }
@@ -351,56 +411,9 @@
           "clk_wiz_0/clk_out1",
           "clk_divider_0/clk_i",
           "system_ila_0/clk",
-          "demodulator_0/clk"
+          "demodulator_0/clk",
+          "resetting_timer_0/clk"
         ]
-      },
-      "demodulator_0_bits_read_o": {
-        "ports": [
-          "demodulator_0/bits_read_o",
-          "system_ila_0/probe5"
-        ]
-      },
-      "demodulator_0_counter_finished_o": {
-        "ports": [
-          "demodulator_0/counter_finished_o",
-          "system_ila_0/probe4"
-        ],
-        "hdl_attributes": {
-          "DEBUG": {
-            "value": "true"
-          },
-          "MARK_DEBUG": {
-            "value": "true"
-          }
-        }
-      },
-      "demodulator_0_counter_o": {
-        "ports": [
-          "demodulator_0/counter_o",
-          "system_ila_0/probe2"
-        ],
-        "hdl_attributes": {
-          "DEBUG": {
-            "value": "true"
-          },
-          "MARK_DEBUG": {
-            "value": "true"
-          }
-        }
-      },
-      "demodulator_0_couter_running_o": {
-        "ports": [
-          "demodulator_0/couter_running_o",
-          "system_ila_0/probe3"
-        ],
-        "hdl_attributes": {
-          "DEBUG": {
-            "value": "true"
-          },
-          "MARK_DEBUG": {
-            "value": "true"
-          }
-        }
       },
       "demodulator_0_data_o": {
         "ports": [
@@ -417,11 +430,35 @@
           }
         }
       },
-      "demodulator_0_signal_buffer_o": {
+      "demodulator_0_timer_enable_o": {
         "ports": [
-          "demodulator_0/signal_buffer_o",
-          "system_ila_0/probe6"
-        ]
+          "demodulator_0/timer_enable_o",
+          "system_ila_0/probe1",
+          "resetting_timer_0/enable"
+        ],
+        "hdl_attributes": {
+          "DEBUG": {
+            "value": "true"
+          },
+          "MARK_DEBUG": {
+            "value": "true"
+          }
+        }
+      },
+      "demodulator_0_timer_reset_o": {
+        "ports": [
+          "demodulator_0/timer_reset_o",
+          "system_ila_0/probe2",
+          "resetting_timer_0/reset"
+        ],
+        "hdl_attributes": {
+          "DEBUG": {
+            "value": "true"
+          },
+          "MARK_DEBUG": {
+            "value": "true"
+          }
+        }
       },
       "reset_0_1": {
         "ports": [
@@ -429,6 +466,36 @@
           "clk_divider_0/reset",
           "demodulator_0/reset"
         ]
+      },
+      "resetting_timer_0_almost_finished": {
+        "ports": [
+          "resetting_timer_0/almost_finished",
+          "demodulator_0/timer_almost_finished_i",
+          "system_ila_0/probe5"
+        ],
+        "hdl_attributes": {
+          "DEBUG": {
+            "value": "true"
+          },
+          "MARK_DEBUG": {
+            "value": "true"
+          }
+        }
+      },
+      "resetting_timer_0_finished": {
+        "ports": [
+          "resetting_timer_0/finished",
+          "system_ila_0/probe3",
+          "demodulator_0/timer_finished_i"
+        ],
+        "hdl_attributes": {
+          "DEBUG": {
+            "value": "true"
+          },
+          "MARK_DEBUG": {
+            "value": "true"
+          }
+        }
       },
       "seven_segment_contro_0_seven_seg_select": {
         "ports": [
@@ -442,10 +509,10 @@
           "seven_seg_value"
         ]
       },
-      "signal_i_0_1": {
+      "signal_i_1": {
         "ports": [
           "signal_i",
-          "system_ila_0/probe1",
+          "system_ila_0/probe4",
           "demodulator_0/signal_i"
         ],
         "hdl_attributes": {

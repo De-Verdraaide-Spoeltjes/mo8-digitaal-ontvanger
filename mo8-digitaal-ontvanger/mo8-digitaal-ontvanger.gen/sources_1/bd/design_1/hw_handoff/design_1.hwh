@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Fri Apr 12 14:13:59 2024" VIVADOVERSION="2023.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sat Apr 13 18:27:56 2024" VIVADOVERSION="2023.1">
 
   <SYSTEMINFO ARCH="zynq" BOARD="tul.com.tw:pynq-z2:part0:1.0" DEVICE="7z020" NAME="design_1" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -11,7 +11,7 @@
     </PORT>
     <PORT DIR="I" NAME="signal_i" SIGIS="undef" SIGNAME="External_Ports_signal_i">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="system_ila_0" PORT="probe1"/>
+        <CONNECTION INSTANCE="system_ila_0" PORT="probe4"/>
         <CONNECTION INSTANCE="demodulator_0" PORT="signal_i"/>
       </CONNECTIONS>
     </PORT>
@@ -67,7 +67,7 @@
         <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=clk_wiz;v=v6_0;d=pg065-clk-wiz.pdf"/>
       </DOCUMENTS>
       <PARAMETERS>
-        <PARAMETER NAME="C_CLKOUT2_USED" VALUE="1"/>
+        <PARAMETER NAME="C_CLKOUT2_USED" VALUE="0"/>
         <PARAMETER NAME="C_USER_CLK_FREQ0" VALUE="100.0"/>
         <PARAMETER NAME="C_AUTO_PRIMITIVE" VALUE="MMCM"/>
         <PARAMETER NAME="C_USER_CLK_FREQ1" VALUE="100.0"/>
@@ -127,7 +127,7 @@
         <PARAMETER NAME="C_USE_POWER_DOWN" VALUE="0"/>
         <PARAMETER NAME="C_USE_STATUS" VALUE="0"/>
         <PARAMETER NAME="C_USE_FREEZE" VALUE="0"/>
-        <PARAMETER NAME="C_NUM_OUT_CLKS" VALUE="2"/>
+        <PARAMETER NAME="C_NUM_OUT_CLKS" VALUE="1"/>
         <PARAMETER NAME="C_CLKOUT1_DRIVES" VALUE="BUFG"/>
         <PARAMETER NAME="C_CLKOUT2_DRIVES" VALUE="BUFG"/>
         <PARAMETER NAME="C_CLKOUT3_DRIVES" VALUE="BUFG"/>
@@ -140,15 +140,15 @@
         <PARAMETER NAME="C_INCLK_SUM_ROW2" VALUE="no_secondary_input_clock"/>
         <PARAMETER NAME="C_OUTCLK_SUM_ROW0A" VALUE="Output     Output      Phase    Duty Cycle   Pk-to-Pk     Phase"/>
         <PARAMETER NAME="C_OUTCLK_SUM_ROW0B" VALUE="Clock     Freq (MHz)  (degrees)    (%)     Jitter (ps)  Error (ps)"/>
-        <PARAMETER NAME="C_OUTCLK_SUM_ROW1" VALUE="clk_out1__100.00000______0.000______50.0______571.161____613.025"/>
-        <PARAMETER NAME="C_OUTCLK_SUM_ROW2" VALUE="clk_out2___5.00000______0.000______50.0______999.010____613.025"/>
+        <PARAMETER NAME="C_OUTCLK_SUM_ROW1" VALUE="clk_out1__100.00000______0.000______50.0______479.872____668.310"/>
+        <PARAMETER NAME="C_OUTCLK_SUM_ROW2" VALUE="no_CLK_OUT2_output"/>
         <PARAMETER NAME="C_OUTCLK_SUM_ROW3" VALUE="no_CLK_OUT3_output"/>
         <PARAMETER NAME="C_OUTCLK_SUM_ROW4" VALUE="no_CLK_OUT4_output"/>
         <PARAMETER NAME="C_OUTCLK_SUM_ROW5" VALUE="no_CLK_OUT5_output"/>
         <PARAMETER NAME="C_OUTCLK_SUM_ROW6" VALUE="no_CLK_OUT6_output"/>
         <PARAMETER NAME="C_OUTCLK_SUM_ROW7" VALUE="no_CLK_OUT7_output"/>
         <PARAMETER NAME="C_CLKOUT1_REQUESTED_OUT_FREQ" VALUE="100.000"/>
-        <PARAMETER NAME="C_CLKOUT2_REQUESTED_OUT_FREQ" VALUE="5.000"/>
+        <PARAMETER NAME="C_CLKOUT2_REQUESTED_OUT_FREQ" VALUE="5"/>
         <PARAMETER NAME="C_CLKOUT3_REQUESTED_OUT_FREQ" VALUE="100.000"/>
         <PARAMETER NAME="C_CLKOUT4_REQUESTED_OUT_FREQ" VALUE="100.000"/>
         <PARAMETER NAME="C_CLKOUT5_REQUESTED_OUT_FREQ" VALUE="100.000"/>
@@ -200,7 +200,7 @@
         <PARAMETER NAME="C_CLKOUT7_SEQUENCE_NUMBER" VALUE="1"/>
         <PARAMETER NAME="C_MMCM_NOTES" VALUE="None"/>
         <PARAMETER NAME="C_MMCM_BANDWIDTH" VALUE="OPTIMIZED"/>
-        <PARAMETER NAME="C_MMCM_CLKFBOUT_MULT_F" VALUE="50.000"/>
+        <PARAMETER NAME="C_MMCM_CLKFBOUT_MULT_F" VALUE="62.500"/>
         <PARAMETER NAME="C_MMCM_CLKIN1_PERIOD" VALUE="83.333"/>
         <PARAMETER NAME="C_MMCM_CLKIN2_PERIOD" VALUE="10.0"/>
         <PARAMETER NAME="C_MMCM_CLKOUT4_CASCADE" VALUE="FALSE"/>
@@ -210,8 +210,8 @@
         <PARAMETER NAME="C_MMCM_REF_JITTER1" VALUE="0.010"/>
         <PARAMETER NAME="C_MMCM_REF_JITTER2" VALUE="0.010"/>
         <PARAMETER NAME="C_MMCM_STARTUP_WAIT" VALUE="FALSE"/>
-        <PARAMETER NAME="C_MMCM_CLKOUT0_DIVIDE_F" VALUE="6.000"/>
-        <PARAMETER NAME="C_MMCM_CLKOUT1_DIVIDE" VALUE="120"/>
+        <PARAMETER NAME="C_MMCM_CLKOUT0_DIVIDE_F" VALUE="7.500"/>
+        <PARAMETER NAME="C_MMCM_CLKOUT1_DIVIDE" VALUE="1"/>
         <PARAMETER NAME="C_MMCM_CLKOUT2_DIVIDE" VALUE="1"/>
         <PARAMETER NAME="C_MMCM_CLKOUT3_DIVIDE" VALUE="1"/>
         <PARAMETER NAME="C_MMCM_CLKOUT4_DIVIDE" VALUE="1"/>
@@ -342,12 +342,12 @@
         <PARAMETER NAME="C_FILTER_1" VALUE="0000"/>
         <PARAMETER NAME="C_FILTER_2" VALUE="0000"/>
         <PARAMETER NAME="C_DIVIDE1_AUTO" VALUE="1"/>
-        <PARAMETER NAME="C_DIVIDE2_AUTO" VALUE="20.0"/>
-        <PARAMETER NAME="C_DIVIDE3_AUTO" VALUE="0.16666666666666666"/>
-        <PARAMETER NAME="C_DIVIDE4_AUTO" VALUE="0.16666666666666666"/>
-        <PARAMETER NAME="C_DIVIDE5_AUTO" VALUE="0.16666666666666666"/>
-        <PARAMETER NAME="C_DIVIDE6_AUTO" VALUE="0.16666666666666666"/>
-        <PARAMETER NAME="C_DIVIDE7_AUTO" VALUE="0.16666666666666666"/>
+        <PARAMETER NAME="C_DIVIDE2_AUTO" VALUE="0.13333333333333333"/>
+        <PARAMETER NAME="C_DIVIDE3_AUTO" VALUE="0.13333333333333333"/>
+        <PARAMETER NAME="C_DIVIDE4_AUTO" VALUE="0.13333333333333333"/>
+        <PARAMETER NAME="C_DIVIDE5_AUTO" VALUE="0.13333333333333333"/>
+        <PARAMETER NAME="C_DIVIDE6_AUTO" VALUE="0.13333333333333333"/>
+        <PARAMETER NAME="C_DIVIDE7_AUTO" VALUE="0.13333333333333333"/>
         <PARAMETER NAME="C_PLLBUFGCEDIV" VALUE="false"/>
         <PARAMETER NAME="C_MMCMBUFGCEDIV" VALUE="false"/>
         <PARAMETER NAME="C_PLLBUFGCEDIV1" VALUE="false"/>
@@ -427,13 +427,13 @@
         <PARAMETER NAME="CLKIN1_JITTER_PS" VALUE="833.33"/>
         <PARAMETER NAME="CLKIN2_JITTER_PS" VALUE="100.0"/>
         <PARAMETER NAME="CLKOUT1_USED" VALUE="true"/>
-        <PARAMETER NAME="CLKOUT2_USED" VALUE="true"/>
+        <PARAMETER NAME="CLKOUT2_USED" VALUE="false"/>
         <PARAMETER NAME="CLKOUT3_USED" VALUE="false"/>
         <PARAMETER NAME="CLKOUT4_USED" VALUE="false"/>
         <PARAMETER NAME="CLKOUT5_USED" VALUE="false"/>
         <PARAMETER NAME="CLKOUT6_USED" VALUE="false"/>
         <PARAMETER NAME="CLKOUT7_USED" VALUE="false"/>
-        <PARAMETER NAME="NUM_OUT_CLKS" VALUE="2"/>
+        <PARAMETER NAME="NUM_OUT_CLKS" VALUE="1"/>
         <PARAMETER NAME="CLK_OUT1_USE_FINE_PS_GUI" VALUE="false"/>
         <PARAMETER NAME="CLK_OUT2_USE_FINE_PS_GUI" VALUE="false"/>
         <PARAMETER NAME="CLK_OUT3_USE_FINE_PS_GUI" VALUE="false"/>
@@ -463,7 +463,7 @@
         <PARAMETER NAME="CLKOUT1_REQUESTED_OUT_FREQ" VALUE="100.000"/>
         <PARAMETER NAME="CLKOUT1_REQUESTED_PHASE" VALUE="0.000"/>
         <PARAMETER NAME="CLKOUT1_REQUESTED_DUTY_CYCLE" VALUE="50.000"/>
-        <PARAMETER NAME="CLKOUT2_REQUESTED_OUT_FREQ" VALUE="5.000"/>
+        <PARAMETER NAME="CLKOUT2_REQUESTED_OUT_FREQ" VALUE="5"/>
         <PARAMETER NAME="CLKOUT2_REQUESTED_PHASE" VALUE="0.000"/>
         <PARAMETER NAME="CLKOUT2_REQUESTED_DUTY_CYCLE" VALUE="50.000"/>
         <PARAMETER NAME="CLKOUT3_REQUESTED_OUT_FREQ" VALUE="100.000"/>
@@ -532,7 +532,7 @@
         <PARAMETER NAME="MMCM_NOTES" VALUE="None"/>
         <PARAMETER NAME="MMCM_DIVCLK_DIVIDE" VALUE="1"/>
         <PARAMETER NAME="MMCM_BANDWIDTH" VALUE="OPTIMIZED"/>
-        <PARAMETER NAME="MMCM_CLKFBOUT_MULT_F" VALUE="50.000"/>
+        <PARAMETER NAME="MMCM_CLKFBOUT_MULT_F" VALUE="62.500"/>
         <PARAMETER NAME="MMCM_CLKFBOUT_PHASE" VALUE="0.000"/>
         <PARAMETER NAME="MMCM_CLKFBOUT_USE_FINE_PS" VALUE="false"/>
         <PARAMETER NAME="MMCM_CLKIN1_PERIOD" VALUE="83.333"/>
@@ -543,11 +543,11 @@
         <PARAMETER NAME="MMCM_REF_JITTER1" VALUE="0.010"/>
         <PARAMETER NAME="MMCM_REF_JITTER2" VALUE="0.010"/>
         <PARAMETER NAME="MMCM_STARTUP_WAIT" VALUE="false"/>
-        <PARAMETER NAME="MMCM_CLKOUT0_DIVIDE_F" VALUE="6.000"/>
+        <PARAMETER NAME="MMCM_CLKOUT0_DIVIDE_F" VALUE="7.500"/>
         <PARAMETER NAME="MMCM_CLKOUT0_DUTY_CYCLE" VALUE="0.500"/>
         <PARAMETER NAME="MMCM_CLKOUT0_PHASE" VALUE="0.000"/>
         <PARAMETER NAME="MMCM_CLKOUT0_USE_FINE_PS" VALUE="false"/>
-        <PARAMETER NAME="MMCM_CLKOUT1_DIVIDE" VALUE="120"/>
+        <PARAMETER NAME="MMCM_CLKOUT1_DIVIDE" VALUE="1"/>
         <PARAMETER NAME="MMCM_CLKOUT1_DUTY_CYCLE" VALUE="0.500"/>
         <PARAMETER NAME="MMCM_CLKOUT1_PHASE" VALUE="0.000"/>
         <PARAMETER NAME="MMCM_CLKOUT1_USE_FINE_PS" VALUE="false"/>
@@ -621,8 +621,8 @@
         <PARAMETER NAME="CDDCREQ_PORT" VALUE="cddcreq"/>
         <PARAMETER NAME="ENABLE_CLKOUTPHY" VALUE="false"/>
         <PARAMETER NAME="CLKOUTPHY_REQUESTED_FREQ" VALUE="600.000"/>
-        <PARAMETER NAME="CLKOUT1_JITTER" VALUE="571.161"/>
-        <PARAMETER NAME="CLKOUT1_PHASE_ERROR" VALUE="613.025"/>
+        <PARAMETER NAME="CLKOUT1_JITTER" VALUE="479.872"/>
+        <PARAMETER NAME="CLKOUT1_PHASE_ERROR" VALUE="668.310"/>
         <PARAMETER NAME="CLKOUT2_JITTER" VALUE="999.010"/>
         <PARAMETER NAME="CLKOUT2_PHASE_ERROR" VALUE="613.025"/>
         <PARAMETER NAME="CLKOUT3_JITTER" VALUE="0.0"/>
@@ -652,9 +652,9 @@
             <CONNECTION INSTANCE="clk_divider_0" PORT="clk_i"/>
             <CONNECTION INSTANCE="system_ila_0" PORT="clk"/>
             <CONNECTION INSTANCE="demodulator_0" PORT="clk"/>
+            <CONNECTION INSTANCE="resetting_timer_0" PORT="clk"/>
           </CONNECTIONS>
         </PORT>
-        <PORT CLKFREQUENCY="5000000" DIR="O" NAME="clk_out2" SIGIS="clk"/>
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
@@ -680,35 +680,69 @@
             <CONNECTION INSTANCE="External_Ports" PORT="signal_i"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="15" NAME="counter_o" RIGHT="0" SIGIS="undef" SIGNAME="demodulator_0_counter_o">
+        <PORT DIR="I" NAME="timer_almost_finished_i" SIGIS="undef" SIGNAME="resetting_timer_0_almost_finished">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="resetting_timer_0" PORT="almost_finished"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="timer_finished_i" SIGIS="undef" SIGNAME="resetting_timer_0_finished">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="resetting_timer_0" PORT="finished"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="timer_enable_o" SIGIS="undef" SIGNAME="demodulator_0_timer_enable_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="system_ila_0" PORT="probe1"/>
+            <CONNECTION INSTANCE="resetting_timer_0" PORT="enable"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="timer_reset_o" SIGIS="undef" SIGNAME="demodulator_0_timer_reset_o">
           <CONNECTIONS>
             <CONNECTION INSTANCE="system_ila_0" PORT="probe2"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="couter_running_o" SIGIS="undef" SIGNAME="demodulator_0_couter_running_o">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="system_ila_0" PORT="probe3"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="counter_finished_o" SIGIS="undef" SIGNAME="demodulator_0_counter_finished_o">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="system_ila_0" PORT="probe4"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="2" NAME="bits_read_o" RIGHT="0" SIGIS="undef" SIGNAME="demodulator_0_bits_read_o">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="system_ila_0" PORT="probe5"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="7" NAME="signal_buffer_o" RIGHT="0" SIGIS="undef" SIGNAME="demodulator_0_signal_buffer_o">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="system_ila_0" PORT="probe6"/>
+            <CONNECTION INSTANCE="resetting_timer_0" PORT="reset"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="7" NAME="data_o" RIGHT="0" SIGIS="undef" SIGNAME="demodulator_0_data_o">
           <CONNECTIONS>
             <CONNECTION INSTANCE="seven_segment_contro_0" PORT="value_a"/>
             <CONNECTION INSTANCE="system_ila_0" PORT="probe0"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/resetting_timer_0" HWVERSION="1.0" INSTANCE="resetting_timer_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="resetting_timer" VLNV="xilinx.com:module_ref:resetting_timer:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_resetting_timer_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="clk_wiz_0_clk_out1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="clk_wiz_0" PORT="clk_out1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="enable" SIGIS="undef" SIGNAME="demodulator_0_timer_enable_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="demodulator_0" PORT="timer_enable_o"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="reset" POLARITY="ACTIVE_HIGH" SIGIS="rst" SIGNAME="demodulator_0_timer_reset_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="demodulator_0" PORT="timer_reset_o"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="almost_finished" SIGIS="undef" SIGNAME="resetting_timer_0_almost_finished">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="demodulator_0" PORT="timer_almost_finished_i"/>
+            <CONNECTION INSTANCE="system_ila_0" PORT="probe5"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="finished" SIGIS="undef" SIGNAME="resetting_timer_0_finished">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="system_ila_0" PORT="probe3"/>
+            <CONNECTION INSTANCE="demodulator_0" PORT="timer_finished_i"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -745,7 +779,7 @@
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE BD="design_1_system_ila_0_1" BDTYPE="SBD" COREREVISION="14" DRIVERMODE="MIXED" FULLNAME="/system_ila_0" HWVERSION="1.1" INSTANCE="system_ila_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="system_ila" SIM_BD="design_1_system_ila_0_1" VLNV="xilinx.com:ip:system_ila:1.1">
+    <MODULE BD="design_1_system_ila_0_0" BDTYPE="SBD" COREREVISION="14" DRIVERMODE="MIXED" FULLNAME="/system_ila_0" HWVERSION="1.1" INSTANCE="system_ila_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="system_ila" SIM_BD="design_1_system_ila_0_0" VLNV="xilinx.com:ip:system_ila:1.1">
       <DOCUMENTS>
         <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=system_ila;v=v1_1;d=pg261-system-ila.pdf"/>
       </DOCUMENTS>
@@ -3313,10 +3347,10 @@
         <PARAMETER NAME="C_PROBE2_WIDTH" VALUE="1"/>
         <PARAMETER NAME="C_PROBE1_WIDTH" VALUE="1"/>
         <PARAMETER NAME="C_PROBE0_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="C_DATA_DEPTH" VALUE="1024"/>
-        <PARAMETER NAME="C_NUM_OF_PROBES" VALUE="7"/>
+        <PARAMETER NAME="C_DATA_DEPTH" VALUE="131072"/>
+        <PARAMETER NAME="C_NUM_OF_PROBES" VALUE="6"/>
         <PARAMETER NAME="C_XLNX_HW_PROBE_INFO" VALUE="DEFAULT"/>
-        <PARAMETER NAME="Component_Name" VALUE="design_1_system_ila_0_1"/>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_system_ila_0_0"/>
         <PARAMETER NAME="C_PROBE70_WIDTH" VALUE="1"/>
         <PARAMETER NAME="C_TRIGOUT_EN" VALUE="false"/>
         <PARAMETER NAME="C_EN_STRG_QUAL" VALUE="0"/>
@@ -4592,34 +4626,29 @@
             <CONNECTION INSTANCE="demodulator_0" PORT="data_o"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="probe1" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_signal_i">
+        <PORT DIR="I" LEFT="0" NAME="probe1" RIGHT="0" SIGIS="undef" SIGNAME="demodulator_0_timer_enable_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="demodulator_0" PORT="timer_enable_o"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="probe2" RIGHT="0" SIGIS="undef" SIGNAME="demodulator_0_timer_reset_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="demodulator_0" PORT="timer_reset_o"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="probe3" RIGHT="0" SIGIS="undef" SIGNAME="resetting_timer_0_finished">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="resetting_timer_0" PORT="finished"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="probe4" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_signal_i">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="signal_i"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="15" NAME="probe2" RIGHT="0" SIGIS="undef" SIGNAME="demodulator_0_counter_o">
+        <PORT DIR="I" LEFT="0" NAME="probe5" RIGHT="0" SIGIS="undef" SIGNAME="resetting_timer_0_almost_finished">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="demodulator_0" PORT="counter_o"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="probe3" RIGHT="0" SIGIS="undef" SIGNAME="demodulator_0_couter_running_o">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="demodulator_0" PORT="couter_running_o"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="probe4" RIGHT="0" SIGIS="undef" SIGNAME="demodulator_0_counter_finished_o">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="demodulator_0" PORT="counter_finished_o"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="2" NAME="probe5" RIGHT="0" SIGIS="undef" SIGNAME="demodulator_0_bits_read_o">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="demodulator_0" PORT="bits_read_o"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="7" NAME="probe6" RIGHT="0" SIGIS="undef" SIGNAME="demodulator_0_signal_buffer_o">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="demodulator_0" PORT="signal_buffer_o"/>
+            <CONNECTION INSTANCE="resetting_timer_0" PORT="almost_finished"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>

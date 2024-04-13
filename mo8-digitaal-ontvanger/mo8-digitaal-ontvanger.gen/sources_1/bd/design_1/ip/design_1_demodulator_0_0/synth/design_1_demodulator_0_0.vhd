@@ -58,11 +58,10 @@ ENTITY design_1_demodulator_0_0 IS
     clk : IN STD_LOGIC;
     reset : IN STD_LOGIC;
     signal_i : IN STD_LOGIC;
-    counter_o : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
-    couter_running_o : OUT STD_LOGIC;
-    counter_finished_o : OUT STD_LOGIC;
-    bits_read_o : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
-    signal_buffer_o : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+    timer_almost_finished_i : IN STD_LOGIC;
+    timer_finished_i : IN STD_LOGIC;
+    timer_enable_o : OUT STD_LOGIC;
+    timer_reset_o : OUT STD_LOGIC;
     data_o : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
   );
 END design_1_demodulator_0_0;
@@ -75,11 +74,10 @@ ARCHITECTURE design_1_demodulator_0_0_arch OF design_1_demodulator_0_0 IS
       clk : IN STD_LOGIC;
       reset : IN STD_LOGIC;
       signal_i : IN STD_LOGIC;
-      counter_o : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
-      couter_running_o : OUT STD_LOGIC;
-      counter_finished_o : OUT STD_LOGIC;
-      bits_read_o : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
-      signal_buffer_o : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+      timer_almost_finished_i : IN STD_LOGIC;
+      timer_finished_i : IN STD_LOGIC;
+      timer_enable_o : OUT STD_LOGIC;
+      timer_reset_o : OUT STD_LOGIC;
       data_o : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
     );
   END COMPONENT demodulator;
@@ -103,11 +101,10 @@ BEGIN
       clk => clk,
       reset => reset,
       signal_i => signal_i,
-      counter_o => counter_o,
-      couter_running_o => couter_running_o,
-      counter_finished_o => counter_finished_o,
-      bits_read_o => bits_read_o,
-      signal_buffer_o => signal_buffer_o,
+      timer_almost_finished_i => timer_almost_finished_i,
+      timer_finished_i => timer_finished_i,
+      timer_enable_o => timer_enable_o,
+      timer_reset_o => timer_reset_o,
       data_o => data_o
     );
 END design_1_demodulator_0_0_arch;

@@ -19,17 +19,19 @@ Compiling module xil_defaultlib.glbl
 Compiling architecture behavioral of entity xil_defaultlib.clk_divider [\clk_divider(division=1000)\]
 Compiling architecture design_1_clk_divider_0_1_arch of entity xil_defaultlib.design_1_clk_divider_0_1 [design_1_clk_divider_0_1_default]
 Compiling module unisims_ver.IBUF
-Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=64.0,...
+Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=62.5,...
 Compiling module unisims_ver.BUFG
 Compiling module xil_defaultlib.design_1_clk_wiz_0_0_clk_wiz
 Compiling module xil_defaultlib.design_1_clk_wiz_0_0
 Compiling architecture behavioral of entity xil_defaultlib.demodulator [demodulator_default]
 Compiling architecture design_1_demodulator_0_0_arch of entity xil_defaultlib.design_1_demodulator_0_0 [design_1_demodulator_0_0_default]
+Compiling architecture behavioral of entity xil_defaultlib.resetting_timer [resetting_timer_default]
+Compiling architecture design_1_resetting_timer_0_0_arch of entity xil_defaultlib.design_1_resetting_timer_0_0 [design_1_resetting_timer_0_0_def...]
 Compiling architecture behavioral of entity xil_defaultlib.seven_segment_controller [seven_segment_controller_default]
 Compiling architecture design_1_seven_segment_contro_0_0_arch of entity xil_defaultlib.design_1_seven_segment_contro_0_0 [design_1_seven_segment_contro_0_...]
-Compiling architecture bd_36cd_ila_lib_0_arch of entity xil_defaultlib.bd_36cd_ila_lib_0 [bd_36cd_ila_lib_0_default]
-Compiling architecture structure of entity xil_defaultlib.bd_36cd [bd_36cd_default]
-Compiling architecture design_1_system_ila_0_1_arch of entity xil_defaultlib.design_1_system_ila_0_1 [design_1_system_ila_0_1_default]
+Compiling architecture bd_f60c_ila_lib_0_arch of entity xil_defaultlib.bd_f60c_ila_lib_0 [bd_f60c_ila_lib_0_default]
+Compiling architecture structure of entity xil_defaultlib.bd_f60c [bd_f60c_default]
+Compiling architecture design_1_system_ila_0_0_arch of entity xil_defaultlib.design_1_system_ila_0_0 [design_1_system_ila_0_0_default]
 Compiling architecture structure of entity xil_defaultlib.design_1 [design_1_default]
 Compiling architecture structure of entity xil_defaultlib.design_1_wrapper
 Built simulation snapshot design_1_wrapper_behav

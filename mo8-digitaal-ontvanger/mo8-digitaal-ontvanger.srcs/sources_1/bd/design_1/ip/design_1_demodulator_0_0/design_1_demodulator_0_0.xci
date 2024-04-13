@@ -39,11 +39,10 @@
         "clk": [ { "direction": "in" } ],
         "reset": [ { "direction": "in" } ],
         "signal_i": [ { "direction": "in" } ],
-        "counter_o": [ { "direction": "out", "size_left": "15", "size_right": "0" } ],
-        "couter_running_o": [ { "direction": "out" } ],
-        "counter_finished_o": [ { "direction": "out" } ],
-        "bits_read_o": [ { "direction": "out", "size_left": "2", "size_right": "0" } ],
-        "signal_buffer_o": [ { "direction": "out", "size_left": "7", "size_right": "0" } ],
+        "timer_almost_finished_i": [ { "direction": "in" } ],
+        "timer_finished_i": [ { "direction": "in" } ],
+        "timer_enable_o": [ { "direction": "out" } ],
+        "timer_reset_o": [ { "direction": "out" } ],
         "data_o": [ { "direction": "out", "size_left": "7", "size_right": "0" } ]
       },
       "interfaces": {
