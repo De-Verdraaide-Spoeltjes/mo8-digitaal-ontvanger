@@ -1,0 +1,16 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../mo8-digitaal-ontvanger.srcs/sources_1/new/seven_segment_controller.vhd" \
+"../../../../mo8-digitaal-ontvanger.srcs/sources_1/new/clk_divider.vhd" \
+"../../../../mo8-digitaal-ontvanger.srcs/sources_1/new/demodulator.vhd" \
+"../../../../mo8-digitaal-ontvanger.ip_user_files/bd/design_1/ip/design_1_seven_segment_contro_0_0/sim/design_1_seven_segment_contro_0_0.vhd" \
+"../../../../mo8-digitaal-ontvanger.ip_user_files/bd/design_1/ip/design_1_clk_divider_0_1/sim/design_1_clk_divider_0_1.vhd" \
+"../../../../mo8-digitaal-ontvanger.ip_user_files/bd/design_1/ip/design_1_system_ila_0_1/bd_0/ip/ip_0/sim/bd_36cd_ila_lib_0.vhd" \
+"../../../../mo8-digitaal-ontvanger.ip_user_files/bd/design_1/ip/design_1_system_ila_0_1/bd_0/sim/bd_36cd.vhd" \
+"../../../../mo8-digitaal-ontvanger.ip_user_files/bd/design_1/ip/design_1_system_ila_0_1/sim/design_1_system_ila_0_1.vhd" \
+"../../../../mo8-digitaal-ontvanger.ip_user_files/bd/design_1/ip/design_1_demodulator_0_0/sim/design_1_demodulator_0_0.vhd" \
+"../../../../mo8-digitaal-ontvanger.ip_user_files/bd/design_1/sim/design_1.vhd" \
+"../../../../mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd" \
+
+# Do not sort compile order
+nosort
