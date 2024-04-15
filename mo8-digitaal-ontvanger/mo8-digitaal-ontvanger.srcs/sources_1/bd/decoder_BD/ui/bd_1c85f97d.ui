@@ -1,0 +1,52 @@
+{
+   "ActiveEmotionalView":"Reduced Jogs",
+   "Default View_ScaleFactor":"1.25",
+   "Default View_TopLeft":"-195,-212",
+   "ExpandedHierarchyInLayout":"",
+   "No Loops_ExpandedHierarchyInLayout":"",
+   "No Loops_Layout":"# # String gsaved with Nlview 7.5.8 2022-09-21 7111 VDI=41 GEI=38 GUI=JA:10.0
+#  -string -flagsOSRD
+preplace port port-id_sys_clock -pg 1 -lvl 0 -x 0 -y 60 -defaultsOSRD
+preplace portBus Data_out_0 -pg 1 -lvl 3 -x 480 -y 60 -defaultsOSRD
+preplace portBus Data_in_0 -pg 1 -lvl 0 -x 0 -y 140 -defaultsOSRD
+preplace inst clk_wiz_0 -pg 1 -lvl 1 -x 110 -y 40 -swap {1 0 2 3} -defaultsOSRD -pinDir reset left -pinY reset 40L -pinDir clk_in1 left -pinY clk_in1 20L -pinDir clk_out1 right -pinY clk_out1 20R -pinDir locked right -pinY locked 40R
+preplace inst decoder_0 -pg 1 -lvl 2 -x 330 -y 40 -swap {2 0 1 4 3} -defaultsOSRD -pinBusDir Data_in left -pinBusY Data_in 100L -pinDir clk left -pinY clk 20L -pinDir Data_rdy left -pinY Data_rdy 40L -pinDir Output_rdy right -pinY Output_rdy 40R -pinBusDir Data_out right -pinBusY Data_out 20R
+preplace netloc decoder_0_Data_out 1 2 1 N 60
+preplace netloc Data_in_0_1 1 0 2 N 140 N
+preplace netloc clk_wiz_0_clk_out1 1 1 1 N 60
+preplace netloc sys_clock_1 1 0 1 N 60
+levelinfo -pg 1 0 110 330 480
+pagesize -pg 1 -db -bbox -sgen -140 0 630 200
+",
+   "No Loops_ScaleFactor":"1.25",
+   "No Loops_TopLeft":"-181,-61",
+   "Reduced Jogs_ExpandedHierarchyInLayout":"",
+   "Reduced Jogs_Layout":"# # String gsaved with Nlview 7.5.8 2022-09-21 7111 VDI=41 GEI=38 GUI=JA:10.0
+#  -string -flagsOSRD
+preplace port port-id_sys_clock -pg 1 -lvl 0 -x 0 -y 60 -defaultsOSRD
+preplace port port-id_Data_rdy_0 -pg 1 -lvl 0 -x 0 -y 140 -defaultsOSRD
+preplace port port-id_Output_rdy_0 -pg 1 -lvl 3 -x 480 -y 90 -defaultsOSRD
+preplace portBus Data_out_0 -pg 1 -lvl 3 -x 480 -y 60 -defaultsOSRD
+preplace portBus Data_in_0 -pg 1 -lvl 0 -x 0 -y 170 -defaultsOSRD
+preplace inst clk_wiz_0 -pg 1 -lvl 1 -x 110 -y 40 -swap {1 0 2 3} -defaultsOSRD -pinY reset 40L -pinY clk_in1 20L -pinY clk_out1 20R -pinY locked 40R
+preplace inst decoder_0 -pg 1 -lvl 2 -x 330 -y 40 -swap {2 0 1 4 3} -defaultsOSRD -pinBusY Data_in 130L -pinY clk 20L -pinY Data_rdy 100L -pinY Output_rdy 50R -pinBusY Data_out 20R
+preplace netloc decoder_0_Data_out 1 2 1 N 60
+preplace netloc Data_in_0_1 1 0 2 N 170 N
+preplace netloc clk_wiz_0_clk_out1 1 1 1 N 60
+preplace netloc sys_clock_1 1 0 1 N 60
+preplace netloc Data_rdy_0_1 1 0 2 NJ 140 NJ
+preplace netloc decoder_0_Output_rdy 1 2 1 N 90
+levelinfo -pg 1 0 110 330 480
+pagesize -pg 1 -db -bbox -sgen -140 0 630 230
+",
+   "Reduced Jogs_ScaleFactor":"1.25",
+   "Reduced Jogs_TopLeft":"-181,-46",
+   "guistr":"# # String gsaved with Nlview 7.5.8 2022-09-21 7111 VDI=41 GEI=38 GUI=JA:10.0
+#  -string -flagsOSRD
+levelinfo -pg 1 0 10
+pagesize -pg 1 -db -bbox -sgen 0 0 10 10
+"
+}
+{
+   "da_board_cnt":"1"
+}
