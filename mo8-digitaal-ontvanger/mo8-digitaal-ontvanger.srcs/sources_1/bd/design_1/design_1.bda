@@ -199,7 +199,7 @@
                 "MI": "M_AXI_GP0",
                 "MS": "SEG_rsa_versleuteld_karakter_1_Reg",
                 "MV": "xilinx.com:ip:processing_system7:5.5",
-                "SX": "/connection_embedded/rsa_versleuteld_karakter_1",
+                "SX": "/connection_embedded/rsa_versleuteld_karakter",
                 "SI": "S_AXI",
                 "SS": "Reg",
                 "SV": "xilinx.com:ip:axi_gpio:2.0",
@@ -215,9 +215,9 @@
                 "MA": "Data",
                 "MX": "/connection_embedded/processing_system7_0",
                 "MI": "M_AXI_GP0",
-                "MS": "SEG_rsa_versleuteld_karakter_2_Reg",
+                "MS": "SEG_rsa_comunictie_Reg",
                 "MV": "xilinx.com:ip:processing_system7:5.5",
-                "SX": "/connection_embedded/rsa_versleuteld_karakter_2",
+                "SX": "/connection_embedded/rsa_comunictie",
                 "SI": "S_AXI",
                 "SS": "Reg",
                 "SV": "xilinx.com:ip:axi_gpio:2.0",
@@ -225,42 +225,6 @@
                 "TU": "register"
             },
             "V5": {
-                "VT": "AC",
-                "BA": "0x41220000",
-                "HA": "0x4122FFFF",
-                "BP": "C_BASEADDR",
-                "HP": "C_HIGHADDR",
-                "MA": "Data",
-                "MX": "/connection_embedded/processing_system7_0",
-                "MI": "M_AXI_GP0",
-                "MS": "SEG_rsa_versleuteld_karakter_3_Reg",
-                "MV": "xilinx.com:ip:processing_system7:5.5",
-                "SX": "/connection_embedded/rsa_versleuteld_karakter_3",
-                "SI": "S_AXI",
-                "SS": "Reg",
-                "SV": "xilinx.com:ip:axi_gpio:2.0",
-                "TM": "both",
-                "TU": "register"
-            },
-            "V6": {
-                "VT": "AC",
-                "BA": "0x41230000",
-                "HA": "0x4123FFFF",
-                "BP": "C_BASEADDR",
-                "HP": "C_HIGHADDR",
-                "MA": "Data",
-                "MX": "/connection_embedded/processing_system7_0",
-                "MI": "M_AXI_GP0",
-                "MS": "SEG_rsa_versleuteld_karakter_4_Reg",
-                "MV": "xilinx.com:ip:processing_system7:5.5",
-                "SX": "/connection_embedded/rsa_versleuteld_karakter_4",
-                "SI": "S_AXI",
-                "SS": "Reg",
-                "SV": "xilinx.com:ip:axi_gpio:2.0",
-                "TM": "both",
-                "TU": "register"
-            },
-            "V7": {
                 "VT": "AC",
                 "BA": "0x41240000",
                 "HA": "0x4124FFFF",
@@ -278,7 +242,7 @@
                 "TM": "both",
                 "TU": "register"
             },
-            "V8": {
+            "V6": {
                 "VT": "AC",
                 "BA": "0x41250000",
                 "HA": "0x4125FFFF",
@@ -323,16 +287,6 @@
             },
             {
                 "src": "V6",
-                "trg": "V2",
-                "EH": "2"
-            },
-            {
-                "src": "V7",
-                "trg": "V2",
-                "EH": "2"
-            },
-            {
-                "src": "V8",
                 "trg": "V2",
                 "EH": "2"
             }
