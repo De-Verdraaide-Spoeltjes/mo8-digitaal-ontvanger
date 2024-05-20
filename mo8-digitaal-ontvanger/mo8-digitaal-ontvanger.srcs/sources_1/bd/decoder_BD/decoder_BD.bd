@@ -11,19 +11,9 @@
     },
     "design_tree": {
       "clk_wiz_0": "",
-      "decoder_0": ""
+      "decoder_state_machine_0": ""
     },
     "ports": {
-      "Data_out_0": {
-        "direction": "O",
-        "left": "3",
-        "right": "0"
-      },
-      "Data_in_0": {
-        "direction": "I",
-        "left": "4",
-        "right": "0"
-      },
       "sys_clock": {
         "type": "clk",
         "direction": "I",
@@ -35,6 +25,25 @@
             "value": "0.0"
           }
         }
+      },
+      "reset_rtl": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "POLARITY": {
+            "value": "ACTIVE_HIGH"
+          }
+        }
+      },
+      "Data_in_0": {
+        "direction": "I",
+        "left": "239",
+        "right": "0"
+      },
+      "Data_out_0": {
+        "direction": "O",
+        "left": "191",
+        "right": "0"
       },
       "Data_rdy_0": {
         "direction": "I"
@@ -58,20 +67,20 @@
           }
         }
       },
-      "decoder_0": {
-        "vlnv": "xilinx.com:module_ref:decoder:1.0",
-        "xci_name": "decoder_BD_decoder_0_0",
-        "xci_path": "ip\\decoder_BD_decoder_0_0\\decoder_BD_decoder_0_0.xci",
-        "inst_hier_path": "decoder_0",
+      "decoder_state_machine_0": {
+        "vlnv": "xilinx.com:module_ref:decoder_state_machine:1.0",
+        "xci_name": "decoder_BD_decoder_state_machine_0_0",
+        "xci_path": "ip\\decoder_BD_decoder_state_machine_0_0\\decoder_BD_decoder_state_machine_0_0.xci",
+        "inst_hier_path": "decoder_state_machine_0",
         "reference_info": {
           "ref_type": "hdl",
-          "ref_name": "decoder",
+          "ref_name": "decoder_state_machine",
           "boundary_crc": "0x0"
         },
         "ports": {
           "Data_in": {
             "direction": "I",
-            "left": "4",
+            "left": "239",
             "right": "0"
           },
           "clk": {
@@ -86,7 +95,7 @@
           },
           "Data_out": {
             "direction": "O",
-            "left": "3",
+            "left": "191",
             "right": "0"
           }
         }
@@ -96,31 +105,37 @@
       "Data_in_0_1": {
         "ports": [
           "Data_in_0",
-          "decoder_0/Data_in"
+          "decoder_state_machine_0/Data_in"
         ]
       },
       "Data_rdy_0_1": {
         "ports": [
           "Data_rdy_0",
-          "decoder_0/Data_rdy"
+          "decoder_state_machine_0/Data_rdy"
         ]
       },
       "clk_wiz_0_clk_out1": {
         "ports": [
           "clk_wiz_0/clk_out1",
-          "decoder_0/clk"
+          "decoder_state_machine_0/clk"
         ]
       },
-      "decoder_0_Data_out": {
+      "decoder_state_machine_0_Data_out": {
         "ports": [
-          "decoder_0/Data_out",
+          "decoder_state_machine_0/Data_out",
           "Data_out_0"
         ]
       },
-      "decoder_0_Output_rdy": {
+      "decoder_state_machine_0_Output_rdy": {
         "ports": [
-          "decoder_0/Output_rdy",
+          "decoder_state_machine_0/Output_rdy",
           "Output_rdy_0"
+        ]
+      },
+      "reset_rtl_1": {
+        "ports": [
+          "reset_rtl",
+          "clk_wiz_0/reset"
         ]
       },
       "sys_clock_1": {

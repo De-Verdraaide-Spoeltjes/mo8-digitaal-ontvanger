@@ -1,0 +1,52 @@
+--library IEEE;
+--use IEEE.STD_LOGIC;
+--use IEEE.NUMERIC_STD.ALL;
+
+--entity decoder_4b5b is
+--    Port ( clk : in  STD_LOGIC;
+--           data_in : in  STD_LOGIC_VECTOR (239 downto 0);
+--           Data_out : out  STD_LOGIC_VECTOR (191 downto 0);
+--           output_rdy : out  STD_LOGIC);
+--end decoder_4b5b;
+
+--architecture Behavioral of decoder_4b5b is
+--    type encoding_table_type is array (0 to 15) of STD_LOGIC_VECTOR (4 downto 0);
+--    constant encoding_table : encoding_table_type := (
+--        "11110", -- 0000
+--        "01001", -- 0001
+--        "10100", -- 0010
+--        "10101", -- 0011
+--        "01010", -- 0100
+--        "01011", -- 0101
+--        "01110", -- 0110
+--        "01111", -- 0111
+--        "10010", -- 1000
+--        "10011", -- 1001
+--        "10110", -- 1010
+--        "10111", -- 1011
+--        "11010", -- 1100
+--        "11011", -- 1101
+--        "11100", -- 1110
+--        "11101"  -- 1111
+--    );
+
+--    signal counter_temp : INTEGER range 0 to 47 := 0;
+--    signal data_out_temp : STD_LOGIC_VECTOR (191 downto 0) := (others => '0');
+
+--begin
+--    process(clk)
+--    begin
+--        if rising_edge(clk) then
+--            if counter_temp < 48 then
+--                data_out_temp((counter_temp * 5) + 4 downto (counter_temp * 5)) <= 
+--                    encoding_table(to_integer(unsigned(data_in((counter_temp * 4) + 3 downto (counter_temp * 4)))));
+--                counter_temp <= counter_temp + 1;
+--            end if;
+--            if counter_temp = 48 then
+--                output_rdy <= '1';
+--            end if;
+--        end if;
+--    end process;
+
+--    Data_out <= data_out_temp;
+--end Behavioral;

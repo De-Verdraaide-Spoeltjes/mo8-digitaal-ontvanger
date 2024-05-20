@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="decoder_state_machine_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="decoder_state_machine" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="6,515.001 ns"></ZoomEndTime>
+      <Cursor1Time time="615.000 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="233"></NameColumnWidth>
+      <ValueColumnWidth column_width="94"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="11" />
+   <wvobject fp_name="/decoder_state_machine/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/decoder_state_machine/Data_in" type="array">
+      <obj_property name="ElementShortName">Data_in[239:0]</obj_property>
+      <obj_property name="ObjectShortName">Data_in[239:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/decoder_state_machine/Data_rdy" type="logic">
+      <obj_property name="ElementShortName">Data_rdy</obj_property>
+      <obj_property name="ObjectShortName">Data_rdy</obj_property>
+   </wvobject>
+   <wvobject fp_name="/decoder_state_machine/Data_in_buffer" type="array">
+      <obj_property name="ElementShortName">Data_in_buffer[239:0]</obj_property>
+      <obj_property name="ObjectShortName">Data_in_buffer[239:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/decoder_state_machine/Data_in_temp" type="array">
+      <obj_property name="ElementShortName">Data_in_temp[4:0]</obj_property>
+      <obj_property name="ObjectShortName">Data_in_temp[4:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/decoder_state_machine/counter_temp" type="other">
+      <obj_property name="ElementShortName">counter_temp</obj_property>
+      <obj_property name="ObjectShortName">counter_temp</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/decoder_state_machine/PS" type="other">
+      <obj_property name="ElementShortName">PS</obj_property>
+      <obj_property name="ObjectShortName">PS</obj_property>
+   </wvobject>
+   <wvobject fp_name="/decoder_state_machine/NS" type="other">
+      <obj_property name="ElementShortName">NS</obj_property>
+      <obj_property name="ObjectShortName">NS</obj_property>
+   </wvobject>
+   <wvobject fp_name="/decoder_state_machine/Data_out_temp" type="array">
+      <obj_property name="ElementShortName">Data_out_temp[3:0]</obj_property>
+      <obj_property name="ObjectShortName">Data_out_temp[3:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/decoder_state_machine/Data_out_buffer" type="array">
+      <obj_property name="ElementShortName">Data_out_buffer[191:0]</obj_property>
+      <obj_property name="ObjectShortName">Data_out_buffer[191:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/decoder_state_machine/Data_out" type="array">
+      <obj_property name="ElementShortName">Data_out[191:0]</obj_property>
+      <obj_property name="ObjectShortName">Data_out[191:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+</wave_config>

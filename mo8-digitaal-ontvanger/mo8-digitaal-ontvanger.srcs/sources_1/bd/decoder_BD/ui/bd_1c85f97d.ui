@@ -1,8 +1,17 @@
 {
    "ActiveEmotionalView":"Reduced Jogs",
+   "Color Coded_Layers":"/reset_rtl_1:true|/sys_clock_1:true|/clk_wiz_0_clk_out1:true|",
+   "Color Coded_ScaleFactor":"1.0",
+   "Color Coded_TopLeft":"-348,-158",
    "Default View_ScaleFactor":"1.25",
    "Default View_TopLeft":"-195,-212",
+   "Display-PortTypeClock":"true",
+   "Display-PortTypeOthers":"true",
+   "Display-PortTypeReset":"true",
    "ExpandedHierarchyInLayout":"",
+   "Interfaces View_Layers":"/reset_rtl_1:false|/sys_clock_1:false|/clk_wiz_0_clk_out1:false|",
+   "Interfaces View_ScaleFactor":"1.0",
+   "Interfaces View_TopLeft":"-304,-109",
    "No Loops_ExpandedHierarchyInLayout":"",
    "No Loops_Layout":"# # String gsaved with Nlview 7.5.8 2022-09-21 7111 VDI=41 GEI=38 GUI=JA:10.0
 #  -string -flagsOSRD
@@ -19,28 +28,31 @@ levelinfo -pg 1 0 110 330 480
 pagesize -pg 1 -db -bbox -sgen -140 0 630 200
 ",
    "No Loops_ScaleFactor":"1.25",
-   "No Loops_TopLeft":"-181,-61",
+   "No Loops_TopLeft":"-186,-141",
    "Reduced Jogs_ExpandedHierarchyInLayout":"",
+   "Reduced Jogs_Layers":"/sys_clock_1:true|/reset_rtl_1:true|/clk_wiz_0_clk_out1:true|",
    "Reduced Jogs_Layout":"# # String gsaved with Nlview 7.5.8 2022-09-21 7111 VDI=41 GEI=38 GUI=JA:10.0
 #  -string -flagsOSRD
-preplace port port-id_sys_clock -pg 1 -lvl 0 -x 0 -y 60 -defaultsOSRD
-preplace port port-id_Data_rdy_0 -pg 1 -lvl 0 -x 0 -y 140 -defaultsOSRD
-preplace port port-id_Output_rdy_0 -pg 1 -lvl 3 -x 480 -y 90 -defaultsOSRD
-preplace portBus Data_out_0 -pg 1 -lvl 3 -x 480 -y 60 -defaultsOSRD
-preplace portBus Data_in_0 -pg 1 -lvl 0 -x 0 -y 170 -defaultsOSRD
-preplace inst clk_wiz_0 -pg 1 -lvl 1 -x 110 -y 40 -swap {1 0 2 3} -defaultsOSRD -pinY reset 40L -pinY clk_in1 20L -pinY clk_out1 20R -pinY locked 40R
-preplace inst decoder_0 -pg 1 -lvl 2 -x 330 -y 40 -swap {2 0 1 4 3} -defaultsOSRD -pinBusY Data_in 130L -pinY clk 20L -pinY Data_rdy 100L -pinY Output_rdy 50R -pinBusY Data_out 20R
-preplace netloc decoder_0_Data_out 1 2 1 N 60
-preplace netloc Data_in_0_1 1 0 2 N 170 N
-preplace netloc clk_wiz_0_clk_out1 1 1 1 N 60
-preplace netloc sys_clock_1 1 0 1 N 60
-preplace netloc Data_rdy_0_1 1 0 2 NJ 140 NJ
-preplace netloc decoder_0_Output_rdy 1 2 1 N 90
-levelinfo -pg 1 0 110 330 480
-pagesize -pg 1 -db -bbox -sgen -140 0 630 230
+preplace port port-id_sys_clock -pg 1 -lvl 0 -x -10 -y 50 -defaultsOSRD
+preplace port port-id_reset_rtl -pg 1 -lvl 0 -x -10 -y 80 -defaultsOSRD
+preplace port port-id_Data_rdy_0 -pg 1 -lvl 0 -x -10 -y 140 -defaultsOSRD
+preplace port port-id_Output_rdy_0 -pg 1 -lvl 3 -x 530 -y 90 -defaultsOSRD
+preplace portBus Data_in_0 -pg 1 -lvl 0 -x -10 -y 170 -defaultsOSRD
+preplace portBus Data_out_0 -pg 1 -lvl 3 -x 530 -y 60 -defaultsOSRD
+preplace inst clk_wiz_0 -pg 1 -lvl 1 -x 110 -y 40 -swap {1 0 3 2} -defaultsOSRD -pinY reset 40L -pinY clk_in1 20L -pinY clk_out1 40R -pinY locked 20R
+preplace inst decoder_state_machine_0 -pg 1 -lvl 2 -x 360 -y 40 -swap {2 0 1 4 3} -defaultsOSRD -pinBusY Data_in 170L -pinY clk 20L -pinY Data_rdy 80L -pinY Output_rdy 50R -pinBusY Data_out 20R
+preplace netloc reset_rtl_1 1 0 1 NJ 80
+preplace netloc sys_clock_1 1 0 1 10 50n
+preplace netloc clk_wiz_0_clk_out1 1 1 1 200 60n
+preplace netloc Data_in_0_1 1 0 2 NJ 170 200J
+preplace netloc decoder_state_machine_0_Data_out 1 2 1 NJ 60
+preplace netloc Data_rdy_0_1 1 0 2 NJ 140 200J
+preplace netloc decoder_state_machine_0_Output_rdy 1 2 1 NJ 90
+levelinfo -pg 1 -10 110 360 530
+pagesize -pg 1 -db -bbox -sgen -180 0 710 270
 ",
    "Reduced Jogs_ScaleFactor":"1.25",
-   "Reduced Jogs_TopLeft":"-181,-46",
+   "Reduced Jogs_TopLeft":"-353,-110",
    "guistr":"# # String gsaved with Nlview 7.5.8 2022-09-21 7111 VDI=41 GEI=38 GUI=JA:10.0
 #  -string -flagsOSRD
 levelinfo -pg 1 0 10
@@ -48,5 +60,5 @@ pagesize -pg 1 -db -bbox -sgen 0 0 10 10
 "
 }
 {
-   "da_board_cnt":"1"
+   "da_board_cnt":"2"
 }
