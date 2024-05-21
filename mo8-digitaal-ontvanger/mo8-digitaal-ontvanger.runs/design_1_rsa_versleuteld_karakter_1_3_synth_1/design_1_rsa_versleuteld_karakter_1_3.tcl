@@ -70,6 +70,8 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "design_1_rsa_versleuteld_karakter_1_3_synth_1" START { ROLLUP_AUTO }
+set_param chipscope.maxJobs 5
+set_msg_config -id {Common 17-41} -limit 10000000
 set_param project.vivado.isBlockSynthRun true
 set_msg_config -msgmgr_mode ooc_run
 OPTRACE "Creating in-memory project" START { }
@@ -90,7 +92,7 @@ set_property ip_output_repo d:/_code/Git/Fontys/Jaar_2/mo8-digitaal-ontvanger/mo
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_ip -quiet d:/_code/Git/Fontys/Jaar_2/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.srcs/sources_1/bd/design_1/ip/design_1_rsa_versleuteld_karakter_1_3/design_1_rsa_versleuteld_karakter_1_3.xci
+read_ip -quiet D:/_code/Git/Fontys/Jaar_2/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.srcs/sources_1/bd/design_1/ip/design_1_rsa_versleuteld_karakter_1_3/design_1_rsa_versleuteld_karakter_1_3.xci
 set_property used_in_implementation false [get_files -all d:/_code/Git/Fontys/Jaar_2/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/ip/design_1_rsa_versleuteld_karakter_1_3/design_1_rsa_versleuteld_karakter_1_3_board.xdc]
 set_property used_in_implementation false [get_files -all d:/_code/Git/Fontys/Jaar_2/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/ip/design_1_rsa_versleuteld_karakter_1_3/design_1_rsa_versleuteld_karakter_1_3_ooc.xdc]
 set_property used_in_implementation false [get_files -all d:/_code/Git/Fontys/Jaar_2/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/ip/design_1_rsa_versleuteld_karakter_1_3/design_1_rsa_versleuteld_karakter_1_3.xdc]

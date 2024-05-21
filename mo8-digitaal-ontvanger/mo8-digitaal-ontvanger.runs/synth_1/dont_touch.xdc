@@ -33,14 +33,17 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_ax
 # IP: bd/design_1/ip/design_1_rsa_versleuteld_karakter_1_3/design_1_rsa_versleuteld_karakter_1_3.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_rsa_versleuteld_karakter_1_3 || ORIG_REF_NAME==design_1_rsa_versleuteld_karakter_1_3} -quiet] -quiet
 
-# IP: bd/design_1/ip/design_1_fifo_generator_0_0/design_1_fifo_generator_0_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_fifo_generator_0_0 || ORIG_REF_NAME==design_1_fifo_generator_0_0} -quiet] -quiet
-
 # IP: bd/design_1/ip/design_1_xlconstant_0_1/design_1_xlconstant_0_1.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_xlconstant_0_1 || ORIG_REF_NAME==design_1_xlconstant_0_1} -quiet] -quiet
 
 # IP: bd/design_1/ip/design_1_xlslice_0_0/design_1_xlslice_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_xlslice_0_0 || ORIG_REF_NAME==design_1_xlslice_0_0} -quiet] -quiet
+
+# IP: bd/design_1/ip/design_1_Karakter_FIFO_0_0/design_1_Karakter_FIFO_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_Karakter_FIFO_0_0 || ORIG_REF_NAME==design_1_Karakter_FIFO_0_0} -quiet] -quiet
+
+# IP: bd/design_1/ip/design_1_BUTTON_1_0/design_1_BUTTON_1_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_BUTTON_1_0 || ORIG_REF_NAME==design_1_BUTTON_1_0} -quiet] -quiet
 
 # IP: bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_auto_pc_0 || ORIG_REF_NAME==design_1_auto_pc_0} -quiet] -quiet

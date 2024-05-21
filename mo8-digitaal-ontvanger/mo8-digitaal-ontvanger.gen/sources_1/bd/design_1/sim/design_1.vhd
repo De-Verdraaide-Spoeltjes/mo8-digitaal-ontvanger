@@ -2,7 +2,7 @@
 --Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
---Date        : Tue May 14 12:10:55 2024
+--Date        : Wed May 15 11:03:09 2024
 --Host        : XPS-Tommy running 64-bit major release  (build 9200)
 --Command     : generate_target design_1.bd
 --Design      : design_1
@@ -1551,7 +1551,7 @@ entity connection_embedded_imp_4JK09R is
     DDR_ras_n : inout STD_LOGIC;
     DDR_reset_n : inout STD_LOGIC;
     DDR_we_n : inout STD_LOGIC;
-    FIFO_data_count : in STD_LOGIC_VECTOR ( 10 downto 0 );
+    FIFO_data_ready : in STD_LOGIC_VECTOR ( 0 to 0 );
     FIFO_read_enable : out STD_LOGIC_VECTOR ( 0 to 0 );
     FIXED_IO_ddr_vrn : inout STD_LOGIC;
     FIXED_IO_ddr_vrp : inout STD_LOGIC;
@@ -1767,7 +1767,7 @@ architecture STRUCTURE of connection_embedded_imp_4JK09R is
     s_axi_rvalid : out STD_LOGIC;
     s_axi_rready : in STD_LOGIC;
     ip2intc_irpt : out STD_LOGIC;
-    gpio_io_i : in STD_LOGIC_VECTOR ( 10 downto 0 );
+    gpio_io_i : in STD_LOGIC_VECTOR ( 0 to 0 );
     gpio2_io_o : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component design_1_rsa_versleuteld_karakter_1_3;
@@ -1870,7 +1870,7 @@ architecture STRUCTURE of connection_embedded_imp_4JK09R is
   signal axi_interconnect_0_M03_AXI_WSTRB : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal axi_interconnect_0_M03_AXI_WVALID : STD_LOGIC;
   signal gpio_io_i_0_1 : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal gpio_io_i_1 : STD_LOGIC_VECTOR ( 10 downto 0 );
+  signal gpio_io_i_0_2 : STD_LOGIC_VECTOR ( 0 to 0 );
   signal proc_sys_reset_0_peripheral_aresetn : STD_LOGIC_VECTOR ( 0 to 0 );
   signal processing_system7_0_FCLK_CLK0 : STD_LOGIC;
   signal processing_system7_0_FCLK_RESET0_N : STD_LOGIC;
@@ -1932,7 +1932,7 @@ begin
   IIC_sda_t <= Conn3_SDA_T;
   UART_txd <= Conn4_TxD;
   gpio_io_i_0_1(3 downto 0) <= buttons(3 downto 0);
-  gpio_io_i_1(10 downto 0) <= FIFO_data_count(10 downto 0);
+  gpio_io_i_0_2(0) <= FIFO_data_ready(0);
   status_led(2 downto 0) <= axi_gpio_0_gpio_io_o(2 downto 0);
 axi_interconnect_0: entity work.design_1_axi_interconnect_0_0
      port map (
@@ -2168,7 +2168,7 @@ processing_system7_0: component design_1_processing_system7_0_0
 rsa_comunictie: component design_1_rsa_versleuteld_karakter_1_3
      port map (
       gpio2_io_o(0) => rsa_comunictie_gpio2_io_o(0),
-      gpio_io_i(10 downto 0) => gpio_io_i_1(10 downto 0),
+      gpio_io_i(0) => gpio_io_i_0_2(0),
       ip2intc_irpt => rsa_versleuteld_karakter_2_ip2intc_irpt,
       s_axi_aclk => processing_system7_0_FCLK_CLK0,
       s_axi_araddr(8 downto 0) => axi_interconnect_0_M01_AXI_ARADDR(8 downto 0),
@@ -2285,24 +2285,12 @@ entity design_1 is
     status_led : out STD_LOGIC_VECTOR ( 2 downto 0 )
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of design_1 : entity is "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=19,numReposBlks=12,numNonXlnxBlks=0,numHierBlks=7,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=7,da_board_cnt=1,da_clkrst_cnt=1,da_ps7_cnt=1,synth_mode=OOC_per_IP}";
+  attribute CORE_GENERATION_INFO of design_1 : entity is "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=20,numReposBlks=13,numNonXlnxBlks=0,numHierBlks=7,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=1,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=7,da_board_cnt=1,da_clkrst_cnt=1,da_ps7_cnt=1,synth_mode=OOC_per_IP}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of design_1 : entity is "design_1.hwdef";
 end design_1;
 
 architecture STRUCTURE of design_1 is
-  component design_1_fifo_generator_0_0 is
-  port (
-    clk : in STD_LOGIC;
-    din : in STD_LOGIC_VECTOR ( 127 downto 0 );
-    wr_en : in STD_LOGIC;
-    rd_en : in STD_LOGIC;
-    dout : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    full : out STD_LOGIC;
-    empty : out STD_LOGIC;
-    rd_data_count : out STD_LOGIC_VECTOR ( 10 downto 0 )
-  );
-  end component design_1_fifo_generator_0_0;
   component design_1_xlconstant_0_1 is
   port (
     dout : out STD_LOGIC_VECTOR ( 127 downto 0 )
@@ -2314,10 +2302,28 @@ architecture STRUCTURE of design_1 is
     Dout : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component design_1_xlslice_0_0;
+  component design_1_Karakter_FIFO_0_0 is
+  port (
+    clk : in STD_LOGIC;
+    karakterData : in STD_LOGIC_VECTOR ( 127 downto 0 );
+    dataValid : in STD_LOGIC;
+    nextData : in STD_LOGIC;
+    reset : in STD_LOGIC;
+    karakter : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    dataAvailable : out STD_LOGIC
+  );
+  end component design_1_Karakter_FIFO_0_0;
+  component design_1_BUTTON_1_0 is
+  port (
+    Din : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    Dout : out STD_LOGIC_VECTOR ( 0 to 0 )
+  );
+  end component design_1_BUTTON_1_0;
+  signal BUTTON_2_Dout : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal Karakter_FIFO_0_dataAvailable : STD_LOGIC;
   signal connection_embedded_CLK_100MHz : STD_LOGIC;
   signal connection_embedded_FIFO_read_enable : STD_LOGIC_VECTOR ( 0 to 0 );
   signal connection_embedded_gpio_io_o_0 : STD_LOGIC_VECTOR ( 2 downto 0 );
-  signal fifo_generator_0_rd_data_count : STD_LOGIC_VECTOR ( 10 downto 0 );
   signal gpio_io_i_0_1 : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal koppeling_embedded_DDR_ADDR : STD_LOGIC_VECTOR ( 14 downto 0 );
   signal koppeling_embedded_DDR_BA : STD_LOGIC_VECTOR ( 2 downto 0 );
@@ -2351,8 +2357,6 @@ architecture STRUCTURE of design_1 is
   signal rsa_versleuteld_karakter_1_1 : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal xlconstant_1_dout : STD_LOGIC_VECTOR ( 127 downto 0 );
   signal xlslice_0_Dout : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal NLW_fifo_generator_0_empty_UNCONNECTED : STD_LOGIC;
-  signal NLW_fifo_generator_0_full_UNCONNECTED : STD_LOGIC;
   attribute X_INTERFACE_INFO : string;
   attribute X_INTERFACE_INFO of DDR_cas_n : signal is "xilinx.com:interface:ddrx:1.0 DDR CAS_N";
   attribute X_INTERFACE_INFO of DDR_ck_n : signal is "xilinx.com:interface:ddrx:1.0 DDR CK_N";
@@ -2397,6 +2401,26 @@ begin
   koppeling_embedded_IIC_SDA_I <= IIC_sda_i;
   koppeling_embedded_UART_1_0_RxD <= UART_rxd;
   status_led(2 downto 0) <= connection_embedded_gpio_io_o_0(2 downto 0);
+BUTTON_1: component design_1_xlslice_0_0
+     port map (
+      Din(3 downto 0) => gpio_io_i_0_1(3 downto 0),
+      Dout(0) => xlslice_0_Dout(0)
+    );
+BUTTON_4: component design_1_BUTTON_1_0
+     port map (
+      Din(3 downto 0) => gpio_io_i_0_1(3 downto 0),
+      Dout(0) => BUTTON_2_Dout(0)
+    );
+Karakter_FIFO_0: component design_1_Karakter_FIFO_0_0
+     port map (
+      clk => connection_embedded_CLK_100MHz,
+      dataAvailable => Karakter_FIFO_0_dataAvailable,
+      dataValid => xlslice_0_Dout(0),
+      karakter(31 downto 0) => rsa_versleuteld_karakter_1_1(31 downto 0),
+      karakterData(127 downto 0) => xlconstant_1_dout(127 downto 0),
+      nextData => connection_embedded_FIFO_read_enable(0),
+      reset => BUTTON_2_Dout(0)
+    );
 connection_embedded: entity work.connection_embedded_imp_4JK09R
      port map (
       CLK_100MHz => connection_embedded_CLK_100MHz,
@@ -2415,7 +2439,7 @@ connection_embedded: entity work.connection_embedded_imp_4JK09R
       DDR_ras_n => DDR_ras_n,
       DDR_reset_n => DDR_reset_n,
       DDR_we_n => DDR_we_n,
-      FIFO_data_count(10 downto 0) => fifo_generator_0_rd_data_count(10 downto 0),
+      FIFO_data_ready(0) => Karakter_FIFO_0_dataAvailable,
       FIFO_read_enable(0) => connection_embedded_FIFO_read_enable(0),
       FIXED_IO_ddr_vrn => FIXED_IO_ddr_vrn,
       FIXED_IO_ddr_vrp => FIXED_IO_ddr_vrp,
@@ -2435,24 +2459,8 @@ connection_embedded: entity work.connection_embedded_imp_4JK09R
       rsa_versleuteld_karakter_1(31 downto 0) => rsa_versleuteld_karakter_1_1(31 downto 0),
       status_led(2 downto 0) => connection_embedded_gpio_io_o_0(2 downto 0)
     );
-fifo_generator_0: component design_1_fifo_generator_0_0
-     port map (
-      clk => connection_embedded_CLK_100MHz,
-      din(127 downto 0) => xlconstant_1_dout(127 downto 0),
-      dout(31 downto 0) => rsa_versleuteld_karakter_1_1(31 downto 0),
-      empty => NLW_fifo_generator_0_empty_UNCONNECTED,
-      full => NLW_fifo_generator_0_full_UNCONNECTED,
-      rd_data_count(10 downto 0) => fifo_generator_0_rd_data_count(10 downto 0),
-      rd_en => connection_embedded_FIFO_read_enable(0),
-      wr_en => xlslice_0_Dout(0)
-    );
 xlconstant_1: component design_1_xlconstant_0_1
      port map (
       dout(127 downto 0) => xlconstant_1_dout(127 downto 0)
-    );
-xlslice_0: component design_1_xlslice_0_0
-     port map (
-      Din(3 downto 0) => gpio_io_i_0_1(3 downto 0),
-      Dout(0) => xlslice_0_Dout(0)
     );
 end STRUCTURE;

@@ -2,7 +2,7 @@
   "schema": "xilinx.com:schema:json_instance:1.0",
   "ip_inst": {
     "xci_name": "design_1_xlslice_0_0",
-    "cell_name": "xlslice_0",
+    "cell_name": "BUTTON_1",
     "component_reference": "xilinx.com:ip:xlslice:1.0",
     "ip_revision": "2",
     "gen_directory": "../../../../../../mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/ip/design_1_xlslice_0_0",

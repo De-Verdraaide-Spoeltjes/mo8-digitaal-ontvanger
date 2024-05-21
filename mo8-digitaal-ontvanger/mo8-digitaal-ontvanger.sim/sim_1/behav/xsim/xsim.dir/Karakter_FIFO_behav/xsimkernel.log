@@ -1,0 +1,7 @@
+Running: xsim.dir/Karakter_FIFO_behav/xsimk.exe -simmode gui -wdb Karakter_FIFO_behav.wdb -simrunnum 0 -socket 63180
+Design successfully loaded
+Design Loading Memory Usage: 8848 KB (Peak: 8848 KB)
+Design Loading CPU Usage: 108 ms
+Simulation completed
+Simulation Memory Usage: 9544 KB (Peak: 9544 KB)
+Simulation CPU Usage: 108 ms
