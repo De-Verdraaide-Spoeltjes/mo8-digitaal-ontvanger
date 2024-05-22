@@ -18,6 +18,8 @@ vlib modelsim_lib/msim/axi_lite_ipif_v3_0_4
 vlib modelsim_lib/msim/interrupt_control_v3_1_4
 vlib modelsim_lib/msim/axi_gpio_v2_0_30
 vlib modelsim_lib/msim/xlconcat_v2_1_4
+vlib modelsim_lib/msim/xlslice_v1_0_2
+vlib modelsim_lib/msim/xlconstant_v1_1_7
 vlib modelsim_lib/msim/axi_protocol_converter_v2_1_28
 
 vmap xilinx_vip modelsim_lib/msim/xilinx_vip
@@ -37,6 +39,8 @@ vmap axi_lite_ipif_v3_0_4 modelsim_lib/msim/axi_lite_ipif_v3_0_4
 vmap interrupt_control_v3_1_4 modelsim_lib/msim/interrupt_control_v3_1_4
 vmap axi_gpio_v2_0_30 modelsim_lib/msim/axi_gpio_v2_0_30
 vmap xlconcat_v2_1_4 modelsim_lib/msim/xlconcat_v2_1_4
+vmap xlslice_v1_0_2 modelsim_lib/msim/xlslice_v1_0_2
+vmap xlconstant_v1_1_7 modelsim_lib/msim/xlconstant_v1_1_7
 vmap axi_protocol_converter_v2_1_28 modelsim_lib/msim/axi_protocol_converter_v2_1_28
 
 vlog -work xilinx_vip  -incr -mfcu  -sv -L axi_vip_v1_1_14 -L processing_system7_vip_v1_0_16 -L xilinx_vip "+incdir+C:/Xilinx/Vivado/2023.1/data/xilinx_vip/include" \
@@ -132,14 +136,26 @@ vcom -work xil_defaultlib  -93  \
 "../../../bd/design_1/ip/design_1_Karakter_FIFO_0_0/sim/design_1_Karakter_FIFO_0_0.vhd" \
 "../../../bd/design_1/ip/design_1_communicatie_protoco_0_0/sim/design_1_communicatie_protoco_0_0.vhd" \
 
+vlog -work xlslice_v1_0_2  -incr -mfcu  "+incdir+../../../../mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/ipshared/aed8/hdl" "+incdir+C:/Xilinx/Vivado/2023.1/data/xilinx_vip/include" \
+"../../../../mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v" \
+
+vlog -work xil_defaultlib  -incr -mfcu  "+incdir+../../../../mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/ipshared/aed8/hdl" "+incdir+C:/Xilinx/Vivado/2023.1/data/xilinx_vip/include" \
+"../../../bd/design_1/ip/design_1_xlslice_0_0/sim/design_1_xlslice_0_0.v" \
+
+vlog -work xlconstant_v1_1_7  -incr -mfcu  "+incdir+../../../../mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/ipshared/aed8/hdl" "+incdir+C:/Xilinx/Vivado/2023.1/data/xilinx_vip/include" \
+"../../../../mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/ipshared/b0f2/hdl/xlconstant_v1_1_vl_rfs.v" \
+
+vlog -work xil_defaultlib  -incr -mfcu  "+incdir+../../../../mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/ipshared/aed8/hdl" "+incdir+C:/Xilinx/Vivado/2023.1/data/xilinx_vip/include" \
+"../../../bd/design_1/ip/design_1_xlconstant_0_0/sim/design_1_xlconstant_0_0.v" \
+
+vcom -work xil_defaultlib  -93  \
+"../../../bd/design_1/sim/design_1.vhd" \
+
 vlog -work axi_protocol_converter_v2_1_28  -incr -mfcu  "+incdir+../../../../mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/ipshared/aed8/hdl" "+incdir+C:/Xilinx/Vivado/2023.1/data/xilinx_vip/include" \
 "../../../../mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/ipshared/8c02/hdl/axi_protocol_converter_v2_1_vl_rfs.v" \
 
 vlog -work xil_defaultlib  -incr -mfcu  "+incdir+../../../../mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/ipshared/aed8/hdl" "+incdir+C:/Xilinx/Vivado/2023.1/data/xilinx_vip/include" \
 "../../../bd/design_1/ip/design_1_auto_pc_0/sim/design_1_auto_pc_0.v" \
-
-vcom -work xil_defaultlib  -93  \
-"../../../bd/design_1/sim/design_1.vhd" \
 
 vlog -work xil_defaultlib \
 "glbl.v"

@@ -38,6 +38,7 @@ end communicatie_protocol_ontvanger;
 architecture Behavioral of communicatie_protocol_ontvanger is
     -- Storage
     signal buffer_data_intput : std_logic_vector(191 downto 0);
+    signal data_rdy_input_old : std_logic;
     --signal buffer_data_output : std_logic_vector(127 downto 0);
     
     -- State machine
@@ -98,7 +99,7 @@ begin
     begin
         case PS is
             when check_input_ready =>
-                if data_rdy_input = '1' then
+                if data_rdy_input = '1' and data_rdy_input_old = '0' then
                     NS <= data_in_buffer;
                 else
                     NS <= check_input_ready;
@@ -140,7 +141,8 @@ begin
    memory: process(clk)
 	begin
 		if rising_edge(clk) then
-				PS <= NS;
+            PS <= NS;
+            data_rdy_input_old <= data_rdy_input;
 		end if;
 	end process;
 
@@ -149,9 +151,9 @@ begin
     begin
         case PS is
             when check_input_ready =>
-                data_ready_output <= '0';
-
+            
             when data_in_buffer =>
+                data_ready_output <= '0';
                 buffer_data_intput <= data_in;
             
             when s2 =>

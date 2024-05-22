@@ -2,7 +2,7 @@
 --Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
---Date        : Wed May 22 16:07:38 2024
+--Date        : Wed May 22 16:21:19 2024
 --Host        : XPS-Tommy running 64-bit major release  (build 9200)
 --Command     : generate_target design_1.bd
 --Design      : design_1
@@ -2404,7 +2404,7 @@ entity design_1 is
     status_led : out STD_LOGIC_VECTOR ( 2 downto 0 )
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of design_1 : entity is "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=24,numReposBlks=16,numNonXlnxBlks=0,numHierBlks=8,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=7,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=7,da_board_cnt=1,da_clkrst_cnt=1,da_ps7_cnt=1,synth_mode=OOC_per_IP}";
+  attribute CORE_GENERATION_INFO of design_1 : entity is "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=26,numReposBlks=18,numNonXlnxBlks=0,numHierBlks=8,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=7,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=7,da_board_cnt=1,da_clkrst_cnt=1,da_ps7_cnt=1,synth_mode=OOC_per_IP}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of design_1 : entity is "design_1.hwdef";
 end design_1;
@@ -2441,14 +2441,23 @@ architecture STRUCTURE of design_1 is
     crc_d_fail : out STD_LOGIC
   );
   end component design_1_communicatie_protoco_0_0;
+  component design_1_xlslice_0_0 is
+  port (
+    Din : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    Dout : out STD_LOGIC_VECTOR ( 0 to 0 )
+  );
+  end component design_1_xlslice_0_0;
+  component design_1_xlconstant_0_0 is
+  port (
+    dout : out STD_LOGIC_VECTOR ( 127 downto 0 )
+  );
+  end component design_1_xlconstant_0_0;
   signal Karakter_FIFO_0_dataAvailable : STD_LOGIC;
   signal Karakter_FIFO_0_karakter : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal Net : STD_LOGIC;
   signal aux_reset_in_0_1 : STD_LOGIC;
   signal communicatie_protoco_0_crc_d_fail : STD_LOGIC;
   signal communicatie_protoco_0_crc_h_fail : STD_LOGIC;
-  signal communicatie_protoco_0_data_out : STD_LOGIC_VECTOR ( 127 downto 0 );
-  signal communicatie_protoco_0_data_ready_output : STD_LOGIC;
   signal connection_embedded_FIFO_read_enable : STD_LOGIC_VECTOR ( 0 to 0 );
   signal connection_embedded_gpio_io_o_0 : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal connection_embedded_reset : STD_LOGIC_VECTOR ( 0 to 0 );
@@ -2487,6 +2496,10 @@ architecture STRUCTURE of design_1 is
   signal koppeling_embedded_UART_1_0_RxD : STD_LOGIC;
   signal koppeling_embedded_UART_1_0_TxD : STD_LOGIC;
   signal signal_i_0_1 : STD_LOGIC;
+  signal xlconstant_0_dout : STD_LOGIC_VECTOR ( 127 downto 0 );
+  signal xlslice_0_Dout : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal NLW_communicatie_protoco_0_data_ready_output_UNCONNECTED : STD_LOGIC;
+  signal NLW_communicatie_protoco_0_data_out_UNCONNECTED : STD_LOGIC_VECTOR ( 127 downto 0 );
   attribute X_INTERFACE_INFO : string;
   attribute X_INTERFACE_INFO of DDR_cas_n : signal is "xilinx.com:interface:ddrx:1.0 DDR CAS_N";
   attribute X_INTERFACE_INFO of DDR_ck_n : signal is "xilinx.com:interface:ddrx:1.0 DDR CK_N";
@@ -2541,9 +2554,9 @@ Karakter_FIFO_0: component design_1_Karakter_FIFO_0_0
      port map (
       clk => Net,
       dataAvailable => Karakter_FIFO_0_dataAvailable,
-      dataValid => communicatie_protoco_0_data_ready_output,
+      dataValid => xlslice_0_Dout(0),
       karakter(31 downto 0) => Karakter_FIFO_0_karakter(31 downto 0),
-      karakterData(127 downto 0) => communicatie_protoco_0_data_out(127 downto 0),
+      karakterData(127 downto 0) => xlconstant_0_dout(127 downto 0),
       nextData => connection_embedded_FIFO_read_enable(0),
       reset => connection_embedded_reset(0)
     );
@@ -2553,9 +2566,9 @@ communicatie_protoco_0: component design_1_communicatie_protoco_0_0
       crc_d_fail => communicatie_protoco_0_crc_d_fail,
       crc_h_fail => communicatie_protoco_0_crc_h_fail,
       data_in(191 downto 0) => decoder_5b4b_0_Data_out(191 downto 0),
-      data_out(127 downto 0) => communicatie_protoco_0_data_out(127 downto 0),
+      data_out(127 downto 0) => NLW_communicatie_protoco_0_data_out_UNCONNECTED(127 downto 0),
       data_rdy_input => decoder_5b4b_0_Output_rdy,
-      data_ready_output => communicatie_protoco_0_data_ready_output
+      data_ready_output => NLW_communicatie_protoco_0_data_ready_output_UNCONNECTED
     );
 connection_embedded: entity work.connection_embedded_imp_4JK09R
      port map (
@@ -2612,5 +2625,14 @@ module_demodulator: entity work.module_demodulator_imp_G87YIL
       output_ready_o => demodulator_0_output_ready_o,
       reset => connection_embedded_reset(0),
       signal_i => signal_i_0_1
+    );
+xlconstant_0: component design_1_xlconstant_0_0
+     port map (
+      dout(127 downto 0) => xlconstant_0_dout(127 downto 0)
+    );
+xlslice_0: component design_1_xlslice_0_0
+     port map (
+      Din(3 downto 0) => gpio_io_i_0_1(3 downto 0),
+      Dout(0) => xlslice_0_Dout(0)
     );
 end STRUCTURE;

@@ -2,7 +2,7 @@
 -- Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
--- Date        : Wed May 22 16:09:51 2024
+-- Date        : Wed May 22 16:57:11 2024
 -- Host        : XPS-Tommy running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
 --               d:/_code/Git/Fontys/Jaar_2/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/ip/design_1_communicatie_protoco_0_0/design_1_communicatie_protoco_0_0_sim_netlist.vhdl
@@ -206,6 +206,7 @@ architecture STRUCTURE of design_1_communicatie_protoco_0_0_communicatie_protoco
   signal \buffer_data_intput_reg_n_0_[51]\ : STD_LOGIC;
   signal crc_d_fail_reg_i_1_n_0 : STD_LOGIC;
   signal crc_h_fail_reg_i_1_n_0 : STD_LOGIC;
+  signal data_rdy_input_old : STD_LOGIC;
   signal data_ready_output_reg_i_1_n_0 : STD_LOGIC;
   signal p_0_in : STD_LOGIC_VECTOR ( 15 downto 0 );
   signal p_0_in0_in : STD_LOGIC_VECTOR ( 15 downto 0 );
@@ -371,30 +372,28 @@ architecture STRUCTURE of design_1_communicatie_protoco_0_0_communicatie_protoco
   signal \NLW_FSM_onehot_PS_reg[6]_i_2_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal \NLW_FSM_onehot_PS_reg[6]_i_3_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \FSM_onehot_PS[0]_i_1\ : label is "soft_lutpair5";
-  attribute SOFT_HLUTNM of \FSM_onehot_PS[1]_i_1\ : label is "soft_lutpair5";
-  attribute SOFT_HLUTNM of \FSM_onehot_PS[3]_i_1\ : label is "soft_lutpair11";
-  attribute SOFT_HLUTNM of \FSM_onehot_PS[4]_i_1\ : label is "soft_lutpair12";
-  attribute SOFT_HLUTNM of \FSM_onehot_PS[5]_i_1\ : label is "soft_lutpair12";
-  attribute SOFT_HLUTNM of \FSM_onehot_PS[5]_i_103\ : label is "soft_lutpair8";
-  attribute SOFT_HLUTNM of \FSM_onehot_PS[5]_i_105\ : label is "soft_lutpair9";
-  attribute SOFT_HLUTNM of \FSM_onehot_PS[5]_i_107\ : label is "soft_lutpair6";
+  attribute SOFT_HLUTNM of \FSM_onehot_PS[3]_i_1\ : label is "soft_lutpair10";
+  attribute SOFT_HLUTNM of \FSM_onehot_PS[4]_i_1\ : label is "soft_lutpair11";
+  attribute SOFT_HLUTNM of \FSM_onehot_PS[5]_i_1\ : label is "soft_lutpair11";
+  attribute SOFT_HLUTNM of \FSM_onehot_PS[5]_i_103\ : label is "soft_lutpair7";
+  attribute SOFT_HLUTNM of \FSM_onehot_PS[5]_i_105\ : label is "soft_lutpair8";
+  attribute SOFT_HLUTNM of \FSM_onehot_PS[5]_i_107\ : label is "soft_lutpair5";
   attribute SOFT_HLUTNM of \FSM_onehot_PS[5]_i_108\ : label is "soft_lutpair4";
   attribute SOFT_HLUTNM of \FSM_onehot_PS[5]_i_109\ : label is "soft_lutpair4";
   attribute SOFT_HLUTNM of \FSM_onehot_PS[5]_i_24\ : label is "soft_lutpair0";
   attribute SOFT_HLUTNM of \FSM_onehot_PS[5]_i_31\ : label is "soft_lutpair3";
   attribute SOFT_HLUTNM of \FSM_onehot_PS[5]_i_37\ : label is "soft_lutpair0";
-  attribute SOFT_HLUTNM of \FSM_onehot_PS[5]_i_42\ : label is "soft_lutpair7";
+  attribute SOFT_HLUTNM of \FSM_onehot_PS[5]_i_42\ : label is "soft_lutpair6";
   attribute SOFT_HLUTNM of \FSM_onehot_PS[5]_i_43\ : label is "soft_lutpair1";
-  attribute SOFT_HLUTNM of \FSM_onehot_PS[5]_i_49\ : label is "soft_lutpair7";
-  attribute SOFT_HLUTNM of \FSM_onehot_PS[5]_i_54\ : label is "soft_lutpair6";
+  attribute SOFT_HLUTNM of \FSM_onehot_PS[5]_i_49\ : label is "soft_lutpair6";
+  attribute SOFT_HLUTNM of \FSM_onehot_PS[5]_i_54\ : label is "soft_lutpair5";
   attribute SOFT_HLUTNM of \FSM_onehot_PS[5]_i_55\ : label is "soft_lutpair1";
   attribute SOFT_HLUTNM of \FSM_onehot_PS[5]_i_58\ : label is "soft_lutpair3";
-  attribute SOFT_HLUTNM of \FSM_onehot_PS[5]_i_67\ : label is "soft_lutpair8";
-  attribute SOFT_HLUTNM of \FSM_onehot_PS[5]_i_76\ : label is "soft_lutpair9";
+  attribute SOFT_HLUTNM of \FSM_onehot_PS[5]_i_67\ : label is "soft_lutpair7";
+  attribute SOFT_HLUTNM of \FSM_onehot_PS[5]_i_76\ : label is "soft_lutpair8";
   attribute SOFT_HLUTNM of \FSM_onehot_PS[5]_i_90\ : label is "soft_lutpair2";
   attribute SOFT_HLUTNM of \FSM_onehot_PS[5]_i_94\ : label is "soft_lutpair2";
-  attribute SOFT_HLUTNM of \FSM_onehot_PS[6]_i_1\ : label is "soft_lutpair11";
+  attribute SOFT_HLUTNM of \FSM_onehot_PS[6]_i_1\ : label is "soft_lutpair10";
   attribute FSM_ENCODED_STATES : string;
   attribute FSM_ENCODED_STATES of \FSM_onehot_PS_reg[0]\ : label is "s2:0000100,check_input_ready:0000001,data_in_buffer:0000010,header_crc_fail:1000000,s4:0001000,data_crc_fail:0100000,set_output_data:0010000";
   attribute FSM_ENCODED_STATES of \FSM_onehot_PS_reg[1]\ : label is "s2:0000100,check_input_ready:0000001,data_in_buffer:0000010,header_crc_fail:1000000,s4:0001000,data_crc_fail:0100000,set_output_data:0010000";
@@ -791,10 +790,10 @@ architecture STRUCTURE of design_1_communicatie_protoco_0_0_communicatie_protoco
   attribute XILINX_TRANSFORM_PINMAP of \buffer_data_intput_reg[9]\ : label is "VCC:GE GND:CLR";
   attribute XILINX_LEGACY_PRIM of crc_d_fail_reg : label is "LD";
   attribute XILINX_TRANSFORM_PINMAP of crc_d_fail_reg : label is "VCC:GE GND:CLR";
-  attribute SOFT_HLUTNM of crc_d_fail_reg_i_1 : label is "soft_lutpair10";
+  attribute SOFT_HLUTNM of crc_d_fail_reg_i_1 : label is "soft_lutpair9";
   attribute XILINX_LEGACY_PRIM of crc_h_fail_reg : label is "LD";
   attribute XILINX_TRANSFORM_PINMAP of crc_h_fail_reg : label is "VCC:GE GND:CLR";
-  attribute SOFT_HLUTNM of crc_h_fail_reg_i_1 : label is "soft_lutpair10";
+  attribute SOFT_HLUTNM of crc_h_fail_reg_i_1 : label is "soft_lutpair9";
   attribute XILINX_LEGACY_PRIM of \data_out_reg[0]\ : label is "LD";
   attribute XILINX_TRANSFORM_PINMAP of \data_out_reg[0]\ : label is "VCC:GE GND:CLR";
   attribute XILINX_LEGACY_PRIM of \data_out_reg[100]\ : label is "LD";
@@ -1054,25 +1053,27 @@ architecture STRUCTURE of design_1_communicatie_protoco_0_0_communicatie_protoco
   attribute XILINX_LEGACY_PRIM of data_ready_output_reg : label is "LD";
   attribute XILINX_TRANSFORM_PINMAP of data_ready_output_reg : label is "VCC:GE GND:CLR";
 begin
-\FSM_onehot_PS[0]_i_1\: unisim.vcomponents.LUT5
+\FSM_onehot_PS[0]_i_1\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"FFFFEEFE"
+      INIT => X"FFFFFFFFFEEEFEFE"
     )
         port map (
       I0 => \FSM_onehot_PS_reg_n_0_[5]\,
       I1 => \FSM_onehot_PS_reg_n_0_[6]\,
       I2 => \FSM_onehot_PS_reg_n_0_[0]\,
-      I3 => data_rdy_input,
-      I4 => \FSM_onehot_PS_reg_n_0_[4]\,
+      I3 => data_rdy_input_old,
+      I4 => data_rdy_input,
+      I5 => \FSM_onehot_PS_reg_n_0_[4]\,
       O => \FSM_onehot_PS[0]_i_1_n_0\
     );
-\FSM_onehot_PS[1]_i_1\: unisim.vcomponents.LUT2
+\FSM_onehot_PS[1]_i_1\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"8"
+      INIT => X"20"
     )
         port map (
       I0 => \FSM_onehot_PS_reg_n_0_[0]\,
-      I1 => data_rdy_input,
+      I1 => data_rdy_input_old,
+      I2 => data_rdy_input,
       O => \FSM_onehot_PS[1]_i_1_n_0\
     );
 \FSM_onehot_PS[3]_i_1\: unisim.vcomponents.LUT2
@@ -6548,6 +6549,14 @@ crc_h_fail_reg_i_1: unisim.vcomponents.LUT2
       GE => '1',
       Q => data_out(9)
     );
+data_rdy_input_old_reg: unisim.vcomponents.FDRE
+     port map (
+      C => clk,
+      CE => '1',
+      D => data_rdy_input,
+      Q => data_rdy_input_old,
+      R => '0'
+    );
 data_ready_output_reg: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
@@ -6564,7 +6573,7 @@ data_ready_output_reg_i_1: unisim.vcomponents.LUT2
       INIT => X"E"
     )
         port map (
-      I0 => \FSM_onehot_PS_reg_n_0_[0]\,
+      I0 => buffer_data_intput,
       I1 => \FSM_onehot_PS_reg_n_0_[4]\,
       O => data_ready_output_reg_i_1_n_0
     );
