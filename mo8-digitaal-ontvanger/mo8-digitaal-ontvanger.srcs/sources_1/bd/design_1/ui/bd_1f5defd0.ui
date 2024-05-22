@@ -1,35 +1,39 @@
 {
    "ActiveEmotionalView":"Default View",
-   "Default View_ScaleFactor":"1.04381",
-   "Default View_TopLeft":"-148,0",
+   "Default View_ScaleFactor":"2.25",
+   "Default View_TopLeft":"-134,-48",
    "ExpandedHierarchyInLayout":"",
    "guistr":"# # String gsaved with Nlview 7.5.8 2022-09-21 7111 VDI=41 GEI=38 GUI=JA:10.0
 #  -string -flagsOSRD
-preplace port DDR -pg 1 -lvl 3 -x 710 -y 200 -defaultsOSRD
-preplace port FIXED_IO -pg 1 -lvl 3 -x 710 -y 230 -defaultsOSRD
-preplace port UART -pg 1 -lvl 3 -x 710 -y 290 -defaultsOSRD
-preplace port IIC -pg 1 -lvl 3 -x 710 -y 260 -defaultsOSRD
-preplace port port-id_signal_i -pg 1 -lvl 0 -x 0 -y 90 -defaultsOSRD
-preplace port port-id_reset_in -pg 1 -lvl 0 -x 0 -y 330 -defaultsOSRD
-preplace portBus status_led -pg 1 -lvl 3 -x 710 -y 320 -defaultsOSRD
-preplace portBus buttons -pg 1 -lvl 0 -x 0 -y 300 -defaultsOSRD
-preplace inst connection_embedded -pg 1 -lvl 1 -x 190 -y 280 -defaultsOSRD
-preplace inst decoder_5b4b_0 -pg 1 -lvl 2 -x 540 -y 120 -defaultsOSRD
-preplace inst module_demodulator -pg 1 -lvl 1 -x 190 -y 90 -defaultsOSRD
-preplace netloc Net 1 0 2 20 10 380
-preplace netloc aux_reset_in_0_1 1 0 1 NJ 330
-preplace netloc connection_embedded_gpio_io_o_0 1 1 2 NJ 320 NJ
-preplace netloc connection_embedded_reset 1 0 2 20 160 360
-preplace netloc demodulator_0_output_ready_o 1 1 1 390 80n
-preplace netloc fifo_buffer_0_data_out 1 1 1 N 100
-preplace netloc gpio_io_i_0_1 1 0 1 20J 300n
-preplace netloc signal_i_0_1 1 0 1 NJ 90
-preplace netloc koppeling_embedded_DDR 1 1 2 370J 200 NJ
-preplace netloc koppeling_embedded_FIXED_IO 1 1 2 390J 230 NJ
-preplace netloc koppeling_embedded_IIC 1 1 2 NJ 260 NJ
-preplace netloc koppeling_embedded_UART_1_0 1 1 2 370J 290 NJ
-levelinfo -pg 1 0 190 540 710
-pagesize -pg 1 -db -bbox -sgen -130 0 850 390
+preplace port DDR -pg 1 -lvl 3 -x 760 -y 200 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -lvl 3 -x 760 -y 230 -defaultsOSRD
+preplace port UART -pg 1 -lvl 3 -x 760 -y 290 -defaultsOSRD
+preplace port IIC -pg 1 -lvl 3 -x 760 -y 260 -defaultsOSRD
+preplace port port-id_signal_i -pg 1 -lvl 0 -x 0 -y 110 -defaultsOSRD
+preplace port port-id_reset_in -pg 1 -lvl 0 -x 0 -y 410 -defaultsOSRD
+preplace portBus status_led -pg 1 -lvl 3 -x 760 -y 320 -defaultsOSRD
+preplace portBus buttons -pg 1 -lvl 0 -x 0 -y 210 -defaultsOSRD
+preplace inst connection_embedded -pg 1 -lvl 2 -x 540 -y 290 -defaultsOSRD
+preplace inst decoder_5b4b_0 -pg 1 -lvl 2 -x 540 -y 80 -defaultsOSRD
+preplace inst module_demodulator -pg 1 -lvl 1 -x 180 -y 110 -defaultsOSRD
+preplace inst Karakter_FIFO_0 -pg 1 -lvl 1 -x 180 -y 310 -defaultsOSRD
+preplace netloc Net 1 0 3 30 180 340 160 730
+preplace netloc aux_reset_in_0_1 1 0 2 NJ 410 350J
+preplace netloc connection_embedded_gpio_io_o_0 1 2 1 NJ 320
+preplace netloc connection_embedded_reset 1 0 3 20 430 NJ 430 740
+preplace netloc demodulator_0_output_ready_o 1 1 1 N 100
+preplace netloc fifo_buffer_0_data_out 1 1 1 330 60n
+preplace netloc gpio_io_i_0_1 1 0 2 NJ 210 330J
+preplace netloc signal_i_0_1 1 0 1 NJ 110
+preplace netloc Karakter_FIFO_0_karakter 1 1 1 340 260n
+preplace netloc Karakter_FIFO_0_dataAvailable 1 1 1 N 320
+preplace netloc connection_embedded_FIFO_read_enable 1 0 3 30 420 NJ 420 730
+preplace netloc koppeling_embedded_DDR 1 2 1 740J 200n
+preplace netloc koppeling_embedded_FIXED_IO 1 2 1 740J 230n
+preplace netloc koppeling_embedded_IIC 1 2 1 NJ 260
+preplace netloc koppeling_embedded_UART_1_0 1 2 1 740J 280n
+levelinfo -pg 1 0 180 540 760
+pagesize -pg 1 -db -bbox -sgen -130 0 900 440
 "
 }
 {
