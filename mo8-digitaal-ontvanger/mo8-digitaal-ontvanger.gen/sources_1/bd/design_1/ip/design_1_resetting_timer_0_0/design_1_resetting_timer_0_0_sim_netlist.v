@@ -2,10 +2,10 @@
 // Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
-// Date        : Sat Apr 13 18:29:01 2024
+// Date        : Mon May 13 10:52:41 2024
 // Host        : Lenovo-Jochem running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim
-//               c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/ip/design_1_resetting_timer_0_0/design_1_resetting_timer_0_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim -rename_top design_1_resetting_timer_0_0 -prefix
+//               design_1_resetting_timer_0_0_ design_1_resetting_timer_0_0_sim_netlist.v
 // Design      : design_1_resetting_timer_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -20,31 +20,24 @@ module design_1_resetting_timer_0_0
    (clk,
     enable,
     reset,
-    almost_finished,
     finished);
   (* x_interface_info = "xilinx.com:signal:clock:1.0 clk CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME clk, ASSOCIATED_RESET reset, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN /clk_wiz_0_clk_out1, INSERT_VIP 0" *) input clk;
   input enable;
   (* x_interface_info = "xilinx.com:signal:reset:1.0 reset RST" *) (* x_interface_parameter = "XIL_INTERFACENAME reset, POLARITY ACTIVE_HIGH, INSERT_VIP 0" *) input reset;
-  output almost_finished;
   output finished;
 
-  wire \<const1> ;
   wire clk;
   wire enable;
   wire finished;
   wire reset;
 
-  assign almost_finished = \<const1> ;
   design_1_resetting_timer_0_0_resetting_timer U0
        (.clk(clk),
         .enable(enable),
         .finished(finished),
         .reset(reset));
-  VCC VCC
-       (.P(\<const1> ));
 endmodule
 
-(* ORIG_REF_NAME = "resetting_timer" *) 
 module design_1_resetting_timer_0_0_resetting_timer
    (finished,
     reset,

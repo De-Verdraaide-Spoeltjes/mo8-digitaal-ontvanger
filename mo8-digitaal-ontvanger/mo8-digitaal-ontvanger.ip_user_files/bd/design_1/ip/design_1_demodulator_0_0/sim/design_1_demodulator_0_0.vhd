@@ -58,10 +58,10 @@ ENTITY design_1_demodulator_0_0 IS
     clk : IN STD_LOGIC;
     reset : IN STD_LOGIC;
     signal_i : IN STD_LOGIC;
-    timer_almost_finished_i : IN STD_LOGIC;
     timer_finished_i : IN STD_LOGIC;
     timer_enable_o : OUT STD_LOGIC;
     timer_reset_o : OUT STD_LOGIC;
+    data_o_ready : OUT STD_LOGIC;
     data_o : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
   );
 END design_1_demodulator_0_0;
@@ -74,10 +74,10 @@ ARCHITECTURE design_1_demodulator_0_0_arch OF design_1_demodulator_0_0 IS
       clk : IN STD_LOGIC;
       reset : IN STD_LOGIC;
       signal_i : IN STD_LOGIC;
-      timer_almost_finished_i : IN STD_LOGIC;
       timer_finished_i : IN STD_LOGIC;
       timer_enable_o : OUT STD_LOGIC;
       timer_reset_o : OUT STD_LOGIC;
+      data_o_ready : OUT STD_LOGIC;
       data_o : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
     );
   END COMPONENT demodulator;
@@ -93,10 +93,10 @@ BEGIN
       clk => clk,
       reset => reset,
       signal_i => signal_i,
-      timer_almost_finished_i => timer_almost_finished_i,
       timer_finished_i => timer_finished_i,
       timer_enable_o => timer_enable_o,
       timer_reset_o => timer_reset_o,
+      data_o_ready => data_o_ready,
       data_o => data_o
     );
 END design_1_demodulator_0_0_arch;

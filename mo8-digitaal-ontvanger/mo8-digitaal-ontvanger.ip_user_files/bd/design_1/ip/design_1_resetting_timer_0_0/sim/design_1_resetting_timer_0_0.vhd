@@ -58,7 +58,6 @@ ENTITY design_1_resetting_timer_0_0 IS
     clk : IN STD_LOGIC;
     enable : IN STD_LOGIC;
     reset : IN STD_LOGIC;
-    almost_finished : OUT STD_LOGIC;
     finished : OUT STD_LOGIC
   );
 END design_1_resetting_timer_0_0;
@@ -71,7 +70,6 @@ ARCHITECTURE design_1_resetting_timer_0_0_arch OF design_1_resetting_timer_0_0 I
       clk : IN STD_LOGIC;
       enable : IN STD_LOGIC;
       reset : IN STD_LOGIC;
-      almost_finished : OUT STD_LOGIC;
       finished : OUT STD_LOGIC
     );
   END COMPONENT resetting_timer;
@@ -87,7 +85,6 @@ BEGIN
       clk => clk,
       enable => enable,
       reset => reset,
-      almost_finished => almost_finished,
       finished => finished
     );
 END design_1_resetting_timer_0_0_arch;

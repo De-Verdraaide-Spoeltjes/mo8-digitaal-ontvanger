@@ -10,62 +10,22 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0"></ZoomStartTime>
-      <ZoomEndTime time="131,073"></ZoomEndTime>
-      <Cursor1Time time="62,584"></Cursor1Time>
+      <ZoomEndTime time="1,025"></ZoomEndTime>
+      <Cursor1Time time="0"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="299"></NameColumnWidth>
+      <NameColumnWidth column_width="324"></NameColumnWidth>
       <ValueColumnWidth column_width="72"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="6" />
+   <WVObjectSize size="1" />
    <wave_markers>
    </wave_markers>
    <wvobject fp_name="design_1_i/system_ila_0/U0/probe0_1" type="array">
       <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="ElementShortName">design_1_i/system_ila_0/U0/probe0_1[7:0]</obj_property>
-      <obj_property name="ObjectShortName">probe0_1[7:0]</obj_property>
-      <obj_property name="Radix">BINARYRADIX</obj_property>
-      <obj_property name="label">demodulator_0_data_o</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject fp_name="design_1_i/system_ila_0/U0/probe1_1" type="logic">
-      <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="ElementShortName">design_1_i/system_ila_0/U0/probe1_1</obj_property>
-      <obj_property name="ObjectShortName">probe1_1</obj_property>
-      <obj_property name="label">demodulator_0_timer_enable_o</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject fp_name="design_1_i/system_ila_0/U0/probe2_1" type="logic">
-      <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="ElementShortName">design_1_i/system_ila_0/U0/probe2_1</obj_property>
-      <obj_property name="ObjectShortName">probe2_1</obj_property>
-      <obj_property name="label">demodulator_0_timer_reset_o</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject fp_name="design_1_i/system_ila_0/U0/probe5_1" type="logic">
-      <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="ElementShortName">design_1_i/system_ila_0/U0/probe5_1</obj_property>
-      <obj_property name="ObjectShortName">probe5_1</obj_property>
-      <obj_property name="label">resetting_timer_0_almost_finished</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject fp_name="design_1_i/system_ila_0/U0/probe3_1" type="logic">
-      <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="ElementShortName">design_1_i/system_ila_0/U0/probe3_1</obj_property>
-      <obj_property name="ObjectShortName">probe3_1</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-      <obj_property name="label">resetting_timer_0_finished</obj_property>
-   </wvobject>
-   <wvobject fp_name="design_1_i/system_ila_0/U0/probe4_1" type="logic">
-      <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="ElementShortName">design_1_i/system_ila_0/U0/probe4_1</obj_property>
-      <obj_property name="ObjectShortName">probe4_1</obj_property>
-      <obj_property name="label">signal_i_1</obj_property>
+      <obj_property name="ElementShortName">design_1_i/system_ila_0/U0/probe0_1[239:0]</obj_property>
+      <obj_property name="ObjectShortName">probe0_1[239:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="label">fifo_buffer_0_data_out</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>

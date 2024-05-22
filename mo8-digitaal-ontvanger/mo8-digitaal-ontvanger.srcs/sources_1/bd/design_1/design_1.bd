@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x63D7C9CB4575F274",
+      "boundary_crc": "0x6E85A1C14A695ED6",
       "device": "xc7z020clg400-1",
       "gen_directory": "../../../../mo8-digitaal-ontvanger.gen/sources_1/bd/design_1",
       "name": "design_1",
@@ -14,9 +14,14 @@
       "clk_wiz_0": "",
       "seven_segment_contro_0": "",
       "clk_divider_0": "",
-      "system_ila_0": "",
+      "xlslice_0": "",
+      "xlslice_1": "",
+      "resetting_timer_0": "",
+      "io_buffer_0": "",
+      "fifo_buffer_0": "",
+      "xlslice_2": "",
       "demodulator_0": "",
-      "resetting_timer_0": ""
+      "system_ila_0": ""
     },
     "ports": {
       "crystal": {
@@ -24,7 +29,7 @@
         "direction": "I",
         "parameters": {
           "CLK_DOMAIN": {
-            "value": "design_1_clk",
+            "value": "design_1_crystal",
             "value_src": "default"
           },
           "FREQ_HZ": {
@@ -41,23 +46,6 @@
           "PHASE": {
             "value": "0.0",
             "value_src": "default"
-          }
-        }
-      },
-      "signal_i": {
-        "direction": "I",
-        "parameters": {
-          "CLK_DOMAIN": {
-            "value": "/clk_wiz_0_clk_out1",
-            "value_src": "ip_prop"
-          },
-          "FREQ_HZ": {
-            "value": "5000000",
-            "value_src": "ip_prop"
-          },
-          "PHASE": {
-            "value": "0.0",
-            "value_src": "ip_prop"
           }
         }
       },
@@ -83,6 +71,23 @@
             "value": "ACTIVE_HIGH"
           }
         }
+      },
+      "signal_i": {
+        "direction": "I"
+      },
+      "fifo_clear": {
+        "direction": "I"
+      },
+      "leds": {
+        "direction": "O",
+        "left": "5",
+        "right": "0"
+      },
+      "fifo_read": {
+        "direction": "I"
+      },
+      "output_ready": {
+        "direction": "O"
       }
     },
     "components": {
@@ -226,116 +231,40 @@
           }
         }
       },
-      "system_ila_0": {
-        "vlnv": "xilinx.com:ip:system_ila:1.1",
-        "xci_name": "design_1_system_ila_0_0",
-        "xci_path": "ip\\design_1_system_ila_0_0\\design_1_system_ila_0_0.xci",
-        "inst_hier_path": "system_ila_0",
+      "xlslice_0": {
+        "vlnv": "xilinx.com:ip:xlslice:1.0",
+        "xci_name": "design_1_xlslice_0_0",
+        "xci_path": "ip\\design_1_xlslice_0_0\\design_1_xlslice_0_0.xci",
+        "inst_hier_path": "xlslice_0",
         "parameters": {
-          "C_DATA_DEPTH": {
-            "value": "131072"
+          "DIN_FROM": {
+            "value": "7"
           },
-          "C_MON_TYPE": {
-            "value": "NATIVE"
+          "DIN_WIDTH": {
+            "value": "240"
           },
-          "C_NUM_OF_PROBES": {
-            "value": "6"
-          },
-          "C_PROBE0_TYPE": {
-            "value": "0"
-          },
-          "C_PROBE1_TYPE": {
-            "value": "0"
-          },
-          "C_PROBE2_TYPE": {
-            "value": "0"
-          },
-          "C_PROBE3_TYPE": {
-            "value": "0"
-          },
-          "C_PROBE4_TYPE": {
-            "value": "0"
-          },
-          "C_PROBE5_TYPE": {
-            "value": "0"
+          "DOUT_WIDTH": {
+            "value": "8"
           }
         }
       },
-      "demodulator_0": {
-        "vlnv": "xilinx.com:module_ref:demodulator:1.0",
-        "xci_name": "design_1_demodulator_0_0",
-        "xci_path": "ip\\design_1_demodulator_0_0\\design_1_demodulator_0_0.xci",
-        "inst_hier_path": "demodulator_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "demodulator",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "ASSOCIATED_RESET": {
-                "value": "reset",
-                "value_src": "constant"
-              },
-              "FREQ_HZ": {
-                "value": "100000000",
-                "value_src": "ip_prop"
-              },
-              "PHASE": {
-                "value": "0.0",
-                "value_src": "ip_prop"
-              },
-              "CLK_DOMAIN": {
-                "value": "/clk_wiz_0_clk_out1",
-                "value_src": "ip_prop"
-              }
-            }
+      "xlslice_1": {
+        "vlnv": "xilinx.com:ip:xlslice:1.0",
+        "xci_name": "design_1_xlslice_0_1",
+        "xci_path": "ip\\design_1_xlslice_0_1\\design_1_xlslice_0_1.xci",
+        "inst_hier_path": "xlslice_1",
+        "parameters": {
+          "DIN_FROM": {
+            "value": "15"
           },
-          "reset": {
-            "type": "rst",
-            "direction": "I",
-            "parameters": {
-              "POLARITY": {
-                "value": "ACTIVE_HIGH"
-              }
-            }
+          "DIN_TO": {
+            "value": "8"
           },
-          "signal_i": {
-            "direction": "I",
-            "parameters": {
-              "CLK_DOMAIN": {
-                "value": "/clk_wiz_0_clk_out1",
-                "value_src": "ip_prop"
-              },
-              "FREQ_HZ": {
-                "value": "5000000",
-                "value_src": "ip_prop"
-              },
-              "PHASE": {
-                "value": "0.0",
-                "value_src": "ip_prop"
-              }
-            }
+          "DIN_WIDTH": {
+            "value": "240"
           },
-          "timer_almost_finished_i": {
-            "direction": "I"
-          },
-          "timer_finished_i": {
-            "direction": "I"
-          },
-          "timer_enable_o": {
-            "direction": "O"
-          },
-          "timer_reset_o": {
-            "direction": "O"
-          },
-          "data_o": {
-            "direction": "O",
-            "left": "7",
-            "right": "0"
+          "DOUT_WIDTH": {
+            "value": "8"
           }
         }
       },
@@ -384,16 +313,226 @@
               }
             }
           },
-          "almost_finished": {
-            "direction": "O"
-          },
           "finished": {
             "direction": "O"
+          }
+        }
+      },
+      "io_buffer_0": {
+        "vlnv": "xilinx.com:module_ref:io_buffer:1.0",
+        "xci_name": "design_1_io_buffer_0_0",
+        "xci_path": "ip\\design_1_io_buffer_0_0\\design_1_io_buffer_0_0.xci",
+        "inst_hier_path": "io_buffer_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "io_buffer",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "/clk_wiz_0_clk_out1",
+                "value_src": "ip_prop"
+              }
+            }
+          },
+          "signal_i": {
+            "direction": "I"
+          },
+          "signal_o": {
+            "direction": "O"
+          }
+        }
+      },
+      "fifo_buffer_0": {
+        "vlnv": "xilinx.com:module_ref:fifo_buffer:1.0",
+        "xci_name": "design_1_fifo_buffer_0_0",
+        "xci_path": "ip\\design_1_fifo_buffer_0_0\\design_1_fifo_buffer_0_0.xci",
+        "inst_hier_path": "fifo_buffer_0",
+        "parameters": {
+          "BITS_STORED_WIDTH": {
+            "value": "8"
+          },
+          "DEPTH": {
+            "value": "240"
+          },
+          "OUTPUT_WIDTH": {
+            "value": "240"
+          }
+        },
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "fifo_buffer",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "/clk_wiz_0_clk_out1",
+                "value_src": "ip_prop"
+              }
+            }
+          },
+          "data_in": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "write_en": {
+            "direction": "I"
+          },
+          "read_en": {
+            "direction": "I"
+          },
+          "clear": {
+            "direction": "I"
+          },
+          "data_out": {
+            "direction": "O",
+            "left": "239",
+            "right": "0"
+          },
+          "bits_stored_o": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          }
+        }
+      },
+      "xlslice_2": {
+        "vlnv": "xilinx.com:ip:xlslice:1.0",
+        "xci_name": "design_1_xlslice_1_0",
+        "xci_path": "ip\\design_1_xlslice_1_0\\design_1_xlslice_1_0.xci",
+        "inst_hier_path": "xlslice_2",
+        "parameters": {
+          "DIN_FROM": {
+            "value": "5"
+          },
+          "DIN_TO": {
+            "value": "0"
+          },
+          "DIN_WIDTH": {
+            "value": "8"
+          },
+          "DOUT_WIDTH": {
+            "value": "6"
+          }
+        }
+      },
+      "demodulator_0": {
+        "vlnv": "xilinx.com:module_ref:demodulator:1.0",
+        "xci_name": "design_1_demodulator_0_0",
+        "xci_path": "ip\\design_1_demodulator_0_0\\design_1_demodulator_0_0.xci",
+        "inst_hier_path": "demodulator_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "demodulator",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "reset",
+                "value_src": "constant"
+              },
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "/clk_wiz_0_clk_out1",
+                "value_src": "ip_prop"
+              }
+            }
+          },
+          "reset": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_HIGH"
+              }
+            }
+          },
+          "signal_i": {
+            "direction": "I"
+          },
+          "timer_finished_i": {
+            "direction": "I"
+          },
+          "timer_enable_o": {
+            "direction": "O"
+          },
+          "timer_reset_o": {
+            "direction": "O"
+          },
+          "data_o_save": {
+            "direction": "O"
+          },
+          "data_o": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "output_ready_o": {
+            "direction": "O"
+          }
+        }
+      },
+      "system_ila_0": {
+        "vlnv": "xilinx.com:ip:system_ila:1.1",
+        "xci_name": "design_1_system_ila_0_0",
+        "xci_path": "ip\\design_1_system_ila_0_0\\design_1_system_ila_0_0.xci",
+        "inst_hier_path": "system_ila_0",
+        "parameters": {
+          "C_MON_TYPE": {
+            "value": "NATIVE"
+          },
+          "C_NUM_OF_PROBES": {
+            "value": "1"
+          },
+          "C_PROBE0_TYPE": {
+            "value": "0"
           }
         }
       }
     },
     "nets": {
+      "clear_0_1": {
+        "ports": [
+          "fifo_clear",
+          "fifo_buffer_0/clear"
+        ]
+      },
       "clk_divider_0_clk_o": {
         "ports": [
           "clk_divider_0/clk_o",
@@ -410,15 +549,54 @@
         "ports": [
           "clk_wiz_0/clk_out1",
           "clk_divider_0/clk_i",
-          "system_ila_0/clk",
+          "resetting_timer_0/clk",
+          "io_buffer_0/clk",
+          "fifo_buffer_0/clk",
           "demodulator_0/clk",
-          "resetting_timer_0/clk"
+          "system_ila_0/clk"
         ]
       },
       "demodulator_0_data_o": {
         "ports": [
           "demodulator_0/data_o",
-          "seven_segment_contro_0/value_a",
+          "fifo_buffer_0/data_in"
+        ]
+      },
+      "demodulator_0_data_o_save": {
+        "ports": [
+          "demodulator_0/data_o_save",
+          "fifo_buffer_0/write_en"
+        ]
+      },
+      "demodulator_0_output_ready_o": {
+        "ports": [
+          "demodulator_0/output_ready_o",
+          "output_ready"
+        ]
+      },
+      "demodulator_0_timer_enable_o": {
+        "ports": [
+          "demodulator_0/timer_enable_o",
+          "resetting_timer_0/enable"
+        ]
+      },
+      "demodulator_0_timer_reset_o": {
+        "ports": [
+          "demodulator_0/timer_reset_o",
+          "resetting_timer_0/reset"
+        ]
+      },
+      "fifo_buffer_0_bits_stored_o": {
+        "ports": [
+          "fifo_buffer_0/bits_stored_o",
+          "xlslice_2/Din"
+        ]
+      },
+      "fifo_buffer_0_data_out": {
+        "ports": [
+          "fifo_buffer_0/data_out",
+          "xlslice_1/Din",
+          "xlslice_0/Din",
           "system_ila_0/probe0"
         ],
         "hdl_attributes": {
@@ -430,35 +608,11 @@
           }
         }
       },
-      "demodulator_0_timer_enable_o": {
+      "read_en_0_1": {
         "ports": [
-          "demodulator_0/timer_enable_o",
-          "system_ila_0/probe1",
-          "resetting_timer_0/enable"
-        ],
-        "hdl_attributes": {
-          "DEBUG": {
-            "value": "true"
-          },
-          "MARK_DEBUG": {
-            "value": "true"
-          }
-        }
-      },
-      "demodulator_0_timer_reset_o": {
-        "ports": [
-          "demodulator_0/timer_reset_o",
-          "system_ila_0/probe2",
-          "resetting_timer_0/reset"
-        ],
-        "hdl_attributes": {
-          "DEBUG": {
-            "value": "true"
-          },
-          "MARK_DEBUG": {
-            "value": "true"
-          }
-        }
+          "fifo_read",
+          "fifo_buffer_0/read_en"
+        ]
       },
       "reset_0_1": {
         "ports": [
@@ -467,35 +621,11 @@
           "demodulator_0/reset"
         ]
       },
-      "resetting_timer_0_almost_finished": {
-        "ports": [
-          "resetting_timer_0/almost_finished",
-          "demodulator_0/timer_almost_finished_i",
-          "system_ila_0/probe5"
-        ],
-        "hdl_attributes": {
-          "DEBUG": {
-            "value": "true"
-          },
-          "MARK_DEBUG": {
-            "value": "true"
-          }
-        }
-      },
       "resetting_timer_0_finished": {
         "ports": [
           "resetting_timer_0/finished",
-          "system_ila_0/probe3",
           "demodulator_0/timer_finished_i"
-        ],
-        "hdl_attributes": {
-          "DEBUG": {
-            "value": "true"
-          },
-          "MARK_DEBUG": {
-            "value": "true"
-          }
-        }
+        ]
       },
       "seven_segment_contro_0_seven_seg_select": {
         "ports": [
@@ -509,20 +639,35 @@
           "seven_seg_value"
         ]
       },
+      "signal_i_0_1": {
+        "ports": [
+          "io_buffer_0/signal_o",
+          "demodulator_0/signal_i"
+        ]
+      },
       "signal_i_1": {
         "ports": [
           "signal_i",
-          "system_ila_0/probe4",
-          "demodulator_0/signal_i"
-        ],
-        "hdl_attributes": {
-          "DEBUG": {
-            "value": "true"
-          },
-          "MARK_DEBUG": {
-            "value": "true"
-          }
-        }
+          "io_buffer_0/signal_i"
+        ]
+      },
+      "xlslice_0_Dout": {
+        "ports": [
+          "xlslice_0/Dout",
+          "seven_segment_contro_0/value_b"
+        ]
+      },
+      "xlslice_1_Dout": {
+        "ports": [
+          "xlslice_1/Dout",
+          "seven_segment_contro_0/value_a"
+        ]
+      },
+      "xlslice_2_Dout": {
+        "ports": [
+          "xlslice_2/Dout",
+          "leds"
+        ]
       }
     }
   }

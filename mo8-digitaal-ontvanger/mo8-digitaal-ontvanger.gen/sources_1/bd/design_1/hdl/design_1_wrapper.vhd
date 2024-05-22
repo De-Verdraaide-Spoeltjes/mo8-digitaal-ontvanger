@@ -2,7 +2,7 @@
 --Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
---Date        : Sat Apr 13 18:27:53 2024
+--Date        : Wed May 22 10:15:28 2024
 --Host        : Lenovo-Jochem running 64-bit major release  (build 9200)
 --Command     : generate_target design_1_wrapper.bd
 --Design      : design_1_wrapper
@@ -15,6 +15,10 @@ use UNISIM.VCOMPONENTS.ALL;
 entity design_1_wrapper is
   port (
     crystal : in STD_LOGIC;
+    fifo_clear : in STD_LOGIC;
+    fifo_read : in STD_LOGIC;
+    leds : out STD_LOGIC_VECTOR ( 5 downto 0 );
+    output_ready : out STD_LOGIC;
     reset : in STD_LOGIC;
     seven_seg_select : out STD_LOGIC_VECTOR ( 3 downto 0 );
     seven_seg_value : out STD_LOGIC_VECTOR ( 7 downto 0 );
@@ -26,16 +30,24 @@ architecture STRUCTURE of design_1_wrapper is
   component design_1 is
   port (
     crystal : in STD_LOGIC;
-    signal_i : in STD_LOGIC;
     seven_seg_select : out STD_LOGIC_VECTOR ( 3 downto 0 );
     seven_seg_value : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    reset : in STD_LOGIC
+    reset : in STD_LOGIC;
+    signal_i : in STD_LOGIC;
+    fifo_clear : in STD_LOGIC;
+    leds : out STD_LOGIC_VECTOR ( 5 downto 0 );
+    fifo_read : in STD_LOGIC;
+    output_ready : out STD_LOGIC
   );
   end component design_1;
 begin
 design_1_i: component design_1
      port map (
       crystal => crystal,
+      fifo_clear => fifo_clear,
+      fifo_read => fifo_read,
+      leds(5 downto 0) => leds(5 downto 0),
+      output_ready => output_ready,
       reset => reset,
       seven_seg_select(3 downto 0) => seven_seg_select(3 downto 0),
       seven_seg_value(7 downto 0) => seven_seg_value(7 downto 0),

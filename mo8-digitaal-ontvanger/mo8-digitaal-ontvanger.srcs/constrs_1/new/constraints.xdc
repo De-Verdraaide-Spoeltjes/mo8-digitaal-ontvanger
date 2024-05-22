@@ -3,12 +3,12 @@ set_property -dict {PACKAGE_PIN V17 IOSTANDARD LVCMOS33} [get_ports signal_i]
 
 # Left to right
 set_property -dict {PACKAGE_PIN L19 IOSTANDARD LVCMOS33} [get_ports reset]
-set_property -dict {PACKAGE_PIN L20 IOSTANDARD LVCMOS33} [get_ports {buttons[2]}]
-set_property -dict {PACKAGE_PIN D20 IOSTANDARD LVCMOS33} [get_ports {buttons[1]}]
+set_property -dict {PACKAGE_PIN L20 IOSTANDARD LVCMOS33} [get_ports fifo_clear]
+set_property -dict {PACKAGE_PIN D20 IOSTANDARD LVCMOS33} [get_ports fifo_read]
 set_property -dict {PACKAGE_PIN D19 IOSTANDARD LVCMOS33} [get_ports {buttons[0]}]
 
 # Left to right
-set_property -dict {PACKAGE_PIN M14 IOSTANDARD LVCMOS33} [get_ports {leds2[3]}]
+set_property -dict {PACKAGE_PIN M14 IOSTANDARD LVCMOS33} [get_ports output_ready]
 set_property -dict {PACKAGE_PIN N16 IOSTANDARD LVCMOS33} [get_ports {leds2[2]}]
 set_property -dict {PACKAGE_PIN P14 IOSTANDARD LVCMOS33} [get_ports {leds2[1]}]
 set_property -dict {PACKAGE_PIN R14 IOSTANDARD LVCMOS33} [get_ports {leds2[0]}]

@@ -39,11 +39,12 @@
         "clk": [ { "direction": "in" } ],
         "reset": [ { "direction": "in" } ],
         "signal_i": [ { "direction": "in" } ],
-        "timer_almost_finished_i": [ { "direction": "in" } ],
         "timer_finished_i": [ { "direction": "in" } ],
         "timer_enable_o": [ { "direction": "out" } ],
         "timer_reset_o": [ { "direction": "out" } ],
-        "data_o": [ { "direction": "out", "size_left": "7", "size_right": "0" } ]
+        "data_o_save": [ { "direction": "out" } ],
+        "data_o": [ { "direction": "out", "size_left": "7", "size_right": "0" } ],
+        "output_ready_o": [ { "direction": "out" } ]
       },
       "interfaces": {
         "reset": {

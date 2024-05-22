@@ -6,7 +6,6 @@ entity resetting_timer is
     Port ( clk : in STD_LOGIC;
            enable : in STD_LOGIC;
            reset : in STD_LOGIC;
-           almost_finished : out STD_LOGIC;
            finished : out STD_LOGIC);
 end resetting_timer;
 

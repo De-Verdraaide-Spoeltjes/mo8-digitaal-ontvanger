@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sat Apr 13 18:27:56 2024" VIVADOVERSION="2023.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed May 22 10:15:32 2024" VIVADOVERSION="2023.1">
 
   <SYSTEMINFO ARCH="zynq" BOARD="tul.com.tw:pynq-z2:part0:1.0" DEVICE="7z020" NAME="design_1" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -7,12 +7,6 @@
     <PORT CLKFREQUENCY="12000000" DIR="I" NAME="crystal" SIGIS="clk" SIGNAME="External_Ports_crystal">
       <CONNECTIONS>
         <CONNECTION INSTANCE="clk_wiz_0" PORT="clk_in1"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="signal_i" SIGIS="undef" SIGNAME="External_Ports_signal_i">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="system_ila_0" PORT="probe4"/>
-        <CONNECTION INSTANCE="demodulator_0" PORT="signal_i"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="O" LEFT="3" NAME="seven_seg_select" RIGHT="0" SIGIS="undef" SIGNAME="seven_segment_contro_0_seven_seg_select">
@@ -29,6 +23,31 @@
       <CONNECTIONS>
         <CONNECTION INSTANCE="clk_divider_0" PORT="reset"/>
         <CONNECTION INSTANCE="demodulator_0" PORT="reset"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="signal_i" SIGIS="undef" SIGNAME="External_Ports_signal_i">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="io_buffer_0" PORT="signal_i"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="fifo_clear" SIGIS="undef" SIGNAME="External_Ports_fifo_clear">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="fifo_buffer_0" PORT="clear"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="5" NAME="leds" RIGHT="0" SIGIS="undef" SIGNAME="xlslice_2_Dout">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="xlslice_2" PORT="Dout"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="fifo_read" SIGIS="undef" SIGNAME="External_Ports_fifo_read">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="fifo_buffer_0" PORT="read_en"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="output_ready" SIGIS="undef" SIGNAME="demodulator_0_output_ready_o">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="demodulator_0" PORT="output_ready_o"/>
       </CONNECTIONS>
     </PORT>
   </EXTERNALPORTS>
@@ -650,9 +669,11 @@
         <PORT CLKFREQUENCY="100000000" DIR="O" NAME="clk_out1" SIGIS="clk" SIGNAME="clk_wiz_0_clk_out1">
           <CONNECTIONS>
             <CONNECTION INSTANCE="clk_divider_0" PORT="clk_i"/>
-            <CONNECTION INSTANCE="system_ila_0" PORT="clk"/>
-            <CONNECTION INSTANCE="demodulator_0" PORT="clk"/>
             <CONNECTION INSTANCE="resetting_timer_0" PORT="clk"/>
+            <CONNECTION INSTANCE="io_buffer_0" PORT="clk"/>
+            <CONNECTION INSTANCE="fifo_buffer_0" PORT="clk"/>
+            <CONNECTION INSTANCE="demodulator_0" PORT="clk"/>
+            <CONNECTION INSTANCE="system_ila_0" PORT="clk"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -675,14 +696,9 @@
             <CONNECTION INSTANCE="External_Ports" PORT="reset"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="signal_i" SIGIS="undef" SIGNAME="External_Ports_signal_i">
+        <PORT DIR="I" NAME="signal_i" SIGIS="undef" SIGNAME="io_buffer_0_signal_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="signal_i"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="timer_almost_finished_i" SIGIS="undef" SIGNAME="resetting_timer_0_almost_finished">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="resetting_timer_0" PORT="almost_finished"/>
+            <CONNECTION INSTANCE="io_buffer_0" PORT="signal_o"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="timer_finished_i" SIGIS="undef" SIGNAME="resetting_timer_0_finished">
@@ -692,20 +708,103 @@
         </PORT>
         <PORT DIR="O" NAME="timer_enable_o" SIGIS="undef" SIGNAME="demodulator_0_timer_enable_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="system_ila_0" PORT="probe1"/>
             <CONNECTION INSTANCE="resetting_timer_0" PORT="enable"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="timer_reset_o" SIGIS="undef" SIGNAME="demodulator_0_timer_reset_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="system_ila_0" PORT="probe2"/>
             <CONNECTION INSTANCE="resetting_timer_0" PORT="reset"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="data_o_save" SIGIS="undef" SIGNAME="demodulator_0_data_o_save">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="fifo_buffer_0" PORT="write_en"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="7" NAME="data_o" RIGHT="0" SIGIS="undef" SIGNAME="demodulator_0_data_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="seven_segment_contro_0" PORT="value_a"/>
+            <CONNECTION INSTANCE="fifo_buffer_0" PORT="data_in"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="output_ready_o" SIGIS="undef" SIGNAME="demodulator_0_output_ready_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="output_ready"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/fifo_buffer_0" HWVERSION="1.0" INSTANCE="fifo_buffer_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="fifo_buffer" VLNV="xilinx.com:module_ref:fifo_buffer:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="INPUT_WIDTH" VALUE="8"/>
+        <PARAMETER NAME="DEPTH" VALUE="240"/>
+        <PARAMETER NAME="OUTPUT_WIDTH" VALUE="240"/>
+        <PARAMETER NAME="BITS_STORED_WIDTH" VALUE="8"/>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_fifo_buffer_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="clk_wiz_0_clk_out1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="clk_wiz_0" PORT="clk_out1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="data_in" RIGHT="0" SIGIS="undef" SIGNAME="demodulator_0_data_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="demodulator_0" PORT="data_o"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="write_en" SIGIS="undef" SIGNAME="demodulator_0_data_o_save">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="demodulator_0" PORT="data_o_save"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="read_en" SIGIS="undef" SIGNAME="External_Ports_fifo_read">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="fifo_read"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="clear" SIGIS="undef" SIGNAME="External_Ports_fifo_clear">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="fifo_clear"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="239" NAME="data_out" RIGHT="0" SIGIS="undef" SIGNAME="fifo_buffer_0_data_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="xlslice_1" PORT="Din"/>
+            <CONNECTION INSTANCE="xlslice_0" PORT="Din"/>
             <CONNECTION INSTANCE="system_ila_0" PORT="probe0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="bits_stored_o" RIGHT="0" SIGIS="undef" SIGNAME="fifo_buffer_0_bits_stored_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="xlslice_2" PORT="Din"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/io_buffer_0" HWVERSION="1.0" INSTANCE="io_buffer_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="io_buffer" VLNV="xilinx.com:module_ref:io_buffer:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_io_buffer_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="clk_wiz_0_clk_out1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="clk_wiz_0" PORT="clk_out1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="signal_i" SIGIS="undef" SIGNAME="External_Ports_signal_i">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="signal_i"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="signal_o" SIGIS="undef" SIGNAME="io_buffer_0_signal_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="demodulator_0" PORT="signal_i"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -733,15 +832,8 @@
             <CONNECTION INSTANCE="demodulator_0" PORT="timer_reset_o"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="almost_finished" SIGIS="undef" SIGNAME="resetting_timer_0_almost_finished">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="demodulator_0" PORT="timer_almost_finished_i"/>
-            <CONNECTION INSTANCE="system_ila_0" PORT="probe5"/>
-          </CONNECTIONS>
-        </PORT>
         <PORT DIR="O" NAME="finished" SIGIS="undef" SIGNAME="resetting_timer_0_finished">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="system_ila_0" PORT="probe3"/>
             <CONNECTION INSTANCE="demodulator_0" PORT="timer_finished_i"/>
           </CONNECTIONS>
         </PORT>
@@ -760,12 +852,16 @@
             <CONNECTION INSTANCE="clk_divider_0" PORT="clk_o"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="7" NAME="value_a" RIGHT="0" SIGIS="undef" SIGNAME="demodulator_0_data_o">
+        <PORT DIR="I" LEFT="7" NAME="value_a" RIGHT="0" SIGIS="undef" SIGNAME="xlslice_1_Dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="demodulator_0" PORT="data_o"/>
+            <CONNECTION INSTANCE="xlslice_1" PORT="Dout"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="7" NAME="value_b" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="I" LEFT="7" NAME="value_b" RIGHT="0" SIGIS="undef" SIGNAME="xlslice_0_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="xlslice_0" PORT="Dout"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="O" LEFT="3" NAME="seven_seg_select" RIGHT="0" SIGIS="undef" SIGNAME="seven_segment_contro_0_seven_seg_select">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="seven_seg_select"/>
@@ -3347,8 +3443,8 @@
         <PARAMETER NAME="C_PROBE2_WIDTH" VALUE="1"/>
         <PARAMETER NAME="C_PROBE1_WIDTH" VALUE="1"/>
         <PARAMETER NAME="C_PROBE0_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="C_DATA_DEPTH" VALUE="131072"/>
-        <PARAMETER NAME="C_NUM_OF_PROBES" VALUE="6"/>
+        <PARAMETER NAME="C_DATA_DEPTH" VALUE="1024"/>
+        <PARAMETER NAME="C_NUM_OF_PROBES" VALUE="1"/>
         <PARAMETER NAME="C_XLNX_HW_PROBE_INFO" VALUE="DEFAULT"/>
         <PARAMETER NAME="Component_Name" VALUE="design_1_system_ila_0_0"/>
         <PARAMETER NAME="C_PROBE70_WIDTH" VALUE="1"/>
@@ -4621,34 +4717,81 @@
             <CONNECTION INSTANCE="clk_wiz_0" PORT="clk_out1"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="7" NAME="probe0" RIGHT="0" SIGIS="undef" SIGNAME="demodulator_0_data_o">
+        <PORT DIR="I" LEFT="239" NAME="probe0" RIGHT="0" SIGIS="undef" SIGNAME="fifo_buffer_0_data_out">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="demodulator_0" PORT="data_o"/>
+            <CONNECTION INSTANCE="fifo_buffer_0" PORT="data_out"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="probe1" RIGHT="0" SIGIS="undef" SIGNAME="demodulator_0_timer_enable_o">
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="2" FULLNAME="/xlslice_0" HWVERSION="1.0" INSTANCE="xlslice_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="DIN_WIDTH" VALUE="240"/>
+        <PARAMETER NAME="DIN_FROM" VALUE="7"/>
+        <PARAMETER NAME="DIN_TO" VALUE="0"/>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_xlslice_0_0"/>
+        <PARAMETER NAME="DOUT_WIDTH" VALUE="8"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="239" NAME="Din" RIGHT="0" SIGIS="undef" SIGNAME="fifo_buffer_0_data_out">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="demodulator_0" PORT="timer_enable_o"/>
+            <CONNECTION INSTANCE="fifo_buffer_0" PORT="data_out"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="probe2" RIGHT="0" SIGIS="undef" SIGNAME="demodulator_0_timer_reset_o">
+        <PORT DIR="O" LEFT="7" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="xlslice_0_Dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="demodulator_0" PORT="timer_reset_o"/>
+            <CONNECTION INSTANCE="seven_segment_contro_0" PORT="value_b"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="probe3" RIGHT="0" SIGIS="undef" SIGNAME="resetting_timer_0_finished">
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="2" FULLNAME="/xlslice_1" HWVERSION="1.0" INSTANCE="xlslice_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="DIN_WIDTH" VALUE="240"/>
+        <PARAMETER NAME="DIN_FROM" VALUE="15"/>
+        <PARAMETER NAME="DIN_TO" VALUE="8"/>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_xlslice_0_1"/>
+        <PARAMETER NAME="DOUT_WIDTH" VALUE="8"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="239" NAME="Din" RIGHT="0" SIGIS="undef" SIGNAME="fifo_buffer_0_data_out">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="resetting_timer_0" PORT="finished"/>
+            <CONNECTION INSTANCE="fifo_buffer_0" PORT="data_out"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="probe4" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_signal_i">
+        <PORT DIR="O" LEFT="7" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="xlslice_1_Dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="signal_i"/>
+            <CONNECTION INSTANCE="seven_segment_contro_0" PORT="value_a"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="probe5" RIGHT="0" SIGIS="undef" SIGNAME="resetting_timer_0_almost_finished">
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="2" FULLNAME="/xlslice_2" HWVERSION="1.0" INSTANCE="xlslice_2" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="DIN_WIDTH" VALUE="8"/>
+        <PARAMETER NAME="DIN_FROM" VALUE="5"/>
+        <PARAMETER NAME="DIN_TO" VALUE="0"/>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_xlslice_1_0"/>
+        <PARAMETER NAME="DOUT_WIDTH" VALUE="6"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="7" NAME="Din" RIGHT="0" SIGIS="undef" SIGNAME="fifo_buffer_0_bits_stored_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="resetting_timer_0" PORT="almost_finished"/>
+            <CONNECTION INSTANCE="fifo_buffer_0" PORT="bits_stored_o"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="5" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="xlslice_2_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="leds"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>

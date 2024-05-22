@@ -39,7 +39,6 @@
         "clk": [ { "direction": "in" } ],
         "enable": [ { "direction": "in" } ],
         "reset": [ { "direction": "in" } ],
-        "almost_finished": [ { "direction": "out" } ],
         "finished": [ { "direction": "out" } ]
       },
       "interfaces": {

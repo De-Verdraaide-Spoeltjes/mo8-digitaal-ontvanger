@@ -2,10 +2,10 @@
 -- Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
--- Date        : Sat Apr 13 18:29:01 2024
+-- Date        : Mon May 13 10:52:41 2024
 -- Host        : Lenovo-Jochem running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim
---               c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/ip/design_1_resetting_timer_0_0/design_1_resetting_timer_0_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top design_1_resetting_timer_0_0 -prefix
+--               design_1_resetting_timer_0_0_ design_1_resetting_timer_0_0_sim_netlist.vhdl
 -- Design      : design_1_resetting_timer_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -22,8 +22,6 @@ entity design_1_resetting_timer_0_0_resetting_timer is
     enable : in STD_LOGIC;
     clk : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of design_1_resetting_timer_0_0_resetting_timer : entity is "resetting_timer";
 end design_1_resetting_timer_0_0_resetting_timer;
 
 architecture STRUCTURE of design_1_resetting_timer_0_0_resetting_timer is
@@ -1030,7 +1028,6 @@ entity design_1_resetting_timer_0_0 is
     clk : in STD_LOGIC;
     enable : in STD_LOGIC;
     reset : in STD_LOGIC;
-    almost_finished : out STD_LOGIC;
     finished : out STD_LOGIC
   );
   attribute NotValidForBitStream : boolean;
@@ -1046,7 +1043,6 @@ entity design_1_resetting_timer_0_0 is
 end design_1_resetting_timer_0_0;
 
 architecture STRUCTURE of design_1_resetting_timer_0_0 is
-  signal \<const1>\ : STD_LOGIC;
   attribute x_interface_info : string;
   attribute x_interface_info of clk : signal is "xilinx.com:signal:clock:1.0 clk CLK";
   attribute x_interface_parameter : string;
@@ -1054,16 +1050,11 @@ architecture STRUCTURE of design_1_resetting_timer_0_0 is
   attribute x_interface_info of reset : signal is "xilinx.com:signal:reset:1.0 reset RST";
   attribute x_interface_parameter of reset : signal is "XIL_INTERFACENAME reset, POLARITY ACTIVE_HIGH, INSERT_VIP 0";
 begin
-  almost_finished <= \<const1>\;
 U0: entity work.design_1_resetting_timer_0_0_resetting_timer
      port map (
       clk => clk,
       enable => enable,
       finished => finished,
       reset => reset
-    );
-VCC: unisim.vcomponents.VCC
-     port map (
-      P => \<const1>\
     );
 end STRUCTURE;

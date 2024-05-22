@@ -2,7 +2,7 @@
 -- Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
--- Date        : Sat Apr 13 18:01:19 2024
+-- Date        : Wed May 22 10:16:53 2024
 -- Host        : Lenovo-Jochem running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub
 --               c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/ip/design_1_demodulator_0_0/design_1_demodulator_0_0_stub.vhdl
@@ -18,11 +18,12 @@ entity design_1_demodulator_0_0 is
     clk : in STD_LOGIC;
     reset : in STD_LOGIC;
     signal_i : in STD_LOGIC;
-    timer_almost_finished_i : in STD_LOGIC;
     timer_finished_i : in STD_LOGIC;
     timer_enable_o : out STD_LOGIC;
     timer_reset_o : out STD_LOGIC;
-    data_o : out STD_LOGIC_VECTOR ( 7 downto 0 )
+    data_o_save : out STD_LOGIC;
+    data_o : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    output_ready_o : out STD_LOGIC
   );
 
 end design_1_demodulator_0_0;
@@ -31,7 +32,7 @@ architecture stub of design_1_demodulator_0_0 is
 attribute syn_black_box : boolean;
 attribute black_box_pad_pin : string;
 attribute syn_black_box of stub : architecture is true;
-attribute black_box_pad_pin of stub : architecture is "clk,reset,signal_i,timer_almost_finished_i,timer_finished_i,timer_enable_o,timer_reset_o,data_o[7:0]";
+attribute black_box_pad_pin of stub : architecture is "clk,reset,signal_i,timer_finished_i,timer_enable_o,timer_reset_o,data_o_save,data_o[7:0],output_ready_o";
 attribute x_core_info : string;
 attribute x_core_info of stub : architecture is "demodulator,Vivado 2023.1";
 begin
