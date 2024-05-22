@@ -34,10 +34,12 @@
         "buttons": ""
       },
       "decoder_5b4b_0": "",
-      "demodulator_0": "",
-      "fifo_buffer_0": "",
-      "io_buffer_0": "",
-      "resetting_timer_0": ""
+      "module_demodulator": {
+        "io_buffer_0": "",
+        "demodulator_0": "",
+        "resetting_timer_0": "",
+        "fifo_buffer_0": ""
+      }
     },
     "interface_ports": {
       "DDR": {
@@ -3195,171 +3197,267 @@
           }
         }
       },
-      "demodulator_0": {
-        "vlnv": "xilinx.com:module_ref:demodulator:1.0",
-        "xci_name": "design_1_demodulator_0_0",
-        "xci_path": "ip\\design_1_demodulator_0_0\\design_1_demodulator_0_0.xci",
-        "inst_hier_path": "demodulator_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "demodulator",
-          "boundary_crc": "0x0"
-        },
+      "module_demodulator": {
         "ports": {
           "clk": {
             "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "ASSOCIATED_RESET": {
-                "value": "reset",
-                "value_src": "constant"
-              }
-            }
-          },
-          "reset": {
-            "type": "rst",
-            "direction": "I",
-            "parameters": {
-              "POLARITY": {
-                "value": "ACTIVE_HIGH"
-              }
-            }
+            "direction": "I"
           },
           "signal_i": {
             "direction": "I"
           },
-          "timer_finished_i": {
+          "reset": {
+            "type": "rst",
             "direction": "I"
-          },
-          "timer_enable_o": {
-            "direction": "O"
-          },
-          "timer_reset_o": {
-            "direction": "O"
-          },
-          "data_o_save": {
-            "direction": "O"
-          },
-          "data_o": {
-            "direction": "O",
-            "left": "7",
-            "right": "0"
           },
           "output_ready_o": {
             "direction": "O"
-          }
-        }
-      },
-      "fifo_buffer_0": {
-        "vlnv": "xilinx.com:module_ref:fifo_buffer:1.0",
-        "xci_name": "design_1_fifo_buffer_0_0",
-        "xci_path": "ip\\design_1_fifo_buffer_0_0\\design_1_fifo_buffer_0_0.xci",
-        "inst_hier_path": "fifo_buffer_0",
-        "parameters": {
-          "BITS_STORED_WIDTH": {
-            "value": "8"
-          },
-          "DEPTH": {
-            "value": "240"
-          },
-          "OUTPUT_WIDTH": {
-            "value": "240"
-          }
-        },
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "fifo_buffer",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "clk": {
-            "type": "clk",
-            "direction": "I"
-          },
-          "data_in": {
-            "direction": "I",
-            "left": "7",
-            "right": "0"
-          },
-          "write_en": {
-            "direction": "I"
-          },
-          "read_en": {
-            "direction": "I"
-          },
-          "clear": {
-            "direction": "I"
           },
           "data_out": {
             "direction": "O",
             "left": "239",
             "right": "0"
-          },
-          "bits_stored_o": {
-            "direction": "O",
-            "left": "7",
-            "right": "0"
           }
-        }
-      },
-      "io_buffer_0": {
-        "vlnv": "xilinx.com:module_ref:io_buffer:1.0",
-        "xci_name": "design_1_io_buffer_0_0",
-        "xci_path": "ip\\design_1_io_buffer_0_0\\design_1_io_buffer_0_0.xci",
-        "inst_hier_path": "io_buffer_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "io_buffer",
-          "boundary_crc": "0x0"
         },
-        "ports": {
-          "clk": {
-            "type": "clk",
-            "direction": "I"
-          },
-          "signal_i": {
-            "direction": "I"
-          },
-          "signal_o": {
-            "direction": "O"
-          }
-        }
-      },
-      "resetting_timer_0": {
-        "vlnv": "xilinx.com:module_ref:resetting_timer:1.0",
-        "xci_name": "design_1_resetting_timer_0_0",
-        "xci_path": "ip\\design_1_resetting_timer_0_0\\design_1_resetting_timer_0_0.xci",
-        "inst_hier_path": "resetting_timer_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "resetting_timer",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "ASSOCIATED_RESET": {
-                "value": "reset",
-                "value_src": "constant"
+        "components": {
+          "io_buffer_0": {
+            "vlnv": "xilinx.com:module_ref:io_buffer:1.0",
+            "xci_name": "design_1_io_buffer_0_0",
+            "xci_path": "ip\\design_1_io_buffer_0_0\\design_1_io_buffer_0_0.xci",
+            "inst_hier_path": "module_demodulator/io_buffer_0",
+            "reference_info": {
+              "ref_type": "hdl",
+              "ref_name": "io_buffer",
+              "boundary_crc": "0x0"
+            },
+            "ports": {
+              "clk": {
+                "type": "clk",
+                "direction": "I"
+              },
+              "signal_i": {
+                "direction": "I"
+              },
+              "signal_o": {
+                "direction": "O"
               }
             }
           },
-          "enable": {
-            "direction": "I"
-          },
-          "reset": {
-            "type": "rst",
-            "direction": "I",
-            "parameters": {
-              "POLARITY": {
-                "value": "ACTIVE_HIGH"
+          "demodulator_0": {
+            "vlnv": "xilinx.com:module_ref:demodulator:1.0",
+            "xci_name": "design_1_demodulator_0_0",
+            "xci_path": "ip\\design_1_demodulator_0_0\\design_1_demodulator_0_0.xci",
+            "inst_hier_path": "module_demodulator/demodulator_0",
+            "reference_info": {
+              "ref_type": "hdl",
+              "ref_name": "demodulator",
+              "boundary_crc": "0x0"
+            },
+            "ports": {
+              "clk": {
+                "type": "clk",
+                "direction": "I",
+                "parameters": {
+                  "ASSOCIATED_RESET": {
+                    "value": "reset",
+                    "value_src": "constant"
+                  }
+                }
+              },
+              "reset": {
+                "type": "rst",
+                "direction": "I",
+                "parameters": {
+                  "POLARITY": {
+                    "value": "ACTIVE_HIGH"
+                  }
+                }
+              },
+              "signal_i": {
+                "direction": "I"
+              },
+              "timer_finished_i": {
+                "direction": "I"
+              },
+              "timer_enable_o": {
+                "direction": "O"
+              },
+              "timer_reset_o": {
+                "direction": "O"
+              },
+              "data_o_save": {
+                "direction": "O"
+              },
+              "data_o": {
+                "direction": "O",
+                "left": "7",
+                "right": "0"
+              },
+              "output_ready_o": {
+                "direction": "O"
               }
             }
           },
-          "finished": {
-            "direction": "O"
+          "resetting_timer_0": {
+            "vlnv": "xilinx.com:module_ref:resetting_timer:1.0",
+            "xci_name": "design_1_resetting_timer_0_0",
+            "xci_path": "ip\\design_1_resetting_timer_0_0\\design_1_resetting_timer_0_0.xci",
+            "inst_hier_path": "module_demodulator/resetting_timer_0",
+            "reference_info": {
+              "ref_type": "hdl",
+              "ref_name": "resetting_timer",
+              "boundary_crc": "0x0"
+            },
+            "ports": {
+              "clk": {
+                "type": "clk",
+                "direction": "I",
+                "parameters": {
+                  "ASSOCIATED_RESET": {
+                    "value": "reset",
+                    "value_src": "constant"
+                  }
+                }
+              },
+              "enable": {
+                "direction": "I"
+              },
+              "reset": {
+                "type": "rst",
+                "direction": "I",
+                "parameters": {
+                  "POLARITY": {
+                    "value": "ACTIVE_HIGH"
+                  }
+                }
+              },
+              "finished": {
+                "direction": "O"
+              }
+            }
+          },
+          "fifo_buffer_0": {
+            "vlnv": "xilinx.com:module_ref:fifo_buffer:1.0",
+            "xci_name": "design_1_fifo_buffer_0_0",
+            "xci_path": "ip\\design_1_fifo_buffer_0_0\\design_1_fifo_buffer_0_0.xci",
+            "inst_hier_path": "module_demodulator/fifo_buffer_0",
+            "parameters": {
+              "BITS_STORED_WIDTH": {
+                "value": "8"
+              },
+              "DEPTH": {
+                "value": "240"
+              },
+              "OUTPUT_WIDTH": {
+                "value": "240"
+              }
+            },
+            "reference_info": {
+              "ref_type": "hdl",
+              "ref_name": "fifo_buffer",
+              "boundary_crc": "0x0"
+            },
+            "ports": {
+              "clk": {
+                "type": "clk",
+                "direction": "I"
+              },
+              "data_in": {
+                "direction": "I",
+                "left": "7",
+                "right": "0"
+              },
+              "write_en": {
+                "direction": "I"
+              },
+              "read_en": {
+                "direction": "I"
+              },
+              "clear": {
+                "direction": "I"
+              },
+              "data_out": {
+                "direction": "O",
+                "left": "239",
+                "right": "0"
+              },
+              "bits_stored_o": {
+                "direction": "O",
+                "left": "7",
+                "right": "0"
+              }
+            }
+          }
+        },
+        "nets": {
+          "Net": {
+            "ports": [
+              "clk",
+              "demodulator_0/clk",
+              "fifo_buffer_0/clk",
+              "resetting_timer_0/clk",
+              "io_buffer_0/clk"
+            ]
+          },
+          "connection_embedded_reset": {
+            "ports": [
+              "reset",
+              "demodulator_0/reset"
+            ]
+          },
+          "demodulator_0_data_o": {
+            "ports": [
+              "demodulator_0/data_o",
+              "fifo_buffer_0/data_in"
+            ]
+          },
+          "demodulator_0_data_o_save": {
+            "ports": [
+              "demodulator_0/data_o_save",
+              "fifo_buffer_0/write_en"
+            ]
+          },
+          "demodulator_0_output_ready_o": {
+            "ports": [
+              "demodulator_0/output_ready_o",
+              "output_ready_o"
+            ]
+          },
+          "demodulator_0_timer_enable_o": {
+            "ports": [
+              "demodulator_0/timer_enable_o",
+              "resetting_timer_0/enable"
+            ]
+          },
+          "demodulator_0_timer_reset_o": {
+            "ports": [
+              "demodulator_0/timer_reset_o",
+              "resetting_timer_0/reset"
+            ]
+          },
+          "fifo_buffer_0_data_out": {
+            "ports": [
+              "fifo_buffer_0/data_out",
+              "data_out"
+            ]
+          },
+          "io_buffer_0_signal_o": {
+            "ports": [
+              "io_buffer_0/signal_o",
+              "demodulator_0/signal_i"
+            ]
+          },
+          "resetting_timer_0_finished": {
+            "ports": [
+              "resetting_timer_0/finished",
+              "demodulator_0/timer_finished_i"
+            ]
+          },
+          "signal_i_0_1": {
+            "ports": [
+              "signal_i",
+              "io_buffer_0/signal_i"
+            ]
           }
         }
       }
@@ -3394,11 +3492,8 @@
       "Net": {
         "ports": [
           "connection_embedded/CLK_100MHz",
-          "io_buffer_0/clk",
-          "demodulator_0/clk",
-          "fifo_buffer_0/clk",
           "decoder_5b4b_0/clk",
-          "resetting_timer_0/clk"
+          "module_demodulator/clk"
         ]
       },
       "aux_reset_in_0_1": {
@@ -3416,42 +3511,18 @@
       "connection_embedded_reset": {
         "ports": [
           "connection_embedded/reset",
-          "demodulator_0/reset"
-        ]
-      },
-      "demodulator_0_data_o": {
-        "ports": [
-          "demodulator_0/data_o",
-          "fifo_buffer_0/data_in"
-        ]
-      },
-      "demodulator_0_data_o_save": {
-        "ports": [
-          "demodulator_0/data_o_save",
-          "fifo_buffer_0/write_en"
+          "module_demodulator/reset"
         ]
       },
       "demodulator_0_output_ready_o": {
         "ports": [
-          "demodulator_0/output_ready_o",
+          "module_demodulator/output_ready_o",
           "decoder_5b4b_0/Data_rdy"
-        ]
-      },
-      "demodulator_0_timer_enable_o": {
-        "ports": [
-          "demodulator_0/timer_enable_o",
-          "resetting_timer_0/enable"
-        ]
-      },
-      "demodulator_0_timer_reset_o": {
-        "ports": [
-          "demodulator_0/timer_reset_o",
-          "resetting_timer_0/reset"
         ]
       },
       "fifo_buffer_0_data_out": {
         "ports": [
-          "fifo_buffer_0/data_out",
+          "module_demodulator/data_out",
           "decoder_5b4b_0/Data_in"
         ]
       },
@@ -3461,22 +3532,10 @@
           "connection_embedded/buttons"
         ]
       },
-      "io_buffer_0_signal_o": {
-        "ports": [
-          "io_buffer_0/signal_o",
-          "demodulator_0/signal_i"
-        ]
-      },
-      "resetting_timer_0_finished": {
-        "ports": [
-          "resetting_timer_0/finished",
-          "demodulator_0/timer_finished_i"
-        ]
-      },
       "signal_i_0_1": {
         "ports": [
           "signal_i",
-          "io_buffer_0/signal_i"
+          "module_demodulator/signal_i"
         ]
       }
     },
