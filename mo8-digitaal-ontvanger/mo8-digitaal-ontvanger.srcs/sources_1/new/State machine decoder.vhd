@@ -43,6 +43,8 @@ ARCHITECTURE Behavioral OF decoder_state_machine IS
     signal Data_out_temp : STD_LOGIC_VECTOR (3 downto 0) := "0000";      -- Tijdelijke data voor de decoder
     signal counter_temp  : integer range 0 to 47 := 0;                   -- 48 bits in 240-bit input
 
+	signal data_rdy_r : STD_LOGIC := '0'; -- Register van data_rdy (loopt 1 klokslag achter)
+
     TYPE STATE_TYPE IS (s0, s1, s2, s3, s4, s5); -- Verschillende states aanmmaken
 	signal PS : STATE_TYPE;
 	signal NS : STATE_TYPE;
@@ -52,7 +54,7 @@ begin
 	begin
 		case PS is
 			when s0 =>
-				if Data_rdy = '1' then    -- Als data ready is, ga naar state 1
+				if Data_rdy = '1' and data_rdy_r = '0' then    -- Als data ready van laag naar hoog gaat, ga naar state 1
 					NS <= s1;
 				else
 					NS <= s0;             -- Anders blijf in state 0
@@ -79,36 +81,39 @@ begin
 	begin
 		if rising_edge(clk) then          -- Op de rising edge van de klok
 			PS <= NS;                     -- Zet de huidige state naar de volgende state      
+			data_rdy_r <= Data_rdy;       -- Zet data ready naar de buffer
 		end if;
 	end process;
 	
-	output_decoder: process(PS) 											   -- Output decoder 
+	output_decoder: process(clk) 											   -- Output decoder 
 	begin
-		case PS is
-			when s0 =>
+		if rising_edge(clk) then
+			case PS is
+				when s0 =>
 
-			when s1 =>
-                output_rdy <= '0';                                             -- Zet output ready laag
-                Data_in_buffer <= unsigned(Data_in);                           -- Zet de data in de buffer
-                data_out <= (others => '0');                                   -- Zet data_out op 0
+				when s1 =>
+					output_rdy <= '0';                                             -- Zet output ready laag
+					Data_in_buffer <= unsigned(Data_in);                           -- Zet de data in de buffer
+					data_out <= (others => '0');                                   -- Zet data_out op 0
 
-			when s2 =>
-                Data_in_temp <= std_logic_vector(Data_in_buffer (4 downto 0)); -- Zet de 5 bits in de buffer naar de tijdelijke data
+				when s2 =>
+					Data_in_temp <= std_logic_vector(Data_in_buffer (4 downto 0)); -- Zet de 5 bits in de buffer naar de tijdelijke data
 
-            when s3 =>
-                Data_out_buffer(191 downto 188) <= unsigned(Data_out_temp);    -- Zet de 4 bits in de buffer
+				when s3 =>
+					Data_out_buffer(191 downto 188) <= unsigned(Data_out_temp);    -- Zet de 4 bits in de buffer
 
-            when s4 =>
-                Data_in_buffer <= shift_right(Data_in_buffer, 5);              -- Shift de data 5 bits naar rechts
-                Data_out_buffer <= shift_right(Data_out_buffer, 4);            -- Shift de data 4 bits naar links
-                counter_temp <= counter_temp + 1;
+				when s4 =>
+					Data_in_buffer <= shift_right(Data_in_buffer, 5);              -- Shift de data 5 bits naar rechts
+					Data_out_buffer <= shift_right(Data_out_buffer, 4);            -- Shift de data 4 bits naar links
+					counter_temp <= counter_temp + 1;
 
-            when s5 => 
-                Data_out <= std_logic_vector(Data_out_buffer);                 -- Zet de data in de buffer naar de output
-                Output_rdy <= '1';                                             -- Zet data ready hoog
-                counter_temp <= 0;                                             -- Zet counter_temp naar 0                
-			when others =>
-		end case;
+				when s5 => 
+					Data_out <= std_logic_vector(Data_out_buffer);                 -- Zet de data in de buffer naar de output
+					Output_rdy <= '1';                                             -- Zet data ready hoog
+					counter_temp <= 0;                                             -- Zet counter_temp naar 0                
+				when others =>
+			end case;
+		end if;
 	end process;
 
     lut_decoder: process(Data_in_temp)                                         -- Lookup table voor de decoder
