@@ -1,0 +1,17 @@
+vhdl xil_defaultlib  \
+"../../../bd/design_1/ip/design_1_proc_sys_reset_0_0/sim/design_1_proc_sys_reset_0_0.vhd" \
+"../../../bd/design_1/ip/design_1_axi_gpio_0_1/sim/design_1_axi_gpio_0_1.vhd" \
+"../../../bd/design_1/ip/design_1_rsa_versleuteld_karakter_1_2/sim/design_1_rsa_versleuteld_karakter_1_2.vhd" \
+"../../../bd/design_1/ip/design_1_axi_gpio_0_2/sim/design_1_axi_gpio_0_2.vhd" \
+"../../../bd/design_1/ip/design_1_axi_gpio_0_3/sim/design_1_axi_gpio_0_3.vhd" \
+"../../../bd/design_1/ip/design_1_decoder_5b4b_0_0/sim/design_1_decoder_5b4b_0_0.vhd" \
+"../../../bd/design_1/ip/design_1_io_buffer_0_0/sim/design_1_io_buffer_0_0.vhd" \
+"../../../bd/design_1/ip/design_1_demodulator_0_0/sim/design_1_demodulator_0_0.vhd" \
+"../../../bd/design_1/ip/design_1_resetting_timer_0_0/sim/design_1_resetting_timer_0_0.vhd" \
+"../../../bd/design_1/ip/design_1_fifo_buffer_0_0/sim/design_1_fifo_buffer_0_0.vhd" \
+"../../../bd/design_1/ip/design_1_Karakter_FIFO_0_0/sim/design_1_Karakter_FIFO_0_0.vhd" \
+"../../../bd/design_1/ip/design_1_communicatie_protoco_0_0/sim/design_1_communicatie_protoco_0_0.vhd" \
+"../../../bd/design_1/sim/design_1.vhd" \
+
+# Do not sort compile order
+nosort

@@ -2,8 +2,8 @@
 --Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
---Date        : Tue Apr  9 17:16:25 2024
---Host        : Lenovo-Jochem running 64-bit major release  (build 9200)
+--Date        : Wed May 22 16:07:38 2024
+--Host        : XPS-Tommy running 64-bit major release  (build 9200)
 --Command     : generate_target design_1_wrapper.bd
 --Design      : design_1_wrapper
 --Purpose     : IP block netlist
@@ -37,9 +37,13 @@ entity design_1_wrapper is
     FIXED_IO_ps_srstb : inout STD_LOGIC;
     IIC_scl_io : inout STD_LOGIC;
     IIC_sda_io : inout STD_LOGIC;
+    LED_0 : out STD_LOGIC;
+    LED_1 : out STD_LOGIC;
     UART_rxd : in STD_LOGIC;
     UART_txd : out STD_LOGIC;
     buttons : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    reset_in : in STD_LOGIC;
+    signal_i : in STD_LOGIC;
     status_led : out STD_LOGIC_VECTOR ( 2 downto 0 )
   );
 end design_1_wrapper;
@@ -77,7 +81,11 @@ architecture STRUCTURE of design_1_wrapper is
     IIC_scl_o : out STD_LOGIC;
     IIC_scl_t : out STD_LOGIC;
     status_led : out STD_LOGIC_VECTOR ( 2 downto 0 );
-    buttons : in STD_LOGIC_VECTOR ( 3 downto 0 )
+    buttons : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    signal_i : in STD_LOGIC;
+    reset_in : in STD_LOGIC;
+    LED_0 : out STD_LOGIC;
+    LED_1 : out STD_LOGIC
   );
   end component design_1;
   component IOBUF is
@@ -138,9 +146,13 @@ design_1_i: component design_1
       IIC_sda_i => IIC_sda_i,
       IIC_sda_o => IIC_sda_o,
       IIC_sda_t => IIC_sda_t,
+      LED_0 => LED_0,
+      LED_1 => LED_1,
       UART_rxd => UART_rxd,
       UART_txd => UART_txd,
       buttons(3 downto 0) => buttons(3 downto 0),
+      reset_in => reset_in,
+      signal_i => signal_i,
       status_led(2 downto 0) => status_led(2 downto 0)
     );
 end STRUCTURE;
