@@ -24,3 +24,7 @@ set_property PACKAGE_PIN D19 [get_ports {button[0]}]
 set_property PACKAGE_PIN D20 [get_ports {button[1]}]
 set_property PACKAGE_PIN L20 [get_ports {button[2]}]
 set_property PACKAGE_PIN L19 [get_ports {button[3]}]
+
+set_property -dict {PACKAGE_PIN V17 IOSTANDARD LVCMOS33} [get_ports signal_i]
+
+set_property -dict {PACKAGE_PIN M19 IOSTANDARD LVCMOS33} [get_ports reset_in]
