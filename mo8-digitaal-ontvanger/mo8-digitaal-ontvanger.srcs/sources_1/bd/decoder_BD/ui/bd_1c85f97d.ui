@@ -39,20 +39,20 @@ preplace port port-id_Data_rdy_0 -pg 1 -lvl 0 -x -10 -y 140 -defaultsOSRD
 preplace port port-id_Output_rdy_0 -pg 1 -lvl 3 -x 530 -y 90 -defaultsOSRD
 preplace portBus Data_in_0 -pg 1 -lvl 0 -x -10 -y 170 -defaultsOSRD
 preplace portBus Data_out_0 -pg 1 -lvl 3 -x 530 -y 60 -defaultsOSRD
-preplace inst clk_wiz_0 -pg 1 -lvl 1 -x 110 -y 40 -swap {1 0 3 2} -defaultsOSRD -pinY reset 40L -pinY clk_in1 20L -pinY clk_out1 40R -pinY locked 20R
+preplace inst clk_wiz_0 -pg 1 -lvl 1 -x 110 -y 40 -swap {1 0 2 3} -defaultsOSRD -pinY reset 40L -pinY clk_in1 20L -pinY clk_out1 20R -pinY locked 40R
 preplace inst decoder_state_machine_0 -pg 1 -lvl 2 -x 360 -y 40 -swap {2 0 1 4 3} -defaultsOSRD -pinBusY Data_in 170L -pinY clk 20L -pinY Data_rdy 80L -pinY Output_rdy 50R -pinBusY Data_out 20R
+preplace netloc Data_in_0_1 1 0 2 NJ 170 200J
+preplace netloc Data_rdy_0_1 1 0 2 NJ 140 200J
+preplace netloc clk_wiz_0_clk_out1 1 1 1 N 60
+preplace netloc decoder_state_machine_0_Data_out 1 2 1 NJ 60
+preplace netloc decoder_state_machine_0_Output_rdy 1 2 1 NJ 90
 preplace netloc reset_rtl_1 1 0 1 NJ 80
 preplace netloc sys_clock_1 1 0 1 10 50n
-preplace netloc clk_wiz_0_clk_out1 1 1 1 200 60n
-preplace netloc Data_in_0_1 1 0 2 NJ 170 200J
-preplace netloc decoder_state_machine_0_Data_out 1 2 1 NJ 60
-preplace netloc Data_rdy_0_1 1 0 2 NJ 140 200J
-preplace netloc decoder_state_machine_0_Output_rdy 1 2 1 NJ 90
 levelinfo -pg 1 -10 110 360 530
 pagesize -pg 1 -db -bbox -sgen -180 0 710 270
 ",
-   "Reduced Jogs_ScaleFactor":"1.25",
-   "Reduced Jogs_TopLeft":"-353,-110",
+   "Reduced Jogs_ScaleFactor":"1.24416",
+   "Reduced Jogs_TopLeft":"-163,-38",
    "guistr":"# # String gsaved with Nlview 7.5.8 2022-09-21 7111 VDI=41 GEI=38 GUI=JA:10.0
 #  -string -flagsOSRD
 levelinfo -pg 1 0 10

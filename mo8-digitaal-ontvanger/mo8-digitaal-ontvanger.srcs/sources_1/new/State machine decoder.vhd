@@ -44,7 +44,7 @@ ARCHITECTURE Behavioral OF decoder_state_machine IS
     signal counter_temp  : integer range 0 to 47 := 0;                   -- 48 bits in 240-bit input
 
     TYPE STATE_TYPE IS (s0, s1, s2, s3, s4, s5); -- Verschillende states aanmmaken
-	signal PS : STATE_TYPE; 
+	signal PS : STATE_TYPE;
 	signal NS : STATE_TYPE;
 	
 begin
@@ -82,7 +82,7 @@ begin
 		end if;
 	end process;
 	
-	output_decoder: process(PS)
+	output_decoder: process(PS) 											   -- Output decoder 
 	begin
 		case PS is
 			when s0 =>
