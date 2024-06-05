@@ -2,10 +2,10 @@
 // Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
-// Date        : Wed May 22 16:09:51 2024
+// Date        : Wed May 22 16:57:11 2024
 // Host        : XPS-Tommy running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim
-//               d:/_code/Git/Fontys/Jaar_2/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/ip/design_1_communicatie_protoco_0_0/design_1_communicatie_protoco_0_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim -rename_top design_1_communicatie_protoco_0_0 -prefix
+//               design_1_communicatie_protoco_0_0_ design_1_communicatie_protoco_0_0_sim_netlist.v
 // Design      : design_1_communicatie_protoco_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -13,44 +13,6 @@
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CHECK_LICENSE_TYPE = "design_1_communicatie_protoco_0_0,communicatie_protocol_ontvanger,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* ip_definition_source = "module_ref" *) 
-(* x_core_info = "communicatie_protocol_ontvanger,Vivado 2023.1" *) 
-(* NotValidForBitStream *)
-module design_1_communicatie_protoco_0_0
-   (clk,
-    data_rdy_input,
-    data_in,
-    data_ready_output,
-    data_out,
-    crc_h_fail,
-    crc_d_fail);
-  (* x_interface_info = "xilinx.com:signal:clock:1.0 clk CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME clk, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0" *) input clk;
-  input data_rdy_input;
-  input [191:0]data_in;
-  output data_ready_output;
-  output [127:0]data_out;
-  output crc_h_fail;
-  output crc_d_fail;
-
-  wire clk;
-  wire crc_d_fail;
-  wire crc_h_fail;
-  wire [191:0]data_in;
-  wire [127:0]data_out;
-  wire data_rdy_input;
-  wire data_ready_output;
-
-  design_1_communicatie_protoco_0_0_communicatie_protocol_ontvanger U0
-       (.clk(clk),
-        .crc_d_fail(crc_d_fail),
-        .crc_h_fail(crc_h_fail),
-        .data_in(data_in),
-        .data_out(data_out),
-        .data_rdy_input(data_rdy_input),
-        .data_ready_output(data_ready_output));
-endmodule
-
-(* ORIG_REF_NAME = "communicatie_protocol_ontvanger" *) 
 module design_1_communicatie_protoco_0_0_communicatie_protocol_ontvanger
    (data_ready_output,
     data_out,
@@ -249,6 +211,7 @@ module design_1_communicatie_protoco_0_0_communicatie_protocol_ontvanger
   wire [191:0]data_in;
   wire [127:0]data_out;
   wire data_rdy_input;
+  wire data_rdy_input_old;
   wire data_ready_output;
   wire data_ready_output_reg_i_1_n_0;
   wire [15:0]p_0_in;
@@ -415,38 +378,38 @@ module design_1_communicatie_protoco_0_0_communicatie_protocol_ontvanger
   wire [3:0]\NLW_FSM_onehot_PS_reg[6]_i_2_O_UNCONNECTED ;
   wire [3:0]\NLW_FSM_onehot_PS_reg[6]_i_3_O_UNCONNECTED ;
 
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
-  LUT5 #(
-    .INIT(32'hFFFFEEFE)) 
+  LUT6 #(
+    .INIT(64'hFFFFFFFFFEEEFEFE)) 
     \FSM_onehot_PS[0]_i_1 
        (.I0(\FSM_onehot_PS_reg_n_0_[5] ),
         .I1(\FSM_onehot_PS_reg_n_0_[6] ),
         .I2(\FSM_onehot_PS_reg_n_0_[0] ),
-        .I3(data_rdy_input),
-        .I4(\FSM_onehot_PS_reg_n_0_[4] ),
+        .I3(data_rdy_input_old),
+        .I4(data_rdy_input),
+        .I5(\FSM_onehot_PS_reg_n_0_[4] ),
         .O(\FSM_onehot_PS[0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
-  LUT2 #(
-    .INIT(4'h8)) 
+  LUT3 #(
+    .INIT(8'h20)) 
     \FSM_onehot_PS[1]_i_1 
        (.I0(\FSM_onehot_PS_reg_n_0_[0] ),
-        .I1(data_rdy_input),
+        .I1(data_rdy_input_old),
+        .I2(data_rdy_input),
         .O(\FSM_onehot_PS[1]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair11" *) 
+  (* SOFT_HLUTNM = "soft_lutpair10" *) 
   LUT2 #(
     .INIT(4'h8)) 
     \FSM_onehot_PS[3]_i_1 
        (.I0(\FSM_onehot_PS_reg_n_0_[2] ),
         .I1(NS11_out),
         .O(\FSM_onehot_PS[3]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair12" *) 
+  (* SOFT_HLUTNM = "soft_lutpair11" *) 
   LUT2 #(
     .INIT(4'h8)) 
     \FSM_onehot_PS[4]_i_1 
        (.I0(\FSM_onehot_PS_reg_n_0_[3] ),
         .I1(NS1),
         .O(\FSM_onehot_PS[4]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair12" *) 
+  (* SOFT_HLUTNM = "soft_lutpair11" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \FSM_onehot_PS[5]_i_1 
@@ -493,7 +456,7 @@ module design_1_communicatie_protoco_0_0_communicatie_protocol_ontvanger
         .I4(p_19_in65_in),
         .I5(p_0_in[12]),
         .O(\FSM_onehot_PS[5]_i_102_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair8" *) 
+  (* SOFT_HLUTNM = "soft_lutpair7" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \FSM_onehot_PS[5]_i_103 
@@ -506,7 +469,7 @@ module design_1_communicatie_protoco_0_0_communicatie_protocol_ontvanger
        (.I0(p_15_in63_in),
         .I1(p_45_in),
         .O(\FSM_onehot_PS[5]_i_104_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair9" *) 
+  (* SOFT_HLUTNM = "soft_lutpair8" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \FSM_onehot_PS[5]_i_105 
@@ -522,7 +485,7 @@ module design_1_communicatie_protoco_0_0_communicatie_protocol_ontvanger
         .I3(p_36_in),
         .I4(p_23_in28_in),
         .O(\FSM_onehot_PS[5]_i_106_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \FSM_onehot_PS[5]_i_107 
@@ -957,7 +920,7 @@ module design_1_communicatie_protoco_0_0_communicatie_protocol_ontvanger
         .I4(p_23_in),
         .I5(p_34_in),
         .O(\FSM_onehot_PS[5]_i_41_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair7" *) 
+  (* SOFT_HLUTNM = "soft_lutpair6" *) 
   LUT4 #(
     .INIT(16'h6996)) 
     \FSM_onehot_PS[5]_i_42 
@@ -1021,7 +984,7 @@ module design_1_communicatie_protoco_0_0_communicatie_protocol_ontvanger
         .I3(p_9_in14_in),
         .I4(p_4_in),
         .O(\FSM_onehot_PS[5]_i_48_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair7" *) 
+  (* SOFT_HLUTNM = "soft_lutpair6" *) 
   LUT3 #(
     .INIT(8'h96)) 
     \FSM_onehot_PS[5]_i_49 
@@ -1075,7 +1038,7 @@ module design_1_communicatie_protoco_0_0_communicatie_protocol_ontvanger
         .I4(p_0_in[14]),
         .I5(p_2_in90_in),
         .O(\FSM_onehot_PS[5]_i_53_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT4 #(
     .INIT(16'h6996)) 
     \FSM_onehot_PS[5]_i_54 
@@ -1206,7 +1169,7 @@ module design_1_communicatie_protoco_0_0_communicatie_protocol_ontvanger
         .I3(p_32_in37_in),
         .I4(p_44_in),
         .O(\FSM_onehot_PS[5]_i_66_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair8" *) 
+  (* SOFT_HLUTNM = "soft_lutpair7" *) 
   LUT3 #(
     .INIT(8'h69)) 
     \FSM_onehot_PS[5]_i_67 
@@ -1300,7 +1263,7 @@ module design_1_communicatie_protoco_0_0_communicatie_protocol_ontvanger
         .I4(p_0_in[6]),
         .I5(p_3_in88_in),
         .O(\FSM_onehot_PS[5]_i_75_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair9" *) 
+  (* SOFT_HLUTNM = "soft_lutpair8" *) 
   LUT3 #(
     .INIT(8'h96)) 
     \FSM_onehot_PS[5]_i_76 
@@ -1546,7 +1509,7 @@ module design_1_communicatie_protoco_0_0_communicatie_protocol_ontvanger
         .I4(p_3_in57_in),
         .I5(p_21_in66_in),
         .O(\FSM_onehot_PS[5]_i_99_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair11" *) 
+  (* SOFT_HLUTNM = "soft_lutpair10" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \FSM_onehot_PS[6]_i_1 
@@ -3811,7 +3774,7 @@ module design_1_communicatie_protoco_0_0_communicatie_protocol_ontvanger
         .G(crc_d_fail_reg_i_1_n_0),
         .GE(1'b1),
         .Q(crc_d_fail));
-  (* SOFT_HLUTNM = "soft_lutpair10" *) 
+  (* SOFT_HLUTNM = "soft_lutpair9" *) 
   LUT2 #(
     .INIT(4'hE)) 
     crc_d_fail_reg_i_1
@@ -3828,7 +3791,7 @@ module design_1_communicatie_protoco_0_0_communicatie_protocol_ontvanger
         .G(crc_h_fail_reg_i_1_n_0),
         .GE(1'b1),
         .Q(crc_h_fail));
-  (* SOFT_HLUTNM = "soft_lutpair10" *) 
+  (* SOFT_HLUTNM = "soft_lutpair9" *) 
   LUT2 #(
     .INIT(4'hE)) 
     crc_h_fail_reg_i_1
@@ -5115,6 +5078,12 @@ module design_1_communicatie_protoco_0_0_communicatie_protocol_ontvanger
         .G(\FSM_onehot_PS_reg_n_0_[4] ),
         .GE(1'b1),
         .Q(data_out[9]));
+  FDRE data_rdy_input_old_reg
+       (.C(clk),
+        .CE(1'b1),
+        .D(data_rdy_input),
+        .Q(data_rdy_input_old),
+        .R(1'b0));
   (* XILINX_LEGACY_PRIM = "LD" *) 
   (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
   LDCE #(
@@ -5128,9 +5097,46 @@ module design_1_communicatie_protoco_0_0_communicatie_protocol_ontvanger
   LUT2 #(
     .INIT(4'hE)) 
     data_ready_output_reg_i_1
-       (.I0(\FSM_onehot_PS_reg_n_0_[0] ),
+       (.I0(buffer_data_intput),
         .I1(\FSM_onehot_PS_reg_n_0_[4] ),
         .O(data_ready_output_reg_i_1_n_0));
+endmodule
+
+(* CHECK_LICENSE_TYPE = "design_1_communicatie_protoco_0_0,communicatie_protocol_ontvanger,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* ip_definition_source = "module_ref" *) 
+(* x_core_info = "communicatie_protocol_ontvanger,Vivado 2023.1" *) 
+(* NotValidForBitStream *)
+module design_1_communicatie_protoco_0_0
+   (clk,
+    data_rdy_input,
+    data_in,
+    data_ready_output,
+    data_out,
+    crc_h_fail,
+    crc_d_fail);
+  (* x_interface_info = "xilinx.com:signal:clock:1.0 clk CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME clk, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0" *) input clk;
+  input data_rdy_input;
+  input [191:0]data_in;
+  output data_ready_output;
+  output [127:0]data_out;
+  output crc_h_fail;
+  output crc_d_fail;
+
+  wire clk;
+  wire crc_d_fail;
+  wire crc_h_fail;
+  wire [191:0]data_in;
+  wire [127:0]data_out;
+  wire data_rdy_input;
+  wire data_ready_output;
+
+  design_1_communicatie_protoco_0_0_communicatie_protocol_ontvanger U0
+       (.clk(clk),
+        .crc_d_fail(crc_d_fail),
+        .crc_h_fail(crc_h_fail),
+        .data_in(data_in),
+        .data_out(data_out),
+        .data_rdy_input(data_rdy_input),
+        .data_ready_output(data_ready_output));
 endmodule
 `ifndef GLBL
 `define GLBL

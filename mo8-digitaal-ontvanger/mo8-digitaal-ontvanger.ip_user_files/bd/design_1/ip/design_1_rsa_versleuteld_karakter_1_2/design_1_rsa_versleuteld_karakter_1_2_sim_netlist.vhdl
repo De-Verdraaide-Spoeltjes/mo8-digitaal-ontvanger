@@ -4,8 +4,8 @@
 -- Tool Version: Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
 -- Date        : Wed May 22 16:09:50 2024
 -- Host        : XPS-Tommy running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim
---               d:/_code/Git/Fontys/Jaar_2/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/ip/design_1_rsa_versleuteld_karakter_1_2/design_1_rsa_versleuteld_karakter_1_2_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top design_1_rsa_versleuteld_karakter_1_2 -prefix
+--               design_1_rsa_versleuteld_karakter_1_2_ design_1_rsa_versleuteld_karakter_1_2_sim_netlist.vhdl
 -- Design      : design_1_rsa_versleuteld_karakter_1_2
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -60,8 +60,6 @@ entity design_1_rsa_versleuteld_karakter_1_2_address_decoder is
     ip2bus_wrack_i_D1 : in STD_LOGIC;
     s_axi_awready : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of design_1_rsa_versleuteld_karakter_1_2_address_decoder : entity is "address_decoder";
 end design_1_rsa_versleuteld_karakter_1_2_address_decoder;
 
 architecture STRUCTURE of design_1_rsa_versleuteld_karakter_1_2_address_decoder is
@@ -908,8 +906,6 @@ entity design_1_rsa_versleuteld_karakter_1_2_cdc_sync is
     gpio_io_i : in STD_LOGIC_VECTOR ( 0 to 0 );
     s_axi_aclk : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of design_1_rsa_versleuteld_karakter_1_2_cdc_sync : entity is "cdc_sync";
 end design_1_rsa_versleuteld_karakter_1_2_cdc_sync;
 
 architecture STRUCTURE of design_1_rsa_versleuteld_karakter_1_2_cdc_sync is
@@ -1022,8 +1018,6 @@ entity design_1_rsa_versleuteld_karakter_1_2_interrupt_control is
     p_5_in : in STD_LOGIC;
     Bus_RNW_reg : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of design_1_rsa_versleuteld_karakter_1_2_interrupt_control : entity is "interrupt_control";
 end design_1_rsa_versleuteld_karakter_1_2_interrupt_control;
 
 architecture STRUCTURE of design_1_rsa_versleuteld_karakter_1_2_interrupt_control is
@@ -1238,8 +1232,6 @@ entity design_1_rsa_versleuteld_karakter_1_2_GPIO_Core is
     intr2bus_rdack : in STD_LOGIC;
     gpio_io_i : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of design_1_rsa_versleuteld_karakter_1_2_GPIO_Core : entity is "GPIO_Core";
 end design_1_rsa_versleuteld_karakter_1_2_GPIO_Core;
 
 architecture STRUCTURE of design_1_rsa_versleuteld_karakter_1_2_GPIO_Core is
@@ -1460,8 +1452,6 @@ entity design_1_rsa_versleuteld_karakter_1_2_slave_attachment is
     s_axi_araddr : in STD_LOGIC_VECTOR ( 6 downto 0 );
     s_axi_awaddr : in STD_LOGIC_VECTOR ( 6 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of design_1_rsa_versleuteld_karakter_1_2_slave_attachment : entity is "slave_attachment";
 end design_1_rsa_versleuteld_karakter_1_2_slave_attachment;
 
 architecture STRUCTURE of design_1_rsa_versleuteld_karakter_1_2_slave_attachment is
@@ -2221,8 +2211,6 @@ entity design_1_rsa_versleuteld_karakter_1_2_axi_lite_ipif is
     s_axi_araddr : in STD_LOGIC_VECTOR ( 6 downto 0 );
     s_axi_awaddr : in STD_LOGIC_VECTOR ( 6 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of design_1_rsa_versleuteld_karakter_1_2_axi_lite_ipif : entity is "axi_lite_ipif";
 end design_1_rsa_versleuteld_karakter_1_2_axi_lite_ipif;
 
 architecture STRUCTURE of design_1_rsa_versleuteld_karakter_1_2_axi_lite_ipif is
@@ -2349,8 +2337,6 @@ entity design_1_rsa_versleuteld_karakter_1_2_axi_gpio is
   attribute C_TRI_DEFAULT of design_1_rsa_versleuteld_karakter_1_2_axi_gpio : entity is "32'b11111111111111111111111111111111";
   attribute C_TRI_DEFAULT_2 : string;
   attribute C_TRI_DEFAULT_2 of design_1_rsa_versleuteld_karakter_1_2_axi_gpio : entity is "32'b11111111111111111111111111111111";
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of design_1_rsa_versleuteld_karakter_1_2_axi_gpio : entity is "axi_gpio";
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of design_1_rsa_versleuteld_karakter_1_2_axi_gpio : entity is "yes";
   attribute ip_group : string;

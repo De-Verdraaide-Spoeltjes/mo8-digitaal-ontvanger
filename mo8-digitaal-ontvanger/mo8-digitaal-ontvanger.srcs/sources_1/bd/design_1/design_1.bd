@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x9E288901785BA14E",
+      "boundary_crc": "0x59AB508365858166",
       "device": "xc7z020clg400-1",
       "gen_directory": "../../../../mo8-digitaal-ontvanger.gen/sources_1/bd/design_1",
       "name": "design_1",
@@ -27,8 +27,7 @@
         "rsa_versleuteld_karakter": "",
         "rsa_communicatie": "",
         "xlconcat_0": "",
-        "status_led": "",
-        "buttons": ""
+        "status_led": ""
       },
       "decoder_5b4b_0": "",
       "module_demodulator": {
@@ -37,8 +36,16 @@
         "resetting_timer_0": "",
         "fifo_buffer_0": ""
       },
+      "communicatie_protoco_0": "",
       "Karakter_FIFO_0": "",
-      "communicatie_protoco_0": ""
+      "status_led": {
+        "clk_divider_0": "",
+        "util_vector_logic_0": "",
+        "util_vector_logic_1": "",
+        "util_vector_logic_2": "",
+        "rgb_led_controller_0": "",
+        "xlconstant_0": ""
+      }
     },
     "interface_ports": {
       "DDR": {
@@ -257,14 +264,9 @@
       }
     },
     "ports": {
-      "status_led": {
+      "embedded_status_led": {
         "direction": "O",
         "left": "2",
-        "right": "0"
-      },
-      "buttons": {
-        "direction": "I",
-        "left": "3",
         "right": "0"
       },
       "signal_i": {
@@ -284,10 +286,35 @@
         }
       },
       "LED_0": {
-        "direction": "O"
+        "direction": "O",
+        "parameters": {
+          "PortType": {
+            "value": "undef",
+            "value_src": "ip_prop"
+          },
+          "PortType.PROP_SRC": {
+            "value": "false",
+            "value_src": "ip_prop"
+          }
+        }
       },
       "LED_1": {
-        "direction": "O"
+        "direction": "O",
+        "parameters": {
+          "PortType": {
+            "value": "undef",
+            "value_src": "ip_prop"
+          },
+          "PortType.PROP_SRC": {
+            "value": "false",
+            "value_src": "ip_prop"
+          }
+        }
+      },
+      "digitaal_status_led": {
+        "direction": "O",
+        "left": "2",
+        "right": "0"
       }
     },
     "components": {
@@ -326,11 +353,6 @@
           "status_led": {
             "direction": "O",
             "left": "2",
-            "right": "0"
-          },
-          "buttons": {
-            "direction": "I",
-            "left": "3",
             "right": "0"
           },
           "reset": {
@@ -2746,17 +2768,6 @@
                 "value": "true"
               }
             }
-          },
-          "buttons": {
-            "vlnv": "xilinx.com:ip:axi_gpio:2.0",
-            "xci_name": "design_1_axi_gpio_0_3",
-            "xci_path": "ip\\design_1_axi_gpio_0_3\\design_1_axi_gpio_0_3.xci",
-            "inst_hier_path": "connection_embedded/buttons",
-            "parameters": {
-              "GPIO_BOARD_INTERFACE": {
-                "value": "btns_4bits"
-              }
-            }
           }
         },
         "interface_nets": {
@@ -2802,12 +2813,6 @@
               "axi_interconnect_0/M02_AXI"
             ]
           },
-          "axi_interconnect_0_M03_AXI": {
-            "interface_ports": [
-              "buttons/S_AXI",
-              "axi_interconnect_0/M03_AXI"
-            ]
-          },
           "processing_system7_0_M_AXI_GP0": {
             "interface_ports": [
               "processing_system7_0/M_AXI_GP0",
@@ -2828,12 +2833,6 @@
               "status_led"
             ]
           },
-          "gpio_io_i_0_1": {
-            "ports": [
-              "buttons",
-              "buttons/gpio_io_i"
-            ]
-          },
           "gpio_io_i_0_2": {
             "ports": [
               "FIFO_data_ready",
@@ -2851,8 +2850,7 @@
               "axi_interconnect_0/M02_ARESETN",
               "rsa_communicatie/s_axi_aresetn",
               "axi_interconnect_0/M03_ARESETN",
-              "status_led/s_axi_aresetn",
-              "buttons/s_axi_aresetn"
+              "status_led/s_axi_aresetn"
             ]
           },
           "proc_sys_reset_0_peripheral_reset": {
@@ -2875,8 +2873,7 @@
               "axi_interconnect_0/M02_ACLK",
               "rsa_communicatie/s_axi_aclk",
               "axi_interconnect_0/M03_ACLK",
-              "status_led/s_axi_aclk",
-              "buttons/s_axi_aclk"
+              "status_led/s_axi_aclk"
             ]
           },
           "processing_system7_0_FCLK_RESET0_N": {
@@ -3260,6 +3257,75 @@
           }
         }
       },
+      "communicatie_protoco_0": {
+        "vlnv": "xilinx.com:module_ref:communicatie_protocol_ontvanger:1.0",
+        "xci_name": "design_1_communicatie_protoco_0_0",
+        "xci_path": "ip\\design_1_communicatie_protoco_0_0\\design_1_communicatie_protoco_0_0.xci",
+        "inst_hier_path": "communicatie_protoco_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "communicatie_protocol_ontvanger",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "user_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "design_1_processing_system7_0_0_FCLK_CLK0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "data_rdy_input": {
+            "direction": "I"
+          },
+          "data_in": {
+            "direction": "I",
+            "left": "191",
+            "right": "0"
+          },
+          "data_ready_output": {
+            "direction": "O"
+          },
+          "data_out": {
+            "direction": "O",
+            "left": "127",
+            "right": "0"
+          },
+          "crc_h_fail": {
+            "direction": "O",
+            "parameters": {
+              "PortType": {
+                "value": "undef",
+                "value_src": "ip_prop"
+              },
+              "PortType.PROP_SRC": {
+                "value": "false",
+                "value_src": "ip_prop"
+              }
+            }
+          },
+          "crc_d_fail": {
+            "direction": "O",
+            "parameters": {
+              "PortType": {
+                "value": "undef",
+                "value_src": "ip_prop"
+              },
+              "PortType.PROP_SRC": {
+                "value": "false",
+                "value_src": "ip_prop"
+              }
+            }
+          }
+        }
+      },
       "Karakter_FIFO_0": {
         "vlnv": "xilinx.com:module_ref:Karakter_FIFO:1.0",
         "xci_name": "design_1_Karakter_FIFO_0_0",
@@ -3319,52 +3385,270 @@
           }
         }
       },
-      "communicatie_protoco_0": {
-        "vlnv": "xilinx.com:module_ref:communicatie_protocol_ontvanger:1.0",
-        "xci_name": "design_1_communicatie_protoco_0_0",
-        "xci_path": "ip\\design_1_communicatie_protoco_0_0\\design_1_communicatie_protoco_0_0.xci",
-        "inst_hier_path": "communicatie_protoco_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "communicatie_protocol_ontvanger",
-          "boundary_crc": "0x0"
-        },
+      "status_led": {
         "ports": {
-          "clk": {
-            "type": "clk",
+          "clk_in": {
+            "direction": "I"
+          },
+          "reset": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "LED_0": {
             "direction": "I",
+            "left": "0",
+            "right": "0"
+          },
+          "LED_1": {
+            "direction": "I",
+            "left": "0",
+            "right": "0"
+          },
+          "digitaal_status_led": {
+            "direction": "O",
+            "left": "2",
+            "right": "0"
+          }
+        },
+        "components": {
+          "clk_divider_0": {
+            "vlnv": "xilinx.com:module_ref:clk_divider:1.0",
+            "xci_name": "design_1_clk_divider_0_0",
+            "xci_path": "ip\\design_1_clk_divider_0_0\\design_1_clk_divider_0_0.xci",
+            "inst_hier_path": "status_led/clk_divider_0",
             "parameters": {
-              "FREQ_HZ": {
-                "value": "100000000",
-                "value_src": "user_prop"
+              "division": {
+                "value": "50000000"
+              }
+            },
+            "reference_info": {
+              "ref_type": "hdl",
+              "ref_name": "clk_divider",
+              "boundary_crc": "0x0"
+            },
+            "ports": {
+              "clk_in": {
+                "direction": "I",
+                "parameters": {
+                  "FREQ_HZ": {
+                    "value": "100000000",
+                    "value_src": "user_prop"
+                  },
+                  "PHASE": {
+                    "value": "0.0",
+                    "value_src": "default_prop"
+                  },
+                  "CLK_DOMAIN": {
+                    "value": "design_1_processing_system7_0_0_FCLK_CLK0",
+                    "value_src": "default_prop"
+                  }
+                }
               },
-              "CLK_DOMAIN": {
-                "value": "design_1_processing_system7_0_0_FCLK_CLK0",
-                "value_src": "default_prop"
+              "reset": {
+                "type": "rst",
+                "direction": "I",
+                "parameters": {
+                  "POLARITY": {
+                    "value": "ACTIVE_HIGH"
+                  }
+                }
+              },
+              "clk_out": {
+                "direction": "O"
               }
             }
           },
-          "data_rdy_input": {
-            "direction": "I"
+          "util_vector_logic_0": {
+            "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
+            "xci_name": "design_1_util_vector_logic_0_0",
+            "xci_path": "ip\\design_1_util_vector_logic_0_0\\design_1_util_vector_logic_0_0.xci",
+            "inst_hier_path": "status_led/util_vector_logic_0",
+            "parameters": {
+              "C_OPERATION": {
+                "value": "or"
+              },
+              "C_SIZE": {
+                "value": "1"
+              }
+            }
           },
-          "data_in": {
-            "direction": "I",
-            "left": "191",
-            "right": "0"
+          "util_vector_logic_1": {
+            "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
+            "xci_name": "design_1_util_vector_logic_1_0",
+            "xci_path": "ip\\design_1_util_vector_logic_1_0\\design_1_util_vector_logic_1_0.xci",
+            "inst_hier_path": "status_led/util_vector_logic_1",
+            "parameters": {
+              "C_OPERATION": {
+                "value": "or"
+              },
+              "C_SIZE": {
+                "value": "1"
+              }
+            }
           },
-          "data_ready_output": {
-            "direction": "O"
+          "util_vector_logic_2": {
+            "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
+            "xci_name": "design_1_util_vector_logic_1_1",
+            "xci_path": "ip\\design_1_util_vector_logic_1_1\\design_1_util_vector_logic_1_1.xci",
+            "inst_hier_path": "status_led/util_vector_logic_2",
+            "parameters": {
+              "C_OPERATION": {
+                "value": "not"
+              },
+              "C_SIZE": {
+                "value": "1"
+              }
+            }
           },
-          "data_out": {
-            "direction": "O",
-            "left": "127",
-            "right": "0"
+          "rgb_led_controller_0": {
+            "vlnv": "xilinx.com:module_ref:rgb_led_controller:1.0",
+            "xci_name": "design_1_rgb_led_controller_0_0",
+            "xci_path": "ip\\design_1_rgb_led_controller_0_0\\design_1_rgb_led_controller_0_0.xci",
+            "inst_hier_path": "status_led/rgb_led_controller_0",
+            "reference_info": {
+              "ref_type": "hdl",
+              "ref_name": "rgb_led_controller",
+              "boundary_crc": "0x0"
+            },
+            "ports": {
+              "blink_clk": {
+                "type": "clk",
+                "direction": "I"
+              },
+              "blink": {
+                "direction": "I",
+                "parameters": {
+                  "PortType": {
+                    "value": "undef",
+                    "value_src": "ip_prop"
+                  },
+                  "PortType.PROP_SRC": {
+                    "value": "false",
+                    "value_src": "ip_prop"
+                  }
+                }
+              },
+              "r": {
+                "direction": "I",
+                "parameters": {
+                  "PortType": {
+                    "value": "undef",
+                    "value_src": "ip_prop"
+                  },
+                  "PortType.PROP_SRC": {
+                    "value": "false",
+                    "value_src": "ip_prop"
+                  }
+                }
+              },
+              "g": {
+                "direction": "I",
+                "parameters": {
+                  "PortType": {
+                    "value": "undef",
+                    "value_src": "ip_prop"
+                  },
+                  "PortType.PROP_SRC": {
+                    "value": "false",
+                    "value_src": "ip_prop"
+                  }
+                }
+              },
+              "b": {
+                "direction": "I",
+                "parameters": {
+                  "PortType": {
+                    "value": "undef",
+                    "value_src": "ip_prop"
+                  },
+                  "PortType.PROP_SRC": {
+                    "value": "false",
+                    "value_src": "ip_prop"
+                  }
+                }
+              },
+              "rgb_out": {
+                "direction": "O",
+                "left": "2",
+                "right": "0"
+              }
+            }
           },
-          "crc_h_fail": {
-            "direction": "O"
+          "xlconstant_0": {
+            "vlnv": "xilinx.com:ip:xlconstant:1.1",
+            "xci_name": "design_1_xlconstant_0_0",
+            "xci_path": "ip\\design_1_xlconstant_0_0\\design_1_xlconstant_0_0.xci",
+            "inst_hier_path": "status_led/xlconstant_0",
+            "parameters": {
+              "CONST_VAL": {
+                "value": "0"
+              }
+            }
+          }
+        },
+        "nets": {
+          "Net": {
+            "ports": [
+              "clk_in",
+              "clk_divider_0/clk_in"
+            ]
           },
-          "crc_d_fail": {
-            "direction": "O"
+          "Net1": {
+            "ports": [
+              "xlconstant_0/dout",
+              "util_vector_logic_1/Op2",
+              "rgb_led_controller_0/b"
+            ]
+          },
+          "clk_divider_0_clk_out": {
+            "ports": [
+              "clk_divider_0/clk_out",
+              "rgb_led_controller_0/blink_clk"
+            ]
+          },
+          "communicatie_protoco_0_crc_d_fail": {
+            "ports": [
+              "LED_1",
+              "util_vector_logic_0/Op2"
+            ]
+          },
+          "communicatie_protoco_0_crc_h_fail": {
+            "ports": [
+              "LED_0",
+              "util_vector_logic_0/Op1"
+            ]
+          },
+          "connection_embedded_reset": {
+            "ports": [
+              "reset",
+              "clk_divider_0/reset"
+            ]
+          },
+          "rgb_led_controller_0_rgb_out": {
+            "ports": [
+              "rgb_led_controller_0/rgb_out",
+              "digitaal_status_led"
+            ]
+          },
+          "util_vector_logic_0_Res": {
+            "ports": [
+              "util_vector_logic_0/Res",
+              "rgb_led_controller_0/blink",
+              "rgb_led_controller_0/r",
+              "util_vector_logic_1/Op1"
+            ]
+          },
+          "util_vector_logic_1_Res": {
+            "ports": [
+              "util_vector_logic_1/Res",
+              "util_vector_logic_2/Op1"
+            ]
+          },
+          "util_vector_logic_2_Res": {
+            "ports": [
+              "util_vector_logic_2/Res",
+              "rgb_led_controller_0/g"
+            ]
           }
         }
       }
@@ -3413,8 +3697,9 @@
           "connection_embedded/CLK_100MHz",
           "decoder_5b4b_0/clk",
           "module_demodulator/clk",
+          "communicatie_protoco_0/clk",
           "Karakter_FIFO_0/clk",
-          "communicatie_protoco_0/clk"
+          "status_led/clk_in"
         ]
       },
       "aux_reset_in_0_1": {
@@ -3426,13 +3711,15 @@
       "communicatie_protoco_0_crc_d_fail": {
         "ports": [
           "communicatie_protoco_0/crc_d_fail",
-          "LED_1"
+          "LED_1",
+          "status_led/LED_1"
         ]
       },
       "communicatie_protoco_0_crc_h_fail": {
         "ports": [
           "communicatie_protoco_0/crc_h_fail",
-          "LED_0"
+          "LED_0",
+          "status_led/LED_0"
         ]
       },
       "communicatie_protoco_0_data_out": {
@@ -3456,14 +3743,15 @@
       "connection_embedded_gpio_io_o_0": {
         "ports": [
           "connection_embedded/status_led",
-          "status_led"
+          "embedded_status_led"
         ]
       },
       "connection_embedded_reset": {
         "ports": [
           "connection_embedded/reset",
           "module_demodulator/reset",
-          "Karakter_FIFO_0/reset"
+          "Karakter_FIFO_0/reset",
+          "status_led/reset"
         ]
       },
       "decoder_5b4b_0_Data_out": {
@@ -3490,10 +3778,10 @@
           "decoder_5b4b_0/Data_in"
         ]
       },
-      "gpio_io_i_0_1": {
+      "rgb_led_controller_0_rgb_out": {
         "ports": [
-          "buttons",
-          "connection_embedded/buttons"
+          "status_led/digitaal_status_led",
+          "digitaal_status_led"
         ]
       },
       "signal_i_0_1": {
@@ -3511,11 +3799,6 @@
               "SEG_axi_gpio_0_Reg": {
                 "address_block": "/connection_embedded/status_led/S_AXI/Reg",
                 "offset": "0x41240000",
-                "range": "64K"
-              },
-              "SEG_axi_gpio_0_Reg_1": {
-                "address_block": "/connection_embedded/buttons/S_AXI/Reg",
-                "offset": "0x41250000",
                 "range": "64K"
               },
               "SEG_rsa_versleuteld_karakter_1_Reg": {

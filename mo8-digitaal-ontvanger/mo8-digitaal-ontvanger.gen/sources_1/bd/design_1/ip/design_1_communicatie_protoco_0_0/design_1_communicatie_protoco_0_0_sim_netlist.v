@@ -4,8 +4,8 @@
 // Tool Version: Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
 // Date        : Wed May 22 16:57:11 2024
 // Host        : XPS-Tommy running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim
-//               d:/_code/Git/Fontys/Jaar_2/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/ip/design_1_communicatie_protoco_0_0/design_1_communicatie_protoco_0_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim -rename_top design_1_communicatie_protoco_0_0 -prefix
+//               design_1_communicatie_protoco_0_0_ design_1_communicatie_protoco_0_0_sim_netlist.v
 // Design      : design_1_communicatie_protoco_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -13,44 +13,6 @@
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CHECK_LICENSE_TYPE = "design_1_communicatie_protoco_0_0,communicatie_protocol_ontvanger,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* ip_definition_source = "module_ref" *) 
-(* x_core_info = "communicatie_protocol_ontvanger,Vivado 2023.1" *) 
-(* NotValidForBitStream *)
-module design_1_communicatie_protoco_0_0
-   (clk,
-    data_rdy_input,
-    data_in,
-    data_ready_output,
-    data_out,
-    crc_h_fail,
-    crc_d_fail);
-  (* x_interface_info = "xilinx.com:signal:clock:1.0 clk CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME clk, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0" *) input clk;
-  input data_rdy_input;
-  input [191:0]data_in;
-  output data_ready_output;
-  output [127:0]data_out;
-  output crc_h_fail;
-  output crc_d_fail;
-
-  wire clk;
-  wire crc_d_fail;
-  wire crc_h_fail;
-  wire [191:0]data_in;
-  wire [127:0]data_out;
-  wire data_rdy_input;
-  wire data_ready_output;
-
-  design_1_communicatie_protoco_0_0_communicatie_protocol_ontvanger U0
-       (.clk(clk),
-        .crc_d_fail(crc_d_fail),
-        .crc_h_fail(crc_h_fail),
-        .data_in(data_in),
-        .data_out(data_out),
-        .data_rdy_input(data_rdy_input),
-        .data_ready_output(data_ready_output));
-endmodule
-
-(* ORIG_REF_NAME = "communicatie_protocol_ontvanger" *) 
 module design_1_communicatie_protoco_0_0_communicatie_protocol_ontvanger
    (data_ready_output,
     data_out,
@@ -5138,6 +5100,43 @@ module design_1_communicatie_protoco_0_0_communicatie_protocol_ontvanger
        (.I0(buffer_data_intput),
         .I1(\FSM_onehot_PS_reg_n_0_[4] ),
         .O(data_ready_output_reg_i_1_n_0));
+endmodule
+
+(* CHECK_LICENSE_TYPE = "design_1_communicatie_protoco_0_0,communicatie_protocol_ontvanger,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* ip_definition_source = "module_ref" *) 
+(* x_core_info = "communicatie_protocol_ontvanger,Vivado 2023.1" *) 
+(* NotValidForBitStream *)
+module design_1_communicatie_protoco_0_0
+   (clk,
+    data_rdy_input,
+    data_in,
+    data_ready_output,
+    data_out,
+    crc_h_fail,
+    crc_d_fail);
+  (* x_interface_info = "xilinx.com:signal:clock:1.0 clk CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME clk, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0" *) input clk;
+  input data_rdy_input;
+  input [191:0]data_in;
+  output data_ready_output;
+  output [127:0]data_out;
+  output crc_h_fail;
+  output crc_d_fail;
+
+  wire clk;
+  wire crc_d_fail;
+  wire crc_h_fail;
+  wire [191:0]data_in;
+  wire [127:0]data_out;
+  wire data_rdy_input;
+  wire data_ready_output;
+
+  design_1_communicatie_protoco_0_0_communicatie_protocol_ontvanger U0
+       (.clk(clk),
+        .crc_d_fail(crc_d_fail),
+        .crc_h_fail(crc_h_fail),
+        .data_in(data_in),
+        .data_out(data_out),
+        .data_rdy_input(data_rdy_input),
+        .data_ready_output(data_ready_output));
 endmodule
 `ifndef GLBL
 `define GLBL

@@ -1,8 +1,8 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
-| Date         : Wed May 22 16:59:42 2024
-| Host         : XPS-Tommy running 64-bit major release  (build 9200)
+| Date         : Wed Jun  5 15:21:45 2024
+| Host         : Lenovo-Jochem running 64-bit major release  (build 9200)
 | Command      : report_methodology -file design_1_wrapper_methodology_drc_routed.rpt -pb design_1_wrapper_methodology_drc_routed.pb -rpx design_1_wrapper_methodology_drc_routed.rpx
 | Design       : design_1_wrapper
 | Device       : xc7z020clg400-1
@@ -23,60 +23,46 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 343
-+-----------+----------+--------------------------------+------------+
-| Rule      | Severity | Description                    | Violations |
-+-----------+----------+--------------------------------+------------+
-| TIMING-18 | Warning  | Missing input or output delay  | 9          |
-| TIMING-20 | Warning  | Non-clocked latch              | 333        |
-| LATCH-1   | Advisory | Existing latches in the design | 1          |
-+-----------+----------+--------------------------------+------------+
+             Violations found: 340
++-----------+------------------+--------------------------------+------------+
+| Rule      | Severity         | Description                    | Violations |
++-----------+------------------+--------------------------------+------------+
+| TIMING-17 | Critical Warning | Non-clocked sequential cell    | 1          |
+| TIMING-18 | Warning          | Missing input or output delay  | 5          |
+| TIMING-20 | Warning          | Non-clocked latch              | 333        |
+| LATCH-1   | Advisory         | Existing latches in the design | 1          |
++-----------+------------------+--------------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
+TIMING-17#1 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_1_i/status_led/rgb_led_controller_0/U0/blink_active_reg/C is not reached by a timing clock
+Related violations: <none>
+
 TIMING-18#1 Warning
-Missing input or output delay  
-An input delay is missing on buttons[0] relative to the rising and/or falling clock edge(s) of clk_fpga_0.
-Related violations: <none>
-
-TIMING-18#2 Warning
-Missing input or output delay  
-An input delay is missing on buttons[1] relative to the rising and/or falling clock edge(s) of clk_fpga_0.
-Related violations: <none>
-
-TIMING-18#3 Warning
-Missing input or output delay  
-An input delay is missing on buttons[2] relative to the rising and/or falling clock edge(s) of clk_fpga_0.
-Related violations: <none>
-
-TIMING-18#4 Warning
-Missing input or output delay  
-An input delay is missing on buttons[3] relative to the rising and/or falling clock edge(s) of clk_fpga_0.
-Related violations: <none>
-
-TIMING-18#5 Warning
 Missing input or output delay  
 An input delay is missing on reset_in relative to the rising and/or falling clock edge(s) of clk_fpga_0.
 Related violations: <none>
 
-TIMING-18#6 Warning
+TIMING-18#2 Warning
 Missing input or output delay  
 An input delay is missing on signal_i relative to the rising and/or falling clock edge(s) of clk_fpga_0.
 Related violations: <none>
 
-TIMING-18#7 Warning
+TIMING-18#3 Warning
 Missing input or output delay  
-An output delay is missing on status_led[0] relative to the rising and/or falling clock edge(s) of clk_fpga_0.
+An output delay is missing on embedded_status_led[0] relative to the rising and/or falling clock edge(s) of clk_fpga_0.
 Related violations: <none>
 
-TIMING-18#8 Warning
+TIMING-18#4 Warning
 Missing input or output delay  
-An output delay is missing on status_led[1] relative to the rising and/or falling clock edge(s) of clk_fpga_0.
+An output delay is missing on embedded_status_led[1] relative to the rising and/or falling clock edge(s) of clk_fpga_0.
 Related violations: <none>
 
-TIMING-18#9 Warning
+TIMING-18#5 Warning
 Missing input or output delay  
-An output delay is missing on status_led[2] relative to the rising and/or falling clock edge(s) of clk_fpga_0.
+An output delay is missing on embedded_status_led[2] relative to the rising and/or falling clock edge(s) of clk_fpga_0.
 Related violations: <none>
 
 TIMING-20#1 Warning

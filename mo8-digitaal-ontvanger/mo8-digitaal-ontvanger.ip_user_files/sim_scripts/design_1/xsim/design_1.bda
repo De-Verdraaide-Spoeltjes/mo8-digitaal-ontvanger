@@ -241,24 +241,6 @@
                 "SV": "xilinx.com:ip:axi_gpio:2.0",
                 "TM": "both",
                 "TU": "register"
-            },
-            "V6": {
-                "VT": "AC",
-                "BA": "0x41250000",
-                "HA": "0x4125FFFF",
-                "BP": "C_BASEADDR",
-                "HP": "C_HIGHADDR",
-                "MA": "Data",
-                "MX": "/connection_embedded/processing_system7_0",
-                "MI": "M_AXI_GP0",
-                "MS": "SEG_axi_gpio_0_Reg_1",
-                "MV": "xilinx.com:ip:processing_system7:5.5",
-                "SX": "/connection_embedded/buttons",
-                "SI": "S_AXI",
-                "SS": "Reg",
-                "SV": "xilinx.com:ip:axi_gpio:2.0",
-                "TM": "both",
-                "TU": "register"
             }
         },
         "edges": [
@@ -282,11 +264,6 @@
             },
             {
                 "src": "V5",
-                "trg": "V2",
-                "EH": "2"
-            },
-            {
-                "src": "V6",
                 "trg": "V2",
                 "EH": "2"
             }

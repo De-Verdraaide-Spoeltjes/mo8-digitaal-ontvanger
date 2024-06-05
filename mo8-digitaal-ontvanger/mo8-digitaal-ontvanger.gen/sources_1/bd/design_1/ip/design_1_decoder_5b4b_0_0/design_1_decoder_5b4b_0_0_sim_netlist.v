@@ -4,8 +4,8 @@
 // Tool Version: Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
 // Date        : Wed May 22 16:09:50 2024
 // Host        : XPS-Tommy running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim
-//               d:/_code/Git/Fontys/Jaar_2/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/ip/design_1_decoder_5b4b_0_0/design_1_decoder_5b4b_0_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim -rename_top design_1_decoder_5b4b_0_0 -prefix
+//               design_1_decoder_5b4b_0_0_ design_1_decoder_5b4b_0_0_sim_netlist.v
 // Design      : design_1_decoder_5b4b_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -13,36 +13,6 @@
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CHECK_LICENSE_TYPE = "design_1_decoder_5b4b_0_0,decoder_5b4b,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* ip_definition_source = "module_ref" *) 
-(* x_core_info = "decoder_5b4b,Vivado 2023.1" *) 
-(* NotValidForBitStream *)
-module design_1_decoder_5b4b_0_0
-   (Data_in,
-    clk,
-    Data_rdy,
-    Output_rdy,
-    Data_out);
-  input [239:0]Data_in;
-  (* x_interface_info = "xilinx.com:signal:clock:1.0 clk CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME clk, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0" *) input clk;
-  input Data_rdy;
-  output Output_rdy;
-  output [191:0]Data_out;
-
-  wire [239:0]Data_in;
-  wire [191:0]Data_out;
-  wire Data_rdy;
-  wire Output_rdy;
-  wire clk;
-
-  design_1_decoder_5b4b_0_0_decoder_5b4b U0
-       (.Data_in(Data_in),
-        .Data_out(Data_out),
-        .Data_rdy(Data_rdy),
-        .Output_rdy(Output_rdy),
-        .clk(clk));
-endmodule
-
-(* ORIG_REF_NAME = "decoder_5b4b" *) 
 module design_1_decoder_5b4b_0_0_decoder_5b4b
    (Data_out,
     Output_rdy,
@@ -6951,6 +6921,35 @@ module design_1_decoder_5b4b_0_0_decoder_5b4b
         .I2(Data_in_temp[3]),
         .I3(Data_in_temp[4]),
         .O(in3[191]));
+endmodule
+
+(* CHECK_LICENSE_TYPE = "design_1_decoder_5b4b_0_0,decoder_5b4b,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* ip_definition_source = "module_ref" *) 
+(* x_core_info = "decoder_5b4b,Vivado 2023.1" *) 
+(* NotValidForBitStream *)
+module design_1_decoder_5b4b_0_0
+   (Data_in,
+    clk,
+    Data_rdy,
+    Output_rdy,
+    Data_out);
+  input [239:0]Data_in;
+  (* x_interface_info = "xilinx.com:signal:clock:1.0 clk CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME clk, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0" *) input clk;
+  input Data_rdy;
+  output Output_rdy;
+  output [191:0]Data_out;
+
+  wire [239:0]Data_in;
+  wire [191:0]Data_out;
+  wire Data_rdy;
+  wire Output_rdy;
+  wire clk;
+
+  design_1_decoder_5b4b_0_0_decoder_5b4b U0
+       (.Data_in(Data_in),
+        .Data_out(Data_out),
+        .Data_rdy(Data_rdy),
+        .Output_rdy(Output_rdy),
+        .clk(clk));
 endmodule
 `ifndef GLBL
 `define GLBL

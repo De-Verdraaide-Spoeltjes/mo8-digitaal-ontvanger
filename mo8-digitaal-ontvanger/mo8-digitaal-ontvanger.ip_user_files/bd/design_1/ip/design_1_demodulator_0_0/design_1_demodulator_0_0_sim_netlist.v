@@ -4,8 +4,8 @@
 // Tool Version: Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
 // Date        : Wed May 22 16:09:49 2024
 // Host        : XPS-Tommy running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim
-//               d:/_code/Git/Fontys/Jaar_2/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/ip/design_1_demodulator_0_0/design_1_demodulator_0_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim -rename_top design_1_demodulator_0_0 -prefix
+//               design_1_demodulator_0_0_ design_1_demodulator_0_0_sim_netlist.v
 // Design      : design_1_demodulator_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -13,50 +13,6 @@
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CHECK_LICENSE_TYPE = "design_1_demodulator_0_0,demodulator,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* ip_definition_source = "module_ref" *) 
-(* x_core_info = "demodulator,Vivado 2023.1" *) 
-(* NotValidForBitStream *)
-module design_1_demodulator_0_0
-   (clk,
-    reset,
-    signal_i,
-    timer_finished_i,
-    timer_enable_o,
-    timer_reset_o,
-    data_o_save,
-    data_o,
-    output_ready_o);
-  (* x_interface_info = "xilinx.com:signal:clock:1.0 clk CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME clk, ASSOCIATED_RESET reset, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0" *) input clk;
-  (* x_interface_info = "xilinx.com:signal:reset:1.0 reset RST" *) (* x_interface_parameter = "XIL_INTERFACENAME reset, POLARITY ACTIVE_HIGH, INSERT_VIP 0" *) input reset;
-  input signal_i;
-  input timer_finished_i;
-  output timer_enable_o;
-  output timer_reset_o;
-  output data_o_save;
-  output [7:0]data_o;
-  output output_ready_o;
-
-  wire clk;
-  wire [7:0]data_o;
-  wire data_o_save;
-  wire output_ready_o;
-  wire signal_i;
-  wire timer_enable_o;
-  wire timer_finished_i;
-  wire timer_reset_o;
-
-  design_1_demodulator_0_0_demodulator U0
-       (.clk(clk),
-        .data_o(data_o),
-        .data_o_save(data_o_save),
-        .output_ready_o(output_ready_o),
-        .signal_i(signal_i),
-        .timer_enable_o(timer_enable_o),
-        .timer_finished_i(timer_finished_i),
-        .timer_reset_o(timer_reset_o));
-endmodule
-
-(* ORIG_REF_NAME = "demodulator" *) 
 module design_1_demodulator_0_0_demodulator
    (timer_enable_o,
     timer_reset_o,
@@ -1110,6 +1066,49 @@ module design_1_demodulator_0_0_demodulator
         .I1(state[0]),
         .I2(state[2]),
         .O(timer_reset_o_reg_i_1_n_0));
+endmodule
+
+(* CHECK_LICENSE_TYPE = "design_1_demodulator_0_0,demodulator,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* ip_definition_source = "module_ref" *) 
+(* x_core_info = "demodulator,Vivado 2023.1" *) 
+(* NotValidForBitStream *)
+module design_1_demodulator_0_0
+   (clk,
+    reset,
+    signal_i,
+    timer_finished_i,
+    timer_enable_o,
+    timer_reset_o,
+    data_o_save,
+    data_o,
+    output_ready_o);
+  (* x_interface_info = "xilinx.com:signal:clock:1.0 clk CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME clk, ASSOCIATED_RESET reset, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0" *) input clk;
+  (* x_interface_info = "xilinx.com:signal:reset:1.0 reset RST" *) (* x_interface_parameter = "XIL_INTERFACENAME reset, POLARITY ACTIVE_HIGH, INSERT_VIP 0" *) input reset;
+  input signal_i;
+  input timer_finished_i;
+  output timer_enable_o;
+  output timer_reset_o;
+  output data_o_save;
+  output [7:0]data_o;
+  output output_ready_o;
+
+  wire clk;
+  wire [7:0]data_o;
+  wire data_o_save;
+  wire output_ready_o;
+  wire signal_i;
+  wire timer_enable_o;
+  wire timer_finished_i;
+  wire timer_reset_o;
+
+  design_1_demodulator_0_0_demodulator U0
+       (.clk(clk),
+        .data_o(data_o),
+        .data_o_save(data_o_save),
+        .output_ready_o(output_ready_o),
+        .signal_i(signal_i),
+        .timer_enable_o(timer_enable_o),
+        .timer_finished_i(timer_finished_i),
+        .timer_reset_o(timer_reset_o));
 endmodule
 `ifndef GLBL
 `define GLBL
