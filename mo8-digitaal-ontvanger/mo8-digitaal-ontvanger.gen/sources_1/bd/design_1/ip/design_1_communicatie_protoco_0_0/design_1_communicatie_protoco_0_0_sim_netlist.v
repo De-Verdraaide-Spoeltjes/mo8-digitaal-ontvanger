@@ -2,10 +2,10 @@
 // Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
-// Date        : Wed May 22 16:57:11 2024
-// Host        : XPS-Tommy running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim -rename_top design_1_communicatie_protoco_0_0 -prefix
-//               design_1_communicatie_protoco_0_0_ design_1_communicatie_protoco_0_0_sim_netlist.v
+// Date        : Thu Jun  6 15:41:32 2024
+// Host        : Lenovo-Jochem running 64-bit major release  (build 9200)
+// Command     : write_verilog -force -mode funcsim
+//               c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/ip/design_1_communicatie_protoco_0_0/design_1_communicatie_protoco_0_0_sim_netlist.v
 // Design      : design_1_communicatie_protoco_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -13,21 +13,59 @@
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-module design_1_communicatie_protoco_0_0_communicatie_protocol_ontvanger
-   (data_ready_output,
+(* CHECK_LICENSE_TYPE = "design_1_communicatie_protoco_0_0,communicatie_protocol_ontvanger,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* ip_definition_source = "module_ref" *) 
+(* x_core_info = "communicatie_protocol_ontvanger,Vivado 2023.1" *) 
+(* NotValidForBitStream *)
+module design_1_communicatie_protoco_0_0
+   (clk,
+    data_rdy_input,
+    data_in,
+    data_ready_output,
     data_out,
     crc_h_fail,
-    crc_d_fail,
-    clk,
-    data_in,
-    data_rdy_input);
+    crc_d_fail);
+  (* x_interface_info = "xilinx.com:signal:clock:1.0 clk CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME clk, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0" *) input clk;
+  input data_rdy_input;
+  input [191:0]data_in;
   output data_ready_output;
   output [127:0]data_out;
   output crc_h_fail;
   output crc_d_fail;
+
+  wire clk;
+  wire crc_d_fail;
+  wire crc_h_fail;
+  wire [191:0]data_in;
+  wire [127:0]data_out;
+  wire data_rdy_input;
+  wire data_ready_output;
+
+  design_1_communicatie_protoco_0_0_communicatie_protocol_ontvanger U0
+       (.clk(clk),
+        .crc_d_fail(crc_d_fail),
+        .crc_h_fail(crc_h_fail),
+        .data_in(data_in),
+        .data_out(data_out),
+        .data_rdy_input(data_rdy_input),
+        .data_ready_output(data_ready_output));
+endmodule
+
+(* ORIG_REF_NAME = "communicatie_protocol_ontvanger" *) 
+module design_1_communicatie_protoco_0_0_communicatie_protocol_ontvanger
+   (data_out,
+    data_ready_output,
+    crc_h_fail,
+    crc_d_fail,
+    clk,
+    data_rdy_input,
+    data_in);
+  output [127:0]data_out;
+  output data_ready_output;
+  output crc_h_fail;
+  output crc_d_fail;
   input clk;
-  input [191:0]data_in;
   input data_rdy_input;
+  input [191:0]data_in;
 
   wire \FSM_onehot_PS[0]_i_1_n_0 ;
   wire \FSM_onehot_PS[1]_i_1_n_0 ;
@@ -205,15 +243,15 @@ module design_1_communicatie_protoco_0_0_communicatie_protocol_ontvanger
   wire \buffer_data_intput_reg_n_0_[51] ;
   wire clk;
   wire crc_d_fail;
-  wire crc_d_fail_reg_i_1_n_0;
+  wire crc_d_fail_i_1_n_0;
   wire crc_h_fail;
-  wire crc_h_fail_reg_i_1_n_0;
+  wire crc_h_fail_i_1_n_0;
   wire [191:0]data_in;
   wire [127:0]data_out;
   wire data_rdy_input;
   wire data_rdy_input_old;
   wire data_ready_output;
-  wire data_ready_output_reg_i_1_n_0;
+  wire data_ready_output_i_1_n_0;
   wire [15:0]p_0_in;
   wire [15:0]p_0_in0_in;
   wire p_0_in107_in;
@@ -1844,3299 +1882,1973 @@ module design_1_communicatie_protoco_0_0_communicatie_protocol_ontvanger
         .DI({1'b0,1'b0,1'b0,1'b0}),
         .O(\NLW_FSM_onehot_PS_reg[6]_i_3_O_UNCONNECTED [3:0]),
         .S({\FSM_onehot_PS[6]_i_6_n_0 ,\FSM_onehot_PS[6]_i_7_n_0 ,\FSM_onehot_PS[6]_i_8_n_0 ,\FSM_onehot_PS[6]_i_9_n_0 }));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[0] 
-       (.CLR(1'b0),
+  FDRE \buffer_data_intput_reg[0] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[0]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(\buffer_data_intput_reg_n_0_[0] ));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[100] 
-       (.CLR(1'b0),
+        .Q(\buffer_data_intput_reg_n_0_[0] ),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[100] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[100]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_34_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[101] 
-       (.CLR(1'b0),
+        .Q(p_34_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[101] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[101]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_35_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[102] 
-       (.CLR(1'b0),
+        .Q(p_35_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[102] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[102]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_15_in63_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[103] 
-       (.CLR(1'b0),
+        .Q(p_15_in63_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[103] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[103]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_36_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[104] 
-       (.CLR(1'b0),
+        .Q(p_36_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[104] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[104]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_0_in5_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[105] 
-       (.CLR(1'b0),
+        .Q(p_0_in5_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[105] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[105]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_1_in6_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[106] 
-       (.CLR(1'b0),
+        .Q(p_1_in6_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[106] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[106]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_17_in64_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[107] 
-       (.CLR(1'b0),
+        .Q(p_17_in64_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[107] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[107]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_2_in7_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[108] 
-       (.CLR(1'b0),
+        .Q(p_2_in7_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[108] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[108]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_3_in8_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[109] 
-       (.CLR(1'b0),
+        .Q(p_3_in8_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[109] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[109]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_4_in9_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[10] 
-       (.CLR(1'b0),
+        .Q(p_4_in9_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[10] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[10]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_5_in115_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[110] 
-       (.CLR(1'b0),
+        .Q(p_5_in115_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[110] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[110]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_5_in10_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[111] 
-       (.CLR(1'b0),
+        .Q(p_5_in10_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[111] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[111]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_6_in11_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[112] 
-       (.CLR(1'b0),
+        .Q(p_6_in11_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[112] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[112]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_7_in12_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[113] 
-       (.CLR(1'b0),
+        .Q(p_7_in12_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[113] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[113]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_8_in13_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[114] 
-       (.CLR(1'b0),
+        .Q(p_8_in13_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[114] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[114]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_9_in14_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[115] 
-       (.CLR(1'b0),
+        .Q(p_9_in14_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[115] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[115]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_10_in15_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[116] 
-       (.CLR(1'b0),
+        .Q(p_10_in15_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[116] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[116]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_11_in16_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[117] 
-       (.CLR(1'b0),
+        .Q(p_11_in16_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[117] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[117]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_19_in65_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[118] 
-       (.CLR(1'b0),
+        .Q(p_19_in65_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[118] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[118]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_19_in75_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[119] 
-       (.CLR(1'b0),
+        .Q(p_19_in75_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[119] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[119]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_19_in80_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[11] 
-       (.CLR(1'b0),
+        .Q(p_19_in80_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[11] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[11]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_6_in116_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[120] 
-       (.CLR(1'b0),
+        .Q(p_6_in116_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[120] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[120]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_20_in84_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[121] 
-       (.CLR(1'b0),
+        .Q(p_20_in84_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[121] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[121]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_12_in17_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[122] 
-       (.CLR(1'b0),
+        .Q(p_12_in17_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[122] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[122]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_13_in18_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[123] 
-       (.CLR(1'b0),
+        .Q(p_13_in18_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[123] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[123]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_14_in19_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[124] 
-       (.CLR(1'b0),
+        .Q(p_14_in19_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[124] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[124]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_15_in20_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[125] 
-       (.CLR(1'b0),
+        .Q(p_15_in20_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[125] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[125]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_16_in21_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[126] 
-       (.CLR(1'b0),
+        .Q(p_16_in21_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[126] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[126]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_17_in22_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[127] 
-       (.CLR(1'b0),
+        .Q(p_17_in22_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[127] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[127]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_18_in23_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[128] 
-       (.CLR(1'b0),
+        .Q(p_18_in23_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[128] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[128]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_19_in24_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[129] 
-       (.CLR(1'b0),
+        .Q(p_19_in24_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[129] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[129]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_20_in25_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[12] 
-       (.CLR(1'b0),
+        .Q(p_20_in25_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[12] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[12]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_7_in117_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[130] 
-       (.CLR(1'b0),
+        .Q(p_7_in117_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[130] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[130]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_21_in26_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[131] 
-       (.CLR(1'b0),
+        .Q(p_21_in26_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[131] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[131]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_22_in27_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[132] 
-       (.CLR(1'b0),
+        .Q(p_22_in27_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[132] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[132]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_21_in66_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[133] 
-       (.CLR(1'b0),
+        .Q(p_21_in66_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[133] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[133]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_23_in28_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[134] 
-       (.CLR(1'b0),
+        .Q(p_23_in28_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[134] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[134]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_23_in67_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[135] 
-       (.CLR(1'b0),
+        .Q(p_23_in67_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[135] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[135]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_24_in29_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[136] 
-       (.CLR(1'b0),
+        .Q(p_24_in29_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[136] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[136]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_25_in30_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[137] 
-       (.CLR(1'b0),
+        .Q(p_25_in30_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[137] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[137]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_26_in31_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[138] 
-       (.CLR(1'b0),
+        .Q(p_26_in31_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[138] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[138]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_27_in32_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[139] 
-       (.CLR(1'b0),
+        .Q(p_27_in32_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[139] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[139]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_28_in33_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[13] 
-       (.CLR(1'b0),
+        .Q(p_28_in33_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[13] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[13]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_8_in118_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[140] 
-       (.CLR(1'b0),
+        .Q(p_8_in118_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[140] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[140]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_29_in34_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[141] 
-       (.CLR(1'b0),
+        .Q(p_29_in34_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[141] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[141]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_30_in35_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[142] 
-       (.CLR(1'b0),
+        .Q(p_30_in35_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[142] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[142]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_31_in36_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[143] 
-       (.CLR(1'b0),
+        .Q(p_31_in36_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[143] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[143]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_32_in37_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[144] 
-       (.CLR(1'b0),
+        .Q(p_32_in37_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[144] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[144]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_33_in38_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[145] 
-       (.CLR(1'b0),
+        .Q(p_33_in38_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[145] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[145]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_34_in39_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[146] 
-       (.CLR(1'b0),
+        .Q(p_34_in39_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[146] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[146]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_35_in40_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[147] 
-       (.CLR(1'b0),
+        .Q(p_35_in40_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[147] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[147]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_25_in68_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[148] 
-       (.CLR(1'b0),
+        .Q(p_25_in68_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[148] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[148]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_36_in76_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[149] 
-       (.CLR(1'b0),
+        .Q(p_36_in76_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[149] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[149]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_36_in41_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[14] 
-       (.CLR(1'b0),
+        .Q(p_36_in41_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[14] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[14]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_9_in119_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[150] 
-       (.CLR(1'b0),
+        .Q(p_9_in119_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[150] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[150]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_37_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[151] 
-       (.CLR(1'b0),
+        .Q(p_37_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[151] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[151]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_38_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[152] 
-       (.CLR(1'b0),
+        .Q(p_38_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[152] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[152]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_39_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[153] 
-       (.CLR(1'b0),
+        .Q(p_39_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[153] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[153]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_40_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[154] 
-       (.CLR(1'b0),
+        .Q(p_40_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[154] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[154]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_41_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[155] 
-       (.CLR(1'b0),
+        .Q(p_41_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[155] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[155]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_42_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[156] 
-       (.CLR(1'b0),
+        .Q(p_42_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[156] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[156]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_43_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[157] 
-       (.CLR(1'b0),
+        .Q(p_43_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[157] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[157]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_44_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[158] 
-       (.CLR(1'b0),
+        .Q(p_44_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[158] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[158]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_45_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[159] 
-       (.CLR(1'b0),
+        .Q(p_45_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[159] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[159]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_46_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[15] 
-       (.CLR(1'b0),
+        .Q(p_46_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[15] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[15]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_10_in120_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[160] 
-       (.CLR(1'b0),
+        .Q(p_10_in120_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[160] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[160]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_47_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[161] 
-       (.CLR(1'b0),
+        .Q(p_47_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[161] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[161]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_48_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[162] 
-       (.CLR(1'b0),
+        .Q(p_48_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[162] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[162]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_13_in69_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[163] 
-       (.CLR(1'b0),
+        .Q(p_13_in69_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[163] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[163]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_0_in42_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[164] 
-       (.CLR(1'b0),
+        .Q(p_0_in42_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[164] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[164]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_1_in43_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[165] 
-       (.CLR(1'b0),
+        .Q(p_1_in43_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[165] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[165]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_2_in44_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[166] 
-       (.CLR(1'b0),
+        .Q(p_2_in44_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[166] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[166]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_3_in45_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[167] 
-       (.CLR(1'b0),
+        .Q(p_3_in45_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[167] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[167]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_4_in46_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[168] 
-       (.CLR(1'b0),
+        .Q(p_4_in46_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[168] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[168]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_5_in47_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[169] 
-       (.CLR(1'b0),
+        .Q(p_5_in47_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[169] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[169]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_6_in48_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[16] 
-       (.CLR(1'b0),
+        .Q(p_6_in48_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[16] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[16]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_11_in121_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[170] 
-       (.CLR(1'b0),
+        .Q(p_11_in121_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[170] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[170]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_7_in49_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[171] 
-       (.CLR(1'b0),
+        .Q(p_7_in49_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[171] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[171]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_8_in50_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[172] 
-       (.CLR(1'b0),
+        .Q(p_8_in50_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[172] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[172]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_9_in51_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[173] 
-       (.CLR(1'b0),
+        .Q(p_9_in51_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[173] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[173]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_10_in52_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[174] 
-       (.CLR(1'b0),
+        .Q(p_10_in52_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[174] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[174]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_11_in53_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[175] 
-       (.CLR(1'b0),
+        .Q(p_11_in53_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[175] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[175]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_40_in54_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[176] 
-       (.CLR(1'b0),
+        .Q(p_40_in54_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[176] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[176]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_0_in[0]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[177] 
-       (.CLR(1'b0),
+        .Q(p_0_in[0]),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[177] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[177]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_0_in[1]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[178] 
-       (.CLR(1'b0),
+        .Q(p_0_in[1]),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[178] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[178]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_0_in[2]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[179] 
-       (.CLR(1'b0),
+        .Q(p_0_in[2]),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[179] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[179]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_0_in[3]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[17] 
-       (.CLR(1'b0),
+        .Q(p_0_in[3]),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[17] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[17]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_12_in122_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[180] 
-       (.CLR(1'b0),
+        .Q(p_12_in122_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[180] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[180]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_0_in[4]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[181] 
-       (.CLR(1'b0),
+        .Q(p_0_in[4]),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[181] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[181]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_0_in[5]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[182] 
-       (.CLR(1'b0),
+        .Q(p_0_in[5]),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[182] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[182]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_0_in[6]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[183] 
-       (.CLR(1'b0),
+        .Q(p_0_in[6]),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[183] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[183]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_0_in[7]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[184] 
-       (.CLR(1'b0),
+        .Q(p_0_in[7]),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[184] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[184]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_0_in[8]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[185] 
-       (.CLR(1'b0),
+        .Q(p_0_in[8]),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[185] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[185]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_0_in[9]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[186] 
-       (.CLR(1'b0),
+        .Q(p_0_in[9]),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[186] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[186]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_0_in[10]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[187] 
-       (.CLR(1'b0),
+        .Q(p_0_in[10]),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[187] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[187]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_0_in[11]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[188] 
-       (.CLR(1'b0),
+        .Q(p_0_in[11]),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[188] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[188]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_0_in[12]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[189] 
-       (.CLR(1'b0),
+        .Q(p_0_in[12]),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[189] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[189]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_0_in[13]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[18] 
-       (.CLR(1'b0),
+        .Q(p_0_in[13]),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[18] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[18]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_26_in137_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[190] 
-       (.CLR(1'b0),
+        .Q(p_26_in137_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[190] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[190]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_0_in[14]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[191] 
-       (.CLR(1'b0),
+        .Q(p_0_in[14]),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[191] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[191]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_0_in[15]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[19] 
-       (.CLR(1'b0),
+        .Q(p_0_in[15]),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[19] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[19]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_13_in123_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[1] 
-       (.CLR(1'b0),
+        .Q(p_13_in123_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[1] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[1]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(\buffer_data_intput_reg_n_0_[1] ));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[20] 
-       (.CLR(1'b0),
+        .Q(\buffer_data_intput_reg_n_0_[1] ),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[20] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[20]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_14_in124_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[21] 
-       (.CLR(1'b0),
+        .Q(p_14_in124_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[21] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[21]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_15_in125_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[22] 
-       (.CLR(1'b0),
+        .Q(p_15_in125_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[22] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[22]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_16_in126_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[23] 
-       (.CLR(1'b0),
+        .Q(p_16_in126_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[23] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[23]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_17_in127_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[24] 
-       (.CLR(1'b0),
+        .Q(p_17_in127_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[24] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[24]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_18_in128_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[25] 
-       (.CLR(1'b0),
+        .Q(p_18_in128_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[25] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[25]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_19_in129_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[26] 
-       (.CLR(1'b0),
+        .Q(p_19_in129_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[26] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[26]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_20_in130_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[27] 
-       (.CLR(1'b0),
+        .Q(p_20_in130_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[27] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[27]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_21_in131_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[28] 
-       (.CLR(1'b0),
+        .Q(p_21_in131_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[28] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[28]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_22_in132_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[29] 
-       (.CLR(1'b0),
+        .Q(p_22_in132_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[29] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[29]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_23_in133_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[2] 
-       (.CLR(1'b0),
+        .Q(p_23_in133_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[2] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[2]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_0_in107_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[30] 
-       (.CLR(1'b0),
+        .Q(p_0_in107_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[30] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[30]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_24_in134_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[31] 
-       (.CLR(1'b0),
+        .Q(p_24_in134_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[31] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[31]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_29_in135_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[32] 
-       (.CLR(1'b0),
+        .Q(p_29_in135_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[32] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[32]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_0_in0_in[0]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[33] 
-       (.CLR(1'b0),
+        .Q(p_0_in0_in[0]),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[33] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[33]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_0_in0_in[1]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[34] 
-       (.CLR(1'b0),
+        .Q(p_0_in0_in[1]),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[34] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[34]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_0_in0_in[2]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[35] 
-       (.CLR(1'b0),
+        .Q(p_0_in0_in[2]),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[35] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[35]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_0_in0_in[3]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[36] 
-       (.CLR(1'b0),
+        .Q(p_0_in0_in[3]),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[36] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[36]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_0_in0_in[4]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[37] 
-       (.CLR(1'b0),
+        .Q(p_0_in0_in[4]),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[37] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[37]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_0_in0_in[5]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[38] 
-       (.CLR(1'b0),
+        .Q(p_0_in0_in[5]),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[38] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[38]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_0_in0_in[6]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[39] 
-       (.CLR(1'b0),
+        .Q(p_0_in0_in[6]),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[39] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[39]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_0_in0_in[7]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[3] 
-       (.CLR(1'b0),
+        .Q(p_0_in0_in[7]),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[3] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[3]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_25_in138_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[40] 
-       (.CLR(1'b0),
+        .Q(p_25_in138_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[40] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[40]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_0_in0_in[8]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[41] 
-       (.CLR(1'b0),
+        .Q(p_0_in0_in[8]),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[41] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[41]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_0_in0_in[9]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[42] 
-       (.CLR(1'b0),
+        .Q(p_0_in0_in[9]),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[42] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[42]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_0_in0_in[10]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[43] 
-       (.CLR(1'b0),
+        .Q(p_0_in0_in[10]),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[43] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[43]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_0_in0_in[11]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[44] 
-       (.CLR(1'b0),
+        .Q(p_0_in0_in[11]),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[44] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[44]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_0_in0_in[12]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[45] 
-       (.CLR(1'b0),
+        .Q(p_0_in0_in[12]),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[45] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[45]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_0_in0_in[13]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[46] 
-       (.CLR(1'b0),
+        .Q(p_0_in0_in[13]),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[46] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[46]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_0_in0_in[14]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[47] 
-       (.CLR(1'b0),
+        .Q(p_0_in0_in[14]),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[47] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[47]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_0_in0_in[15]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[48] 
-       (.CLR(1'b0),
+        .Q(p_0_in0_in[15]),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[48] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[48]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(\buffer_data_intput_reg_n_0_[48] ));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[49] 
-       (.CLR(1'b0),
+        .Q(\buffer_data_intput_reg_n_0_[48] ),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[49] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[49]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(\buffer_data_intput_reg_n_0_[49] ));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[4] 
-       (.CLR(1'b0),
+        .Q(\buffer_data_intput_reg_n_0_[49] ),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[4] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[4]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_27_in140_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[50] 
-       (.CLR(1'b0),
+        .Q(p_27_in140_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[50] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[50]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_1_in1_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[51] 
-       (.CLR(1'b0),
+        .Q(p_1_in1_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[51] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[51]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(\buffer_data_intput_reg_n_0_[51] ));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[52] 
-       (.CLR(1'b0),
+        .Q(\buffer_data_intput_reg_n_0_[51] ),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[52] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[52]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_2_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[53] 
-       (.CLR(1'b0),
+        .Q(p_2_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[53] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[53]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_3_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[54] 
-       (.CLR(1'b0),
+        .Q(p_3_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[54] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[54]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_4_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[55] 
-       (.CLR(1'b0),
+        .Q(p_4_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[55] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[55]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_5_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[56] 
-       (.CLR(1'b0),
+        .Q(p_5_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[56] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[56]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_6_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[57] 
-       (.CLR(1'b0),
+        .Q(p_6_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[57] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[57]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_0_in56_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[58] 
-       (.CLR(1'b0),
+        .Q(p_0_in56_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[58] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[58]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_0_in72_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[59] 
-       (.CLR(1'b0),
+        .Q(p_0_in72_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[59] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[59]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_0_in79_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[5] 
-       (.CLR(1'b0),
+        .Q(p_0_in79_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[5] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[5]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_0_in110_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[60] 
-       (.CLR(1'b0),
+        .Q(p_0_in110_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[60] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[60]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_2_in83_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[61] 
-       (.CLR(1'b0),
+        .Q(p_2_in83_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[61] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[61]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_2_in86_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[62] 
-       (.CLR(1'b0),
+        .Q(p_2_in86_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[62] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[62]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_3_in88_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[63] 
-       (.CLR(1'b0),
+        .Q(p_3_in88_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[63] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[63]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_2_in90_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[64] 
-       (.CLR(1'b0),
+        .Q(p_2_in90_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[64] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[64]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_3_in93_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[65] 
-       (.CLR(1'b0),
+        .Q(p_3_in93_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[65] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[65]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_7_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[66] 
-       (.CLR(1'b0),
+        .Q(p_7_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[66] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[66]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_8_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[67] 
-       (.CLR(1'b0),
+        .Q(p_8_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[67] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[67]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_9_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[68] 
-       (.CLR(1'b0),
+        .Q(p_9_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[68] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[68]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_10_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[69] 
-       (.CLR(1'b0),
+        .Q(p_10_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[69] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[69]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_11_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[6] 
-       (.CLR(1'b0),
+        .Q(p_11_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[6] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[6]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_1_in111_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[70] 
-       (.CLR(1'b0),
+        .Q(p_1_in111_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[70] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[70]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_12_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[71] 
-       (.CLR(1'b0),
+        .Q(p_12_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[71] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[71]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_13_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[72] 
-       (.CLR(1'b0),
+        .Q(p_13_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[72] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[72]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_3_in57_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[73] 
-       (.CLR(1'b0),
+        .Q(p_3_in57_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[73] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[73]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_14_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[74] 
-       (.CLR(1'b0),
+        .Q(p_14_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[74] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[74]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_5_in58_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[75] 
-       (.CLR(1'b0),
+        .Q(p_5_in58_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[75] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[75]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_15_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[76] 
-       (.CLR(1'b0),
+        .Q(p_15_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[76] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[76]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_7_in59_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[77] 
-       (.CLR(1'b0),
+        .Q(p_7_in59_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[77] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[77]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_16_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[78] 
-       (.CLR(1'b0),
+        .Q(p_16_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[78] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[78]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_9_in60_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[79] 
-       (.CLR(1'b0),
+        .Q(p_9_in60_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[79] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[79]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_17_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[7] 
-       (.CLR(1'b0),
+        .Q(p_17_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[7] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[7]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_2_in112_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[80] 
-       (.CLR(1'b0),
+        .Q(p_2_in112_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[80] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[80]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_18_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[81] 
-       (.CLR(1'b0),
+        .Q(p_18_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[81] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[81]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_19_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[82] 
-       (.CLR(1'b0),
+        .Q(p_19_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[82] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[82]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_20_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[83] 
-       (.CLR(1'b0),
+        .Q(p_20_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[83] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[83]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_21_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[84] 
-       (.CLR(1'b0),
+        .Q(p_21_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[84] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[84]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_22_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[85] 
-       (.CLR(1'b0),
+        .Q(p_22_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[85] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[85]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_23_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[86] 
-       (.CLR(1'b0),
+        .Q(p_23_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[86] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[86]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_24_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[87] 
-       (.CLR(1'b0),
+        .Q(p_24_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[87] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[87]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_11_in61_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[88] 
-       (.CLR(1'b0),
+        .Q(p_11_in61_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[88] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[88]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_11_in73_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[89] 
-       (.CLR(1'b0),
+        .Q(p_11_in73_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[89] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[89]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_25_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[8] 
-       (.CLR(1'b0),
+        .Q(p_25_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[8] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[8]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_3_in113_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[90] 
-       (.CLR(1'b0),
+        .Q(p_3_in113_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[90] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[90]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_26_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[91] 
-       (.CLR(1'b0),
+        .Q(p_26_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[91] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[91]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_13_in62_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[92] 
-       (.CLR(1'b0),
+        .Q(p_13_in62_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[92] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[92]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_13_in74_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[93] 
-       (.CLR(1'b0),
+        .Q(p_13_in74_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[93] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[93]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_27_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[94] 
-       (.CLR(1'b0),
+        .Q(p_27_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[94] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[94]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_28_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[95] 
-       (.CLR(1'b0),
+        .Q(p_28_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[95] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[95]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_29_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[96] 
-       (.CLR(1'b0),
+        .Q(p_29_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[96] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[96]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_30_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[97] 
-       (.CLR(1'b0),
+        .Q(p_30_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[97] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[97]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_31_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[98] 
-       (.CLR(1'b0),
+        .Q(p_31_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[98] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[98]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_32_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[99] 
-       (.CLR(1'b0),
+        .Q(p_32_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[99] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[99]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_33_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \buffer_data_intput_reg[9] 
-       (.CLR(1'b0),
+        .Q(p_33_in),
+        .R(1'b0));
+  FDRE \buffer_data_intput_reg[9] 
+       (.C(clk),
+        .CE(buffer_data_intput),
         .D(data_in[9]),
-        .G(buffer_data_intput),
-        .GE(1'b1),
-        .Q(p_4_in114_in));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    crc_d_fail_reg
-       (.CLR(1'b0),
-        .D(\FSM_onehot_PS_reg_n_0_[5] ),
-        .G(crc_d_fail_reg_i_1_n_0),
-        .GE(1'b1),
-        .Q(crc_d_fail));
-  (* SOFT_HLUTNM = "soft_lutpair9" *) 
-  LUT2 #(
-    .INIT(4'hE)) 
-    crc_d_fail_reg_i_1
+        .Q(p_4_in114_in),
+        .R(1'b0));
+  LUT3 #(
+    .INIT(8'hDC)) 
+    crc_d_fail_i_1
        (.I0(\FSM_onehot_PS_reg_n_0_[4] ),
         .I1(\FSM_onehot_PS_reg_n_0_[5] ),
-        .O(crc_d_fail_reg_i_1_n_0));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    crc_h_fail_reg
-       (.CLR(1'b0),
-        .D(\FSM_onehot_PS_reg_n_0_[6] ),
-        .G(crc_h_fail_reg_i_1_n_0),
-        .GE(1'b1),
-        .Q(crc_h_fail));
+        .I2(crc_d_fail),
+        .O(crc_d_fail_i_1_n_0));
+  FDRE crc_d_fail_reg
+       (.C(clk),
+        .CE(1'b1),
+        .D(crc_d_fail_i_1_n_0),
+        .Q(crc_d_fail),
+        .R(1'b0));
   (* SOFT_HLUTNM = "soft_lutpair9" *) 
-  LUT2 #(
-    .INIT(4'hE)) 
-    crc_h_fail_reg_i_1
+  LUT3 #(
+    .INIT(8'hDC)) 
+    crc_h_fail_i_1
        (.I0(\FSM_onehot_PS_reg_n_0_[4] ),
         .I1(\FSM_onehot_PS_reg_n_0_[6] ),
-        .O(crc_h_fail_reg_i_1_n_0));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[0] 
-       (.CLR(1'b0),
+        .I2(crc_h_fail),
+        .O(crc_h_fail_i_1_n_0));
+  FDRE crc_h_fail_reg
+       (.C(clk),
+        .CE(1'b1),
+        .D(crc_h_fail_i_1_n_0),
+        .Q(crc_h_fail),
+        .R(1'b0));
+  FDRE \data_out_reg[0] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(\buffer_data_intput_reg_n_0_[48] ),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[0]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[100] 
-       (.CLR(1'b0),
+        .Q(data_out[0]),
+        .R(1'b0));
+  FDRE \data_out_reg[100] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_36_in76_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[100]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[101] 
-       (.CLR(1'b0),
+        .Q(data_out[100]),
+        .R(1'b0));
+  FDRE \data_out_reg[101] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_36_in41_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[101]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[102] 
-       (.CLR(1'b0),
+        .Q(data_out[101]),
+        .R(1'b0));
+  FDRE \data_out_reg[102] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_37_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[102]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[103] 
-       (.CLR(1'b0),
+        .Q(data_out[102]),
+        .R(1'b0));
+  FDRE \data_out_reg[103] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_38_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[103]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[104] 
-       (.CLR(1'b0),
+        .Q(data_out[103]),
+        .R(1'b0));
+  FDRE \data_out_reg[104] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_39_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[104]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[105] 
-       (.CLR(1'b0),
+        .Q(data_out[104]),
+        .R(1'b0));
+  FDRE \data_out_reg[105] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_40_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[105]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[106] 
-       (.CLR(1'b0),
+        .Q(data_out[105]),
+        .R(1'b0));
+  FDRE \data_out_reg[106] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_41_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[106]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[107] 
-       (.CLR(1'b0),
+        .Q(data_out[106]),
+        .R(1'b0));
+  FDRE \data_out_reg[107] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_42_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[107]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[108] 
-       (.CLR(1'b0),
+        .Q(data_out[107]),
+        .R(1'b0));
+  FDRE \data_out_reg[108] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_43_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[108]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[109] 
-       (.CLR(1'b0),
+        .Q(data_out[108]),
+        .R(1'b0));
+  FDRE \data_out_reg[109] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_44_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[109]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[10] 
-       (.CLR(1'b0),
+        .Q(data_out[109]),
+        .R(1'b0));
+  FDRE \data_out_reg[10] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_0_in72_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[10]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[110] 
-       (.CLR(1'b0),
+        .Q(data_out[10]),
+        .R(1'b0));
+  FDRE \data_out_reg[110] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_45_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[110]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[111] 
-       (.CLR(1'b0),
+        .Q(data_out[110]),
+        .R(1'b0));
+  FDRE \data_out_reg[111] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_46_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[111]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[112] 
-       (.CLR(1'b0),
+        .Q(data_out[111]),
+        .R(1'b0));
+  FDRE \data_out_reg[112] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_47_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[112]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[113] 
-       (.CLR(1'b0),
+        .Q(data_out[112]),
+        .R(1'b0));
+  FDRE \data_out_reg[113] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_48_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[113]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[114] 
-       (.CLR(1'b0),
+        .Q(data_out[113]),
+        .R(1'b0));
+  FDRE \data_out_reg[114] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_13_in69_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[114]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[115] 
-       (.CLR(1'b0),
+        .Q(data_out[114]),
+        .R(1'b0));
+  FDRE \data_out_reg[115] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_0_in42_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[115]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[116] 
-       (.CLR(1'b0),
+        .Q(data_out[115]),
+        .R(1'b0));
+  FDRE \data_out_reg[116] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_1_in43_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[116]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[117] 
-       (.CLR(1'b0),
+        .Q(data_out[116]),
+        .R(1'b0));
+  FDRE \data_out_reg[117] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_2_in44_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[117]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[118] 
-       (.CLR(1'b0),
+        .Q(data_out[117]),
+        .R(1'b0));
+  FDRE \data_out_reg[118] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_3_in45_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[118]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[119] 
-       (.CLR(1'b0),
+        .Q(data_out[118]),
+        .R(1'b0));
+  FDRE \data_out_reg[119] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_4_in46_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[119]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[11] 
-       (.CLR(1'b0),
+        .Q(data_out[119]),
+        .R(1'b0));
+  FDRE \data_out_reg[11] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_0_in79_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[11]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[120] 
-       (.CLR(1'b0),
+        .Q(data_out[11]),
+        .R(1'b0));
+  FDRE \data_out_reg[120] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_5_in47_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[120]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[121] 
-       (.CLR(1'b0),
+        .Q(data_out[120]),
+        .R(1'b0));
+  FDRE \data_out_reg[121] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_6_in48_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[121]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[122] 
-       (.CLR(1'b0),
+        .Q(data_out[121]),
+        .R(1'b0));
+  FDRE \data_out_reg[122] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_7_in49_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[122]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[123] 
-       (.CLR(1'b0),
+        .Q(data_out[122]),
+        .R(1'b0));
+  FDRE \data_out_reg[123] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_8_in50_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[123]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[124] 
-       (.CLR(1'b0),
+        .Q(data_out[123]),
+        .R(1'b0));
+  FDRE \data_out_reg[124] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_9_in51_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[124]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[125] 
-       (.CLR(1'b0),
+        .Q(data_out[124]),
+        .R(1'b0));
+  FDRE \data_out_reg[125] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_10_in52_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[125]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[126] 
-       (.CLR(1'b0),
+        .Q(data_out[125]),
+        .R(1'b0));
+  FDRE \data_out_reg[126] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_11_in53_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[126]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[127] 
-       (.CLR(1'b0),
+        .Q(data_out[126]),
+        .R(1'b0));
+  FDRE \data_out_reg[127] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_40_in54_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[127]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[12] 
-       (.CLR(1'b0),
+        .Q(data_out[127]),
+        .R(1'b0));
+  FDRE \data_out_reg[12] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_2_in83_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[12]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[13] 
-       (.CLR(1'b0),
+        .Q(data_out[12]),
+        .R(1'b0));
+  FDRE \data_out_reg[13] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_2_in86_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[13]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[14] 
-       (.CLR(1'b0),
+        .Q(data_out[13]),
+        .R(1'b0));
+  FDRE \data_out_reg[14] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_3_in88_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[14]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[15] 
-       (.CLR(1'b0),
+        .Q(data_out[14]),
+        .R(1'b0));
+  FDRE \data_out_reg[15] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_2_in90_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[15]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[16] 
-       (.CLR(1'b0),
+        .Q(data_out[15]),
+        .R(1'b0));
+  FDRE \data_out_reg[16] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_3_in93_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[16]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[17] 
-       (.CLR(1'b0),
+        .Q(data_out[16]),
+        .R(1'b0));
+  FDRE \data_out_reg[17] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_7_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[17]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[18] 
-       (.CLR(1'b0),
+        .Q(data_out[17]),
+        .R(1'b0));
+  FDRE \data_out_reg[18] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_8_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[18]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[19] 
-       (.CLR(1'b0),
+        .Q(data_out[18]),
+        .R(1'b0));
+  FDRE \data_out_reg[19] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_9_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[19]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[1] 
-       (.CLR(1'b0),
+        .Q(data_out[19]),
+        .R(1'b0));
+  FDRE \data_out_reg[1] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(\buffer_data_intput_reg_n_0_[49] ),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[1]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[20] 
-       (.CLR(1'b0),
+        .Q(data_out[1]),
+        .R(1'b0));
+  FDRE \data_out_reg[20] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_10_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[20]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[21] 
-       (.CLR(1'b0),
+        .Q(data_out[20]),
+        .R(1'b0));
+  FDRE \data_out_reg[21] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_11_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[21]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[22] 
-       (.CLR(1'b0),
+        .Q(data_out[21]),
+        .R(1'b0));
+  FDRE \data_out_reg[22] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_12_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[22]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[23] 
-       (.CLR(1'b0),
+        .Q(data_out[22]),
+        .R(1'b0));
+  FDRE \data_out_reg[23] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_13_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[23]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[24] 
-       (.CLR(1'b0),
+        .Q(data_out[23]),
+        .R(1'b0));
+  FDRE \data_out_reg[24] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_3_in57_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[24]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[25] 
-       (.CLR(1'b0),
+        .Q(data_out[24]),
+        .R(1'b0));
+  FDRE \data_out_reg[25] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_14_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[25]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[26] 
-       (.CLR(1'b0),
+        .Q(data_out[25]),
+        .R(1'b0));
+  FDRE \data_out_reg[26] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_5_in58_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[26]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[27] 
-       (.CLR(1'b0),
+        .Q(data_out[26]),
+        .R(1'b0));
+  FDRE \data_out_reg[27] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_15_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[27]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[28] 
-       (.CLR(1'b0),
+        .Q(data_out[27]),
+        .R(1'b0));
+  FDRE \data_out_reg[28] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_7_in59_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[28]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[29] 
-       (.CLR(1'b0),
+        .Q(data_out[28]),
+        .R(1'b0));
+  FDRE \data_out_reg[29] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_16_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[29]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[2] 
-       (.CLR(1'b0),
+        .Q(data_out[29]),
+        .R(1'b0));
+  FDRE \data_out_reg[2] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_1_in1_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[2]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[30] 
-       (.CLR(1'b0),
+        .Q(data_out[2]),
+        .R(1'b0));
+  FDRE \data_out_reg[30] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_9_in60_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[30]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[31] 
-       (.CLR(1'b0),
+        .Q(data_out[30]),
+        .R(1'b0));
+  FDRE \data_out_reg[31] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_17_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[31]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[32] 
-       (.CLR(1'b0),
+        .Q(data_out[31]),
+        .R(1'b0));
+  FDRE \data_out_reg[32] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_18_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[32]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[33] 
-       (.CLR(1'b0),
+        .Q(data_out[32]),
+        .R(1'b0));
+  FDRE \data_out_reg[33] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_19_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[33]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[34] 
-       (.CLR(1'b0),
+        .Q(data_out[33]),
+        .R(1'b0));
+  FDRE \data_out_reg[34] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_20_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[34]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[35] 
-       (.CLR(1'b0),
+        .Q(data_out[34]),
+        .R(1'b0));
+  FDRE \data_out_reg[35] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_21_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[35]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[36] 
-       (.CLR(1'b0),
+        .Q(data_out[35]),
+        .R(1'b0));
+  FDRE \data_out_reg[36] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_22_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[36]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[37] 
-       (.CLR(1'b0),
+        .Q(data_out[36]),
+        .R(1'b0));
+  FDRE \data_out_reg[37] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_23_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[37]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[38] 
-       (.CLR(1'b0),
+        .Q(data_out[37]),
+        .R(1'b0));
+  FDRE \data_out_reg[38] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_24_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[38]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[39] 
-       (.CLR(1'b0),
+        .Q(data_out[38]),
+        .R(1'b0));
+  FDRE \data_out_reg[39] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_11_in61_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[39]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[3] 
-       (.CLR(1'b0),
+        .Q(data_out[39]),
+        .R(1'b0));
+  FDRE \data_out_reg[3] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(\buffer_data_intput_reg_n_0_[51] ),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[3]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[40] 
-       (.CLR(1'b0),
+        .Q(data_out[3]),
+        .R(1'b0));
+  FDRE \data_out_reg[40] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_11_in73_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[40]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[41] 
-       (.CLR(1'b0),
+        .Q(data_out[40]),
+        .R(1'b0));
+  FDRE \data_out_reg[41] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_25_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[41]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[42] 
-       (.CLR(1'b0),
+        .Q(data_out[41]),
+        .R(1'b0));
+  FDRE \data_out_reg[42] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_26_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[42]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[43] 
-       (.CLR(1'b0),
+        .Q(data_out[42]),
+        .R(1'b0));
+  FDRE \data_out_reg[43] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_13_in62_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[43]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[44] 
-       (.CLR(1'b0),
+        .Q(data_out[43]),
+        .R(1'b0));
+  FDRE \data_out_reg[44] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_13_in74_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[44]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[45] 
-       (.CLR(1'b0),
+        .Q(data_out[44]),
+        .R(1'b0));
+  FDRE \data_out_reg[45] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_27_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[45]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[46] 
-       (.CLR(1'b0),
+        .Q(data_out[45]),
+        .R(1'b0));
+  FDRE \data_out_reg[46] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_28_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[46]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[47] 
-       (.CLR(1'b0),
+        .Q(data_out[46]),
+        .R(1'b0));
+  FDRE \data_out_reg[47] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_29_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[47]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[48] 
-       (.CLR(1'b0),
+        .Q(data_out[47]),
+        .R(1'b0));
+  FDRE \data_out_reg[48] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_30_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[48]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[49] 
-       (.CLR(1'b0),
+        .Q(data_out[48]),
+        .R(1'b0));
+  FDRE \data_out_reg[49] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_31_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[49]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[4] 
-       (.CLR(1'b0),
+        .Q(data_out[49]),
+        .R(1'b0));
+  FDRE \data_out_reg[4] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_2_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[4]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[50] 
-       (.CLR(1'b0),
+        .Q(data_out[4]),
+        .R(1'b0));
+  FDRE \data_out_reg[50] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_32_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[50]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[51] 
-       (.CLR(1'b0),
+        .Q(data_out[50]),
+        .R(1'b0));
+  FDRE \data_out_reg[51] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_33_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[51]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[52] 
-       (.CLR(1'b0),
+        .Q(data_out[51]),
+        .R(1'b0));
+  FDRE \data_out_reg[52] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_34_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[52]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[53] 
-       (.CLR(1'b0),
+        .Q(data_out[52]),
+        .R(1'b0));
+  FDRE \data_out_reg[53] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_35_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[53]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[54] 
-       (.CLR(1'b0),
+        .Q(data_out[53]),
+        .R(1'b0));
+  FDRE \data_out_reg[54] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_15_in63_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[54]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[55] 
-       (.CLR(1'b0),
+        .Q(data_out[54]),
+        .R(1'b0));
+  FDRE \data_out_reg[55] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_36_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[55]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[56] 
-       (.CLR(1'b0),
+        .Q(data_out[55]),
+        .R(1'b0));
+  FDRE \data_out_reg[56] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_0_in5_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[56]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[57] 
-       (.CLR(1'b0),
+        .Q(data_out[56]),
+        .R(1'b0));
+  FDRE \data_out_reg[57] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_1_in6_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[57]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[58] 
-       (.CLR(1'b0),
+        .Q(data_out[57]),
+        .R(1'b0));
+  FDRE \data_out_reg[58] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_17_in64_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[58]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[59] 
-       (.CLR(1'b0),
+        .Q(data_out[58]),
+        .R(1'b0));
+  FDRE \data_out_reg[59] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_2_in7_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[59]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[5] 
-       (.CLR(1'b0),
+        .Q(data_out[59]),
+        .R(1'b0));
+  FDRE \data_out_reg[5] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_3_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[5]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[60] 
-       (.CLR(1'b0),
+        .Q(data_out[5]),
+        .R(1'b0));
+  FDRE \data_out_reg[60] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_3_in8_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[60]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[61] 
-       (.CLR(1'b0),
+        .Q(data_out[60]),
+        .R(1'b0));
+  FDRE \data_out_reg[61] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_4_in9_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[61]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[62] 
-       (.CLR(1'b0),
+        .Q(data_out[61]),
+        .R(1'b0));
+  FDRE \data_out_reg[62] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_5_in10_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[62]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[63] 
-       (.CLR(1'b0),
+        .Q(data_out[62]),
+        .R(1'b0));
+  FDRE \data_out_reg[63] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_6_in11_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[63]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[64] 
-       (.CLR(1'b0),
+        .Q(data_out[63]),
+        .R(1'b0));
+  FDRE \data_out_reg[64] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_7_in12_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[64]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[65] 
-       (.CLR(1'b0),
+        .Q(data_out[64]),
+        .R(1'b0));
+  FDRE \data_out_reg[65] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_8_in13_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[65]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[66] 
-       (.CLR(1'b0),
+        .Q(data_out[65]),
+        .R(1'b0));
+  FDRE \data_out_reg[66] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_9_in14_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[66]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[67] 
-       (.CLR(1'b0),
+        .Q(data_out[66]),
+        .R(1'b0));
+  FDRE \data_out_reg[67] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_10_in15_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[67]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[68] 
-       (.CLR(1'b0),
+        .Q(data_out[67]),
+        .R(1'b0));
+  FDRE \data_out_reg[68] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_11_in16_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[68]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[69] 
-       (.CLR(1'b0),
+        .Q(data_out[68]),
+        .R(1'b0));
+  FDRE \data_out_reg[69] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_19_in65_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[69]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[6] 
-       (.CLR(1'b0),
+        .Q(data_out[69]),
+        .R(1'b0));
+  FDRE \data_out_reg[6] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_4_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[6]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[70] 
-       (.CLR(1'b0),
+        .Q(data_out[6]),
+        .R(1'b0));
+  FDRE \data_out_reg[70] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_19_in75_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[70]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[71] 
-       (.CLR(1'b0),
+        .Q(data_out[70]),
+        .R(1'b0));
+  FDRE \data_out_reg[71] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_19_in80_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[71]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[72] 
-       (.CLR(1'b0),
+        .Q(data_out[71]),
+        .R(1'b0));
+  FDRE \data_out_reg[72] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_20_in84_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[72]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[73] 
-       (.CLR(1'b0),
+        .Q(data_out[72]),
+        .R(1'b0));
+  FDRE \data_out_reg[73] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_12_in17_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[73]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[74] 
-       (.CLR(1'b0),
+        .Q(data_out[73]),
+        .R(1'b0));
+  FDRE \data_out_reg[74] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_13_in18_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[74]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[75] 
-       (.CLR(1'b0),
+        .Q(data_out[74]),
+        .R(1'b0));
+  FDRE \data_out_reg[75] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_14_in19_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[75]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[76] 
-       (.CLR(1'b0),
+        .Q(data_out[75]),
+        .R(1'b0));
+  FDRE \data_out_reg[76] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_15_in20_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[76]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[77] 
-       (.CLR(1'b0),
+        .Q(data_out[76]),
+        .R(1'b0));
+  FDRE \data_out_reg[77] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_16_in21_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[77]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[78] 
-       (.CLR(1'b0),
+        .Q(data_out[77]),
+        .R(1'b0));
+  FDRE \data_out_reg[78] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_17_in22_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[78]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[79] 
-       (.CLR(1'b0),
+        .Q(data_out[78]),
+        .R(1'b0));
+  FDRE \data_out_reg[79] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_18_in23_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[79]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[7] 
-       (.CLR(1'b0),
+        .Q(data_out[79]),
+        .R(1'b0));
+  FDRE \data_out_reg[7] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_5_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[7]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[80] 
-       (.CLR(1'b0),
+        .Q(data_out[7]),
+        .R(1'b0));
+  FDRE \data_out_reg[80] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_19_in24_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[80]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[81] 
-       (.CLR(1'b0),
+        .Q(data_out[80]),
+        .R(1'b0));
+  FDRE \data_out_reg[81] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_20_in25_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[81]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[82] 
-       (.CLR(1'b0),
+        .Q(data_out[81]),
+        .R(1'b0));
+  FDRE \data_out_reg[82] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_21_in26_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[82]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[83] 
-       (.CLR(1'b0),
+        .Q(data_out[82]),
+        .R(1'b0));
+  FDRE \data_out_reg[83] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_22_in27_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[83]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[84] 
-       (.CLR(1'b0),
+        .Q(data_out[83]),
+        .R(1'b0));
+  FDRE \data_out_reg[84] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_21_in66_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[84]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[85] 
-       (.CLR(1'b0),
+        .Q(data_out[84]),
+        .R(1'b0));
+  FDRE \data_out_reg[85] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_23_in28_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[85]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[86] 
-       (.CLR(1'b0),
+        .Q(data_out[85]),
+        .R(1'b0));
+  FDRE \data_out_reg[86] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_23_in67_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[86]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[87] 
-       (.CLR(1'b0),
+        .Q(data_out[86]),
+        .R(1'b0));
+  FDRE \data_out_reg[87] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_24_in29_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[87]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[88] 
-       (.CLR(1'b0),
+        .Q(data_out[87]),
+        .R(1'b0));
+  FDRE \data_out_reg[88] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_25_in30_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[88]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[89] 
-       (.CLR(1'b0),
+        .Q(data_out[88]),
+        .R(1'b0));
+  FDRE \data_out_reg[89] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_26_in31_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[89]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[8] 
-       (.CLR(1'b0),
+        .Q(data_out[89]),
+        .R(1'b0));
+  FDRE \data_out_reg[8] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_6_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[8]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[90] 
-       (.CLR(1'b0),
+        .Q(data_out[8]),
+        .R(1'b0));
+  FDRE \data_out_reg[90] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_27_in32_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[90]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[91] 
-       (.CLR(1'b0),
+        .Q(data_out[90]),
+        .R(1'b0));
+  FDRE \data_out_reg[91] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_28_in33_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[91]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[92] 
-       (.CLR(1'b0),
+        .Q(data_out[91]),
+        .R(1'b0));
+  FDRE \data_out_reg[92] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_29_in34_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[92]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[93] 
-       (.CLR(1'b0),
+        .Q(data_out[92]),
+        .R(1'b0));
+  FDRE \data_out_reg[93] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_30_in35_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[93]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[94] 
-       (.CLR(1'b0),
+        .Q(data_out[93]),
+        .R(1'b0));
+  FDRE \data_out_reg[94] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_31_in36_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[94]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[95] 
-       (.CLR(1'b0),
+        .Q(data_out[94]),
+        .R(1'b0));
+  FDRE \data_out_reg[95] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_32_in37_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[95]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[96] 
-       (.CLR(1'b0),
+        .Q(data_out[95]),
+        .R(1'b0));
+  FDRE \data_out_reg[96] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_33_in38_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[96]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[97] 
-       (.CLR(1'b0),
+        .Q(data_out[96]),
+        .R(1'b0));
+  FDRE \data_out_reg[97] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_34_in39_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[97]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[98] 
-       (.CLR(1'b0),
+        .Q(data_out[97]),
+        .R(1'b0));
+  FDRE \data_out_reg[98] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_35_in40_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[98]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[99] 
-       (.CLR(1'b0),
+        .Q(data_out[98]),
+        .R(1'b0));
+  FDRE \data_out_reg[99] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_25_in68_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[99]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \data_out_reg[9] 
-       (.CLR(1'b0),
+        .Q(data_out[99]),
+        .R(1'b0));
+  FDRE \data_out_reg[9] 
+       (.C(clk),
+        .CE(\FSM_onehot_PS_reg_n_0_[4] ),
         .D(p_0_in56_in),
-        .G(\FSM_onehot_PS_reg_n_0_[4] ),
-        .GE(1'b1),
-        .Q(data_out[9]));
+        .Q(data_out[9]),
+        .R(1'b0));
   FDRE data_rdy_input_old_reg
        (.C(clk),
         .CE(1'b1),
         .D(data_rdy_input),
         .Q(data_rdy_input_old),
         .R(1'b0));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    data_ready_output_reg
-       (.CLR(1'b0),
-        .D(\FSM_onehot_PS_reg_n_0_[4] ),
-        .G(data_ready_output_reg_i_1_n_0),
-        .GE(1'b1),
-        .Q(data_ready_output));
-  LUT2 #(
-    .INIT(4'hE)) 
-    data_ready_output_reg_i_1
+  (* SOFT_HLUTNM = "soft_lutpair9" *) 
+  LUT3 #(
+    .INIT(8'hDC)) 
+    data_ready_output_i_1
        (.I0(buffer_data_intput),
         .I1(\FSM_onehot_PS_reg_n_0_[4] ),
-        .O(data_ready_output_reg_i_1_n_0));
-endmodule
-
-(* CHECK_LICENSE_TYPE = "design_1_communicatie_protoco_0_0,communicatie_protocol_ontvanger,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* ip_definition_source = "module_ref" *) 
-(* x_core_info = "communicatie_protocol_ontvanger,Vivado 2023.1" *) 
-(* NotValidForBitStream *)
-module design_1_communicatie_protoco_0_0
-   (clk,
-    data_rdy_input,
-    data_in,
-    data_ready_output,
-    data_out,
-    crc_h_fail,
-    crc_d_fail);
-  (* x_interface_info = "xilinx.com:signal:clock:1.0 clk CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME clk, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0" *) input clk;
-  input data_rdy_input;
-  input [191:0]data_in;
-  output data_ready_output;
-  output [127:0]data_out;
-  output crc_h_fail;
-  output crc_d_fail;
-
-  wire clk;
-  wire crc_d_fail;
-  wire crc_h_fail;
-  wire [191:0]data_in;
-  wire [127:0]data_out;
-  wire data_rdy_input;
-  wire data_ready_output;
-
-  design_1_communicatie_protoco_0_0_communicatie_protocol_ontvanger U0
-       (.clk(clk),
-        .crc_d_fail(crc_d_fail),
-        .crc_h_fail(crc_h_fail),
-        .data_in(data_in),
-        .data_out(data_out),
-        .data_rdy_input(data_rdy_input),
-        .data_ready_output(data_ready_output));
+        .I2(data_ready_output),
+        .O(data_ready_output_i_1_n_0));
+  FDRE data_ready_output_reg
+       (.C(clk),
+        .CE(1'b1),
+        .D(data_ready_output_i_1_n_0),
+        .Q(data_ready_output),
+        .R(1'b0));
 endmodule
 `ifndef GLBL
 `define GLBL

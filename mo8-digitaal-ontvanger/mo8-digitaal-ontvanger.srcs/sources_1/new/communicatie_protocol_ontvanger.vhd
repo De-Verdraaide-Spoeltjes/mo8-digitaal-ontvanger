@@ -39,7 +39,6 @@ architecture Behavioral of communicatie_protocol_ontvanger is
     -- Storage
     signal buffer_data_intput : std_logic_vector(191 downto 0);
     signal data_rdy_input_old : std_logic;
-    --signal buffer_data_output : std_logic_vector(127 downto 0);
     
     -- State machine
     type state_type is (check_input_ready, data_in_buffer, s2, header_crc_fail, s4, data_crc_fail, set_output_data);
@@ -149,31 +148,33 @@ begin
     -- Output decoder
     output_decoder:process(PS)
     begin
-        case PS is
-            when check_input_ready =>
+        if rising_edge(clk) then
+            case PS is
+                when check_input_ready =>
+                
+                when data_in_buffer =>
+                    data_ready_output <= '0';
+                    buffer_data_intput <= data_in;
+                
+                when s2 =>
+
+                when header_crc_fail =>
+                    crc_h_fail <= '1';
+
+                when s4 =>
+
+                when data_crc_fail =>
+                    crc_d_fail <= '1';
+
+                when set_output_data =>
+                    data_out <= buffer_data_intput(175 downto 48);
+                    crc_d_fail <= '0';
+                    crc_h_fail <= '0';
+                    data_ready_output <= '1';
+
+                when others =>
             
-            when data_in_buffer =>
-                data_ready_output <= '0';
-                buffer_data_intput <= data_in;
-            
-            when s2 =>
-
-            when header_crc_fail =>
-                crc_h_fail <= '1';
-
-            when s4 =>
-
-            when data_crc_fail =>
-                crc_d_fail <= '1';
-
-            when set_output_data =>
-                data_out <= buffer_data_intput(175 downto 48);
-                crc_d_fail <= '0';
-                crc_h_fail <= '0';
-                data_ready_output <= '1';
-
-            when others =>
-        
-        end case;
+            end case;
+        end if;
     end process;
 end Behavioral;

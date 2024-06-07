@@ -36,7 +36,6 @@
         "resetting_timer_0": "",
         "fifo_buffer_0": ""
       },
-      "communicatie_protoco_0": "",
       "Karakter_FIFO_0": "",
       "status_led": {
         "clk_divider_0": "",
@@ -45,7 +44,8 @@
         "util_vector_logic_2": "",
         "rgb_led_controller_0": "",
         "xlconstant_0": ""
-      }
+      },
+      "communicatie_protoco_0": ""
     },
     "interface_ports": {
       "DDR": {
@@ -3257,75 +3257,6 @@
           }
         }
       },
-      "communicatie_protoco_0": {
-        "vlnv": "xilinx.com:module_ref:communicatie_protocol_ontvanger:1.0",
-        "xci_name": "design_1_communicatie_protoco_0_0",
-        "xci_path": "ip\\design_1_communicatie_protoco_0_0\\design_1_communicatie_protoco_0_0.xci",
-        "inst_hier_path": "communicatie_protoco_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "communicatie_protocol_ontvanger",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "FREQ_HZ": {
-                "value": "100000000",
-                "value_src": "user_prop"
-              },
-              "CLK_DOMAIN": {
-                "value": "design_1_processing_system7_0_0_FCLK_CLK0",
-                "value_src": "default_prop"
-              }
-            }
-          },
-          "data_rdy_input": {
-            "direction": "I"
-          },
-          "data_in": {
-            "direction": "I",
-            "left": "191",
-            "right": "0"
-          },
-          "data_ready_output": {
-            "direction": "O"
-          },
-          "data_out": {
-            "direction": "O",
-            "left": "127",
-            "right": "0"
-          },
-          "crc_h_fail": {
-            "direction": "O",
-            "parameters": {
-              "PortType": {
-                "value": "undef",
-                "value_src": "ip_prop"
-              },
-              "PortType.PROP_SRC": {
-                "value": "false",
-                "value_src": "ip_prop"
-              }
-            }
-          },
-          "crc_d_fail": {
-            "direction": "O",
-            "parameters": {
-              "PortType": {
-                "value": "undef",
-                "value_src": "ip_prop"
-              },
-              "PortType.PROP_SRC": {
-                "value": "false",
-                "value_src": "ip_prop"
-              }
-            }
-          }
-        }
-      },
       "Karakter_FIFO_0": {
         "vlnv": "xilinx.com:module_ref:Karakter_FIFO:1.0",
         "xci_name": "design_1_Karakter_FIFO_0_0",
@@ -3651,6 +3582,75 @@
             ]
           }
         }
+      },
+      "communicatie_protoco_0": {
+        "vlnv": "xilinx.com:module_ref:communicatie_protocol_ontvanger:1.0",
+        "xci_name": "design_1_communicatie_protoco_0_0",
+        "xci_path": "ip\\design_1_communicatie_protoco_0_0\\design_1_communicatie_protoco_0_0.xci",
+        "inst_hier_path": "communicatie_protoco_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "communicatie_protocol_ontvanger",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "user_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "design_1_processing_system7_0_0_FCLK_CLK0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "data_rdy_input": {
+            "direction": "I"
+          },
+          "data_in": {
+            "direction": "I",
+            "left": "191",
+            "right": "0"
+          },
+          "data_ready_output": {
+            "direction": "O"
+          },
+          "data_out": {
+            "direction": "O",
+            "left": "127",
+            "right": "0"
+          },
+          "crc_h_fail": {
+            "direction": "O",
+            "parameters": {
+              "PortType": {
+                "value": "undef",
+                "value_src": "ip_prop"
+              },
+              "PortType.PROP_SRC": {
+                "value": "false",
+                "value_src": "ip_prop"
+              }
+            }
+          },
+          "crc_d_fail": {
+            "direction": "O",
+            "parameters": {
+              "PortType": {
+                "value": "undef",
+                "value_src": "ip_prop"
+              },
+              "PortType.PROP_SRC": {
+                "value": "false",
+                "value_src": "ip_prop"
+              }
+            }
+          }
+        }
       }
     },
     "interface_nets": {
@@ -3697,9 +3697,9 @@
           "connection_embedded/CLK_100MHz",
           "decoder_5b4b_0/clk",
           "module_demodulator/clk",
-          "communicatie_protoco_0/clk",
           "Karakter_FIFO_0/clk",
-          "status_led/clk_in"
+          "status_led/clk_in",
+          "communicatie_protoco_0/clk"
         ]
       },
       "aux_reset_in_0_1": {

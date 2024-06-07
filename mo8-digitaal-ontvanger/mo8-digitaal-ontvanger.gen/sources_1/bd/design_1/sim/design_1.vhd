@@ -2,7 +2,7 @@
 --Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
---Date        : Wed Jun  5 14:36:16 2024
+--Date        : Thu Jun  6 15:40:23 2024
 --Host        : Lenovo-Jochem running 64-bit major release  (build 9200)
 --Command     : generate_target design_1.bd
 --Design      : design_1
@@ -2532,17 +2532,6 @@ architecture STRUCTURE of design_1 is
     Data_out : out STD_LOGIC_VECTOR ( 191 downto 0 )
   );
   end component design_1_decoder_5b4b_0_0;
-  component design_1_communicatie_protoco_0_0 is
-  port (
-    clk : in STD_LOGIC;
-    data_rdy_input : in STD_LOGIC;
-    data_in : in STD_LOGIC_VECTOR ( 191 downto 0 );
-    data_ready_output : out STD_LOGIC;
-    data_out : out STD_LOGIC_VECTOR ( 127 downto 0 );
-    crc_h_fail : out STD_LOGIC;
-    crc_d_fail : out STD_LOGIC
-  );
-  end component design_1_communicatie_protoco_0_0;
   component design_1_Karakter_FIFO_0_0 is
   port (
     clk : in STD_LOGIC;
@@ -2554,6 +2543,17 @@ architecture STRUCTURE of design_1 is
     dataAvailable : out STD_LOGIC
   );
   end component design_1_Karakter_FIFO_0_0;
+  component design_1_communicatie_protoco_0_0 is
+  port (
+    clk : in STD_LOGIC;
+    data_rdy_input : in STD_LOGIC;
+    data_in : in STD_LOGIC_VECTOR ( 191 downto 0 );
+    data_ready_output : out STD_LOGIC;
+    data_out : out STD_LOGIC_VECTOR ( 127 downto 0 );
+    crc_h_fail : out STD_LOGIC;
+    crc_d_fail : out STD_LOGIC
+  );
+  end component design_1_communicatie_protoco_0_0;
   signal Karakter_FIFO_0_dataAvailable : STD_LOGIC;
   signal Karakter_FIFO_0_karakter : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal Net : STD_LOGIC;

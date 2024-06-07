@@ -18,3 +18,9 @@ set_property -dict {PACKAGE_PIN L15 IOSTANDARD LVCMOS33} [get_ports digitaal_sta
 
 set_property -dict {PACKAGE_PIN R14 IOSTANDARD LVCMOS33} [get_ports LED_0]
 set_property -dict {PACKAGE_PIN P14 IOSTANDARD LVCMOS33} [get_ports LED_1]
+
+
+
+set_property -dict {PACKAGE_PIN Y9 IOSTANDARD LVCMOS33} [get_ports crystal]
+set_property -dict {PACKAGE_PIN M20 IOSTANDARD LVCMOS33} [get_ports data_rdy_input]
+set_property -dict {PACKAGE_PIN N16 IOSTANDARD LVCMOS33} [get_ports LED_2]

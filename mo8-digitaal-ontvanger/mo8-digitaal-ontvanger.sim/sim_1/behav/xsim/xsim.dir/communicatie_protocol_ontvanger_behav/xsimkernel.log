@@ -1,0 +1,7 @@
+Running: xsim.dir/communicatie_protocol_ontvanger_behav/xsimk.exe -simmode gui -wdb communicatie_protocol_ontvanger_behav.wdb -simrunnum 0 -socket 52357
+Design successfully loaded
+Design Loading Memory Usage: 9316 KB (Peak: 9316 KB)
+Design Loading CPU Usage: 15 ms
+Simulation completed
+Simulation Memory Usage: 10036 KB (Peak: 10036 KB)
+Simulation CPU Usage: 15 ms

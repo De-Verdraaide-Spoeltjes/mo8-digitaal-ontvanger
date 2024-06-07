@@ -3,8 +3,8 @@
 # SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
 # IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
 # SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
-# Start of session at: Wed Jun  5 15:15:37 2024
-# Process ID: 10236
+# Start of session at: Thu Jun  6 15:41:36 2024
+# Process ID: 27452
 # Current directory: C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1
 # Command line: vivado.exe -log design_1_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_wrapper.tcl
 # Log file: C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/design_1_wrapper.vds
@@ -12,11 +12,11 @@
 # Running On: Lenovo-Jochem, OS: Windows, CPU Frequency: 2496 MHz, CPU Physical cores: 4, Host memory: 17041 MB
 #-----------------------------------------------------------
 source design_1_wrapper.tcl -notrace
-create_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:14 . Memory (MB): peak = 1461.598 ; gain = 160.516
+create_project: Time (s): cpu = 00:00:03 ; elapsed = 00:00:07 . Memory (MB): peak = 1461.016 ; gain = 159.586
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2023.1/data/ip'.
-add_files: Time (s): cpu = 00:00:02 ; elapsed = 00:00:19 . Memory (MB): peak = 1500.844 ; gain = 33.930
+add_files: Time (s): cpu = 00:00:00 ; elapsed = 00:00:11 . Memory (MB): peak = 1500.086 ; gain = 34.371
 Command: read_checkpoint -auto_incremental -incremental C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.srcs/utils_1/imports/synth_1/design_1_wrapper.dcp
 INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.srcs/utils_1/imports/synth_1/design_1_wrapper.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
@@ -25,13 +25,11 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Device 21-403] Loading part xc7z020clg400-1
-INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
-INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 16096
+INFO: [Synth 8-7075] Helper process launched with PID 23880
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:11 . Memory (MB): peak = 2341.445 ; gain = 411.309
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 2337.926 ; gain = 408.812
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'design_1_wrapper' [C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:51]
 INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2023.1/scripts/rt/data/unisim_comp.v:76334' bound to instance 'IIC_scl_iobuf' of component 'IOBUF' [C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:106]
@@ -40,10 +38,10 @@ INFO: [Synth 8-6155] done synthesizing module 'IOBUF' (0#1) [C:/Xilinx/Vivado/20
 INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2023.1/scripts/rt/data/unisim_comp.v:76334' bound to instance 'IIC_sda_iobuf' of component 'IOBUF' [C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:113]
 INFO: [Synth 8-3491] module 'design_1' declared at 'c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/synth/design_1.vhd:2481' bound to instance 'design_1_i' of component 'design_1' [C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:120]
 INFO: [Synth 8-638] synthesizing module 'design_1' [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/synth/design_1.vhd:2525]
-INFO: [Synth 8-3491] module 'design_1_Karakter_FIFO_0_0' declared at 'C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-10236-Lenovo-Jochem/realtime/design_1_Karakter_FIFO_0_0_stub.vhdl:6' bound to instance 'Karakter_FIFO_0' of component 'design_1_Karakter_FIFO_0_0' [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/synth/design_1.vhd:2653]
-INFO: [Synth 8-638] synthesizing module 'design_1_Karakter_FIFO_0_0' [C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-10236-Lenovo-Jochem/realtime/design_1_Karakter_FIFO_0_0_stub.vhdl:19]
-INFO: [Synth 8-3491] module 'design_1_communicatie_protoco_0_0' declared at 'C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-10236-Lenovo-Jochem/realtime/design_1_communicatie_protoco_0_0_stub.vhdl:6' bound to instance 'communicatie_protoco_0' of component 'design_1_communicatie_protoco_0_0' [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/synth/design_1.vhd:2663]
-INFO: [Synth 8-638] synthesizing module 'design_1_communicatie_protoco_0_0' [C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-10236-Lenovo-Jochem/realtime/design_1_communicatie_protoco_0_0_stub.vhdl:19]
+INFO: [Synth 8-3491] module 'design_1_Karakter_FIFO_0_0' declared at 'C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-27452-Lenovo-Jochem/realtime/design_1_Karakter_FIFO_0_0_stub.vhdl:6' bound to instance 'Karakter_FIFO_0' of component 'design_1_Karakter_FIFO_0_0' [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/synth/design_1.vhd:2653]
+INFO: [Synth 8-638] synthesizing module 'design_1_Karakter_FIFO_0_0' [C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-27452-Lenovo-Jochem/realtime/design_1_Karakter_FIFO_0_0_stub.vhdl:19]
+INFO: [Synth 8-3491] module 'design_1_communicatie_protoco_0_0' declared at 'C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-27452-Lenovo-Jochem/realtime/design_1_communicatie_protoco_0_0_stub.vhdl:6' bound to instance 'communicatie_protoco_0' of component 'design_1_communicatie_protoco_0_0' [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/synth/design_1.vhd:2663]
+INFO: [Synth 8-638] synthesizing module 'design_1_communicatie_protoco_0_0' [C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-27452-Lenovo-Jochem/realtime/design_1_communicatie_protoco_0_0_stub.vhdl:19]
 INFO: [Synth 8-638] synthesizing module 'connection_embedded_imp_4JK09R' [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/synth/design_1.vhd:1852]
 INFO: [Synth 8-638] synthesizing module 'design_1_axi_interconnect_0_0' [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/synth/design_1.vhd:1088]
 INFO: [Synth 8-638] synthesizing module 'm00_couplers_imp_163ALG1' [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/synth/design_1.vhd:58]
@@ -55,51 +53,51 @@ INFO: [Synth 8-256] done synthesizing module 'm02_couplers_imp_14MDQJ6' (0#1) [c
 INFO: [Synth 8-638] synthesizing module 'm03_couplers_imp_YQOGHF' [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/synth/design_1.vhd:365]
 INFO: [Synth 8-256] done synthesizing module 'm03_couplers_imp_YQOGHF' (0#1) [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/synth/design_1.vhd:365]
 INFO: [Synth 8-638] synthesizing module 's00_couplers_imp_UOAE6R' [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/synth/design_1.vhd:603]
-INFO: [Synth 8-3491] module 'design_1_auto_pc_0' declared at 'C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-10236-Lenovo-Jochem/realtime/design_1_auto_pc_0_stub.vhdl:6' bound to instance 'auto_pc' of component 'design_1_auto_pc_0' [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/synth/design_1.vhd:786]
-INFO: [Synth 8-638] synthesizing module 'design_1_auto_pc_0' [C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-10236-Lenovo-Jochem/realtime/design_1_auto_pc_0_stub.vhdl:71]
+INFO: [Synth 8-3491] module 'design_1_auto_pc_0' declared at 'C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-27452-Lenovo-Jochem/realtime/design_1_auto_pc_0_stub.vhdl:6' bound to instance 'auto_pc' of component 'design_1_auto_pc_0' [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/synth/design_1.vhd:786]
+INFO: [Synth 8-638] synthesizing module 'design_1_auto_pc_0' [C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-27452-Lenovo-Jochem/realtime/design_1_auto_pc_0_stub.vhdl:71]
 INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_UOAE6R' (0#1) [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/synth/design_1.vhd:603]
-INFO: [Synth 8-3491] module 'design_1_xbar_0' declared at 'C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-10236-Lenovo-Jochem/realtime/design_1_xbar_0_stub.vhdl:6' bound to instance 'xbar' of component 'design_1_xbar_0' [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/synth/design_1.vhd:1677]
-INFO: [Synth 8-638] synthesizing module 'design_1_xbar_0' [C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-10236-Lenovo-Jochem/realtime/design_1_xbar_0_stub.vhdl:52]
+INFO: [Synth 8-3491] module 'design_1_xbar_0' declared at 'C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-27452-Lenovo-Jochem/realtime/design_1_xbar_0_stub.vhdl:6' bound to instance 'xbar' of component 'design_1_xbar_0' [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/synth/design_1.vhd:1677]
+INFO: [Synth 8-638] synthesizing module 'design_1_xbar_0' [C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-27452-Lenovo-Jochem/realtime/design_1_xbar_0_stub.vhdl:52]
 INFO: [Synth 8-256] done synthesizing module 'design_1_axi_interconnect_0_0' (0#1) [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/synth/design_1.vhd:1088]
-INFO: [Synth 8-3491] module 'design_1_proc_sys_reset_0_0' declared at 'C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-10236-Lenovo-Jochem/realtime/design_1_proc_sys_reset_0_0_stub.vhdl:6' bound to instance 'proc_sys_reset_0' of component 'design_1_proc_sys_reset_0_0' [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/synth/design_1.vhd:2309]
-INFO: [Synth 8-638] synthesizing module 'design_1_proc_sys_reset_0_0' [C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-10236-Lenovo-Jochem/realtime/design_1_proc_sys_reset_0_0_stub.vhdl:22]
-INFO: [Synth 8-3491] module 'design_1_processing_system7_0_0' declared at 'C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-10236-Lenovo-Jochem/realtime/design_1_processing_system7_0_0_stub.vhdl:6' bound to instance 'processing_system7_0' of component 'design_1_processing_system7_0_0' [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/synth/design_1.vhd:2322]
-INFO: [Synth 8-638] synthesizing module 'design_1_processing_system7_0_0' [C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-10236-Lenovo-Jochem/realtime/design_1_processing_system7_0_0_stub.vhdl:83]
-INFO: [Synth 8-3491] module 'design_1_rsa_versleuteld_karakter_1_2' declared at 'C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-10236-Lenovo-Jochem/realtime/design_1_rsa_versleuteld_karakter_1_2_stub.vhdl:6' bound to instance 'rsa_communicatie' of component 'design_1_rsa_versleuteld_karakter_1_2' [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/synth/design_1.vhd:2396]
-INFO: [Synth 8-638] synthesizing module 'design_1_rsa_versleuteld_karakter_1_2' [C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-10236-Lenovo-Jochem/realtime/design_1_rsa_versleuteld_karakter_1_2_stub.vhdl:34]
-INFO: [Synth 8-3491] module 'design_1_axi_gpio_0_1' declared at 'C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-10236-Lenovo-Jochem/realtime/design_1_axi_gpio_0_1_stub.vhdl:6' bound to instance 'rsa_versleuteld_karakter_RnM' of component 'design_1_axi_gpio_0_1' [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/synth/design_1.vhd:2421]
-INFO: [Synth 8-638] synthesizing module 'design_1_axi_gpio_0_1' [C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-10236-Lenovo-Jochem/realtime/design_1_axi_gpio_0_1_stub.vhdl:33]
-INFO: [Synth 8-3491] module 'design_1_axi_gpio_0_2' declared at 'C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-10236-Lenovo-Jochem/realtime/design_1_axi_gpio_0_2_stub.vhdl:6' bound to instance 'status_led_RnM' of component 'design_1_axi_gpio_0_2' [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/synth/design_1.vhd:2445]
-INFO: [Synth 8-638] synthesizing module 'design_1_axi_gpio_0_2' [C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-10236-Lenovo-Jochem/realtime/design_1_axi_gpio_0_2_stub.vhdl:32]
+INFO: [Synth 8-3491] module 'design_1_proc_sys_reset_0_0' declared at 'C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-27452-Lenovo-Jochem/realtime/design_1_proc_sys_reset_0_0_stub.vhdl:6' bound to instance 'proc_sys_reset_0' of component 'design_1_proc_sys_reset_0_0' [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/synth/design_1.vhd:2309]
+INFO: [Synth 8-638] synthesizing module 'design_1_proc_sys_reset_0_0' [C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-27452-Lenovo-Jochem/realtime/design_1_proc_sys_reset_0_0_stub.vhdl:22]
+INFO: [Synth 8-3491] module 'design_1_processing_system7_0_0' declared at 'C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-27452-Lenovo-Jochem/realtime/design_1_processing_system7_0_0_stub.vhdl:6' bound to instance 'processing_system7_0' of component 'design_1_processing_system7_0_0' [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/synth/design_1.vhd:2322]
+INFO: [Synth 8-638] synthesizing module 'design_1_processing_system7_0_0' [C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-27452-Lenovo-Jochem/realtime/design_1_processing_system7_0_0_stub.vhdl:83]
+INFO: [Synth 8-3491] module 'design_1_rsa_versleuteld_karakter_1_2' declared at 'C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-27452-Lenovo-Jochem/realtime/design_1_rsa_versleuteld_karakter_1_2_stub.vhdl:6' bound to instance 'rsa_communicatie' of component 'design_1_rsa_versleuteld_karakter_1_2' [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/synth/design_1.vhd:2396]
+INFO: [Synth 8-638] synthesizing module 'design_1_rsa_versleuteld_karakter_1_2' [C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-27452-Lenovo-Jochem/realtime/design_1_rsa_versleuteld_karakter_1_2_stub.vhdl:34]
+INFO: [Synth 8-3491] module 'design_1_axi_gpio_0_1' declared at 'C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-27452-Lenovo-Jochem/realtime/design_1_axi_gpio_0_1_stub.vhdl:6' bound to instance 'rsa_versleuteld_karakter_RnM' of component 'design_1_axi_gpio_0_1' [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/synth/design_1.vhd:2421]
+INFO: [Synth 8-638] synthesizing module 'design_1_axi_gpio_0_1' [C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-27452-Lenovo-Jochem/realtime/design_1_axi_gpio_0_1_stub.vhdl:33]
+INFO: [Synth 8-3491] module 'design_1_axi_gpio_0_2' declared at 'C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-27452-Lenovo-Jochem/realtime/design_1_axi_gpio_0_2_stub.vhdl:6' bound to instance 'status_led_RnM' of component 'design_1_axi_gpio_0_2' [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/synth/design_1.vhd:2445]
+INFO: [Synth 8-638] synthesizing module 'design_1_axi_gpio_0_2' [C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-27452-Lenovo-Jochem/realtime/design_1_axi_gpio_0_2_stub.vhdl:32]
 INFO: [Synth 8-3491] module 'design_1_xlconcat_0_0' declared at 'c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/ip/design_1_xlconcat_0_0/synth/design_1_xlconcat_0_0.v:53' bound to instance 'xlconcat_0' of component 'design_1_xlconcat_0_0' [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/synth/design_1.vhd:2468]
 INFO: [Synth 8-6157] synthesizing module 'design_1_xlconcat_0_0' [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/ip/design_1_xlconcat_0_0/synth/design_1_xlconcat_0_0.v:53]
 INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_4_xlconcat' [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/ipshared/4b67/hdl/xlconcat_v2_1_vl_rfs.v:14]
 INFO: [Synth 8-6155] done synthesizing module 'xlconcat_v2_1_4_xlconcat' (0#1) [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/ipshared/4b67/hdl/xlconcat_v2_1_vl_rfs.v:14]
 INFO: [Synth 8-6155] done synthesizing module 'design_1_xlconcat_0_0' (0#1) [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/ip/design_1_xlconcat_0_0/synth/design_1_xlconcat_0_0.v:53]
 INFO: [Synth 8-256] done synthesizing module 'connection_embedded_imp_4JK09R' (0#1) [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/synth/design_1.vhd:1852]
-INFO: [Synth 8-3491] module 'design_1_decoder_5b4b_0_0' declared at 'C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-10236-Lenovo-Jochem/realtime/design_1_decoder_5b4b_0_0_stub.vhdl:6' bound to instance 'decoder_5b4b_0' of component 'design_1_decoder_5b4b_0_0' [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/synth/design_1.vhd:2712]
-INFO: [Synth 8-638] synthesizing module 'design_1_decoder_5b4b_0_0' [C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-10236-Lenovo-Jochem/realtime/design_1_decoder_5b4b_0_0_stub.vhdl:17]
+INFO: [Synth 8-3491] module 'design_1_decoder_5b4b_0_0' declared at 'C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-27452-Lenovo-Jochem/realtime/design_1_decoder_5b4b_0_0_stub.vhdl:6' bound to instance 'decoder_5b4b_0' of component 'design_1_decoder_5b4b_0_0' [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/synth/design_1.vhd:2712]
+INFO: [Synth 8-638] synthesizing module 'design_1_decoder_5b4b_0_0' [C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-27452-Lenovo-Jochem/realtime/design_1_decoder_5b4b_0_0_stub.vhdl:17]
 INFO: [Synth 8-638] synthesizing module 'module_demodulator_imp_G87YIL' [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/synth/design_1.vhd:439]
-INFO: [Synth 8-3491] module 'design_1_demodulator_0_0' declared at 'C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-10236-Lenovo-Jochem/realtime/design_1_demodulator_0_0_stub.vhdl:6' bound to instance 'demodulator_0' of component 'design_1_demodulator_0_0' [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/synth/design_1.vhd:497]
-INFO: [Synth 8-638] synthesizing module 'design_1_demodulator_0_0' [C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-10236-Lenovo-Jochem/realtime/design_1_demodulator_0_0_stub.vhdl:21]
-INFO: [Synth 8-3491] module 'design_1_fifo_buffer_0_0' declared at 'C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-10236-Lenovo-Jochem/realtime/design_1_fifo_buffer_0_0_stub.vhdl:6' bound to instance 'fifo_buffer_0' of component 'design_1_fifo_buffer_0_0' [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/synth/design_1.vhd:509]
-INFO: [Synth 8-638] synthesizing module 'design_1_fifo_buffer_0_0' [C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-10236-Lenovo-Jochem/realtime/design_1_fifo_buffer_0_0_stub.vhdl:19]
-INFO: [Synth 8-3491] module 'design_1_io_buffer_0_0' declared at 'C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-10236-Lenovo-Jochem/realtime/design_1_io_buffer_0_0_stub.vhdl:6' bound to instance 'io_buffer_0' of component 'design_1_io_buffer_0_0' [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/synth/design_1.vhd:519]
-INFO: [Synth 8-638] synthesizing module 'design_1_io_buffer_0_0' [C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-10236-Lenovo-Jochem/realtime/design_1_io_buffer_0_0_stub.vhdl:15]
-INFO: [Synth 8-3491] module 'design_1_resetting_timer_0_0' declared at 'C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-10236-Lenovo-Jochem/realtime/design_1_resetting_timer_0_0_stub.vhdl:6' bound to instance 'resetting_timer_0' of component 'design_1_resetting_timer_0_0' [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/synth/design_1.vhd:525]
-INFO: [Synth 8-638] synthesizing module 'design_1_resetting_timer_0_0' [C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-10236-Lenovo-Jochem/realtime/design_1_resetting_timer_0_0_stub.vhdl:16]
+INFO: [Synth 8-3491] module 'design_1_demodulator_0_0' declared at 'C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-27452-Lenovo-Jochem/realtime/design_1_demodulator_0_0_stub.vhdl:6' bound to instance 'demodulator_0' of component 'design_1_demodulator_0_0' [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/synth/design_1.vhd:497]
+INFO: [Synth 8-638] synthesizing module 'design_1_demodulator_0_0' [C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-27452-Lenovo-Jochem/realtime/design_1_demodulator_0_0_stub.vhdl:21]
+INFO: [Synth 8-3491] module 'design_1_fifo_buffer_0_0' declared at 'C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-27452-Lenovo-Jochem/realtime/design_1_fifo_buffer_0_0_stub.vhdl:6' bound to instance 'fifo_buffer_0' of component 'design_1_fifo_buffer_0_0' [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/synth/design_1.vhd:509]
+INFO: [Synth 8-638] synthesizing module 'design_1_fifo_buffer_0_0' [C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-27452-Lenovo-Jochem/realtime/design_1_fifo_buffer_0_0_stub.vhdl:19]
+INFO: [Synth 8-3491] module 'design_1_io_buffer_0_0' declared at 'C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-27452-Lenovo-Jochem/realtime/design_1_io_buffer_0_0_stub.vhdl:6' bound to instance 'io_buffer_0' of component 'design_1_io_buffer_0_0' [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/synth/design_1.vhd:519]
+INFO: [Synth 8-638] synthesizing module 'design_1_io_buffer_0_0' [C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-27452-Lenovo-Jochem/realtime/design_1_io_buffer_0_0_stub.vhdl:15]
+INFO: [Synth 8-3491] module 'design_1_resetting_timer_0_0' declared at 'C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-27452-Lenovo-Jochem/realtime/design_1_resetting_timer_0_0_stub.vhdl:6' bound to instance 'resetting_timer_0' of component 'design_1_resetting_timer_0_0' [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/synth/design_1.vhd:525]
+INFO: [Synth 8-638] synthesizing module 'design_1_resetting_timer_0_0' [C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-27452-Lenovo-Jochem/realtime/design_1_resetting_timer_0_0_stub.vhdl:16]
 INFO: [Synth 8-256] done synthesizing module 'module_demodulator_imp_G87YIL' (0#1) [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/synth/design_1.vhd:439]
 INFO: [Synth 8-638] synthesizing module 'status_led_imp_1J974DJ' [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/synth/design_1.vhd:863]
-INFO: [Synth 8-3491] module 'design_1_clk_divider_0_0' declared at 'C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-10236-Lenovo-Jochem/realtime/design_1_clk_divider_0_0_stub.vhdl:6' bound to instance 'clk_divider_0' of component 'design_1_clk_divider_0_0' [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/synth/design_1.vhd:922]
-INFO: [Synth 8-638] synthesizing module 'design_1_clk_divider_0_0' [C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-10236-Lenovo-Jochem/realtime/design_1_clk_divider_0_0_stub.vhdl:15]
-INFO: [Synth 8-3491] module 'design_1_rgb_led_controller_0_0' declared at 'C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-10236-Lenovo-Jochem/realtime/design_1_rgb_led_controller_0_0_stub.vhdl:6' bound to instance 'rgb_led_controller_0' of component 'design_1_rgb_led_controller_0_0' [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/synth/design_1.vhd:928]
-INFO: [Synth 8-638] synthesizing module 'design_1_rgb_led_controller_0_0' [C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-10236-Lenovo-Jochem/realtime/design_1_rgb_led_controller_0_0_stub.vhdl:18]
-INFO: [Synth 8-3491] module 'design_1_util_vector_logic_0_0' declared at 'C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-10236-Lenovo-Jochem/realtime/design_1_util_vector_logic_0_0_stub.vhdl:6' bound to instance 'util_vector_logic_0' of component 'design_1_util_vector_logic_0_0' [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/synth/design_1.vhd:937]
-INFO: [Synth 8-638] synthesizing module 'design_1_util_vector_logic_0_0' [C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-10236-Lenovo-Jochem/realtime/design_1_util_vector_logic_0_0_stub.vhdl:15]
-INFO: [Synth 8-3491] module 'design_1_util_vector_logic_1_0' declared at 'C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-10236-Lenovo-Jochem/realtime/design_1_util_vector_logic_1_0_stub.vhdl:6' bound to instance 'util_vector_logic_1' of component 'design_1_util_vector_logic_1_0' [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/synth/design_1.vhd:943]
-INFO: [Synth 8-638] synthesizing module 'design_1_util_vector_logic_1_0' [C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-10236-Lenovo-Jochem/realtime/design_1_util_vector_logic_1_0_stub.vhdl:15]
-INFO: [Synth 8-3491] module 'design_1_util_vector_logic_1_1' declared at 'C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-10236-Lenovo-Jochem/realtime/design_1_util_vector_logic_1_1_stub.vhdl:6' bound to instance 'util_vector_logic_2' of component 'design_1_util_vector_logic_1_1' [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/synth/design_1.vhd:949]
-INFO: [Synth 8-638] synthesizing module 'design_1_util_vector_logic_1_1' [C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-10236-Lenovo-Jochem/realtime/design_1_util_vector_logic_1_1_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'design_1_clk_divider_0_0' declared at 'C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-27452-Lenovo-Jochem/realtime/design_1_clk_divider_0_0_stub.vhdl:6' bound to instance 'clk_divider_0' of component 'design_1_clk_divider_0_0' [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/synth/design_1.vhd:922]
+INFO: [Synth 8-638] synthesizing module 'design_1_clk_divider_0_0' [C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-27452-Lenovo-Jochem/realtime/design_1_clk_divider_0_0_stub.vhdl:15]
+INFO: [Synth 8-3491] module 'design_1_rgb_led_controller_0_0' declared at 'C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-27452-Lenovo-Jochem/realtime/design_1_rgb_led_controller_0_0_stub.vhdl:6' bound to instance 'rgb_led_controller_0' of component 'design_1_rgb_led_controller_0_0' [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/synth/design_1.vhd:928]
+INFO: [Synth 8-638] synthesizing module 'design_1_rgb_led_controller_0_0' [C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-27452-Lenovo-Jochem/realtime/design_1_rgb_led_controller_0_0_stub.vhdl:18]
+INFO: [Synth 8-3491] module 'design_1_util_vector_logic_0_0' declared at 'C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-27452-Lenovo-Jochem/realtime/design_1_util_vector_logic_0_0_stub.vhdl:6' bound to instance 'util_vector_logic_0' of component 'design_1_util_vector_logic_0_0' [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/synth/design_1.vhd:937]
+INFO: [Synth 8-638] synthesizing module 'design_1_util_vector_logic_0_0' [C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-27452-Lenovo-Jochem/realtime/design_1_util_vector_logic_0_0_stub.vhdl:15]
+INFO: [Synth 8-3491] module 'design_1_util_vector_logic_1_0' declared at 'C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-27452-Lenovo-Jochem/realtime/design_1_util_vector_logic_1_0_stub.vhdl:6' bound to instance 'util_vector_logic_1' of component 'design_1_util_vector_logic_1_0' [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/synth/design_1.vhd:943]
+INFO: [Synth 8-638] synthesizing module 'design_1_util_vector_logic_1_0' [C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-27452-Lenovo-Jochem/realtime/design_1_util_vector_logic_1_0_stub.vhdl:15]
+INFO: [Synth 8-3491] module 'design_1_util_vector_logic_1_1' declared at 'C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-27452-Lenovo-Jochem/realtime/design_1_util_vector_logic_1_1_stub.vhdl:6' bound to instance 'util_vector_logic_2' of component 'design_1_util_vector_logic_1_1' [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/synth/design_1.vhd:949]
+INFO: [Synth 8-638] synthesizing module 'design_1_util_vector_logic_1_1' [C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/.Xil/Vivado-27452-Lenovo-Jochem/realtime/design_1_util_vector_logic_1_1_stub.vhdl:14]
 INFO: [Synth 8-3491] module 'design_1_xlconstant_0_0' declared at 'c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/ip/design_1_xlconstant_0_0/synth/design_1_xlconstant_0_0.v:53' bound to instance 'xlconstant_0' of component 'design_1_xlconstant_0_0' [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/synth/design_1.vhd:954]
 INFO: [Synth 8-6157] synthesizing module 'design_1_xlconstant_0_0' [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/ip/design_1_xlconstant_0_0/synth/design_1_xlconstant_0_0.v:53]
 INFO: [Synth 8-6157] synthesizing module 'xlconstant_v1_1_7_xlconstant' [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/ipshared/b0f2/hdl/xlconstant_v1_1_vl_rfs.v:23]
@@ -210,18 +208,18 @@ WARNING: [Synth 8-7129] Port In102[0] in module xlconcat_v2_1_4_xlconcat is eith
 WARNING: [Synth 8-7129] Port In103[0] in module xlconcat_v2_1_4_xlconcat is either unconnected or has no load
 INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:16 . Memory (MB): peak = 2443.980 ; gain = 513.844
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:08 . Memory (MB): peak = 2440.258 ; gain = 511.145
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:11 ; elapsed = 00:00:16 . Memory (MB): peak = 2461.902 ; gain = 531.766
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:08 . Memory (MB): peak = 2458.164 ; gain = 529.051
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:16 . Memory (MB): peak = 2461.902 ; gain = 531.766
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:08 . Memory (MB): peak = 2458.164 ; gain = 529.051
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.063 . Memory (MB): peak = 2473.949 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.045 . Memory (MB): peak = 2470.227 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 2 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -252,8 +250,6 @@ Parsing XDC File [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digit
 Finished Parsing XDC File [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/ip/design_1_resetting_timer_0_0/design_1_resetting_timer_0_0/design_1_resetting_timer_0_0_in_context.xdc] for cell 'design_1_i/module_demodulator/resetting_timer_0'
 Parsing XDC File [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/ip/design_1_fifo_buffer_0_0/design_1_fifo_buffer_0_0/design_1_fifo_buffer_0_0_in_context.xdc] for cell 'design_1_i/module_demodulator/fifo_buffer_0'
 Finished Parsing XDC File [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/ip/design_1_fifo_buffer_0_0/design_1_fifo_buffer_0_0/design_1_fifo_buffer_0_0_in_context.xdc] for cell 'design_1_i/module_demodulator/fifo_buffer_0'
-Parsing XDC File [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/ip/design_1_communicatie_protoco_0_0/design_1_communicatie_protoco_0_0/design_1_communicatie_protoco_0_0_in_context.xdc] for cell 'design_1_i/communicatie_protoco_0'
-Finished Parsing XDC File [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/ip/design_1_communicatie_protoco_0_0/design_1_communicatie_protoco_0_0/design_1_communicatie_protoco_0_0_in_context.xdc] for cell 'design_1_i/communicatie_protoco_0'
 Parsing XDC File [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/ip/design_1_Karakter_FIFO_0_0/design_1_Karakter_FIFO_0_0/design_1_Karakter_FIFO_0_0_in_context.xdc] for cell 'design_1_i/Karakter_FIFO_0'
 Finished Parsing XDC File [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/ip/design_1_Karakter_FIFO_0_0/design_1_Karakter_FIFO_0_0/design_1_Karakter_FIFO_0_0_in_context.xdc] for cell 'design_1_i/Karakter_FIFO_0'
 Parsing XDC File [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/ip/design_1_clk_divider_0_0/design_1_clk_divider_0_0/design_1_clk_divider_0_0_in_context.xdc] for cell 'design_1_i/status_led/clk_divider_0'
@@ -266,31 +262,35 @@ Parsing XDC File [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digit
 Finished Parsing XDC File [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/ip/design_1_util_vector_logic_1_1/design_1_util_vector_logic_1_1/design_1_util_vector_logic_1_1_in_context.xdc] for cell 'design_1_i/status_led/util_vector_logic_2'
 Parsing XDC File [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/ip/design_1_rgb_led_controller_0_0/design_1_rgb_led_controller_0_0/design_1_rgb_led_controller_0_0_in_context.xdc] for cell 'design_1_i/status_led/rgb_led_controller_0'
 Finished Parsing XDC File [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/ip/design_1_rgb_led_controller_0_0/design_1_rgb_led_controller_0_0/design_1_rgb_led_controller_0_0_in_context.xdc] for cell 'design_1_i/status_led/rgb_led_controller_0'
+Parsing XDC File [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/ip/design_1_communicatie_protoco_0_0/design_1_communicatie_protoco_0_0/design_1_communicatie_protoco_0_0_in_context.xdc] for cell 'design_1_i/communicatie_protoco_0'
+Finished Parsing XDC File [c:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/ip/design_1_communicatie_protoco_0_0/design_1_communicatie_protoco_0_0/design_1_communicatie_protoco_0_0_in_context.xdc] for cell 'design_1_i/communicatie_protoco_0'
 Parsing XDC File [C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.srcs/constrs_1/new/constraints.xdc]
+WARNING: [Vivado 12-584] No ports matched 'crystal'. [C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.srcs/constrs_1/new/constraints.xdc:24]
+WARNING: [Vivado 12-584] No ports matched 'data_rdy_input'. [C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.srcs/constrs_1/new/constraints.xdc:25]
+WARNING: [Vivado 12-584] No ports matched 'LED_2'. [C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.srcs/constrs_1/new/constraints.xdc:26]
 Finished Parsing XDC File [C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.srcs/constrs_1/new/constraints.xdc]
+WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.srcs/constrs_1/new/constraints.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/design_1_wrapper_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.srcs/constrs_1/new/constraints.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/design_1_wrapper_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/design_1_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Parsing XDC File [C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/dont_touch.xdc]
 Finished Parsing XDC File [C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2513.988 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 2510.281 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 2 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 2 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.022 . Memory (MB): peak = 2513.988 ; gain = 0.000
-INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
-INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 2510.281 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:23 ; elapsed = 00:00:37 . Memory (MB): peak = 2513.988 ; gain = 583.852
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:17 . Memory (MB): peak = 2510.281 ; gain = 581.168
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:23 ; elapsed = 00:00:37 . Memory (MB): peak = 2513.988 ; gain = 583.852
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:17 . Memory (MB): peak = 2510.281 ; gain = 581.168
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -570,7 +570,6 @@ Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/module_demodulator/io_
 Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/module_demodulator/demodulator_0. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/module_demodulator/resetting_timer_0. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/module_demodulator/fifo_buffer_0. (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/communicatie_protoco_0. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/Karakter_FIFO_0. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/status_led/clk_divider_0. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/status_led/util_vector_logic_0. (constraint file  auto generated constraint).
@@ -578,12 +577,33 @@ Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/status_led/util_vector
 Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/status_led/util_vector_logic_2. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/status_led/rgb_led_controller_0. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/status_led/xlconstant_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/communicatie_protoco_0. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:38 . Memory (MB): peak = 2513.988 ; gain = 583.852
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:18 . Memory (MB): peak = 2510.281 ; gain = 581.168
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:24 ; elapsed = 00:00:39 . Memory (MB): peak = 2513.988 ; gain = 583.852
+Start Preparing Guide Design
 ---------------------------------------------------------------------------------
+CRITICAL WARNING: [Synth 8-6895] The reference checkpoint C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.srcs/utils_1/imports/synth_1/design_1_wrapper.dcp is not suitable for use with incremental synthesis for this design. Please regenerate the checkpoint for this design with -incremental_synth switch in the same Vivado session that synth_design has been run. Synthesis will continue with the default flow
+---------------------------------------------------------------------------------
+Finished Doing Graph Differ : Time (s): cpu = 00:00:07 ; elapsed = 00:00:18 . Memory (MB): peak = 2510.281 ; gain = 581.168
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Preparing Guide Design : Time (s): cpu = 00:00:07 ; elapsed = 00:00:18 . Memory (MB): peak = 2510.281 ; gain = 581.168
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:18 . Memory (MB): peak = 2510.281 ; gain = 581.168
+---------------------------------------------------------------------------------
+
+
+Incremental Synthesis Report Summary:
+
+1. Incremental synthesis run: no
+
+   Reason for not running incremental synthesis : 
+
+
+INFO: [Synth 8-7130] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -605,25 +625,25 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:26 ; elapsed = 00:00:42 . Memory (MB): peak = 2513.988 ; gain = 583.852
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:20 . Memory (MB): peak = 2510.281 ; gain = 581.168
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:32 ; elapsed = 00:00:53 . Memory (MB): peak = 2513.988 ; gain = 583.852
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:26 . Memory (MB): peak = 2510.281 ; gain = 581.168
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:32 ; elapsed = 00:00:54 . Memory (MB): peak = 2513.988 ; gain = 583.852
+Finished Timing Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:26 . Memory (MB): peak = 2510.281 ; gain = 581.168
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:32 ; elapsed = 00:00:54 . Memory (MB): peak = 2513.988 ; gain = 583.852
+Finished Technology Mapping : Time (s): cpu = 00:00:11 ; elapsed = 00:00:26 . Memory (MB): peak = 2510.281 ; gain = 581.168
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -641,37 +661,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:37 ; elapsed = 00:01:03 . Memory (MB): peak = 2513.988 ; gain = 583.852
+Finished IO Insertion : Time (s): cpu = 00:00:13 ; elapsed = 00:00:31 . Memory (MB): peak = 2510.281 ; gain = 581.168
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:37 ; elapsed = 00:01:03 . Memory (MB): peak = 2513.988 ; gain = 583.852
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:13 ; elapsed = 00:00:31 . Memory (MB): peak = 2510.281 ; gain = 581.168
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:37 ; elapsed = 00:01:03 . Memory (MB): peak = 2513.988 ; gain = 583.852
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:13 ; elapsed = 00:00:31 . Memory (MB): peak = 2510.281 ; gain = 581.168
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:37 ; elapsed = 00:01:03 . Memory (MB): peak = 2513.988 ; gain = 583.852
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:13 ; elapsed = 00:00:31 . Memory (MB): peak = 2510.281 ; gain = 581.168
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:37 ; elapsed = 00:01:03 . Memory (MB): peak = 2513.988 ; gain = 583.852
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:13 ; elapsed = 00:00:31 . Memory (MB): peak = 2510.281 ; gain = 581.168
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:37 ; elapsed = 00:01:03 . Memory (MB): peak = 2513.988 ; gain = 583.852
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:13 ; elapsed = 00:00:31 . Memory (MB): peak = 2510.281 ; gain = 581.168
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -730,27 +750,30 @@ Report Cell Usage:
 |22    |OBUF                                       |     9|
 +------+-------------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:37 ; elapsed = 00:01:03 . Memory (MB): peak = 2513.988 ; gain = 583.852
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:13 ; elapsed = 00:00:31 . Memory (MB): peak = 2510.281 ; gain = 581.168
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 11 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:24 ; elapsed = 00:00:58 . Memory (MB): peak = 2513.988 ; gain = 531.766
-Synthesis Optimization Complete : Time (s): cpu = 00:00:38 ; elapsed = 00:01:03 . Memory (MB): peak = 2513.988 ; gain = 583.852
+Synthesis finished with 0 errors, 1 critical warnings and 11 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:08 ; elapsed = 00:00:28 . Memory (MB): peak = 2510.281 ; gain = 529.051
+Synthesis Optimization Complete : Time (s): cpu = 00:00:13 ; elapsed = 00:00:31 . Memory (MB): peak = 2510.281 ; gain = 581.168
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.051 . Memory (MB): peak = 2513.988 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.032 . Memory (MB): peak = 2510.281 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 2 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2513.988 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2510.281 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 2 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 2 instances
 
 Synth Design complete | Checksum: ddce1880
 INFO: [Common 17-83] Releasing license: Synthesis
-102 Infos, 101 Warnings, 0 Critical Warnings and 0 Errors encountered.
+99 Infos, 105 Warnings, 1 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:44 ; elapsed = 00:01:16 . Memory (MB): peak = 2513.988 ; gain = 998.266
+synth_design: Time (s): cpu = 00:00:15 ; elapsed = 00:00:37 . Memory (MB): peak = 2510.281 ; gain = 993.000
+INFO: [Common 17-600] The following parameters have non-default value.
+tcl.collectionResultDisplayLimit
+INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
 INFO: [Common 17-1381] The checkpoint 'C:/Users/Jochem/GitHub/Fontys/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger/mo8-digitaal-ontvanger.runs/synth_1/design_1_wrapper.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file design_1_wrapper_utilization_synth.rpt -pb design_1_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed Jun  5 15:17:45 2024...
+INFO: [Common 17-206] Exiting Vivado at Thu Jun  6 15:42:41 2024...
