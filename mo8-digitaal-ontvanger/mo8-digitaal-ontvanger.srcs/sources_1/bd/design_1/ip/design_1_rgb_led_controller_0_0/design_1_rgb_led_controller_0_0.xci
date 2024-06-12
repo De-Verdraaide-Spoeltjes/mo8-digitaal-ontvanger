@@ -2,7 +2,7 @@
   "schema": "xilinx.com:schema:json_instance:1.0",
   "ip_inst": {
     "xci_name": "design_1_rgb_led_controller_0_0",
-    "cell_name": "status_led/rgb_led_controller_0",
+    "cell_name": "rgb_led_controller_0",
     "component_reference": "xilinx.com:module_ref:rgb_led_controller:1.0",
     "ip_revision": "1",
     "gen_directory": "../../../../../../mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/ip/design_1_rgb_led_controller_0_0",

@@ -66,6 +66,9 @@ ARCHITECTURE design_1_resetting_timer_0_0_arch OF design_1_resetting_timer_0_0 I
   ATTRIBUTE DowngradeIPIdentifiedWarnings : STRING;
   ATTRIBUTE DowngradeIPIdentifiedWarnings OF design_1_resetting_timer_0_0_arch: ARCHITECTURE IS "yes";
   COMPONENT resetting_timer IS
+    GENERIC (
+      goal : INTEGER
+    );
     PORT (
       clk : IN STD_LOGIC;
       enable : IN STD_LOGIC;
@@ -78,7 +81,7 @@ ARCHITECTURE design_1_resetting_timer_0_0_arch OF design_1_resetting_timer_0_0 I
   ATTRIBUTE CHECK_LICENSE_TYPE : STRING;
   ATTRIBUTE CHECK_LICENSE_TYPE OF design_1_resetting_timer_0_0_arch : ARCHITECTURE IS "design_1_resetting_timer_0_0,resetting_timer,{}";
   ATTRIBUTE CORE_GENERATION_INFO : STRING;
-  ATTRIBUTE CORE_GENERATION_INFO OF design_1_resetting_timer_0_0_arch: ARCHITECTURE IS "design_1_resetting_timer_0_0,resetting_timer,{x_ipProduct=Vivado 2023.1,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=resetting_timer,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED}";
+  ATTRIBUTE CORE_GENERATION_INFO OF design_1_resetting_timer_0_0_arch: ARCHITECTURE IS "design_1_resetting_timer_0_0,resetting_timer,{x_ipProduct=Vivado 2023.1,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=resetting_timer,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,goal=106000}";
   ATTRIBUTE IP_DEFINITION_SOURCE : STRING;
   ATTRIBUTE IP_DEFINITION_SOURCE OF design_1_resetting_timer_0_0_arch: ARCHITECTURE IS "module_ref";
   ATTRIBUTE X_INTERFACE_INFO : STRING;
@@ -89,6 +92,9 @@ ARCHITECTURE design_1_resetting_timer_0_0_arch OF design_1_resetting_timer_0_0 I
   ATTRIBUTE X_INTERFACE_INFO OF reset: SIGNAL IS "xilinx.com:signal:reset:1.0 reset RST";
 BEGIN
   U0 : resetting_timer
+    GENERIC MAP (
+      goal => 106000
+    )
     PORT MAP (
       clk => clk,
       enable => enable,

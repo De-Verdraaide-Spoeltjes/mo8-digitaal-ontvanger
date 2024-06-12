@@ -66,6 +66,9 @@ ARCHITECTURE design_1_resetting_timer_0_0_arch OF design_1_resetting_timer_0_0 I
   ATTRIBUTE DowngradeIPIdentifiedWarnings : STRING;
   ATTRIBUTE DowngradeIPIdentifiedWarnings OF design_1_resetting_timer_0_0_arch: ARCHITECTURE IS "yes";
   COMPONENT resetting_timer IS
+    GENERIC (
+      goal : INTEGER
+    );
     PORT (
       clk : IN STD_LOGIC;
       enable : IN STD_LOGIC;
@@ -81,6 +84,9 @@ ARCHITECTURE design_1_resetting_timer_0_0_arch OF design_1_resetting_timer_0_0 I
   ATTRIBUTE X_INTERFACE_INFO OF reset: SIGNAL IS "xilinx.com:signal:reset:1.0 reset RST";
 BEGIN
   U0 : resetting_timer
+    GENERIC MAP (
+      goal => 106000
+    )
     PORT MAP (
       clk => clk,
       enable => enable,

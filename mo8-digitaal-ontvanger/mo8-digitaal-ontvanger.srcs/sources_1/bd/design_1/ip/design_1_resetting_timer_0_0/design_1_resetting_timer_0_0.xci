@@ -2,13 +2,17 @@
   "schema": "xilinx.com:schema:json_instance:1.0",
   "ip_inst": {
     "xci_name": "design_1_resetting_timer_0_0",
-    "cell_name": "module_demodulator/resetting_timer_0",
+    "cell_name": "resetting_timer_0",
     "component_reference": "xilinx.com:module_ref:resetting_timer:1.0",
     "ip_revision": "1",
     "gen_directory": "../../../../../../mo8-digitaal-ontvanger.gen/sources_1/bd/design_1/ip/design_1_resetting_timer_0_0",
     "parameters": {
       "component_parameters": {
+        "goal": [ { "value": "106000", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "Component_Name": [ { "value": "design_1_resetting_timer_0_0", "resolve_type": "user", "usage": "all" } ]
+      },
+      "model_parameters": {
+        "goal": [ { "value": "106000", "resolve_type": "generated", "format": "long", "usage": "all" } ]
       },
       "project_parameters": {
         "ARCHITECTURE": [ { "value": "zynq" } ],

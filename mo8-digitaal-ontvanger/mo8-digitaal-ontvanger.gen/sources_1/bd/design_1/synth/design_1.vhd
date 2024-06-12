@@ -2,7 +2,7 @@
 --Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
---Date        : Thu Jun  6 15:40:23 2024
+--Date        : Tue Jun 11 20:35:57 2024
 --Host        : Lenovo-Jochem running 64-bit major release  (build 9200)
 --Command     : generate_target design_1.bd
 --Design      : design_1
@@ -457,14 +457,6 @@ architecture STRUCTURE of module_demodulator_imp_G87YIL is
     output_ready_o : out STD_LOGIC
   );
   end component design_1_demodulator_0_0;
-  component design_1_resetting_timer_0_0 is
-  port (
-    clk : in STD_LOGIC;
-    enable : in STD_LOGIC;
-    reset : in STD_LOGIC;
-    finished : out STD_LOGIC
-  );
-  end component design_1_resetting_timer_0_0;
   component design_1_fifo_buffer_0_0 is
   port (
     clk : in STD_LOGIC;
@@ -476,6 +468,14 @@ architecture STRUCTURE of module_demodulator_imp_G87YIL is
     bits_stored_o : out STD_LOGIC_VECTOR ( 7 downto 0 )
   );
   end component design_1_fifo_buffer_0_0;
+  component design_1_resetting_timer_0_0 is
+  port (
+    clk : in STD_LOGIC;
+    enable : in STD_LOGIC;
+    reset : in STD_LOGIC;
+    finished : out STD_LOGIC
+  );
+  end component design_1_resetting_timer_0_0;
   signal Net : STD_LOGIC;
   signal connection_embedded_reset : STD_LOGIC;
   signal demodulator_0_data_o : STD_LOGIC_VECTOR ( 7 downto 0 );
@@ -888,6 +888,11 @@ architecture STRUCTURE of status_led_imp_1J974DJ is
     Res : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component design_1_util_vector_logic_1_1;
+  component design_1_xlconstant_0_0 is
+  port (
+    dout : out STD_LOGIC_VECTOR ( 0 to 0 )
+  );
+  end component design_1_xlconstant_0_0;
   component design_1_rgb_led_controller_0_0 is
   port (
     blink_clk : in STD_LOGIC;
@@ -898,11 +903,6 @@ architecture STRUCTURE of status_led_imp_1J974DJ is
     rgb_out : out STD_LOGIC_VECTOR ( 2 downto 0 )
   );
   end component design_1_rgb_led_controller_0_0;
-  component design_1_xlconstant_0_0 is
-  port (
-    dout : out STD_LOGIC_VECTOR ( 0 to 0 )
-  );
-  end component design_1_xlconstant_0_0;
   signal Net : STD_LOGIC;
   signal Net1 : STD_LOGIC_VECTOR ( 0 to 0 );
   signal clk_divider_0_clk_out : STD_LOGIC;

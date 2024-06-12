@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu Jun  6 15:40:26 2024" VIVADOVERSION="2023.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Tue Jun 11 20:35:58 2024" VIVADOVERSION="2023.1">
 
   <SYSTEMINFO ARCH="zynq" BOARD="tul.com.tw:pynq-z2:part0:1.0" DEVICE="7z020" NAME="design_1" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -2584,8 +2584,8 @@
             <CONNECTION INSTANCE="decoder_5b4b_0" PORT="clk"/>
             <CONNECTION INSTANCE="module_demodulator_demodulator_0" PORT="clk"/>
             <CONNECTION INSTANCE="module_demodulator_fifo_buffer_0" PORT="clk"/>
-            <CONNECTION INSTANCE="module_demodulator_resetting_timer_0" PORT="clk"/>
             <CONNECTION INSTANCE="module_demodulator_io_buffer_0" PORT="clk"/>
+            <CONNECTION INSTANCE="module_demodulator_resetting_timer_0" PORT="clk"/>
             <CONNECTION INSTANCE="Karakter_FIFO_0" PORT="clk"/>
             <CONNECTION INSTANCE="status_led_clk_divider_0" PORT="clk_in"/>
             <CONNECTION INSTANCE="communicatie_protoco_0" PORT="clk"/>
@@ -4254,6 +4254,7 @@
     <MODULE COREREVISION="1" FULLNAME="/module_demodulator/resetting_timer_0" HWVERSION="1.0" INSTANCE="module_demodulator_resetting_timer_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="resetting_timer" VLNV="xilinx.com:module_ref:resetting_timer:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
+        <PARAMETER NAME="goal" VALUE="106000"/>
         <PARAMETER NAME="Component_Name" VALUE="design_1_resetting_timer_0_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
@@ -4369,9 +4370,9 @@
         </PORT>
         <PORT DIR="O" LEFT="0" NAME="Res" RIGHT="0" SIGIS="undef" SIGNAME="status_led_util_vector_logic_0_Res">
           <CONNECTIONS>
+            <CONNECTION INSTANCE="status_led_util_vector_logic_1" PORT="Op1"/>
             <CONNECTION INSTANCE="status_led_rgb_led_controller_0" PORT="blink"/>
             <CONNECTION INSTANCE="status_led_rgb_led_controller_0" PORT="r"/>
-            <CONNECTION INSTANCE="status_led_util_vector_logic_1" PORT="Op1"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
